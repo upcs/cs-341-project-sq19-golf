@@ -38,16 +38,11 @@ def scrapeClass(html):
 
 #import urllib2
 
-#specify the url
-schedule_page = 'term_in=201902&sel_subj=dummy&sel_day=dummy&sel_schd=dummy&sel_insm=dummy&sel_camp=dummy&sel_levl=dummy&sel_sess=dummy&sel_instr=dummy&sel_ptrm=dummy&sel_attr=dummy&sel_subj=BIO&sel_crse=&sel_title=&sel_schd=%25&sel_from_cred=&sel_to_cred=&sel_levl=%25&sel_instr=%25&begin_hh=0&begin_mi=0&begin_ap=a&end_hh=0&end_mi=0&end_ap=a'
+#specify the url and get the HTML in string form.
 schedule_page2 = requests.get("https://selfserve-db.up.edu/prd/bwckschd.p_get_crse_unsec?term_in=201902&sel_subj=dummy&sel_day=dummy&sel_schd=dummy&sel_insm=dummy&sel_camp=dummy&sel_levl=dummy&sel_sess=dummy&sel_instr=dummy&sel_ptrm=dummy&sel_attr=dummy&sel_subj=BIO&sel_crse=&sel_title=&sel_schd=%25&sel_from_cred=&sel_to_cred=&sel_levl=%25&sel_instr=%25&begin_hh=0&begin_mi=0&begin_ap=a&end_hh=0&end_mi=0&end_ap=a").content.decode('utf-8')
 
 #parse html using bs and store in variable 'soup'
 soup = BeautifulSoup(schedule_page2, 'html.parser')
-
-#extract contents of table data
-#print name
-
 
 #splitting the html string after the tr once, then again, then once more after new search
 myHTML = schedule_page2
