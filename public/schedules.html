@@ -8,56 +8,57 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/stylesheets/styles.css">
   <title>UP Scheduler</title>
-  <script type="text/javascript" src="functions.js"></script>
 </head>
 
 <body>
-  <section id="topNav">
-    <a id="left">UP Scheduler</a>
-    <a id="right">Settings</a>
+  <section class="topNav">
+    <a id="leftNav">UP Scheduler</a>
+    <a id="rightNav">Settings</a>
   </section>
   <section id="main">
-    <div class="scheduleOption">
-      <!-- Each scheduleTime serves to describe one possible schedule, based on the previously defined -->
-      <span class="scheduleTime"> 
-	<div class="timeLabel">8:00am - 9:00am</div>
-	<div class="timeLabel">10:00am - 11:00am</div>
-	<div class="timeLabel">11:00am - 12:00pm</div>
-      </span>
-      <span class="scheduleClass">
-	<div class="classLabel">CS 324</div>
-	<div class="classLabel">CS 341</div>
-	<div class="classLabel">CS 349</div>
-      </span>
-    </div>
+    <div class="horiz-container">
+      <div class="scheduleOption">
+        <!-- Each scheduleTime serves to describe one possible schedule, based on the previously defined -->
+        <span class="scheduleTime">
+          <div class="timeLabel">8:00am - 9:00am</div>
+          <div class="timeLabel">10:00am - 11:00am</div>
+          <div class="timeLabel">11:00am - 12:00pm</div>
+        </span>
+        <span class="scheduleClass">
+          <div class="classLabel">CS 324</div>
+          <div class="classLabel">CS 341</div>
+          <div class="classLabel">CS 349</div>
+        </span>
+      </div>
 
-    <!-- The following two scheduleOptions will be deleted when angular.js is implemented to allow for reactivity -->
-    <div class="scheduleOption">
-      <span class="scheduleTime">
-	<div class="timeLabel">11:00am - 12:00am</div>
-	<div class="timeLabel">3:00pm - 4:00pm</div>
-	<div class="timeLabel">5:00pm - 6:00pm</div>
-      </span>
-      <span class="scheduleClass">
-	<div class="classLabel">CS 349</div>
-	<div class="classLabel">CS 341</div>
-	<div class="classLabel">CS 324</div>
-      </span>
-    </div>
-    <div class="scheduleOption">
-      <span class="scheduleTime">
-	<div class="timeLabel">8:00am - 9:00am</div>
-	<div class="timeLabel">11:00am - 12:00pm</div>
-	<div class="timeLabel">3:00pm - 4:00pm</div>
-      </span>
-      <span class="scheduleClass">
-	<div class="classLabel">CS 324</div>
-	<div class="classLabel">CS 349</div>
-	<div class="classLabel">CS 341</div>
-      </span>
+      <!-- The following two scheduleOptions will be deleted when angular.js is implemented to allow for reactivity -->
+      <div class="scheduleOption">
+        <span class="scheduleTime">
+          <div class="timeLabel">11:00am - 12:00am</div>
+          <div class="timeLabel">3:00pm - 4:00pm</div>
+          <div class="timeLabel">5:00pm - 6:00pm</div>
+        </span>
+        <span class="scheduleClass">
+          <div class="classLabel">CS 349</div>
+          <div class="classLabel">CS 341</div>
+          <div class="classLabel">CS 324</div>
+        </span>
+      </div>
+      <div class="scheduleOption">
+        <span class="scheduleTime">
+          <div class="timeLabel">8:00am - 9:00am</div>
+          <div class="timeLabel">11:00am - 12:00pm</div>
+          <div class="timeLabel">3:00pm - 4:00pm</div>
+        </span>
+        <span class="scheduleClass">
+          <div class="classLabel">CS 324</div>
+          <div class="classLabel">CS 349</div>
+          <div class="classLabel">CS 341</div>
+        </span>
+      </div>
     </div>
 
     <input id="return" type="button" value="Return" onclick="window.history.back();"></input>
   </section>
+
 </body>
-</html>

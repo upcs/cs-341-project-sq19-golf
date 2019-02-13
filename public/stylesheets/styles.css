@@ -1,64 +1,109 @@
 /* Author: Michael Quach and Julian Donovan */
+/* Project Color Scheme:*/
 
-/*stylizes header for index page*/
+
+body {
+    margin: 2vh;
+    background-color: #DDDEDE;
+    font-size: 18px;
+}
+
+/*Header Style*/
 .topNav {
-    width: 80vw;
-    height: 5vh;
-
-    border: 1px solid black;
-    display: flex; /*allow the header to act as a flexible box*/
-    font: 35px "Lucida Grande", Helvetica, Arial, sans-serif; /*sets font of header to Arial, sized 35*/
-
-    background-color: #990099;
+    height: 32px;
+    padding: 10px;
+    font: 24px "Lucida Grande", Helvetica, Arial, sans-serif; /*sets font of header to Arial, sized 35*/
+    background-color: #232122;
 }
 
 a {
-    color: white; /*sets font color in header to white*/
+    color: #DDDEDE; /*sets font color in header to white*/
 }
 
-#left {
-    flex: 0 0 65%; /*sets "UP Scheduler" text to left of header bar*/
+#leftNav {
+    float: left;
+    font-weight: bold;
+    font-size: 32px;
+    margin-left: 6px;
 }
 
-#right {
-    flex: 1; /*sets "Settings" text to right of header bar*/
+#rightNav {
+    float: right;
     cursor: pointer; /*changes mouse to pointer when hovering over "Settings"*/
+    margin: 3px 6px;
 }
 
-/*stylizes body for index page*/
-body {
-    padding: 50px; /*adds padding to body*/
-    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; /*sets font of body to Arial, sized 14*/
-}
-
-h4 {
-    text-decoration: underline; /*adds underline to "Select your courses"*/
-}
-
-#submit {
-    text-align: center; /*centers text in "Submit" button*/
-    cursor: pointer; /*changes mouse to pointer when hovering over "Submit" button*/
-}
-
-/*stylizes header for schedules page*/
-h2 {
-    border:1px solid black; /*adds a solid black border around header*/
-    font: 35px "Lucida Grande", Helvetica, Arial, sans-serif; /*sets font of header to Arial, sized 35*/
-    background-color: #990099; /*sets a purple background for header*/
-    color: white; /*sets font color in header to white*/
-    width: 50%; /*compress width of header by 50%*/
-}
- 
-/*stylizes body for schedules page*/ 
+/*Body Style*/
 #main {
-    width: 50%; /*compress width of body by 50%*/
+  padding-top: 24px;
+  margin-left: 16px;
+}
+
+#greetingText {
+  padding-bottom: 12px;
+}
+
+#termSelect {
+  background-color: #968f8f;
+  width: 60px;
+  text-align: center;
+}
+
+#return, form input {
+  background-color: #aa8cc5;
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+  text-align: right;
+  padding: 6px 12px;
+  margin: 3px;
+  border: none;
+}
+
+.classGroup {
+  text-align: center;
+}
+
+.classSelect {
+}
+
+#return, form input[type='submit'] {
+  background-color: #885ead;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+input[type=number] {
+    -moz-appearance:textfield; /* Firefox */
+}
+
+/*stylizes body for schedules page*/
+.horiz-container {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 8px;
+}
+
+.scheduleOption {
+  display: flex;
+  flex-direction: row;
+  margin-right: 48px;
 }
 
 .scheduleTime {
-    float: right; /*sets all times of classes to right of page, align with classes*/
+  float: right; /*sets all times of classes to right of page, align with classes*/
+  margin-right: 16px;
+  margin: 16px;
 }
 
-#return {
-    text-align: center; /*centers text in "Return" button*/
-    cursor: pointer; /*changes mouse to pointer when hovering over "Return" button*/
+.scheduleClass {
+  background-color: #aa8cc5;
+  color: white;
+  border-radius: 5px;
+  padding: 16px;
 }
