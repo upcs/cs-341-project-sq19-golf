@@ -9,5 +9,5 @@ matrix:
       install:
         - pip install coverage
       script:
-        - coverage run tests.py
+        - coverage run ./WebScraper/tests.py
 
