@@ -10,20 +10,24 @@ from bs4 import BeautifulSoup
 #handles separation of each class details, such as: name, time, days, instr
 def scrapeClass(html):
 
+	#Grab the first desired data about the class name/title
 	classes = html.split('<a href', 1)
 	classes = classes[1].split('">', 1)
 	name = classes[1].split("</a", 1)[0]
 	classes = classes[1].split('Instructors</th>', 1)
 
+	#grab the second desired data about the time alotted for the class
 	time = classes[1].split('</td>', 1)
 	time = time[1].split('</td>', 1)
 	time = time[0].split('">')[1]
 
+	#grab the desired data of which days the class will be held.
 	days = classes[1].split(time)
 	days = days[1].split('</td>', 1)
 	days = days[1].split('</td>', 1)
 	days = days[0].split('">')[1]
 
+	#grab the desired data of which instructor will teach the class.
 	instr = classes[1].split(days, 1)
 	instr = instr[1].split('</td>', 1)
 	instr = instr[1].split('</td>', 1)
@@ -32,6 +36,7 @@ def scrapeClass(html):
 	instr = instr[1].split('(<ABBR', 1)
 	instr = instr[0].split('">')[1]
 
+	#return the desired databits: name, time, days, instructor
 	return [name,time, days, instr]
 
 
@@ -44,15 +49,17 @@ schedule_page2 = requests.get("https://selfserve-db.up.edu/prd/bwckschd.p_get_cr
 #parse html using bs and store in variable 'soup'
 soup = BeautifulSoup(schedule_page2, 'html.parser')
 
-#splitting the html string after the tr once, then again, then once more after new search
+#splitting the html string after the tablerow once, then again, then once more after new search
 myHTML = schedule_page2
 s1 = myHTML.split('CLASS="ddtitle"', 1)
 sFinal = s1[1].split('This is for formatting of the bottom links.', 1)
-
 sFinal = sFinal[0]
-
 sFinal = sFinal.split('CLASS="ddtitle"')
-#sFinal = sFinal.split('</tr>')
+#above splitting will yield the section of data that contains the start of the
+#	table data where the first class and info is listed, to the end of the
+#	table data where the last class and info is listed.
+
+#append each class' scraped data as an element of lstScrapedData
 lstScrapedData = []
 for x in sFinal:
 	lstScrapedData.append(scrapeClass(x))
