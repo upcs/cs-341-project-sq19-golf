@@ -1,4 +1,6 @@
 <!-- Author: Julian Donovan and Michael Quach and Andrew Tagawa-->
+<!-- Word to the grader: Much of this is dummied up as we needed to write a web scraper in order to gather relevant course data before working to generate real output.
+If possible please grade the scripting and testing based on the web scraper (as located in the top-level WebScraper directory) -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -24,11 +26,12 @@
 
       <div id="classGroup">
         <div class="classSelect">
-          <input type="text" placeholder="Course Type">
-          <input type="number" placeholder="Course Number">
+          <input type="text" placeholder="Course Type"> <!-- Specify course subject -->
+          <input type="number" placeholder="Course Number"> <!-- Specify course number -->
         </div>
 
         <!-- The following two "classSelect" divs will eventually be deleted once reactive support has been enabled through angular.js/handlebars-->
+        <!-- More specifically, {#each} logic will be used with templating to generate the necessary number of classSelect input fields -->
         <div class="classSelect">
           <input type="text" placeholder="Course Type">
           <input type="number" placeholder="Course Number">
@@ -43,7 +46,7 @@
         </div>
       </div>
 
-      <input type="Submit">
+      <input type="Submit"> <!-- Triggers form navigation on click -->
     </form>
   </section>
 

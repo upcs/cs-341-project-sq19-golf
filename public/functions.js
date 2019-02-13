@@ -1,7 +1,7 @@
 //Written by Andrew Tagawa on 2/11/19
 
 function submit() {
-	alert("heyo");
+	//Dummied up function to trigger (currently empty) form submit
 }
 
 function back() {
