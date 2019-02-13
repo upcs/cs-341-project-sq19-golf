@@ -1,6 +1,4 @@
 /* Author: Michael Quach and Julian Donovan */
-/* Project Color Scheme:*/
-
 
 body {
     margin: 2vh;
@@ -10,8 +8,8 @@ body {
 
 /*Header Style*/
 .topNav {
-    height: 32px;
-    padding: 10px;
+    height: 30px;
+    padding: 8px;
     font: 24px "Lucida Grande", Helvetica, Arial, sans-serif; /*sets font of header to Arial, sized 35*/
     background-color: #232122;
 }
@@ -23,7 +21,7 @@ a {
 #leftNav {
     float: left;
     font-weight: bold;
-    font-size: 32px;
+    font-size: 28px;
     margin-left: 6px;
 }
 
@@ -33,6 +31,8 @@ a {
     margin: 3px 6px;
 }
 
+
+
 /*Body Style*/
 #main {
   padding-top: 24px;
@@ -40,7 +40,7 @@ a {
 }
 
 #greetingText {
-  padding-bottom: 12px;
+  margin-bottom: 12px;
 }
 
 #termSelect {
@@ -60,6 +60,24 @@ a {
   border: none;
 }
 
+::-webkit-input-placeholder { /* Chrome */
+  color: white;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  color: white;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: white;
+  opacity: 1;
+}
+:-moz-placeholder { /* Firefox 4 - 18 */
+  color: white;
+  opacity: 1;
+}
+
+
+
+/*Schedule Style */
 .classGroup {
   text-align: center;
 }
@@ -68,21 +86,20 @@ a {
 }
 
 #return, form input[type='submit'] {
+  margin-top: 12px;
   background-color: #885ead;
 }
 
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
-    /* display: none; <- Crashes Chrome on hover */
     -webkit-appearance: none;
-    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+    margin: 0; /* Removes hidden margins */
 }
 
 input[type=number] {
     -moz-appearance:textfield; /* Firefox */
 }
 
-/*stylizes body for schedules page*/
 .horiz-container {
     display: flex;
     flex-direction: row;
@@ -97,7 +114,6 @@ input[type=number] {
 
 .scheduleTime {
   float: right; /*sets all times of classes to right of page, align with classes*/
-  margin-right: 16px;
   margin: 16px;
 }
 
