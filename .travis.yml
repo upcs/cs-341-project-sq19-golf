@@ -1,7 +1,12 @@
 language: python
 
-# Set the python version to 2.7
-python: 3.6.5
+
+before_install:
+ - sudo apt-get update -qq
+ - sudo apt-get install -qq python3.6.5
+
+python:
+ - "3.6.5"
 
 # Install the codecov pip dependency
 install:
