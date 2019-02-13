@@ -5,10 +5,8 @@ as we first need to gather data before our back-end can do any interesting datab
 or our front end may display any meaningful metrics
 */
 
-function submit() {
-	//Dummied up function to trigger (currently empty) form submit
-}
-
-function back() {
-	window.history.back();
-}
+module.exports = {
+  submit: function() {
+  //Dummied up function to trigger (currently empty) form submit
+  }
+};
