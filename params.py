@@ -62,4 +62,4 @@ def genQuery(term_in, sel_subj, sel_crse, sel_title, sel_from_cred,
 	'end_mi=%s&' %(end_mi) +
 	'end_ap=%s'  %(end_ap)))
 	
-	print(myURL + '?' + postQuery)
+	return(myURL + '?' + postQuery)
