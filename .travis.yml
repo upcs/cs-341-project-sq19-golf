@@ -1,3 +1,17 @@
-language: node_js
-node_js:
-  - "10"
+language: python
+
+# Set the python version to 2.7
+python: 3.6.5
+
+# Install the codecov pip dependency
+install:
+  - pip install codecov
+
+# Run the unit test
+CODECOV_TOKEN="401427f9-b2b9-4f11-be33-a3d001b85850"
+script:
+  - coverage run tests.py
+
+# Push the results back to codecov
+after_success:
+- bash <(curl -s https://codecov.io/bash) -cF python
