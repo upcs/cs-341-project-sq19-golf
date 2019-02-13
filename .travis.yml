@@ -5,7 +5,7 @@ python: 3.6.5
 
 # Install the codecov pip dependency
 install:
-  - pip install codecov
+  - pip install coverage
 
 # Run the unit test
 CODECOV_TOKEN="401427f9-b2b9-4f11-be33-a3d001b85850"
