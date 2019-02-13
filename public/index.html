@@ -1,4 +1,4 @@
-<!-- Author: Julian Donovan -->
+<!-- Author: Julian Donovan and Michael Quach-->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -6,16 +6,54 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheets" href="styles.css">
   <title>UP Scheduler</title>
+  <style>
+	#topNav {
+		border:1px solid black;
+		font: 35px "Lucida Grande", Helvetica, Arial, sans-serif;
+		background-color: #990099;
+		width: 50%;
+		display: flex;
+	}
+
+	a {
+		color: white;
+	}
+
+	#left {
+		flex: 0 0 65%;
+	}
+
+	#right {
+		flex: 1;
+		cursor: pointer;
+	}
+
+	body {
+		padding: 50px;
+		font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+	}
+    
+	h4 {
+		text-decoration: underline;
+	}
+	
+	#submit {
+		text-align: center;
+		cursor: pointer;
+	}
+  </style>
 </head>
 
 <body>
   <section id="topNav">
-    <a>UP Scheduler</a>
-    <a>Settings</a>
+    <h4>Select your couses...</h4>
+    <a id="left">UP Scheduler</a>
+    <a id="right">Settings</a>
   </section>
   <section id="main">
-    <h4>Select your couses...</h4>
+    <h4>Select your courses:</h4>
     <form id="classSelectForm">
       <input id="termSelect" type="text" value="Fall 2019">
       
@@ -34,7 +72,7 @@
 	<input type="number" placeholder="Course Number">
       </div>
 
-      <input type="Submit">
+      <input id="submit" type="Submit">
     </form>
   </section>
 <body>				
