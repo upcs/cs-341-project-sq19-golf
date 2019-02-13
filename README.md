@@ -1,8 +1,13 @@
-[![Codecov Coverage](https://img.shields.io/codecov/c/github/<Github
-Username>/<Repository Name>/<Branch Name>.svg?style=flat-square)]
-(https://codecov.io/gh/<Github Username>/<Repository Name>/)
+![codecov](https://img.shields.io/codecov/c/github/upcs/cs-341-project-sq19-golf/master.svg?style=flat-square) ![build](https://img.shields.io/travis/com/upcs/cs-341-project-sq19-golf.svg?style=flat)
 
-Tasks Completed:
+Members:
+  -Andrew
+  -Logan
+  -Michael
+  -Nico
+  -Julian
+
+Tasks Completed for Sprint 1:
   -A a functional Express.js framework
   -A Mockup of the UI
     -Using HTML
