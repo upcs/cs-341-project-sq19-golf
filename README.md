@@ -2,8 +2,6 @@
 
 ## **Members:**
 
----
-
 - Andrew
 - Logan
 - Michael
@@ -11,8 +9,6 @@
 - Julian
 
 ## **Tasks Completed for Sprint 1:**
-
----
 
 - A a functional Express.js framework
 - A Mockup of the UI
@@ -22,8 +18,6 @@
 - Integration of Jest, CodeCov and Travis CI
 
 ## **Current Tech Stack:**
-
----
 
 - Web-Scraper
   - BeautifulSoup - Python web scraping library utilized to extract course data from self serve
