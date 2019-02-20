@@ -1,6 +1,6 @@
 ![codecov](https://img.shields.io/codecov/c/github/upcs/cs-341-project-sq19-golf/master.svg?style=flat-square) ![build](https://img.shields.io/travis/com/upcs/cs-341-project-sq19-golf.svg?style=flat)
 
-Members:
+## **Members:**
 
 - Andrew
 - Logan
@@ -8,7 +8,7 @@ Members:
 - Nico
 - Julian
 
-Tasks Completed for Sprint 1:
+## **Tasks Completed for Sprint 1:**
 
 - A a functional Express.js framework
 - A Mockup of the UI
@@ -17,7 +17,7 @@ Tasks Completed for Sprint 1:
 - A Webscraper capable of gathering all scheduling data
 - Integration of Jest, CodeCov and Travis CI
 
-Current Tech Stack:
+## **Current Tech Stack:**
 
 - Web-Scraper
   - BeautifulSoup - Python web scraping library utilized to extract course data from self serve
