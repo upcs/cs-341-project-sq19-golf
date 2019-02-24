@@ -14,6 +14,7 @@ export class TopNavigation extends Component {
   }
 };
 
+//All input options
 export class InputContainer extends Component {
   constructor(props) {
     super(props);
@@ -43,6 +44,7 @@ export class InputContainer extends Component {
   }
 };
 
+//Academic term input
 class TermInput extends Component {
   render() {
     return (
@@ -53,6 +55,7 @@ class TermInput extends Component {
   }
 };
 
+//Course selection input
 class CourseInput extends Component {
   render() {
     return (
