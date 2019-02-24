@@ -1,0 +1,21 @@
+language: python
+
+before_install:
+ - sudo apt-get update -qq
+ - sudo apt-get install -qq python3.6.5
+
+python:
+ - "3.6.5"
+
+# Install the codecov pip dependency
+install:
+  - pip install coverage
+
+# Run the unit test
+CODECOV_TOKEN="401427f9-b2b9-4f11-be33-a3d001b85850"
+script:
+  - coverage run tests.py
+
+# Push the results back to codecov
+after_success:
+ - bash <(curl -s https://codecov.io/bash) -cF python
