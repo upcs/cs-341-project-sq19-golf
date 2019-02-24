@@ -33,4 +33,3 @@
   - Husky - Automates pre-hooks to fire prior to each commit
   - Prettier - Beautifies code, configured to function as a pre-hook triggered before each commit
   - Nodemon - Automatically serves server .js files when updated, allowing for "real-time" back-end edits
-
