@@ -9,7 +9,7 @@ body {
 /*Header Style*/
 .topNav {
     height: 22px;
-    padding: 6px;
+    padding: 8px;
     font: 18px "Lucida Grande", Helvetica, Arial, sans-serif; /*sets font of header to Arial, sized 35*/
     background-color: #232122;
 }

@@ -18,28 +18,50 @@ export class TopNavigation extends Component {
 export class InputContainer extends Component {
   constructor(props) {
     super(props);
-    this.state = { numInputs: necessaryInputs() }
+    this.state = {
+      totalInputs: this.necessaryInputs(),
+      populatedInputs: 0
+    }
+    //this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  necessaryInputs() {
+    //$('.classSelect').find('input[data-populated="true"]');
+
+    return 3;
+  }
+
+  handleSubmit(event) {
+    event.preventDefault();
+    const data = new FormData(event.target);
+    console.log(data);
+
+    fetch('/api/scheduleRequest', {
+      method: 'POST',
+      body: data
+    });
   }
 
   render() {
     let courseList = [];
-    for (let i = 0; i < this.state.numInputs; i++) {
+    for (let i = 0; i < this.state.totalInputs; i++) {
       let course = <CourseInput key={"course-" + i}/>
       courseList.push(course);
     }
 
     return (
-      <section id="main">
+      <form id="main" onSubmit={this.handleSubmit}>
         <TermInput/>
         <div id="classGroup">
           {courseList}
         </div>
         <Link to='/schedules'>
-          <button id="submitButton">
+          <button id="submitButton" form="main" type="submit">
             Submit
           </button>
         </Link>
-      </section>
+        <button id="submitButton" form="main" type="submit"/>
+      </form>
     );
   }
 };
@@ -57,20 +79,23 @@ class TermInput extends Component {
 
 //Course selection input
 class CourseInput extends Component {
+  constructor(props) {
+    super(props);
+  }
+
+  checkIfPopulated(event) {
+    event.target.dataset.populated = (event.target.value !== "") ? "true" : "false";
+  }
+
   render() {
     return (
       <div className="classSelect">
-        <input type="text" placeholder="Course Type"/>
-        <input type="number" placeholder="Course Number"/>
+        <input type="text" placeholder="Course Type" onChange={this.props.handleChange} data-populated="false"/>
+        <input type="number" placeholder="Course Number" onChange={this.props.handleChange} data-populated="false"/>
       </div>
     );
   }
 };
-
-function necessaryInputs() {
-  //TODO: Add logic
-  return 3;
-}
 
 function displaySchedules() {
   //TODO: Add logic
