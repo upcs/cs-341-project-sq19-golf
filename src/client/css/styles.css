@@ -43,13 +43,7 @@ a {
   margin-bottom: 12px;
 }
 
-#termSelect {
-  background-color: #968f8f;
-  width: 60px;
-  text-align: center;
-}
-
-#return, form input {
+#main input, #main button  {
   background-color: #aa8cc5;
   color: white;
   border-radius: 5px;
@@ -58,6 +52,12 @@ a {
   padding: 6px 12px;
   margin: 3px;
   border: none;
+}
+
+#termSelect {
+  background-color: #968f8f !important;
+  width: 60px;
+  text-align: center;
 }
 
 ::-webkit-input-placeholder { /* Chrome */
@@ -78,14 +78,13 @@ a {
 
 
 /*Schedule Style */
-.classGroup {
-  text-align: center;
+.horiz-container {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 8px;
 }
 
-.classSelect {
-}
-
-#return, form input[type='submit'] {
+#main button {
   margin-top: 12px;
   background-color: #885ead;
 }
@@ -100,24 +99,18 @@ input[type=number] {
     -moz-appearance:textfield; /* Firefox */
 }
 
-.horiz-container {
-    display: flex;
-    flex-direction: row;
-    margin-bottom: 8px;
-}
-
-.scheduleOption {
+.scheduleClass {
   display: flex;
   flex-direction: row;
   margin-right: 48px;
 }
 
-.scheduleTime {
+.timeLabel {
   float: right; /*sets all times of classes to right of page, align with classes*/
   margin: 16px;
 }
 
-.scheduleClass {
+.classLabel {
   background-color: #aa8cc5;
   color: white;
   border-radius: 5px;
