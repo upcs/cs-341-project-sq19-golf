@@ -10,8 +10,6 @@ matrix:
         - pip install coverage
         - pip install requests
 	- pip install bs4
-	- npm install codecov
       script:
         - coverage run ./web_scraper/scraping_schedule.py
         - coverage report
-        - npm run codecov
