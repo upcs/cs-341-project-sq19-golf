@@ -96,8 +96,3 @@ class CourseInput extends Component {
     );
   }
 };
-
-function displaySchedules() {
-  //TODO: Add logic
-
-}
