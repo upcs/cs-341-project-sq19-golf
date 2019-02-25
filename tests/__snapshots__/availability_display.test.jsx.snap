@@ -1,0 +1,353 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AvailabilityContainer Should render correctly 1`] = `
+<div
+  id="main"
+>
+  <SelectInput />
+  <ReactTable
+    AggregatedComponent={[Function]}
+    ExpanderComponent={[Function]}
+    FilterComponent={[Function]}
+    LoadingComponent={[Function]}
+    NoDataComponent={[Function]}
+    PadRowComponent={[Function]}
+    PaginationComponent={[Function]}
+    PivotValueComponent={[Function]}
+    ResizerComponent={[Function]}
+    TableComponent={[Function]}
+    TbodyComponent={[Function]}
+    TdComponent={[Function]}
+    TfootComponent={[Function]}
+    ThComponent={[Function]}
+    TheadComponent={[Function]}
+    TrComponent={[Function]}
+    TrGroupComponent={[Function]}
+    aggregatedKey="_aggregated"
+    className=""
+    collapseOnDataChange={true}
+    collapseOnPageChange={true}
+    collapseOnSortingChange={true}
+    column={
+      Object {
+        "Aggregated": undefined,
+        "Cell": undefined,
+        "Expander": undefined,
+        "Filter": undefined,
+        "Footer": undefined,
+        "Header": undefined,
+        "Pivot": undefined,
+        "PivotValue": undefined,
+        "Placeholder": undefined,
+        "aggregate": undefined,
+        "className": "",
+        "filterAll": false,
+        "filterMethod": undefined,
+        "filterable": undefined,
+        "footerClassName": "",
+        "footerStyle": Object {},
+        "getFooterProps": [Function],
+        "getHeaderProps": [Function],
+        "getProps": [Function],
+        "headerClassName": "",
+        "headerStyle": Object {},
+        "minResizeWidth": 11,
+        "minWidth": 100,
+        "resizable": undefined,
+        "show": true,
+        "sortMethod": undefined,
+        "sortable": undefined,
+        "style": Object {},
+      }
+    }
+    columns={
+      Array [
+        Object {
+          "Header": "Times",
+          "accessor": "times",
+        },
+        Object {
+          "Header": "Monday",
+          "accessor": "monday",
+        },
+        Object {
+          "Header": "Tuesday",
+          "accessor": "tuesday",
+        },
+        Object {
+          "Header": "Wednesday",
+          "accessor": "wednesday",
+        },
+        Object {
+          "Header": "Thursday",
+          "accessor": "thursday",
+        },
+        Object {
+          "Header": "Friday",
+          "accessor": "friday",
+        },
+        Object {
+          "Header": "Saturday",
+          "accessor": "saturday",
+        },
+        Object {
+          "Header": "Sunday",
+          "accessor": "sunday",
+        },
+      ]
+    }
+    data={
+      Array [
+        Object {
+          "friday": null,
+          "monday": null,
+          "saturday": null,
+          "sunday": null,
+          "thursday": null,
+          "times": "8:00",
+          "tuesday": null,
+          "wednesday": null,
+        },
+        Object {
+          "friday": null,
+          "monday": null,
+          "saturday": null,
+          "sunday": null,
+          "thursday": null,
+          "times": "9:00",
+          "tuesday": null,
+          "wednesday": null,
+        },
+        Object {
+          "friday": null,
+          "monday": null,
+          "saturday": null,
+          "sunday": null,
+          "thursday": null,
+          "times": "10:00",
+          "tuesday": null,
+          "wednesday": null,
+        },
+        Object {
+          "friday": null,
+          "monday": null,
+          "saturday": null,
+          "sunday": null,
+          "thursday": null,
+          "times": "11:00",
+          "tuesday": null,
+          "wednesday": null,
+        },
+        Object {
+          "friday": null,
+          "monday": null,
+          "saturday": null,
+          "sunday": null,
+          "thursday": null,
+          "times": "12:00",
+          "tuesday": null,
+          "wednesday": null,
+        },
+        Object {
+          "friday": null,
+          "monday": null,
+          "saturday": null,
+          "sunday": null,
+          "thursday": null,
+          "times": "13:00",
+          "tuesday": null,
+          "wednesday": null,
+        },
+        Object {
+          "friday": null,
+          "monday": null,
+          "saturday": null,
+          "sunday": null,
+          "thursday": null,
+          "times": "14:00",
+          "tuesday": null,
+          "wednesday": null,
+        },
+        Object {
+          "friday": null,
+          "monday": null,
+          "saturday": null,
+          "sunday": null,
+          "thursday": null,
+          "times": "15:00",
+          "tuesday": null,
+          "wednesday": null,
+        },
+        Object {
+          "friday": null,
+          "monday": null,
+          "saturday": null,
+          "sunday": null,
+          "thursday": null,
+          "times": "16:00",
+          "tuesday": null,
+          "wednesday": null,
+        },
+        Object {
+          "friday": null,
+          "monday": null,
+          "saturday": null,
+          "sunday": null,
+          "thursday": null,
+          "times": "17:00",
+          "tuesday": null,
+          "wednesday": null,
+        },
+        Object {
+          "friday": null,
+          "monday": null,
+          "saturday": null,
+          "sunday": null,
+          "thursday": null,
+          "times": "18:00",
+          "tuesday": null,
+          "wednesday": null,
+        },
+        Object {
+          "friday": null,
+          "monday": null,
+          "saturday": null,
+          "sunday": null,
+          "thursday": null,
+          "times": "19:00",
+          "tuesday": null,
+          "wednesday": null,
+        },
+        Object {
+          "friday": null,
+          "monday": null,
+          "saturday": null,
+          "sunday": null,
+          "thursday": null,
+          "times": "20:00",
+          "tuesday": null,
+          "wednesday": null,
+        },
+        Object {
+          "friday": null,
+          "monday": null,
+          "saturday": null,
+          "sunday": null,
+          "thursday": null,
+          "times": "21:00",
+          "tuesday": null,
+          "wednesday": null,
+        },
+        Object {
+          "friday": null,
+          "monday": null,
+          "saturday": null,
+          "sunday": null,
+          "thursday": null,
+          "times": "22:00",
+          "tuesday": null,
+          "wednesday": null,
+        },
+      ]
+    }
+    defaultExpanded={Object {}}
+    defaultFilterMethod={[Function]}
+    defaultFiltered={Array []}
+    defaultPage={0}
+    defaultPageSize={20}
+    defaultResized={Array []}
+    defaultSortDesc={false}
+    defaultSortMethod={[Function]}
+    defaultSorted={Array []}
+    expanderDefaults={
+      Object {
+        "filterable": false,
+        "resizable": false,
+        "sortable": false,
+        "width": 35,
+      }
+    }
+    filterable={false}
+    freezeWhenExpanded={false}
+    getLoadingProps={[Function]}
+    getNoDataProps={[Function]}
+    getPaginationProps={[Function]}
+    getProps={[Function]}
+    getResizerProps={[Function]}
+    getTableProps={[Function]}
+    getTbodyProps={[Function]}
+    getTdProps={[Function]}
+    getTfootProps={[Function]}
+    getTfootTdProps={[Function]}
+    getTfootTrProps={[Function]}
+    getTheadFilterProps={[Function]}
+    getTheadFilterThProps={[Function]}
+    getTheadFilterTrProps={[Function]}
+    getTheadGroupProps={[Function]}
+    getTheadGroupThProps={[Function]}
+    getTheadGroupTrProps={[Function]}
+    getTheadProps={[Function]}
+    getTheadThProps={[Function]}
+    getTheadTrProps={[Function]}
+    getTrGroupProps={[Function]}
+    getTrProps={[Function]}
+    groupedByPivotKey="_groupedByPivot"
+    indexKey="_index"
+    loading={false}
+    loadingText="Loading..."
+    minRows={0}
+    multiSort={true}
+    nestingLevelKey="_nestingLevel"
+    nextText="Next"
+    noDataText="No rows found"
+    ofText="of"
+    onFetchData={[Function]}
+    originalKey="_original"
+    pageJumpText="jump to page"
+    pageSizeOptions={
+      Array [
+        5,
+        10,
+        20,
+        25,
+        50,
+        100,
+      ]
+    }
+    pageText="Page"
+    pivotDefaults={Object {}}
+    pivotIDKey="_pivotID"
+    pivotValKey="_pivotVal"
+    previousText="Previous"
+    resizable={false}
+    resolveData={[Function]}
+    rowsSelectorText="rows per page"
+    rowsText="rows"
+    showPageJump={true}
+    showPageSizeOptions={true}
+    showPagination={false}
+    showPaginationBottom={true}
+    showPaginationTop={false}
+    sortable={false}
+    style={Object {}}
+    subRowsKey="_subRows"
+  />
+  <form
+    id="main"
+    onSubmit={[Function]}
+  >
+    <Link
+      replace={false}
+      to="/schedules"
+    >
+      <button
+        form="main"
+        id="submitButton"
+        type="submit"
+      >
+        Submit
+      </button>
+    </Link>
+  </form>
+</div>
+`;
