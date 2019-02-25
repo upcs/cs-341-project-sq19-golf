@@ -10,4 +10,4 @@ matrix:
         - pip install coverage
         - pip install requests
       script:
-        - coverage report ./web_scraper/*
+        - coverage report ./web_scraper/*.py
