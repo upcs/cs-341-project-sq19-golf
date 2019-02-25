@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
 import '../css/styles.css';
 
+//TODO: Remove this in favor of dynamic data
 const tmpSchedules = [
   {
     schedule: {

@@ -10,7 +10,7 @@
 
 ## **Tasks Completed for Sprint 1:**
 
-- A a functional Express.js framework
+- A functional Express.js framework
 - A Mockup of the UI
   - Using HTML
   - Using CSS (Extra attention was paid here as it will be re-used in our shift towards angular.js)
