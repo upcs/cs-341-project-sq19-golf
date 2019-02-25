@@ -74,15 +74,15 @@ export class AvailabilityContainer extends Component {
 			}]
 
 		return (
-		<div>
-		  <form id="main" onSubmit={this.handleSubmit}>
-			<SelectInput/>
 			<div id="table">
 			  <ReactTable
 				data={data}
 				columns={columns}
 			  />
 			</div>
+		  <form id="main" onSubmit={this.handleSubmit}>
+			<SelectInput/>
+			
 			<Link to='/schedules'>
 			  <button id="submitButton" form="main" type="submit">
 				Submit
@@ -97,7 +97,7 @@ export class AvailabilityContainer extends Component {
 class SelectInput extends Component {
   render() {
     return (
-      <div id="greetingText">Select your unavailability over a school week: 
+      <div id="greetingText">Select your unavailability over a typical school week: 
       </div>
     );
   }
