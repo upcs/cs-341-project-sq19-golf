@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import ReactTable from "react-table";
 
-import {BrowserRouter, NavLink, Route} from 'react-router-dom';
+import {HashRouter, Route} from 'react-router-dom';
 import FadeIn from 'react-fade-in';
 
 import {TopNavigation, InputContainer} from './input_display';
@@ -27,9 +27,9 @@ const pageContainer = (
 );
 
 const inputPage = (
-    <BrowserRouter>
+    <HashRouter>
       {pageContainer}
-    </BrowserRouter>
+    </HashRouter>
 );
 
 ReactDOM.render(inputPage, document.getElementById('root'));

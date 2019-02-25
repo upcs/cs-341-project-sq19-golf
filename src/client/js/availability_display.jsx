@@ -76,15 +76,15 @@ export class AvailabilityContainer extends Component {
 		return (
 			<div id="table">
 			  <ReactTable
-				data={data}
-				columns={columns}
+					data={data}
+					columns={columns}
 			  />
 			  <form id="main" onSubmit={this.handleSubmit}>
 					<SelectInput/>
 
 					<Link to='/schedules'>
 					  <button id="submitButton" form="main" type="submit">
-						Submit
+							Submit
 					  </button>
 					</Link>
 			  </form>
