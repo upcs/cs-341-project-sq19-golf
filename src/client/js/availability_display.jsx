@@ -21,7 +21,7 @@ export class AvailabilityContainer extends Component {
 		  }
 	
 	render() {
-		const rows = [{
+		const data = [{
 				time: '8:00AM'
 			},{
 				time: '9:00AM'
@@ -53,7 +53,7 @@ export class AvailabilityContainer extends Component {
 				time: '10:00PM'
 			}]
 
-		const headings = [{
+		const columns = [{
 				Header: 'Time',
 				accessor: 'time'
 			},{
@@ -79,8 +79,8 @@ export class AvailabilityContainer extends Component {
 			<SelectInput/>
 			<div id="table">
 			  <ReactTable
-				data={rows}
-				columns={headings}
+				data={data}
+				columns={columns}
 			  />
 			</div>
 			<Link to='/schedules'>
