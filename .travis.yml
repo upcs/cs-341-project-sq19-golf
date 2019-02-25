@@ -3,12 +3,6 @@ matrix:
     - language: node_js
       node_js:
         - "10"
-      install:
-        - npm install -g codecov
-      script:
-        - npm test
-      after_success:
-        - codecov 
     - language: python
       python:
         - "3.6.5"
@@ -16,6 +10,6 @@ matrix:
         - pip install coverage
         - pip install requests
       script:
-        - coverage run ./web_scraper/tests.py
+        - coverage report ./web_scraper/*
       after_success:
 	- codecov
