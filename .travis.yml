@@ -10,5 +10,6 @@ matrix:
         - pip install coverage
         - pip install requests
       script:
-        - coverage report ./web_scraper/*.py
+        - coverage run ./web_scraper/scraping_schedule.py
+        - coverage report -m
         - codecov

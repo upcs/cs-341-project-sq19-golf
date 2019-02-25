@@ -1,6 +1,3 @@
-#easy_install pip
-#pip install BeautifulSoup4
-
 #import libraries
 import requests
 from bs4 import BeautifulSoup
