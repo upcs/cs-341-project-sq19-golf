@@ -11,5 +11,3 @@ matrix:
         - pip install requests
       script:
         - coverage report ./web_scraper/*
-      after_success:
-	- codecov
