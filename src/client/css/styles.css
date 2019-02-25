@@ -29,6 +29,7 @@ a {
     float: right;
     cursor: pointer; /*changes mouse to pointer when hovering over "Settings"*/
     margin: 0 6px;
+    text-decoration: none;
 }
 
 

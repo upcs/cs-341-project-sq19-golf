@@ -8,7 +8,9 @@ export class TopNavigation extends Component {
     return (
       <section className="topNav">
         <a id="leftNav">UP Scheduler</a>
-        <a id="rightNav">Settings</a>
+        <Link id='rightNav' to='/settings'>
+          Settings
+        </Link>
       </section>
     );
   }

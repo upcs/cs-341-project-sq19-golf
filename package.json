@@ -15,7 +15,9 @@
     "verbose": true,
     "collectCoverage": true,
     "collectCoverageFrom": [
-      "**/*.{js,jsx,py}"
+      "**/*.{js,jsx}",
+      "!**/coverage/**",
+      "!webpack.config.js"
     ]
   },
   "dependencies": {
