@@ -1,8 +1,9 @@
+#easy_install pip
+#pip install BeautifulSoup4
+
 #import libraries
 import requests
 from bs4 import BeautifulSoup
-
-
 
 #handles separation of each class details, such as: name, time, days, instr
 def scrapeClass(html):

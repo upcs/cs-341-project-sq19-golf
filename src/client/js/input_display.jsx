@@ -60,6 +60,11 @@ export class InputContainer extends Component {
             Submit
           </button>
         </Link>
+	<Link to ='/availability'>
+	  <button id="submitButton" form="mian" type="submit>
+	    Availability
+	  </button>
+	</Link>
         <button id="submitButton" form="main" type="submit"/>
       </form>
     );
