@@ -5,7 +5,7 @@ import {AvailabilityContainer} from '../src/client/js/availability_display.jsx';
 
 describe('AvailabilityContainer', () => {
   test('Should render correctly', () => {
-    const availabilityContainer = shallow(<AvailabilityContainer/>);
+    const availabilityContainer = render(<AvailabilityContainer/>);
     expect(availabilityContainer).toMatchSnapshot();
   });
 });
