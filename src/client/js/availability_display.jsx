@@ -4,11 +4,11 @@ import ReactTable from "react-table";
 import '../css/styles.css';
 
 //Availability Table
-export class AvailabilityContainer extends Component { 
+export class AvailabilityContainer extends Component {
 	constructor(props) {
 		super(props);
 	}
-	
+
 	handleSubmit(event) {
 			event.preventDefault();
 			const data = new FormData(event.target);
@@ -18,8 +18,8 @@ export class AvailabilityContainer extends Component {
 			  method: 'POST',
 			  body: data
 			});
-		  }
-	
+  }
+
 	render() {
 		const data = [{
 				time: '8:00AM'
@@ -51,7 +51,7 @@ export class AvailabilityContainer extends Component {
 				time: '9:00PM'
 			},{
 				time: '10:00PM'
-			}]
+			}];
 
 		const columns = [{
 				Header: 'Time',
@@ -71,7 +71,7 @@ export class AvailabilityContainer extends Component {
 			},{
 				Header: 'Friday',
 				accessor: 'friday'
-			}]
+			}];
 
 		return (
 			<div id="table">
@@ -79,16 +79,16 @@ export class AvailabilityContainer extends Component {
 				data={data}
 				columns={columns}
 			  />
+			  <form id="main" onSubmit={this.handleSubmit}>
+					<SelectInput/>
+
+					<Link to='/schedules'>
+					  <button id="submitButton" form="main" type="submit">
+						Submit
+					  </button>
+					</Link>
+			  </form>
 			</div>
-		  <form id="main" onSubmit={this.handleSubmit}>
-			<SelectInput/>
-			
-			<Link to='/schedules'>
-			  <button id="submitButton" form="main" type="submit">
-				Submit
-			  </button>
-			</Link>
-		  </form>
 		);
   }
 }
@@ -97,13 +97,7 @@ export class AvailabilityContainer extends Component {
 class SelectInput extends Component {
   render() {
     return (
-      <div id="greetingText">Select your unavailability over a typical school week: 
-      </div>
+      <div id="greetingText">Select your unavailability over a typical school week:</div>
     );
   }
 };
-
-function displaySchedules() {
-  //TODO: Add logic
-
-}

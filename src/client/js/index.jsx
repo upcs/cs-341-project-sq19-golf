@@ -6,7 +6,7 @@ import {BrowserRouter, NavLink, Route} from 'react-router-dom';
 import FadeIn from 'react-fade-in';
 
 import {TopNavigation, InputContainer} from './input_display';
-import (AvailabilityContainer} from './availability_display';
+import {AvailabilityContainer} from './availability_display';
 import {SchedulesContainer} from './schedule_display';
 
 const FadeInRoute = ({ component: Component, ...rest }) => (
