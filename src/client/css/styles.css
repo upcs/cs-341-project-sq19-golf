@@ -75,7 +75,17 @@ a {
   opacity: 1;
 }
 
+/*Table Style*/
+#table {
+	border: 1px solid black;
+	text-align: right;
+	padding: 6px 12px;
+}
 
+#main button {
+  margin-top: 12px;
+  background-color: #885ead;
+}
 
 /*Schedule Style */
 .horiz-container {
