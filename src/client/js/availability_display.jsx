@@ -75,7 +75,7 @@ export class AvailabilityContainer extends Component {
 }
 
 //Time Select Input
-class SelectInput extends Component {
+export class SelectInput extends Component {
   render() {
     return (
       <div id="greetingText">Select your unavailability over a typical school week:</div>

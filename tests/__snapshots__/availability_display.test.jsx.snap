@@ -351,3 +351,11 @@ exports[`AvailabilityContainer Should render correctly 1`] = `
   </form>
 </div>
 `;
+
+exports[`SelectInput Should render correctly 1`] = `
+<div
+  id="greetingText"
+>
+  Select your unavailability over a typical school week:
+</div>
+`;
