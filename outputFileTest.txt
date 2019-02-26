@@ -1,0 +1,1 @@
+[{"subject":"BIO","courseID":"233","courseName":"title","professor":"Nuxoll","timeStart":"7:20 am","timeEnd":"6:20 pm","days":"MWF"},{"subject":"MTH","courseID":"341","courseName":"title2","professor":"Vegdahl","timeStart":"5:40 pm","timeEnd":"6:30 pm","days":"TR"}]
