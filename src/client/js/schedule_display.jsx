@@ -82,6 +82,9 @@ export class SchedulesContainer extends Component {
     //TODO: Needs date/professor information
     return (
       <section id="main">
+		<div id="name">Schedule Name:
+			<input id="scheduleName" type="text" placeholder="Enter Schedule Name Here"/>
+		</div>
         <div className="horiz-container">
           {schedulesList}
         </div>
