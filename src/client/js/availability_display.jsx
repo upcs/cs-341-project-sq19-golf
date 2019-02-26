@@ -46,10 +46,6 @@ export class AvailabilityContainer extends Component {
 			});
   }
 
-	refreshPage() {
-		window.location.reload();
-	}
-
 	render() {
 		let data = [];
 		for(let time = 8; time <= 22; time++) {
@@ -91,9 +87,11 @@ export class AvailabilityContainer extends Component {
 					resizable={false}
 			  />
 			<div>
-				<button type="reset" onClick={ refreshPage }>
-					Reset
-				</button>
+				<Link to="/availability" refresh="true">
+					<button type="reset">
+						Reset
+					</button>
+				</Link>
 				<button onClick={this.showMenu}>
 				  Additional Options
 				</button>
