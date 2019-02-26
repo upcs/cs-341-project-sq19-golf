@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
 import '../css/styles.css';
 
+//Options for About Page and Quit to Initial Page
 export class SettingsContainer extends Component {
 	constructor(props) {
 		super(props);
