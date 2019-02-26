@@ -8,7 +8,9 @@ export class TopNavigation extends Component {
     return (
       <section className="topNav">
         <a id="leftNav">UP Scheduler</a>
-        <a id="rightNav">Settings</a>
+        <Link id='rightNav' to='/settings'>
+          Settings
+        </Link>
       </section>
     );
   }
@@ -56,7 +58,7 @@ export class InputContainer extends Component {
           {courseList}
         </div>
         <Link to='/availability'>
-          <button id="submitButton" form="main" type="submit">
+          <button form="main" type="submit">
             Submit
           </button>
         </Link>

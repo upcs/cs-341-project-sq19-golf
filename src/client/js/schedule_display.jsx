@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
 import '../css/styles.css';
 
+//TODO: Remove this in favor of dynamic data
 const tmpSchedules = [
   {
     schedule: {
@@ -85,6 +86,11 @@ export class SchedulesContainer extends Component {
           {schedulesList}
         </div>
         <Link to="/">
+          <button id="save" type="button">
+            Save
+          </button>
+        </Link>
+		<Link to="/availability">
           <button id="return" type="button">
             Return
           </button>

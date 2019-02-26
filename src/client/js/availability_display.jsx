@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
 import ReactTable from "react-table";
+import 'react-table/react-table.css'
 import '../css/styles.css';
 
 //Availability Table
-export class AvailabilityContainer extends Component { 
+export class AvailabilityContainer extends Component {
 	constructor(props) {
 		super(props);
 	}
-	
+
 	handleSubmit(event) {
 			event.preventDefault();
 			const data = new FormData(event.target);
@@ -18,77 +19,61 @@ export class AvailabilityContainer extends Component {
 			  method: 'POST',
 			  body: data
 			});
-		  }
-	
-	render() {
-		const data = [{
-				time: '8:00AM'
-			},{
-				time: '9:00AM'
-			},{
-				time: '10:00AM'
-			},{
-				time: '11:00AM'
-			},{
-				time: '12:00PM'
-			},{
-				time: '1:00PM'
-			},{
-				time: '2:00PM'
-			},{
-				time: '3:00PM'
-			},{
-				time: '4:00PM'
-			},{
-				time: '5:00PM'
-			},{
-				time: '6:00PM'
-			},{
-				time: '7:00PM'
-			},{
-				time: '8:00PM'
-			},{
-				time: '9:00PM'
-			},{
-				time: '10:00PM'
-			}]
+  }
 
-		const columns = [{
-				Header: 'Time',
-				accessor: 'time'
-			},{
-				Header: 'Monday',
-				accessor: 'monday'
-			},{
-				Header: 'Tuesday',
-				accessor: 'tuesday'
-			},{
-				Header: 'Wednesday',
-				accessor: 'wednesday'
-			},{
-				Header: 'Thursday',
-				accessor: 'thursday'
-			},{
-				Header: 'Friday',
-				accessor: 'friday'
-			}]
+	render() {
+		let data = [];
+		for(let time = 8; time <= 22; time++) {
+			let row = {
+				times: time + ":00",
+				monday: null,
+				tuesday: null,
+				wednesday: null,
+				thursday: null,
+				friday: null,
+				saturday: null,
+				sunday: null
+			}
+
+			data.push(row);
+		}
+
+		let columns = [], colAccessors = ['times', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'];
+		for (let i = 0; i < colAccessors.length; i++) {
+			let accessor = colAccessors[i];
+			let col = {
+				Header: accessor.charAt(0).toUpperCase() + accessor.slice(1),
+				accessor: accessor,
+			}
+
+			columns.push(col);
+		}
 
 		return (
-			<div id="table">
+			<div id="main">
+				<SelectInput/>
 			  <ReactTable
-				data={data}
-				columns={columns}
+					data={data}
+					resolveData={data => data.map(row => row)}
+					columns={columns}
+					showPagination={false}
+					minRows={0}
+					sortable={false}
+					resizable={false}
 			  />
+			  <form id="main" onSubmit={this.handleSubmit}>
+					<Link to='/schedules'>
+					  <button id="submitButton" form="main" type="submit">
+							Submit
+					  </button>
+					</Link>
+					<Link to='/'>
+						<button form="main" type="submit">
+							Return
+						</button>
+					</Link>
+			  </form>
 			</div>
-		  <form id="main" onSubmit={this.handleSubmit}>
-			<SelectInput/>
-			
-			<Link to='/schedules'>
-			  <button id="submitButton" form="main" type="submit">
-				Submit
-			  </button>
-			</Link>
-		  </form>
 		);
   }
 }
@@ -97,13 +82,7 @@ export class AvailabilityContainer extends Component {
 class SelectInput extends Component {
   render() {
     return (
-      <div id="greetingText">Select your unavailability over a typical school week: 
-      </div>
+      <div id="greetingText">Select your unavailability over a typical school week:</div>
     );
   }
 };
-
-function displaySchedules() {
-  //TODO: Add logic
-
-}
