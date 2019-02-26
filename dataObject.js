@@ -14,7 +14,7 @@ class Course {
 
 var fs = require('fs');
 //read file and store in variable *data
-var data = fs.readFileSync("./inputFile.txt", "utf-8");
+var data = fs.readFileSync("./inputFileTest.txt", "utf-8");
 //store each line of file into an element of the array respectively
 var dataByLine = data.split("\n");
 //assign variable *lines as an array
@@ -23,15 +23,14 @@ var lines = dataByLine;
 var courses = new Array(Course);
 var i;
 //iterate through *lines
-for(i = 0; i < lines.length; i++) {
+for(i = 0; i < lines.length-1; i++) {
     //for each element of *courses store a Course Object from an element of *lines, respectively
     var fields = lines[i].split(",");
-    courses[i] = new Course(fields[0], fields[1], fields[2], fields[3], fields[4], fields[5], fields[6]);
+    //console.log(fields);
+    courses[i] = new Course(fields[0].toUpperCase().trim(), fields[1].trim(), fields[2].trim(), fields[3].trim(), fields[4].toLowerCase().trim(), fields[5].toLowerCase().trim(), fields[6].toUpperCase().trim());
+
 }
-var jsondata = [];
-for(var x = 0; x < courses.length; x++){
-  jsondata.push(JSON.stringify(courses[i]));
-}
+//console.log(courses);
 
 //write array of Course objects into file
-fs.writeFile('outputFile.txt', jsondata);
+fs.writeFileSync('outputFileTest.txt', JSON.stringify(courses));
