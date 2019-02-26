@@ -8,8 +8,34 @@ import '../css/styles.css';
 export class AvailabilityContainer extends Component {
 	constructor(props) {
 		super(props);
+		
+		 this.state = {
+      showMenu: false,
+	};
+	
+	    this.showMenu = this.showMenu.bind(this);
+		this.closeMenu = this.closeMenu.bind(this);
 	}
 
+	showMenu(event) {
+		event.preventDefault();
+		
+		this.setState({ showMenu: true }, () => {
+		  document.addEventListener('click', this.closeMenu);
+		});
+	  }
+	  
+	  closeMenu(event) {
+		
+		if (!this.dropdownMenu.contains(event.target)) {
+		  
+		  this.setState({ showMenu: false }, () => {
+			document.removeEventListener('click', this.closeMenu);
+		  });  
+		  
+		}
+	  }
+	
 	handleSubmit(event) {
 			event.preventDefault();
 			const data = new FormData(event.target);
@@ -20,6 +46,10 @@ export class AvailabilityContainer extends Component {
 			  body: data
 			});
   }
+  
+	function refreshPage(){ 
+		window.location.reload(); 
+	}
 
 	render() {
 		let data = [];
@@ -61,6 +91,42 @@ export class AvailabilityContainer extends Component {
 					sortable={false}
 					resizable={false}
 			  />
+			<div>
+				<button type="reset" onClick={ refreshPage }> 
+					Reset
+				</button> 
+				<button onClick={this.showMenu}>
+				  Additional Options
+				</button>
+				
+				{
+				  this.state.showMenu
+					? (
+					  <div
+						className="menu"
+						ref={(element) => {
+						  this.dropdownMenu = element;
+						}}
+					  >
+						<div id="credit">Max Credit Amount:
+							<input type="number" placeholder="Enter Max Credit Value" onChange={this.props.handleChange} data-populated="false"/>
+							<button id="creditButton" form="main" type="creditSave">
+							Save
+							</button>
+						</div>
+						<div id="blacklist">Professor Blacklist:
+							<input id="profBlacklist" type="text" placeholder="Enter Professor Name"/>
+							<button id="profButton" form="main" type="profSave">
+							Save
+							</button>
+						</div>
+					  </div>
+					)
+					: (
+					  null
+					)
+				}
+			  </div>
 			  <form id="main" onSubmit={this.handleSubmit}>
 					<Link to='/schedules'>
 					  <button id="submitButton" form="main" type="submit">
