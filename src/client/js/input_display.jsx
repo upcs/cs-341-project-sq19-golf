@@ -57,13 +57,8 @@ export class InputContainer extends Component {
         <div id="classGroup">
           {courseList}
         </div>
-<<<<<<< HEAD
         <Link to='/schedules'>
-          <button id="submitButton" form="main" type="submit">
-=======
-        <Link to='/availability'>
           <button form="main" type="submit">
->>>>>>> a9887fc2d24f2a8c1285dd99fe90ad87280da8aa
             Submit
           </button>
         </Link>

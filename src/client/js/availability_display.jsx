@@ -9,11 +9,11 @@ export class AvailabilityContainer extends Component {
 	constructor(props) {
 		super(props);
 
-		 this.state = {
+		this.state = {
       showMenu: false,
-	};
+		};
 
-	    this.showMenu = this.showMenu.bind(this);
+	  this.showMenu = this.showMenu.bind(this);
 		this.closeMenu = this.closeMenu.bind(this);
 	}
 
@@ -23,18 +23,17 @@ export class AvailabilityContainer extends Component {
 		this.setState({ showMenu: true }, () => {
 		  document.addEventListener('click', this.closeMenu);
 		});
-	  }
+  }
 
-	  closeMenu(event) {
-
+  closeMenu(event) {
 		if (!this.dropdownMenu.contains(event.target)) {
 
 		  this.setState({ showMenu: false }, () => {
-			document.removeEventListener('click', this.closeMenu);
+				document.removeEventListener('click', this.closeMenu);
 		  });
 
 		}
-	  }
+  }
 
 	handleSubmit(event) {
 			event.preventDefault();
@@ -47,7 +46,7 @@ export class AvailabilityContainer extends Component {
 			});
   }
 
-	function refreshPage(){
+	refreshPage() {
 		window.location.reload();
 	}
 
