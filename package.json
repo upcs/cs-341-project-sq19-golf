@@ -8,7 +8,7 @@
     "client": "webpack-dev-server --mode development --devtool inline-source-map --hot",
     "server": "nodemon src/server/index.js",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "test": "jest --coverage && codecov > /dev/null"
+    "test": "jest -u --coverage && codecov > /dev/null"
   },
   "author": "Team Golf",
   "jest": {

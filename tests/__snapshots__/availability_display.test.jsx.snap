@@ -332,6 +332,24 @@ exports[`AvailabilityContainer Should render correctly 1`] = `
     style={Object {}}
     subRowsKey="_subRows"
   />
+  <div>
+    <Link
+      refresh="true"
+      replace={false}
+      to="/availability"
+    >
+      <button
+        type="reset"
+      >
+        Reset
+      </button>
+    </Link>
+    <button
+      onClick={[Function]}
+    >
+      Additional Options
+    </button>
+  </div>
   <form
     id="main"
     onSubmit={[Function]}
@@ -346,6 +364,17 @@ exports[`AvailabilityContainer Should render correctly 1`] = `
         type="submit"
       >
         Submit
+      </button>
+    </Link>
+    <Link
+      replace={false}
+      to="/"
+    >
+      <button
+        form="main"
+        type="submit"
+      >
+        Return
       </button>
     </Link>
   </form>

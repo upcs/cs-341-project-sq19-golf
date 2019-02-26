@@ -25,7 +25,6 @@ exports[`InputContainer Should render correctly 1`] = `
   >
     <button
       form="main"
-      id="submitButton"
       type="submit"
     >
       Submit
@@ -50,25 +49,6 @@ exports[`InputContainer Should render correctly 1`] = `
 `;
 
 exports[`TopNavigation Should render correctly 1`] = `
-<section
-  className="topNav"
->
-  <a
-    id="leftNav"
-  >
-    UP Scheduler
-  </a>
-  <Link
-    id="rightNav"
-    replace={false}
-    to="/settings"
-  >
-    Settings
-  </Link>
-</section>
-`;
-
-exports[`TopNavigation should render correctly 1`] = `
 <section
   className="topNav"
 >
