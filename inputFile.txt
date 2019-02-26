@@ -1,0 +1,2 @@
+bio,233,title,prof,7:20 am, 6:20 pm, MWF
+MTH, 341, title2, prof3, 5:40 pm, 6:30pm, TR 
