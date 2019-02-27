@@ -1,0 +1,86 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ClassDisplay Should render correctly 1`] = `
+<div
+  className="scheduleClass"
+>
+  <span
+    className="timeLabel"
+  >
+    0
+     - 
+    1
+  </span>
+  <span
+    className="classLabel"
+  >
+    class
+  </span>
+</div>
+`;
+
+exports[`ScheduleDisplay Should render correctly 1`] = `
+<span
+  className="scheduleOption"
+>
+  <ClassDisplay
+    classData={Array []}
+    key="class-0"
+  />
+  <ClassDisplay
+    classData={Array []}
+    key="class-1"
+  />
+</span>
+`;
+
+exports[`SchedulesContainer Should render correctly 1`] = `
+<section
+  id="main"
+>
+  <div
+    id="name"
+  >
+    Schedule Name:
+    <input
+      id="scheduleName"
+      placeholder="Enter Schedule Name Here"
+      type="text"
+    />
+  </div>
+  <div
+    className="horiz-container"
+  >
+    <ScheduleDisplay
+      key="schedule-0"
+      schedule={Array []}
+    />
+    <ScheduleDisplay
+      key="schedule-1"
+      schedule={Array []}
+    />
+  </div>
+  <Link
+    replace={false}
+    to="/"
+  >
+    <button
+      id="save"
+      type="button"
+    >
+      Save
+    </button>
+  </Link>
+  <Link
+    replace={false}
+    to="/availability"
+  >
+    <button
+      id="return"
+      type="button"
+    >
+      Return
+    </button>
+  </Link>
+</section>
+`;

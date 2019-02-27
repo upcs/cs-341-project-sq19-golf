@@ -10,13 +10,19 @@ exports[`InputContainer Should render correctly 1`] = `
     id="classGroup"
   >
     <CourseInput
+      id={0}
       key="course-0"
+      onChange={[Function]}
     />
     <CourseInput
+      id={1}
       key="course-1"
+      onChange={[Function]}
     />
     <CourseInput
+      id={2}
       key="course-2"
+      onChange={[Function]}
     />
   </div>
   <Link
