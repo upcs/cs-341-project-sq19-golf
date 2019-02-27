@@ -8,9 +8,9 @@ body {
 
 /*Header Style*/
 .topNav {
-    height: 30px;
+    height: 22px;
     padding: 8px;
-    font: 24px "Lucida Grande", Helvetica, Arial, sans-serif; /*sets font of header to Arial, sized 35*/
+    font: 18px "Lucida Grande", Helvetica, Arial, sans-serif; /*sets font of header to Arial, sized 35*/
     background-color: #232122;
 }
 
@@ -21,21 +21,22 @@ a {
 #leftNav {
     float: left;
     font-weight: bold;
-    font-size: 28px;
+    font-size: 22px;
     margin-left: 6px;
 }
 
 #rightNav {
     float: right;
     cursor: pointer; /*changes mouse to pointer when hovering over "Settings"*/
-    margin: 3px 6px;
+    margin: 0 6px;
+    text-decoration: none;
 }
 
 
 
 /*Body Style*/
 #main {
-  padding-top: 24px;
+  padding-top: 16px;
   margin-left: 16px;
 }
 
@@ -43,13 +44,7 @@ a {
   margin-bottom: 12px;
 }
 
-#termSelect {
-  background-color: #968f8f;
-  width: 60px;
-  text-align: center;
-}
-
-#return, form input {
+#main input, #main button  {
   background-color: #aa8cc5;
   color: white;
   border-radius: 5px;
@@ -58,6 +53,12 @@ a {
   padding: 6px 12px;
   margin: 3px;
   border: none;
+}
+
+#termSelect {
+  background-color: #968f8f !important;
+  width: 60px;
+  text-align: center;
 }
 
 ::-webkit-input-placeholder { /* Chrome */
@@ -75,17 +76,17 @@ a {
   opacity: 1;
 }
 
+/*Table Style*/
 
 
 /*Schedule Style */
-.classGroup {
-  text-align: center;
+.horiz-container {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 8px;
 }
 
-.classSelect {
-}
-
-#return, form input[type='submit'] {
+#main button {
   margin-top: 12px;
   background-color: #885ead;
 }
@@ -100,24 +101,18 @@ input[type=number] {
     -moz-appearance:textfield; /* Firefox */
 }
 
-.horiz-container {
-    display: flex;
-    flex-direction: row;
-    margin-bottom: 8px;
-}
-
-.scheduleOption {
+.scheduleClass {
   display: flex;
   flex-direction: row;
   margin-right: 48px;
 }
 
-.scheduleTime {
+.timeLabel {
   float: right; /*sets all times of classes to right of page, align with classes*/
   margin: 16px;
 }
 
-.scheduleClass {
+.classLabel {
   background-color: #aa8cc5;
   color: white;
   border-radius: 5px;

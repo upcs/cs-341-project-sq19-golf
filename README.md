@@ -1,4 +1,4 @@
-![codecov](https://img.shields.io/codecov/c/github/upcs/cs-341-project-sq19-golf/master.svg?style=flat-square) ![build](https://img.shields.io/travis/com/upcs/cs-341-project-sq19-golf.svg?style=flat)
+![codecov](https://img.shields.io/codecov/c/github/upcs/cs-341-project-sq19-golf/master.svg?style=flat) ![build](https://img.shields.io/travis/com/upcs/cs-341-project-sq19-golf.svg?style=flat)
 
 ## **Members:**
 
@@ -10,7 +10,7 @@
 
 ## **Tasks Completed for Sprint 1:**
 
-- A a functional Express.js framework
+- A functional Express.js framework
 - A Mockup of the UI
   - Using HTML
   - Using CSS (Extra attention was paid here as it will be re-used in our shift towards angular.js)

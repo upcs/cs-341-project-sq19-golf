@@ -5,19 +5,22 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const outputDirectory = 'dist';
 
 module.exports = {
-  entry: ['babel-polyfill', './src/client/js/index.js'],
+  entry: ['babel-polyfill', './src/client/js/index.jsx'],
   output: {
     path: path.join(__dirname, outputDirectory),
     filename: 'bundle.js'
   },
+  resolve: {
+    extensions: ['.js', '.jsx']
+  },
   module: {
     rules: [
       {
-        test: /\.js$/,
-        exclude: /node_modules/,
+        test: /\.jsx?$/,
         use: {
-          loader: 'babel-loader'
-        }
+          loader: "babel-loader"
+        },
+        exclude: [/node_modules/, /public/]
       },
       {
         test: /\.css$/,
@@ -40,7 +43,7 @@ module.exports = {
     new CleanWebpackPlugin([outputDirectory]),
     new HtmlWebpackPlugin({
       template: './src/client/html/index.html',
-      favicon: './src/client/icons/favicon.ico'
+      favicon: './src/client/icons/scheduleIcon.png'
     })
   ]
 };

@@ -8,46 +8,9 @@ If possible please grade the scripting and testing based on the web scraper (as 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/css/styles.css">
   <title>UP Scheduler</title>
-  <script type="text/javascript" src="functions.js"></script>
 </head>
 
 <body>
-  <section class="topNav">
-    <a id="leftNav">UP Scheduler</a>
-    <a id="rightNav">Settings</a>
-  </section>
-  <section id="main">
-    <form id="classSelectForm" action="/src/client/html/schedules.html">
-      <div id="greetingText">Select your courses for
-        <input id="termSelect" type="text" value="Fall 2019">
-      </div>
-
-      <div id="classGroup">
-        <div class="classSelect">
-          <input type="text" placeholder="Course Type"> <!-- Specify course subject -->
-          <input type="number" placeholder="Course Number"> <!-- Specify course number -->
-        </div>
-
-        <!-- The following two "classSelect" divs will eventually be deleted once reactive support has been enabled through angular.js/handlebars-->
-        <!-- More specifically, {#each} logic will be used with templating to generate the necessary number of classSelect input fields -->
-        <div class="classSelect">
-          <input type="text" placeholder="Course Type">
-          <input type="number" placeholder="Course Number">
-        </div>
-        <div class="classSelect">
-          <input type="text" placeholder="Course Type">
-          <input type="number" placeholder="Course Number">
-        </div>
-        <div class="classSelect">
-          <input type="text" placeholder="Course Type">
-          <input type="number" placeholder="Course Number">
-        </div>
-      </div>
-
-      <input type="Submit"> <!-- Triggers form navigation on click -->
-    </form>
-  </section>
-
-  <body>
+  <span id="root"></span>
+<body>

@@ -9,16 +9,22 @@ def getHTML(p_term):
 	
 def getCourseCodes(html):
 	"""Returns a list of strings in the form <Code:Course>."""
-	return parseSelectBlock(html, """"subj_id">""")
+	lstCodes = parseSelectBlock(html, """"subj_id">""")
+	del lstCodes[0]
+	return lstCodes
 	
 def getProfID(html):
 	"""Returns a list of strings in the form <ID:Professor>."""
-	return parseSelectBlock(html, """"instr_id">""")
+	lstIDs = parseSelectBlock(html, """"instr_id">""")
+	del lstIDs[0]
+	del lstIDs[0]
+	del lstIDs[0]
+	return lstIDs
 	
 def parseSelectBlock(html, multiple_id): #param can be found in html code, value of MULTIPLE ID. ***INCLUDE "'s!!!
 	"""Strips content from a select block in HTML and returns a list of strings <VALUE:DISPLAY_TEXT>"""
 	html = html.split(multiple_id, 1)
-	html = html[1].split("</OPTION>", 1)
+	html = html[1].split("<OPTION", 1)
 	html = html[1].split("</select>", 1)
 	html = html[0]
 	html = html.split("</OPTION>")
@@ -27,4 +33,5 @@ def parseSelectBlock(html, multiple_id): #param can be found in html code, value
 	html = (":").join(html.split('">'))
 	html = ("").join(html.split('<OPTION VALUE='))
 	html = html.split('"')
+	
 	return html
