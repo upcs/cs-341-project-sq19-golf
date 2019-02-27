@@ -33,9 +33,12 @@
   },
   "dependencies": {
     "babel-plugin-transform-class-properties": "^6.24.1",
+    "body-parser": "^1.18.3",
     "codecov": "^3.2.0",
     "express": "^4.16.3",
     "jest-pytest": "^0.7.0",
+    "jquery": "^3.3.1",
+    "js-combinatorics": "^0.5.4",
     "mysql": "^2.16.0",
     "mysql2": "^1.6.5",
     "react": "^16.5.2",

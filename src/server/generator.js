@@ -1,15 +1,14 @@
-//Author: Andrew Tagawa
 //Last edited on 2/26/19
 
 /*Assumed course object structure:
-var course = {
-	department:
-	number:
-	name:
-	teacher:
-	start:
-	end:
-	days:
+constructor(sub, id, name, prof, start, end, d){
+		this.subject = sub;
+		this.number = id;
+		this.title = name;
+		this.professor = prof;
+		this.start = start;
+		this.end = end;
+		this.days = d;
 }
 */
 
