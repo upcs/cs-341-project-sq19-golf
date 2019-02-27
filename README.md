@@ -17,6 +17,19 @@
 - A Webscraper capable of gathering all scheduling data
 - Integration of Jest, CodeCov and Travis CI
 
+## **Tasks Completed for Sprint 2:**
+
+- A functional React.js frontend
+  - Complete conversion of all HTML to .jsx
+  - The addition of several Components (as our app is a single-page) including Settings and Availability/Preferences
+- Populated a MySQL server, storing all scraped data from Self Serve
+  - Successfully utilized the python scraping scripts developed in the previous sprint
+- Developed MySQL queries to gather schedule data on POST and .js objects to represent these schedules
+  - Involved the development of a comprehensivce algorithm to efficently generate all possible schedules given a desiredClasses input
+  - The front-end is now fully connected to the back-end, rendering UP_Scheduler a fully functional app if only a little clunky
+- Added better test scoping and coverage
+- Integrated and documented many new automation, styling and serving tools as detailed below
+
 ## **Current Tech Stack:**
 
 - Web-Scraper
