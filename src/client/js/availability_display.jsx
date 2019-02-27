@@ -11,6 +11,7 @@ export class AvailabilityContainer extends Component {
 
 		this.state = {
       showMenu: false,
+	  	selected: -1
 		};
 
 	  this.showMenu = this.showMenu.bind(this);
@@ -78,13 +79,44 @@ export class AvailabilityContainer extends Component {
 			<div id="main">
 				<SelectInput/>
 			  <ReactTable
-					data={data}
-					resolveData={data => data.map(row => row)}
-					columns={columns}
-					showPagination={false}
-					minRows={0}
-					sortable={false}
-					resizable={false}
+				getTrProps={(state, rowInfo, column, instance) => {
+					if (typeof rowInfo !== "undefined") {
+						return {
+							onClick: (e, handleOriginal) => {
+								this.setState({
+								selected: rowInfo.index
+								});
+								if (handleOriginal) {
+								handleOriginal()
+								}
+							},
+							style: {
+								background: rowInfo.index === this.state.selected ? '#00afec' : 'white',
+								color: rowInfo.index === this.state.selected ? 'white' : 'black'
+							},
+						}
+					}
+					else {
+						return {
+							onClick: (e, handleOriginal) => {
+								if (handleOriginal) {
+								handleOriginal()
+								}
+							},
+							style: {
+								background: 'white',
+								color: 'black'
+							},
+						}
+					}
+				}}
+				data={data}
+				resolveData={data => data.map(row => row)}
+				columns={columns}
+				showPagination={false}
+				minRows={0}
+				sortable={false}
+				resizable={false}
 			  />
 			<div>
 				<Link to="/availability" refresh="true">
