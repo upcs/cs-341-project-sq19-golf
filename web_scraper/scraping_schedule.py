@@ -13,6 +13,7 @@ def scrapeClass(html):
 	classes = html.split('<a href', 1)
 	classes = classes[1].split('">', 1)
 	name = classes[1].split("</a", 1)[0]
+	name = ("").join(name.split(",")) #take commas out of name
 	classes = classes[1].split('Instructors</th>', 1)
 
 	#grab the second desired data about the time alotted for the class

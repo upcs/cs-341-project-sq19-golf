@@ -1,0 +1,1221 @@
+subject,number,title, professor, start, end, days
+AS,001,Air Force ROTC Physical Training, John David Anthony  Gasa, 6:30 am,7:30 am, M
+AS,002,Air Force ROTC Physical Training 2, John David Anthony  Gasa, 6:30 am,7:30 am, M
+AS,003,Air Force ROTC Physical Training 3, John David Anthony  Gasa, 6:30 am,7:30 am, M
+AS,004,Air Force ROTC Physical Training 4, John David Anthony  Gasa, 6:30 am,7:30 am, M
+AS,005,Air Force ROTC Physical Training, John David Anthony  Gasa, 6:30 am,7:30 am, M
+AS,102,Foundations of The U.S. Air Force, John David Anthony  Gasa, 10:00 am,11:30 am, T
+AS,102,Foundations of The U.S. Air Force, Bryan Richard  Scism, 2:00 pm,3:30 pm, T
+AS,112,Leadership Laboratory, John David Anthony  Gasa, 4:10 pm,6:00 pm, T
+AS,202,The Evaluation of USAF Air & Space Power, Larry B  Ingersoll, 8:00 am,9:30 am, T
+AS,202,The Evaluation of USAF Air & Space Power, John David Anthony  Gasa, 12:00 pm,1:30 pm, T
+AS,212,Leadership Laboratory, John David Anthony  Gasa, 4:10 pm,6:00 pm, T
+AS,302,Leadership & Management, Drew Marie  Lindley, 8:00 am,9:30 am, TR
+AS,312,Leadership Laboratory, John David Anthony  Gasa, 4:10 pm,6:00 pm, T
+AS,402,National Security Affairs & Preparation for Active Duty, John David Anthony  Gasa, 7:00 am,8:30 am, TW
+AS,412,Leadership Laboratory, John David Anthony  Gasa, 4:10 pm,6:00 pm, T
+AS,415,Leadership Laboratory, John David Anthony  Gasa, 4:10 pm,6:00 pm, T
+BIO,005,BIO 205 Workshop, Amy S  Beadles-Bohling, 4:50 pm,5:50 pm, M
+BIO,005,BIO 205 Workshop, Amy S  Beadles-Bohling, 6:00 pm,7:00 pm, M
+BIO,005,BIO 205 Workshop, Amy S  Beadles-Bohling, 4:50 pm,5:50 pm, T
+BIO,005,BIO 205 Workshop, Amy S  Beadles-Bohling, 6:00 pm,7:00 pm, T
+BIO,005,BIO 205 Workshop, Amy S  Beadles-Bohling, 4:50 pm,5:50 pm, M
+BIO,005,BIO 205 Workshop, Amy S  Beadles-Bohling, 4:50 pm,5:50 pm, T
+BIO,005,BIO 205 Workshop, Amy S  Beadles-Bohling, 6:00 pm,7:00 pm, M
+BIO,005,BIO 205 Workshop, Amy S  Beadles-Bohling, 6:00 pm,7:00 pm, T
+BIO,203,Human Form and Function, Robert Louis  Hesslink Jr, 4:10 pm,5:35 pm, TR
+BIO,205,Foundations of Biology, Amy S  Beadles-Bohling, 9:15 am,10:10 am, MWF
+BIO,205,Foundations of Biology, Amy S  Beadles-Bohling, 11:25 am,12:20 pm, MWF
+BIO,207,Introduction to Molecular and Cellular Biology, David   Wynne, 8:10 am,9:05 am, MWF
+BIO,207,Introduction to Molecular and Cellular Biology, Adrienne A  Greaves, 10:20 am,11:15 am, MWF
+BIO,207,Introduction to Molecular and Cellular Biology, Adrienne A  Greaves, 11:25 am,12:20 pm, MWF
+BIO,208,Introduction to Evolution and Ecology, David W  Taylor, 10:20 am,11:15 am, MWF
+BIO,208,Introduction to Evolution and Ecology, David W  Taylor, 12:30 pm,1:25 pm, MWF
+BIO,208,Introduction to Evolution and Ecology, David W  Taylor, 1:35 pm,2:30 pm, MWF
+BIO,277,Introduction to Molecular and Cellular Biology Laboratory, David   Wynne, 8:10 am,11:10 am, R
+BIO,277,Introduction to Molecular and Cellular Biology Laboratory, David   Wynne, 12:55 pm,3:55 pm, R
+BIO,277,Introduction to Molecular and Cellular Biology Laboratory, Sarah   Schmits, 5:10 pm,8:10 pm, T
+BIO,277,Introduction to Molecular and Cellular Biology Laboratory, Adrienne A  Greaves, 9:45 am,12:45 pm, T
+BIO,277,Introduction to Molecular and Cellular Biology Laboratory, Adrienne A  Greaves, 12:55 pm,3:55 pm, T
+BIO,278,Introduction to Evolution and Ecology Laboratory, Laurie J  Dizney, 1:35 pm,4:35 pm, M
+BIO,278,Introduction to Evolution and Ecology Laboratory, Laurie J  Dizney, 5:00 pm,8:00 pm, M
+BIO,278,Introduction to Evolution and Ecology Laboratory, Laurie J  Dizney, 9:45 am,12:45 pm, T
+BIO,278,Introduction to Evolution and Ecology Laboratory, Laurie J  Dizney, 9:45 am,12:45 pm, R
+BIO,301,Microbiology, David   Katz, 2:40 pm,3:35 pm, MWF
+BIO,304,Wetlands Ecology, Christine L  Weilhoefer, 9:45 am,11:10 am, TR
+BIO,305,Human Anatomy and Physiology 1, Julia Cleverly  Ruppell, 11:25 am,12:20 pm, MWF
+BIO,305,Human Anatomy and Physiology 1, Jacqueline   Van Hoomissen, 9:45 am,11:10 am, TR
+BIO,305,Human Anatomy and Physiology 1, Jonathan Edwin  Elliott, 11:20 am,12:45 pm, TR
+BIO,305,Human Anatomy and Physiology 1, Julia Cleverly  Ruppell, 12:30 pm,1:25 pm, MWF
+BIO,305,Human Anatomy and Physiology 1, David   Katz, 5:10 pm,6:35 pm, MW
+BIO,306,Human Anatomy and Physiology 2, Kyle L  Flann, 8:10 am,9:05 am, MWF
+BIO,306,Human Anatomy and Physiology 2, Anthony   Drew, 6:10 pm,7:35 pm, TR
+BIO,306,Human Anatomy and Physiology 2, John M  White, 9:45 am,11:10 am, TR
+BIO,336,Developmental Biology, Laura   Dyer, 9:15 am,10:10 am, MWF
+BIO,338,Marine Biology of the Pacific Northwest, Tara Elaine  Prestholdt, 11:20 am,12:45 pm, TR
+BIO,342,Neurobiology, Jonathan Edwin  Elliott, 2:30 pm,3:55 pm, TR
+BIO,345,Vertebrate Biology, Kathleen M  OReilly , 11:25 am,12:20 pm, MWF
+BIO,348,Conservation Biology, Laurie J  Dizney, 12:55 pm,2:20 pm, TR
+BIO,348H,Conservation Biology (Honors), Laurie J  Dizney, 12:55 pm,2:20 pm, TR
+BIO,359,Microbiology for Nurses, Paula A.  Tower, 11:25 am,12:20 pm, MWF
+BIO,359,Microbiology for Nurses, Paula A.  Tower, 10:20 am,11:15 am, MWF
+BIO,361,Microbiology Lab, David   Katz, 9:45 am,12:45 pm, T
+BIO,361,Microbiology Lab, David   Katz, 2:30 pm,5:30 pm, T
+BIO,365,Human Anatomy & Physiology Lab 1, Patrick Michael  Geraghty, 5:10 pm,8:10 pm, M
+BIO,365,Human Anatomy & Physiology Lab 1, John M  White, 9:15 am,12:15 pm, M
+BIO,365,Human Anatomy & Physiology Lab 1, Kristin M   Carson, 5:10 pm,8:10 pm, W
+BIO,365,Human Anatomy & Physiology Lab 1, Patrick Michael  Geraghty, 1:35 pm,4:35 pm, R
+BIO,365,Human Anatomy & Physiology Lab 1, Jonathan Edwin  Elliott, 1:35 pm,4:35 pm, W
+BIO,365,Human Anatomy & Physiology Lab 1, John M  White, 1:35 pm,4:35 pm, M
+BIO,365,Human Anatomy & Physiology Lab 1, Bonnie Jean  Sumner, 9:15 am,12:15 pm, W
+BIO,365,Human Anatomy & Physiology Lab 1, Bonnie Jean  Sumner, 9:15 am,12:15 pm, F
+BIO,365,Human Anatomy & Physiology Lab 1, Jonathan Edwin  Elliott, 5:10 pm,8:10 pm, R
+BIO,366,Human Anatomy & Physiology Lab 2, Kyle L  Flann, 9:15 am,12:15 pm, M
+BIO,366,Human Anatomy & Physiology Lab 2, Amy S  Beadles-Bohling, 1:35 pm,4:35 pm, M
+BIO,366,Human Anatomy & Physiology Lab 2, Christie Engesser  Cesar, 9:45 am,12:45 pm, T
+BIO,366,Human Anatomy & Physiology Lab 2, Christie Engesser  Cesar, 12:55 pm,3:55 pm, T
+BIO,366,Human Anatomy & Physiology Lab 2, Kyle L  Flann, 9:15 am,12:15 pm, W
+BIO,366,Human Anatomy & Physiology Lab 2, John M  White, 12:30 pm,3:30 pm, W
+BIO,366,Human Anatomy & Physiology Lab 2, Christie Engesser  Cesar, 9:45 am,12:45 pm, R
+BIO,366,Human Anatomy & Physiology Lab 2, Kyle L  Flann, 9:15 am,12:15 pm, F
+BIO,366,Human Anatomy & Physiology Lab 2, Christie Engesser  Cesar, 12:55 pm,3:55 pm, R
+BIO,368,Marine Biology Laboratory, Tara Elaine  Prestholdt, 1:35 pm,4:35 pm, W
+BIO,368,Marine Biology Laboratory, Tara Elaine  Prestholdt, 12:55 pm,3:55 pm, R
+BIO,374,Wetlands Ecology Laboratory, Christine L  Weilhoefer, 10:20 am,1:20 pm, W
+BIO,374,Wetlands Ecology Laboratory, Christine L  Weilhoefer, 1:35 pm,4:35 pm, W
+BIO,375,Vertebrate Biology Laboratory, Kathleen M  OReilly , 1:35 pm,4:35 pm, M
+BIO,375,Vertebrate Biology Laboratory, Kathleen M  OReilly , 12:55 pm,3:55 pm, T
+BIO,376,Developmental Biology Laboratory, Laura   Dyer, 12:55 pm,3:55 pm, W
+BIO,376,Developmental Biology Laboratory, Laura   Dyer, 12:55 pm,3:55 pm, R
+BIO,379,Microbiology Lab for Nurses, Priya   Mani, 9:45 am,12:45 pm, R
+BIO,379,Microbiology Lab for Nurses, Priya   Mani, 2:30 pm,5:30 pm, R
+BIO,379,Microbiology Lab for Nurses, Priya   Mani, 11:25 am,2:25 pm, F
+BIO,379,Microbiology Lab for Nurses, Priya   Mani, 1:35 pm,4:35 pm, W
+BIO,379,Microbiology Lab for Nurses, Priya   Mani, 5:10 pm,8:10 pm, W
+BIO,387,Service Learning In Biology, Amy S  Beadles-Bohling, 2:30 pm,3:45 pm, R
+BIO,400,Immunology, Susan Elizabeth  Murray, 9:15 am,10:10 am, MWF
+BIO,400,Immunology, Susan Elizabeth  Murray, 10:20 am,11:15 am, MWF
+BIO,453,Evolution, Amelia J  Ahern-Rindell, 9:45 am,11:10 am, TR
+BIO,453,Evolution, Julia Cleverly  Ruppell, 4:10 pm,6:55 pm, W
+BIO,453,Evolution, Amelia J  Ahern-Rindell, 5:10 pm,8:10 pm, M
+BIO,470,Immunology Laboratory, Susan Elizabeth  Murray, 12:55 pm,3:55 pm, T
+BIO,497I,OT/PT Internship, Elizabeth K.  Winegar, 6:00 pm,7:30 pm, M
+BME,200,Introduction to Biomedical Engineering, Kathleen   Bieryla, 9:15 am,10:10 am, MWF
+BME,562,Biomechanics, Jennifer Elaine  Symons, 4:10 pm,5:35 pm, TR
+BME,563,Digital Signal Processing, Joseph P  Hoffbeck, 8:10 am,9:35 am, TR
+BME,578,Management of Technology for Medical Devices, Peter B  Rachor, 4:10 pm,6:55 pm, W
+BME,584,Biomedical Device Optimization, Kathleen   Bieryla, 11:20 am,12:45 pm, TR
+BUS,100,Introduction of Leadership Skills, Montana   Hisel-Cochran, 11:20 am,12:45 pm, TR
+BUS,101,Software Applications Workshop, Robert B  Stratton, 9:15 am,10:10 am, M
+BUS,101,Software Applications Workshop, Robert B  Stratton, 10:20 am,11:15 am, M
+BUS,101,Software Applications Workshop, Robert B  Stratton, 11:25 am,12:20 pm, M
+BUS,101,Software Applications Workshop, Robert B  Stratton, 1:35 pm,2:30 pm, M
+BUS,150,Smart Money I, C Christopher  Dunnaville, 10:20 am,11:15 am, F
+BUS,200,Principles of Marketing, Elena Kiryanova  Bernard, 2:30 pm,3:55 pm, TR
+BUS,200,Principles of Marketing, Tyler   Laird-Magee, 8:10 am,9:35 am, TR
+BUS,200,Principles of Marketing, Ian David  Parkman, 2:40 pm,3:35 pm, MWF
+BUS,202,Professional Development, Gwendolyn Marie  Klobes, 2:40 pm,3:35 pm, M
+BUS,202,Professional Development, Gwendolyn Marie  Klobes, 10:20 am,11:15 am, W
+BUS,202,Professional Development, Gwendolyn Marie  Klobes, 2:40 pm,3:35 pm, W
+BUS,205,Business Finance, Madhuparna   Kolay, 9:15 am,10:10 am, MWF
+BUS,205,Business Finance, Richard D  Gritta, 9:15 am,10:10 am, MWF
+BUS,205,Business Finance, C Christopher  Dunnaville, 11:25 am,12:20 pm, MWF
+BUS,205,Business Finance, C Christopher  Dunnaville, 12:30 pm,1:25 pm, MWF
+BUS,209,Financial Accounting, Ellen June  Lippman, 4:10 pm,6:55 pm, W
+BUS,209,Financial Accounting, Lizhong   Hao, 12:55 pm,2:20 pm, TR
+BUS,209,Financial Accounting, Lizhong   Hao, 2:30 pm,3:55 pm, TR
+BUS,210,Managerial Accounting, Evelyn Claire  Costin, 9:45 am,11:10 am, TR
+BUS,210,Managerial Accounting, Evelyn Claire  Costin, 11:20 am,12:45 pm, TR
+BUS,210,Managerial Accounting, Henghsiu   Lin, 12:55 pm,2:20 pm, TR
+BUS,210,Managerial Accounting, Henghsiu   Lin, 2:30 pm,3:55 pm, TR
+BUS,250,Legal and Social Responsibility in Business, Barbara Ann  Bloom-Groshong, 9:45 am,11:10 am, TR
+BUS,250,Legal and Social Responsibility in Business, Barbara Ann  Bloom-Groshong, 12:55 pm,2:20 pm, TR
+BUS,250,Legal and Social Responsibility in Business, Barbara Ann  Bloom-Groshong, 2:30 pm,3:55 pm, TR
+BUS,255,Introduction to Operations & Technology Management, Naveen   Gudigantala, 9:15 am,10:10 am, MWF
+BUS,255,Introduction to Operations & Technology Management, Wilfred W  Wu, 1:35 pm,2:30 pm, MWF
+BUS,255,Introduction to Operations & Technology Management, Wilfred W  Wu, 2:40 pm,3:35 pm, MWF
+BUS,302,Internship Preparation, Montana   Hisel-Cochran, 9:15 am,10:10 am, M
+BUS,302,Internship Preparation, Montana   Hisel-Cochran, 10:20 am,11:15 am, M
+BUS,311,Intermediate Accounting II, Ellen June  Lippman, 4:10 pm,5:35 pm, TR
+BUS,311,Intermediate Accounting II, Ellen June  Lippman, 5:45 pm,7:05 pm, TR
+BUS,312,Cost Accounting, Lizhong   Hao, 9:45 am,11:10 am, TR
+BUS,330,Managerial Finance, Madhuparna   Kolay, 10:20 am,11:15 am, MWF
+BUS,355,Decision Modeling, Min   Yu, 12:30 pm,1:25 pm, MWF
+BUS,355,Decision Modeling, Min   Yu, 2:40 pm,3:35 pm, MWF
+BUS,355,Decision Modeling, Evelyn Claire  Costin, 2:30 pm,3:55 pm, TR
+BUS,360,Cross Cultural Organizational Behavior and Ethics, Daniel J  Parrish, 9:45 am,11:10 am, TR
+BUS,360,Cross Cultural Organizational Behavior and Ethics, Daniel J  Parrish, 11:20 am,12:45 pm, TR
+BUS,360,Cross Cultural Organizational Behavior and Ethics, Daniel J  Parrish, 2:30 pm,3:55 pm, TR
+BUS,361,Foundations of Operations Management, Joshua Stephen  Grover, 7:10 pm,9:55 pm, T
+BUS,364,Innovation, Jonathan Taylor  Down, 8:10 am,9:05 am, MWF
+BUS,364,Innovation, Beatriz Itzel   Cruz Megchun, 9:15 am,10:10 am, MWF
+BUS,364,Innovation, Beatriz Itzel   Cruz Megchun, 10:20 am,11:15 am, MWF
+BUS,364,Innovation, Jonathan Taylor  Down, 12:30 pm,1:25 pm, MWF
+BUS,371,Consumer Behavior, Debra Lynn  Stephens, 10:20 am,11:15 am, MWF
+BUS,371,Consumer Behavior, Debra Lynn  Stephens, 11:25 am,12:20 pm, MWF
+BUS,371,Consumer Behavior, Debra Lynn  Stephens, 1:35 pm,2:30 pm, MWF
+BUS,371H,Consumer Behavior (Honors), Debra Lynn  Stephens, 11:25 am,12:20 pm, MWF
+BUS,385,Opportunity Assessment, Jonathan Taylor  Down, 4:10 pm,6:55 pm, R
+BUS,400,Management Decisions and Policy, Samuel Scott  Holloway, 11:25 am,12:20 pm, MWF
+BUS,400,Management Decisions and Policy, Samuel Scott  Holloway, 1:35 pm,2:30 pm, MWF
+BUS,408,Innovation for Sustainability, Gregory M  Hill, 7:10 pm,9:55 pm, W
+BUS,430,Investments, Richard D  Gritta, 1:35 pm,2:30 pm, MWF
+BUS,431,Financial Markets and Institutions, Brian J.  Adams, 7:10 pm,9:55 pm, R
+BUS,432,Personal Financial Planning, C Christopher  Dunnaville, 8:10 am,9:05 am, MWF
+BUS,441,International Finance, Arjun   Chatrath, 4:10 pm,5:35 pm, TR
+BUS,443,International Marketing Management, Tyler   Laird-Magee, 2:30 pm,3:55 pm, TR
+BUS,450,Advanced Business Law, Barbara Ann  Bloom-Groshong, 8:10 am,9:05 am, MWF
+BUS,452,Project Management, Gary F  Mitchell, 11:20 am,12:45 pm, TR
+BUS,452,Project Management, Gary F  Mitchell, 12:55 pm,2:20 pm, TR
+BUS,456,Systems Analysis and Design, Tae-In   Eom, 9:45 am,11:10 am, TR
+BUS,456,Systems Analysis and Design, Tae-In   Eom, 7:10 pm,9:55 pm, R
+BUS,459,Business Analytics, Naveen   Gudigantala, 11:25 am,12:20 pm, MWF
+BUS,464,Business Taxation, James John  Jurinski, 2:40 pm,3:35 pm, MWF
+BUS,465,Auditing, Teri O  Grimmer, 4:10 pm,6:55 pm, W
+BUS,466,Advanced Accounting II, Henghsiu   Lin, 9:45 am,11:10 am, TR
+BUS,468,Applied Portfolio Management, Brian J.  Adams, 7:10 pm,9:55 pm, T
+BUS,471,Brand Promotions Management, Tyler   Laird-Magee, 12:55 pm,2:20 pm, TR
+BUS,474,Digital Marketing, Elena Kiryanova  Bernard, 4:10 pm,5:35 pm, TR
+BUS,476,Product Design & Development, Ian David  Parkman, 4:10 pm,5:35 pm, MW
+BUS,483,Strategic Controls for New Venture Operations, Mark R  Meckler, 7:10 pm,9:55 pm, R
+BUS,486,Venture Launch, Jonathan Taylor  Down, 2:40 pm,3:35 pm, MWF
+BUS,487,Social Entrepreneurship, Peter B  Rachor, 7:10 pm,9:55 pm, T
+BUS,491,Accounting Ethics, James John  Jurinski, 4:10 pm,6:55 pm, M
+BUS,491,Design Thinking, Beatriz Itzel   Cruz Megchun, 7:10 pm,9:55 pm, W
+BUS,491,Production and Service Operations Management, Min   Yu, 4:10 pm,6:55 pm, W
+BUS,491,Website Marketing, Elena Kiryanova  Bernard, 11:20 am,12:45 pm, TR
+BUS,491,Accounting Analytics, Teri O  Grimmer, 1:35 pm,2:30 pm, MWF
+BUS,491,Computing Concepts and Programming, Benjamin Raymond  Tribelhorn, 9:15 am,10:10 am, MWF
+BUS,491,Marketing Operations, Joseph Essa  Barhoum, 7:10 pm,9:55 pm, R
+BUS,491,Real Estate Law, James John  Jurinski, 7:10 pm,9:55 pm, W
+BUS,501,Economic Analysis, Bahram   Adrangi, 7:10 pm,9:55 pm, T
+BUS,505,Introduction to Operations & Technology  Management, Timothy Dean  Larson, 7:10 pm,9:55 pm, T
+BUS,506,Principles of Accounting, Teri O  Grimmer, 4:10 pm,6:55 pm, M
+BUS,510,Economics and Metrics for Sustainability, William F  Barnes, 7:10 pm,9:55 pm, W
+BUS,511,Cross-Cultural Management, Samuel Scott  Holloway, 7:10 pm,9:55 pm, M
+BUS,515,Social Venture Management, Shari Lynette  Dunn, 7:10 pm,9:55 pm, M
+BUS,520,Applied Marketing Strategies, Ian David  Parkman, 7:10 pm,9:55 pm, M
+BUS,524,Brand Promotions Management, Tyler   Laird-Magee, 4:10 pm,6:55 pm, T
+BUS,528,Sports Marketing, Alison J  Sarantakos, 7:10 pm,9:55 pm, R
+BUS,530,Corporate Finance, Arjun   Chatrath, 7:10 pm,9:55 pm, R
+BUS,531,International Finance, Arjun   Chatrath, 7:10 pm,9:55 pm, T
+BUS,532,Security and Portfolio Analysis, Richard D  Gritta, 7:10 pm,9:55 pm, M
+BUS,539,Research Methods in Finance, Madhuparna   Kolay, 4:10 pm,6:55 pm, M
+BUS,540,Process Analysis & Quality Management, Wilfred W  Wu, 7:10 pm,9:55 pm, M
+BUS,541,Human Resource Management, Alan Paul  Huston, 7:10 pm,9:55 pm, M
+BUS,542,Systems Analysis and Design, Tae-In   Eom, 7:10 pm,9:55 pm, T
+BUS,545,Project Management, Gary F  Mitchell, 7:10 pm,9:55 pm, W
+BUS,565,Auditing, Teri O  Grimmer, 4:10 pm,6:55 pm, W
+BUS,566,Advanced Accounting, Henghsiu   Lin, 9:45 am,11:10 am, TR
+BUS,578,Management of Technology for Life Science, Peter B  Rachor, 4:10 pm,6:55 pm, W
+BUS,580,Strategic Issues and Applications in Management, Mark R  Meckler, 7:10 pm,9:55 pm, W
+BUS,591,IT Security, Scott David  Fenton, 7:10 pm,9:55 pm, R
+BUS,591,Production and Service Operations Management, Min   Yu, 4:10 pm,6:55 pm, W
+BUS,591,Real Estate Law, James John  Jurinski, 7:10 pm,9:55 pm, W
+BUS,591,Strategy and Competition in the Experiential Economy, Samuel Scott  Holloway, 4:10 pm,6:55 pm, R
+BUS,591,Marketing Operations, Joseph Essa  Barhoum, 7:10 pm,9:55 pm, R
+BUS,912,Tax: Persons/Property/Entities, James John  Jurinski, 6:00 pm,9:35 pm, F
+BUS,913,Retirement/Employee Benefits, C Christopher  Dunnaville, 6:00 pm,9:35 pm, F
+BUS,914,Estate Tax Planning, Theodore B  Austin, 6:00 pm,6:55 pm, F
+BUS,915,Cases in Financial Planning, Bruce E  Miller, 6:00 pm,9:35 pm, F
+CHM,007,General Chemistry I Workshop, Angela   Hoffman, 4:10 pm,5:35 pm, M
+CHM,007,General Chemistry I Workshop, Angela   Hoffman, 7:10 pm,8:35 pm, M
+CHM,007,General Chemistry I Workshop, Angela   Hoffman, 5:40 pm,7:05 pm, T
+CHM,007,General Chemistry I Workshop, Elizabeth Ruth  Morton, 5:40 pm,7:05 pm, W
+CHM,007,General Chemistry I Workshop, Elizabeth Ruth  Morton, 7:10 pm,8:35 pm, W
+CHM,007,General Chemistry I Workshop, Elizabeth Ruth  Morton, 4:10 pm,5:35 pm, T
+CHM,007,General Chemistry I Workshop, Elizabeth Ruth  Morton, 4:10 pm,5:35 pm, W
+CHM,007,General Chemistry I Workshop, Rachel   Hutcheson, 4:10 pm,5:35 pm, M
+CHM,007,General Chemistry I Workshop, Rachel   Hutcheson, 7:10 pm,8:35 pm, M
+CHM,007,General Chemistry I Workshop, Rachel   Hutcheson, 5:40 pm,7:05 pm, T
+CHM,007,General Chemistry I Workshop, Rachel   Hutcheson, 7:10 pm,8:35 pm, T
+CHM,007,General Chemistry I Workshop, Edward J  Valente, 5:40 pm,7:05 pm, M
+CHM,007,General Chemistry I Workshop, Edward J  Valente, 7:10 pm,8:35 pm, M
+CHM,007,General Chemistry I Workshop, Edward J  Valente, 4:10 pm,5:35 pm, T
+CHM,007,General Chemistry I Workshop, Edward J  Valente, 7:10 pm,8:35 pm, T
+CHM,008,General Chemistry II Workshop, Kevin   Cantrell, 5:40 pm,7:05 pm, W
+CHM,008,General Chemistry II Workshop, Kevin   Cantrell, 7:10 pm,8:35 pm, W
+CHM,008,General Chemistry II Workshop, Kevin   Cantrell, 4:10 pm,5:35 pm, T
+CHM,008,General Chemistry II Workshop, Kevin   Cantrell, 4:10 pm,5:35 pm, W
+CHM,008,General Chemistry II Workshop, Elizabeth Ruth  Morton, 5:40 pm,7:05 pm, W
+CHM,008,General Chemistry II Workshop, Elizabeth Ruth  Morton, 7:10 pm,8:35 pm, W
+CHM,008,General Chemistry II Workshop, Elizabeth Ruth  Morton, 5:40 pm,7:05 pm, T
+CHM,008,General Chemistry II Workshop, Elizabeth Ruth  Morton, 4:10 pm,5:35 pm, W
+CHM,008,General Chemistry II Workshop, Sylvia M.  Daoud Kinzie, 5:40 pm,7:05 pm, M
+CHM,008,General Chemistry II Workshop, Sylvia M.  Daoud Kinzie, 7:10 pm,8:35 pm, M
+CHM,008,General Chemistry II Workshop, Sylvia M.  Daoud Kinzie, 4:10 pm,5:35 pm, T
+CHM,008,General Chemistry II Workshop, Sylvia M.  Daoud Kinzie, 7:10 pm,8:35 pm, T
+CHM,008,General Chemistry II Workshop, Sylvia M.  Daoud Kinzie, 5:40 pm,7:05 pm, M
+CHM,008,General Chemistry II Workshop, Sylvia M.  Daoud Kinzie, 7:10 pm,8:35 pm, M
+CHM,008,General Chemistry II Workshop, Sylvia M.  Daoud Kinzie, 5:40 pm,7:05 pm, T
+CHM,008,General Chemistry II Workshop, Sylvia M.  Daoud Kinzie, 7:10 pm,8:35 pm, T
+CHM,008,General Chemistry II Workshop, Eugenijus   Urnezius, 5:40 pm,7:05 pm, M
+CHM,008,General Chemistry II Workshop, Eugenijus   Urnezius, 4:10 pm,5:35 pm, T
+CHM,025,Organic Chemistry I Workshop, Ronda Sandifer  Bard, 7:10 pm,8:35 pm, W
+CHM,025,Organic Chemistry I Workshop, Ronda Sandifer  Bard, 5:40 pm,7:05 pm, W
+CHM,025,Organic Chemistry I Workshop, Ronda Sandifer  Bard, 7:10 pm,8:35 pm, T
+CHM,026,Organic Chemistry II Workshop, Edward J  Valente, 7:10 pm,8:35 pm, W
+CHM,026,Organic Chemistry II Workshop, Edward J  Valente, 4:10 pm,5:35 pm, R
+CHM,026,Organic Chemistry II Workshop, Edward J  Valente, 5:40 pm,7:05 pm, R
+CHM,026,Organic Chemistry II Workshop, Warren J  Wood, 7:10 pm,8:35 pm, W
+CHM,026,Organic Chemistry II Workshop, Warren J  Wood, 4:10 pm,5:35 pm, R
+CHM,026,Organic Chemistry II Workshop, Warren J  Wood, 5:40 pm,7:05 pm, R
+CHM,026,Organic Chemistry II Workshop, Buck   Taylor, 7:10 pm,8:35 pm, W
+CHM,026,Organic Chemistry II Workshop, Buck   Taylor, 5:40 pm,7:05 pm, R
+CHM,026,Organic Chemistry II Workshop, Buck   Taylor, 7:10 pm,8:35 pm, R
+CHM,026,Organic Chemistry II Workshop, Buck   Taylor, 7:10 pm,8:35 pm, W
+CHM,026,Organic Chemistry II Workshop, Buck   Taylor, 4:10 pm,5:35 pm, R
+CHM,026,Organic Chemistry II Workshop, Buck   Taylor, 5:40 pm,7:05 pm, R
+CHM,105,Chemistry in Art, Valerie A  Walters, 4:10 pm,6:55 pm, R
+CHM,207,General Chemistry I, Angela   Hoffman, 8:10 am,9:05 am, MWF
+CHM,207,General Chemistry I, Elizabeth Ruth  Morton, 2:30 pm,3:55 pm, TR
+CHM,207,General Chemistry I, Rachel   Hutcheson, 11:25 am,12:20 pm, MWF
+CHM,207,General Chemistry I, Edward J  Valente, 9:15 am,10:10 am, MWF
+CHM,208,General Chemistry II, Kevin   Cantrell, 12:55 pm,2:20 pm, TR
+CHM,208,General Chemistry II, Elizabeth Ruth  Morton, 11:20 am,12:45 pm, TR
+CHM,208,General Chemistry II, Sylvia M.  Daoud Kinzie, 11:25 am,12:20 pm, MWF
+CHM,208,General Chemistry II, Sylvia M.  Daoud Kinzie, 12:30 pm,1:25 pm, MWF
+CHM,208,General Chemistry II, Eugenijus   Urnezius, 8:10 am,9:05 am, MWF
+CHM,277,General Chemistry I Laboratory, Mahbubur   Rahman, 6:10 pm,9:10 pm, R
+CHM,277,General Chemistry I Laboratory, Wallace   Thompson, 6:10 pm,9:10 pm, M
+CHM,277,General Chemistry I Laboratory, Wilson   Jacob, 8:10 am,11:10 am, T
+CHM,277,General Chemistry I Laboratory, Mahbubur   Rahman, 6:10 pm,9:10 pm, W
+CHM,277,General Chemistry I Laboratory, Valerie A  Walters, 8:10 am,11:10 am, R
+CHM,277,General Chemistry I Laboratory, Barbara Lynn Walton  Pasquale, 8:10 am,11:10 am, R
+CHM,277,General Chemistry I Laboratory, Sylvia M.  Daoud Kinzie, 8:10 am,11:10 am, T
+CHM,278,General Chemistry II Laboratory, Sylvia M.  Daoud Kinzie, 12:55 pm,3:55 pm, T
+CHM,278,General Chemistry II Laboratory, Laura Nicole  Schacherer, 6:10 pm,9:10 pm, T
+CHM,278,General Chemistry II Laboratory, Steven   Soll, 1:35 pm,4:35 pm, W
+CHM,278,General Chemistry II Laboratory, Wilson   Jacob, 12:55 pm,3:55 pm, R
+CHM,278,General Chemistry II Laboratory, Barbara Lynn Walton  Pasquale, 6:10 pm,9:10 pm, R
+CHM,278,General Chemistry II Laboratory, Wallace   Thompson, 6:10 pm,9:10 pm, T
+CHM,278,General Chemistry II Laboratory, Valerie A  Walters, 1:35 pm,4:35 pm, M
+CHM,278,General Chemistry II Laboratory, Elizabeth Ruth  Morton, 1:35 pm,4:35 pm, M
+CHM,278,General Chemistry II Laboratory, Elizabeth Conrad  Wilkinson, 1:35 pm,4:35 pm, F
+CHM,278,General Chemistry II Laboratory, Wilson   Jacob, 6:10 pm,9:10 pm, M
+CHM,325,Organic Chemistry I, Ronda Sandifer  Bard, 8:10 am,9:35 am, TR
+CHM,326,Organic Chemistry II, Edward J  Valente, 8:10 am,9:05 am, MWF
+CHM,326,Organic Chemistry II, Warren J  Wood, 9:15 am,10:10 am, MWF
+CHM,326,Organic Chemistry II, Buck   Taylor, 10:20 am,11:15 am, MWF
+CHM,326,Organic Chemistry II, Buck   Taylor, 11:25 am,12:20 pm, MWF
+CHM,332,Physical Chemistry II, Steven G  Mayer, 9:45 am,11:10 am, TR
+CHM,344,Inorganic Chemistry I, Eugenijus   Urnezius, 11:25 am,12:20 pm, MWF
+CHM,372,Physical Chemistry I Laboratory, Steven G  Mayer, 1:35 pm,4:35 pm, M
+CHM,372,Physical Chemistry I Laboratory, Steven G  Mayer, 12:55 pm,3:55 pm, T
+CHM,374,Inorganic Chemistry I Laboratory, Eugenijus   Urnezius, 1:35 pm,4:35 pm, W
+CHM,374,Inorganic Chemistry I Laboratory, Elizabeth Ruth  Morton, 6:10 pm,9:10 pm, W
+CHM,375,Organic Chemistry I Laboratory, Ronda Sandifer  Bard, 1:35 pm,4:35 pm, M
+CHM,375,Organic Chemistry I Laboratory, Kara J  Breuer, 6:10 pm,9:10 pm, M
+CHM,376,Organic Chemistry II Laboratory, Edward J  Valente, 8:10 am,11:10 am, T
+CHM,376,Organic Chemistry II Laboratory, Warren J  Wood, 12:55 pm,3:55 pm, T
+CHM,376,Organic Chemistry II Laboratory, Kara J  Breuer, 6:10 pm,9:10 pm, T
+CHM,376,Organic Chemistry II Laboratory, Warren J  Wood, 1:35 pm,4:35 pm, W
+CHM,376,Organic Chemistry II Laboratory, Ronda Sandifer  Bard, 6:10 pm,9:10 pm, W
+CHM,376,Organic Chemistry II Laboratory, Wilson   Jacob, 8:10 am,11:10 am, R
+CHM,376,Organic Chemistry II Laboratory, Buck   Taylor, 12:55 pm,3:55 pm, R
+CHM,386,Environmental Chemistry, Kevin   Cantrell, 11:25 am,12:20 pm, MWF
+CHM,393,Organic Chemistry Literature Research, Warren J  Wood, 10:20 am,11:15 am, F
+CHM,412,Advanced Instrumental Theory, Kevin   Cantrell, 1:35 pm,2:30 pm, F
+CHM,453,Biochemistry I, Rachel   Hutcheson, 12:30 pm,1:25 pm, MWF
+CHM,454,Biochemistry II, Angela   Hoffman, 10:20 am,11:15 am, MWF
+CHM,454,Biochemistry II, Rachel   Hutcheson, 9:15 am,10:10 am, MWF
+CHM,454H,Biochemistry II (Honors), Angela   Hoffman, 10:20 am,11:15 am, MWF
+CHM,471,Biochemistry Laboratory, Angela   Hoffman, 12:55 pm,3:55 pm, T
+CHM,472,Advanced Instrumental Laboratory, W. Paige  Hall, 2:40 pm,5:40 pm, F
+CHM,477,Digital Data Acquisition and Instrument Control, Kevin   Cantrell, 11:20 am,12:45 pm, TR
+CHN,102,Beginning Chinese II, Hsiao-Yun Sara  Shotwell, 9:15 am,10:10 am, MWF
+CHN,181,Maximizing Study Abroad, Jeffrey S  White, 8:10 am,9:05 am, R
+CHN,203,Intermediate Chinese, Yingying   Sun, 11:25 am,12:20 pm, MWF
+CHN,497I,Chinese Internship, Jennifer   Hensley, 5:45 pm,6:55 pm, M
+CHN,497I,Chinese Internship, Jeffrey S  White, 5:45 pm,6:55 pm, W
+CE,315,Transportation Engineering, Mojtaba B  Takallou, 2:30 pm,3:55 pm, TR
+CE,315H,Transportation Engineering (Honors), Mojtaba B  Takallou, 2:30 pm,3:55 pm, TR
+CE,353,Reinforced Concrete Design, Mehmet I  Inan, 11:25 am,12:20 pm, MWF
+CE,362,Hydraulic Engineering, Mark S  Kennedy, 8:10 am,9:05 am, MWF
+CE,367,Environmental Engineering, Cara Jean  Poor, 9:45 am,11:10 am, TR
+CE,376,Environmental Engineering Laboratory, Cara Jean  Poor, 2:40 pm,5:40 pm, M
+CE,376,Environmental Engineering Laboratory, Cara Jean  Poor, 2:40 pm,5:40 pm, W
+CE,404,Construction Engineering, Mojtaba B  Takallou, 2:40 pm,5:40 pm, W
+CE,452,Earthquake Engineering, Mehmet I  Inan, 11:20 am,12:45 pm, TR
+CE,464,Water Resources Engineering, Joseph V  Dvorak, 4:10 pm,6:55 pm, M
+CE,484,Civil Engineering Capstone Project II, Mehmet I  Inan, 2:40 pm,5:40 pm, F
+CE,484H,Civil Engineering Capstone II, Mehmet I  Inan, 2:40 pm,5:40 pm, F
+CE,491,Project Life-cycle: The Challenges of Implementing Civil Works in the Twenty First Century, Jude Daniel  Grounds, 4:10 pm,5:35 pm, TR
+CE,504,Construction Engineering, Mojtaba B  Takallou, 2:40 pm,5:40 pm, W
+CE,552,Earthquake Engineering, Mehmet I  Inan, 11:20 am,12:45 pm, TR
+CE,564,Water Resources Engineering, Joseph V  Dvorak, 4:10 pm,6:55 pm, M
+CE,591,Project Life-cycle, Jude Daniel  Grounds, 4:10 pm,5:35 pm, TR
+CAS,101,Introduction to the Health Professions, Rebecca Nicole  Henley, 7:10 pm,8:35 pm, M
+CAS,191,Internship & Career Preparation, Elizabeth A  Jones, 5:45 pm,6:40 pm, M
+CST,101,Introduction to Communication Studies, Ali   Na, 9:15 am,10:10 am, MWF
+CST,101,Introduction to Communication Studies, Ali   Na, 11:25 am,12:20 pm, MWF
+CST,107,Effective Public Speaking, Aaron Nicole  Kaio, 9:15 am,10:10 am, MWF
+CST,107,Effective Public Speaking, Aaron Nicole  Kaio, 10:20 am,11:15 am, MWF
+CST,107,Effective Public Speaking, Bryan C  Hunt, 10:20 am,11:15 am, MWF
+CST,107,Effective Public Speaking, Bryan C  Hunt, 11:25 am,12:20 pm, MWF
+CST,107,Effective Public Speaking, Cameron Reed  Bynum, 7:10 pm,9:55 pm, T
+CST,107,Effective Public Speaking, Sheri Crowley   Rooks, 12:30 pm,1:25 pm, MWF
+CST,107,Effective Public Speaking, Sheri Crowley   Rooks, 1:35 pm,2:30 pm, MWF
+CST,225,Fundamentals of Interpersonal Communication, Cameron Reed  Bynum, 7:10 pm,9:55 pm, R
+CST,225,Fundamentals of Interpersonal Communication, Vail   Fletcher, 11:20 am,12:45 pm, TR
+CST,225,Fundamentals of Interpersonal Communication, Janet   Weir, 1:35 pm,2:30 pm, MWF
+CST,233,Introduction to Organizational Communication Theory, Alexa M  Dare, 12:55 pm,2:20 pm, TR
+CST,291,Speech and Debate, Beau Ryan  Woodward, 7:10 pm,9:55 pm, R
+CST,300,Communication Research, Vail   Fletcher, 4:10 pm,6:55 pm, R
+CST,301,Media and Society, Ali   Na, 4:10 pm,5:35 pm, TR
+CST,320,Rhetorical Theory and Criticism, Bohn D  Lattin, 2:40 pm,4:00 pm, MW
+CST,327,Argumentation and Advocacy, Bohn D  Lattin, 4:10 pm,5:35 pm, MW
+CST,330,Qualitative Communication Research, Natalie Ann  Nelson-Marsh, 9:45 am,11:10 am, TR
+CST,332,Collaborative Leadership in Groups, Janet   Weir, 12:30 pm,1:25 pm, MWF
+CST,352,News Writing and Reporting, Kevin   Friedman, 12:30 pm,1:25 pm, MWF
+CST,362,Introduction to Public Relations, Heather Noelle  Lubay, 4:10 pm,6:55 pm, W
+CST,403,Communication Law, Janine   Robben, 4:10 pm,6:55 pm, R
+CST,410,Communication Theory, Natalie Ann  Nelson-Marsh, 2:30 pm,3:55 pm, TR
+CST,411,Communication Across Barriers, Jeff D  Kerssen-Griep, 12:55 pm,2:20 pm, TR
+CST,431,Intercultural Communication and Identity, Jeff D  Kerssen-Griep, 4:10 pm,6:55 pm, T
+CST,433,Advanced Organizational Communication, Natalie Ann  Nelson-Marsh, 4:10 pm,6:55 pm, T
+CST,434,Organizational Culture, Alexa M  Dare, 4:10 pm,5:35 pm, TR
+CST,435,Advanced Visual Persuasion, Alexa M  Dare, 7:10 pm,8:35 pm, TR
+CST,445,Cinema and Society, Ali   Na, 4:10 pm,5:35 pm, MW
+CST,453,Multimedia Journalism, Zachary Brian  Putnam, 4:10 pm,6:55 pm, T
+CST,470,Advanced Environmental Communication, Vail   Fletcher, 2:30 pm,3:55 pm, TR
+CST,510,Communication Theory, Jeff D  Kerssen-Griep, 2:40 pm,4:00 pm, MW
+CST,511,Communication Across Barriers, Jeff D  Kerssen-Griep, 12:55 pm,2:20 pm, TR
+CST,533,Advanced Organizational Communication, Natalie Ann  Nelson-Marsh, 4:10 pm,6:55 pm, T
+CST,535,Advanced Visual Persuasion, Alexa M  Dare, 7:10 pm,8:35 pm, TR
+CST,545,Cinema and Society, Ali   Na, 4:10 pm,5:35 pm, MW
+CST,553,Multimedia Journalism, Zachary Brian  Putnam, 4:10 pm,6:55 pm, T
+CST,591,Advanced Environmental Communication, Vail   Fletcher, 2:30 pm,3:55 pm, TR
+CS,203,Introduction to Computer Science, Radana Radka  Dvorak, 9:15 am,10:10 am, MWF
+CS,203,Introduction to Computer Science, Radana Radka  Dvorak, 12:30 pm,1:25 pm, MWF
+CS,203,Introduction to Computer Science, Radana Radka  Dvorak, 11:25 am,12:20 pm, MWF
+CS,273,Computer Science Laboratory, Benjamin Raymond  Tribelhorn, 11:20 am,12:45 pm, TR
+CS,273,Computer Science Laboratory, Samuel B  Burich, 5:45 pm,8:45 pm, T
+CS,273,Computer Science Laboratory, Robert E  Stiles, 5:45 pm,8:45 pm, W
+CS,301,Object-Oriented Design, Andrew M  Nuxoll, 2:40 pm,4:00 pm, MW
+CS,305,Data Structures, Tammy S  VanDeGrift, 1:35 pm,2:30 pm, MWF
+CS,324,Analysis of Algorithms, Steven R  Vegdahl, 9:15 am,10:10 am, MWF
+CS,324,Analysis of Algorithms, Steven R  Vegdahl, 11:25 am,12:20 pm, MWF
+CS,334,Operating Systems, Radana Radka  Dvorak, 8:10 am,9:35 am, TR
+CS,341,Software Engineering, Andrew M  Nuxoll, 8:10 am,9:05 am, MWF
+CS,341,Software Engineering, Benjamin Raymond  Tribelhorn, 9:45 am,11:10 am, TR
+CS,358,Compiler Design, Steven R  Vegdahl, 11:20 am,12:45 pm, TR
+CS,371,Object-Oriented Design Laboratory, Kyle Thomas  Kearney, 7:10 pm,9:55 pm, M
+CS,376,UNIX Tools Laboratory, Martin   Cenek, 12:55 pm,2:20 pm, TR
+CS,391,International Software Engineering, Andrew M  Nuxoll, 8:10 am,9:05 am, MWF
+CS,391,International Software Engineering, Benjamin Raymond  Tribelhorn, 9:45 am,11:10 am, TR
+CS,432,Computer Graphics, William   Hux, 7:10 pm,9:55 pm, W
+CS,438,Introduction to Big Data Analytics, Tammy S  VanDeGrift, 11:25 am,12:20 pm, MWF
+CS,448,Topics in Cybersecurity, Johnny Len  Whiteman, 4:10 pm,5:35 pm, TR
+CS,484,Computer Science Capstone Project II, Tammy S  VanDeGrift, 2:40 pm,5:40 pm, F
+CS,484H,Computer Science Capstone Project II (Honors), Tammy S  VanDeGrift, 2:40 pm,5:40 pm, F
+CS,491,Introduction to Machine Learning, Martin   Cenek, 2:30 pm,3:55 pm, TR
+CS,532,Computer Graphics, William   Hux, 7:10 pm,9:55 pm, W
+CS,538,Introduction to Big Data Analytics, Tammy S  VanDeGrift, 11:25 am,12:20 pm, MWF
+CS,548,Topics in Cybersecurity, Johnny Len  Whiteman, 4:10 pm,5:35 pm, TR
+CS,591,Introduction to Machine Learning, Martin   Cenek, 2:30 pm,3:55 pm, TR
+DNC,214,Jazz Dance, Jackie L  Culver, 9:45 am,11:10 am, TR
+DNC,216,Introduction to Ballet I, Leslie Yusuke  Watanabe, 9:15 am,10:10 am, MW
+DNC,315,Jazz and Modern, Jackie L  Culver, 11:20 am,12:45 pm, TR
+DNC,316,Jazz Dance II, Jackie L  Culver, 12:55 pm,2:20 pm, TR
+DNC,317,Ballet II, Leslie Yusuke  Watanabe, 10:20 am,11:15 am, MW
+DNC,418,Ballet III, Leslie Yusuke  Watanabe, 11:25 am,12:20 pm, MW
+ECN,120,Principles of Macroeconomics, Ruth   Dittrich, 11:20 am,12:45 pm, TR
+ECN,120,Principles of Macroeconomics, Ruth   Dittrich, 12:55 pm,2:20 pm, TR
+ECN,121,Principles of Microeconomics, Todd   Easton, 10:20 am,11:15 am, MWF
+ECN,121,Principles of Microeconomics, Ross Aaron Leupp  Hanig, 11:25 am,12:20 pm, MWF
+ECN,121,Principles of Microeconomics, Ross Aaron Leupp  Hanig, 1:35 pm,2:30 pm, MWF
+ECN,121,Principles of Microeconomics, William F  Barnes, 1:35 pm,2:30 pm, MWF
+ECN,121,Principles of Microeconomics, Ross Aaron Leupp  Hanig, 2:40 pm,3:35 pm, MWF
+ECN,310,Econometrics, Bahram   Adrangi, 12:55 pm,2:20 pm, TR
+ECN,320,Intermediate Macroeconomics, Todd   Easton, 12:30 pm,1:25 pm, MWF
+ECN,325,Metrics for Sustainability, William F  Barnes, 4:10 pm,5:35 pm, MW
+ECN,429,Development Economics, Ross Aaron Leupp  Hanig, 4:10 pm,5:35 pm, TR
+ECN,491,Applied Economic Research, Bahram   Adrangi, 4:10 pm,6:55 pm, R
+ED,102,University Success, Thomas   Giumenta, 7:10 pm,8:05 pm, T
+ED,102,University Success, Thomas   Giumenta, 4:10 pm,5:05 pm, W
+ED,250,Pre-Adolescent Theories of Development and Learning, Randy Wayne  Hetherington, 8:10 am,9:35 am, TR
+ED,251,Adolescent Theories of Development and Learning, Karen E  Eifler, 8:10 am,9:35 am, TR
+ED,320,Foundations of Education, Ellyn   Arwood, 11:20 am,12:45 pm, TR
+ED,330,Policies and Practices for Diverse Learners, Benjamin   Gallegos, 2:40 pm,4:00 pm, MW
+ED,340,Pre-Adolescent Health and Wellness for Educators, Brent David  Van Volkinburg, 4:10 pm,6:55 pm, W
+ED,400,Pre-Adolescent Curriculum and Instruction, Rebecca Ann Dollar  Smith, 4:10 pm,6:55 pm, M
+ED,404,School Parent and Community Relations, Benjamin   Gallegos, 4:10 pm,6:55 pm, R
+ED,405,Behavior Support: Consultative and Collaborative, Ellyn   Arwood, 4:10 pm,6:55 pm, T
+ED,424,Technology in Education, Peter A  Pappas, 4:10 pm,6:55 pm, W
+ED,424,Technology in Education, Eric J  Anctil, 4:10 pm,6:55 pm, R
+ED,442,Reading and Language Arts Methods, Kimberly Kay  Ilosvay, 2:30 pm,3:55 pm, TR
+ED,442,Reading and Language Arts Methods, Mary Maynette  Hall, 7:10 pm,9:55 pm, T
+ED,447,Fostering Creativity in the Classroom, Bonnie Elain  Robb, 5:10 pm,7:55 pm, R
+ED,450,Models of Teaching and Literacy Development, Julie S  Kalnin, 4:10 pm,6:55 pm, W
+ED,481,Language Literacy & Culture, Sally J  Hood, 4:10 pm,6:55 pm, T
+ED,484,Administration and Evaluation of Reading Programs, Elizabeth Michelle  Schardt, 5:10 pm,7:55 pm, R
+ED,486,Single-Subject (Secondary) Seminary for Student Teachers, Randy Wayne  Hetherington, 4:10 pm,6:55 pm, M
+ED,487,Multi-Subject (Elementary) Seminar for Student Teachers, Hillary Ann  Gaudio, 4:10 pm,6:55 pm, M
+ED,502,Policies and Practices for Diverse Learners, Benjamin   Gallegos, 2:40 pm,4:00 pm, MW
+ED,504,School Parent and Community Relations, Benjamin   Gallegos, 4:10 pm,6:55 pm, R
+ED,505,Behavior Support: Consultative and Collaborative, Ellyn   Arwood, 4:10 pm,6:55 pm, T
+ED,523,Developmental Theory Identity & College Populations, Kerri   Anderson-Linde, 7:10 pm,9:55 pm, W
+ED,523,Developmental Theory Identity & College Populations, Kerri   Anderson-Linde, 7:10 pm,9:55 pm, W
+ED,536,Student Teaching Seminar, Julie S  Kalnin, 5:00 pm,6:55 pm, M
+ED,536,Student Teaching Seminar, Randy Wayne  Hetherington, 5:00 pm,6:55 pm, M
+ED,546,Policy Ethics and the Law, James N  Stamper, 4:10 pm,6:55 pm, W
+ED,548,Supervision for Instructional Improvement, Patricia Ann  Thompson, 7:10 pm,9:55 pm, W
+ED,551,Social and Cultural Foundations, Teresa Jean  Ketelsen, 4:10 pm,6:55 pm, M
+ED,551,Social and Cultural Foundations, Teresa Jean  Ketelsen, 4:10 pm,6:55 pm, M
+ED,552,Leadership for Sustaining the Vision, Leigh Anne Whitney  Scherer, 7:10 pm,9:55 pm, W
+ED,552,Leadership for Sustaining the Vision, Leigh Anne Whitney  Scherer, 7:10 pm,9:55 pm, W
+ED,558,Educational Research for Improved Student Learning, James B  Carroll, 4:10 pm,6:55 pm, M
+ED,581,Language Literacy & Culture, Sally J  Hood, 4:10 pm,6:55 pm, T
+ED,584,Administration and Evaluation of Reading Programs, Elizabeth Michelle  Schardt, 5:10 pm,7:55 pm, R
+ED,586,Neuroscience and Learning, Ellyn   Arwood, 7:10 pm,9:55 pm, W
+ED,586,Neuroscience and Learning, Ellyn   Arwood, 7:10 pm,9:55 pm, W
+ED,602,Advanced Quantitative Research, Nicole C  Ralston, 4:10 pm,6:55 pm, W
+ED,622,Dissertation Seminar, Jacqueline M  Waggoner, 4:10 pm,6:55 pm, W
+EE,261,Electrical Circuits, Maynard Carver  Falconer, 2:40 pm,3:35 pm, MWF
+EE,261,Electrical Circuits, Maynard Carver  Falconer, 12:30 pm,1:25 pm, MWF
+EE,262,Signals and Systems, Aziz S  Inan, 8:10 am,9:35 am, TR
+EE,271,Electrical Circuits Laboratory, Robert J  Albright, 2:30 pm,5:30 pm, T
+EE,271,Electrical Circuits Laboratory, Robert J  Albright, 2:40 pm,5:40 pm, W
+EE,301,Electromagnetic Fields, Aziz S  Inan, 11:25 am,12:20 pm, MWF
+EE,332,Digital Systems Design, Nazanin   Mansouri, 12:55 pm,2:20 pm, TR
+EE,352,Electronic Circuits II, Peter M  Osterberg, 12:30 pm,1:25 pm, MWF
+EE,371,Electronic Circuits Laboratory, Peter M  Osterberg, 2:40 pm,5:40 pm, M
+EE,373,Digital Systems Design Laboratory, Nazanin   Mansouri, 2:40 pm,5:40 pm, T
+EE,373,Digital Systems Design Laboratory, Nazanin   Mansouri, 2:40 pm,5:40 pm, R
+EE,421,Electric  Power Systems, Robert J  Albright, 8:10 am,9:05 am, MWF
+EE,435,Verilog Digital Systems Modeling, Nazanin   Mansouri, 4:10 pm,6:55 pm, W
+EE,438,Introduction to Digital VLSI Design, Peter M  Osterberg, 2:30 pm,3:55 pm, TR
+EE,463,Digital Signal Processing, Joseph P  Hoffbeck, 8:10 am,9:35 am, TR
+EE,484,Electrical Engineering Capstone Project II, Robert J  Albright, 2:40 pm,5:40 pm, F
+EE,484H,Electrical Engineering Capstone Project II (Honors), Robert J  Albright, 2:40 pm,5:40 pm, F
+EE,491,Pre-silicon Verification, Adrian   Nunez-Aldana, 9:45 am,11:10 am, TR
+EE,521,Electric Power Systems, Robert J  Albright, 8:10 am,9:05 am, MWF
+EE,535,Verilog Digital Systems Modeling, Nazanin   Mansouri, 4:10 pm,6:55 pm, W
+EE,538,Introduction to Digital VLSI Design, Peter M  Osterberg, 2:30 pm,3:55 pm, TR
+EE,563,Digital Signal Processing, Joseph P  Hoffbeck, 8:10 am,9:35 am, TR
+EGR,110,Introduction to Engineering, Shazib Z  Vijlee, 3:00 pm,5:00 pm, TW
+EGR,111,Engineering Computing with Applications, Joseph P  Hoffbeck, 1:35 pm,2:30 pm, MW
+EGR,111,Engineering Computing with Applications, Joseph P  Hoffbeck, 11:20 am,12:45 pm, TR
+EGR,111,Engineering Computing with Applications, Matthew R  Kuhn, 2:30 pm,3:55 pm, TR
+EGR,111,Engineering Computing with Applications, Matthew R  Kuhn, 12:55 pm,2:20 pm, TR
+EGR,111,Engineering Computing with Applications, Kathleen   Bieryla, 11:25 am,12:20 pm, MW
+EGR,115,Pathways to Engineering Success, Jamie R  Merritt, 4:10 pm,5:05 pm, T
+EGR,212,Engineering Mechanics-Dynamics, Nikolene Anne  Schulz, 8:10 am,9:35 am, TR
+EGR,212,Engineering Mechanics-Dynamics, Timothy A  Doughty, 11:20 am,12:45 pm, TR
+EGR,212,Engineering Mechanics-Dynamics, Christina M  Ivler, 12:55 pm,2:20 pm, TR
+EGR,214,Principles of Dynamics, Nikolene Anne  Schulz, 8:10 am,9:35 am, TR
+EGR,214,Principles of Dynamics, Timothy A  Doughty, 11:20 am,12:45 pm, TR
+EGR,214,Principles of Dynamics, Christina M  Ivler, 12:55 pm,2:20 pm, TR
+EGR,270,Materials Laboratory, Gregg   Meyer, 9:45 am,11:10 am, T
+EGR,270,Materials Laboratory, Christopher James  Hainley, 2:30 pm,3:55 pm, T
+EGR,270,Materials Laboratory, Christopher James  Hainley, 2:40 pm,4:40 pm, F
+EGR,270,Materials Laboratory, Christopher James  Hainley, 2:30 pm,4:30 pm, R
+EGR,270,Materials Laboratory, Gregg   Meyer, 9:45 am,11:10 am, R
+EGR,291,Vehicle Design II, Ryan M  Jefferis, 5:45 pm,7:05 pm, T
+EGR,300,Introduction to Capstone Project, Kathryn Bethany  Rohl, 7:10 pm,9:55 pm, W
+EGR,322,Strength of Materials, Nikolene Anne  Schulz, 1:35 pm,2:30 pm, MWF
+EGR,322,Strength of Materials, Gregg   Meyer, 9:15 am,10:10 am, MWF
+EGR,322,Strength of Materials, Gregg   Meyer, 11:25 am,12:20 pm, MWF
+EGR,351,Engineering Economics, Shazib Z  Vijlee, 12:55 pm,2:20 pm, TR
+EGR,351,Engineering Economics, Mojtaba B  Takallou, 11:20 am,12:45 pm, TR
+EGR,361,Analysis of Engineering Data, Aziz S  Inan, 12:30 pm,1:25 pm, MWF
+EGR,361,Analysis of Engineering Data, Jennifer Elaine  Symons, 2:30 pm,3:55 pm, TR
+EGR,408,Innovation for Sustainability, Gregory M  Hill, 7:10 pm,9:55 pm, W
+EGR,483,Multi-disciplinary Capstone Project I, Christopher F  Galati, 2:40 pm,5:40 pm, F
+EGR,483H,Multi-disciplinary Capstone I (Honors), Christopher F  Galati, 2:40 pm,5:40 pm, F
+EGR,484,Multi-disciplinary Capstone Project II, Timothy A  Doughty, 2:40 pm,5:40 pm, F
+EGR,484,Multi-disciplinary Capstone Project II, Tammy S  VanDeGrift, 2:40 pm,5:40 pm, F
+EGR,484H,Multi-Disciplinary Capstone Project II (Honors), Timothy A  Doughty, 2:40 pm,5:40 pm, F
+EGR,484H,Multi-Disciplinary Capstone Project II (Honors), Tammy S  VanDeGrift, 2:40 pm,5:40 pm, F
+EGR,551,Mathematical and Numerical Methods for Engineers, Heather Elizabeth  Dillon, 9:45 am,11:10 am, TR
+ENG,107,College Writing, Laura Frances  Blumenthal, 2:40 pm,4:00 pm, MW
+ENG,107,College Writing, Laura Frances  Blumenthal, 4:10 pm,5:35 pm, MW
+ENG,107,College Writing, John J  McDonald, 2:40 pm,3:35 pm, MWF
+ENG,107,College Writing, Michael John  Ward, 2:40 pm,4:00 pm, MW
+ENG,107,College Writing, Michael John  Ward, 4:10 pm,5:35 pm, MW
+ENG,107,College Writing, Matthew Phillip  Minicucci, 9:45 am,11:10 am, TR
+ENG,107,College Writing, Matthew Phillip  Minicucci, 11:20 am,12:45 pm, TR
+ENG,107,College Writing, William Patrick  Hannon, 9:15 am,10:10 am, MWF
+ENG,112,Thinking Through Literature, Jennifer Neale  McDaneld, 2:40 pm,4:00 pm, MW
+ENG,112,Thinking Through Literature, Jennifer Neale  McDaneld, 4:10 pm,5:35 pm, MW
+ENG,112,Thinking Through Literature, Joshua   Swidzinski, 9:15 am,10:10 am, MWF
+ENG,112,Thinking Through Literature, Joshua   Swidzinski, 10:20 am,11:15 am, MWF
+ENG,112,Thinking Through Literature, Genevieve Y  Brassard, 9:15 am,10:10 am, MWF
+ENG,112,Thinking Through Literature, Genevieve Y  Brassard, 10:20 am,11:15 am, MWF
+ENG,112,Thinking Through Literature, Lars E  Larson, 1:35 pm,2:30 pm, MWF
+ENG,112,Thinking Through Literature, Cara Michelle  Hersh, 9:45 am,11:10 am, TR
+ENG,112,Thinking Through Literature, Cara Michelle  Hersh, 11:20 am,12:45 pm, TR
+ENG,112,Thinking Through Literature, John J  McDonald, 11:25 am,12:20 pm, MWF
+ENG,112,Thinking Through Literature, John J  McDonald, 12:30 pm,1:25 pm, MWF
+ENG,112,Thinking Through Literature, Sean Patrick  Warren, 4:10 pm,5:35 pm, TR
+ENG,112,Thinking Through Literature, Cheri J  Buck-Perry, 11:25 am,12:20 pm, MWF
+ENG,112,Thinking Through Literature, Cheri J  Buck-Perry, 12:30 pm,1:25 pm, MWF
+ENG,112,Thinking Through Literature, Cheri J  Buck-Perry, 9:45 am,11:10 am, TR
+ENG,112,Thinking Through Literature, Cheri J  Buck-Perry, 12:55 pm,2:20 pm, TR
+ENG,225,Introduction to Literary Studies, Joshua   Swidzinski, 11:20 am,12:45 pm, TR
+ENG,302,British Literature II (19th Century to Present), Genevieve Y  Brassard, 1:35 pm,2:30 pm, MWF
+ENG,311,Advanced Writing, John J  McDonald, 12:55 pm,2:20 pm, TR
+ENG,311,Advanced Writing, William Patrick  Hannon, 2:30 pm,3:55 pm, TR
+ENG,343,Studies in Nonfiction, William Patrick  Hannon, 9:45 am,11:10 am, TR
+ENG,371,City Life in American Culture, Lars E  Larson, 2:40 pm,4:00 pm, MW
+ENG,373,African-American Literature, Molly H  Hiro, 12:55 pm,2:20 pm, TR
+ENG,401,Seminar in British Literature I, Cara Michelle  Hersh, 4:10 pm,6:55 pm, M
+ENG,402,Seminar in American Literature I, John C  Orr, 2:30 pm,3:55 pm, TR
+ENG,499,Senior Capstone Seminar, Molly H  Hiro, 4:10 pm,6:55 pm, W
+ENT,200,Introduction to Entrepreneurship, Peter B  Rachor, 7:10 pm,8:10 pm, M
+ENT,481,Entrepreneur Apprenticeship, Peter B  Rachor, 8:10 am,9:35 am, TR
+ENT,482,Global Entrepreneurship, Robin D  Anderson, 8:10 am,9:05 am, MWF
+ENV,110,Earth Systems Science, Kali Marie  Abel, 8:10 am,9:05 am, MWF
+ENV,160,Sustainable Gourmet Science, Heather M  Carpenter, 2:40 pm,4:00 pm, MW
+ENV,160,Science of a Sustainable Gourmet, Heather M  Carpenter, 2:30 pm,3:55 pm, TR
+ENV,162,Introduction to Oceanography, Tara Elaine  Prestholdt, 4:10 pm,6:55 pm, T
+ENV,182,Environmental Science, Steven A.  Kolmes, 9:45 am,11:10 am, TR
+ENV,182,Environmental Science, Heather M  Carpenter, 8:10 am,9:35 am, TR
+ENV,182,Environmental Science, David Mark  Olszyk, 2:30 pm,5:15 pm, T
+ENV,191,Glaciers Ice Climate Change, Kali Marie  Abel, 9:15 am,10:10 am, MWF
+ENV,300,Techniques in Environmental Research, Kristin   Sweeney, 4:10 pm,6:55 pm, R
+ENV,325,Economics and Metrics for Sustainability, William F  Barnes, 4:10 pm,5:35 pm, MW
+ENV,349,Environmental Policy, John L  Shurts, 4:10 pm,6:55 pm, R
+ENV,358,Physical Oceanography, Sharon   Delcambre, 10:20 am,11:15 am, MWF
+ENV,361,Meteorology, Sharon   Delcambre, 11:25 am,12:20 pm, MWF
+ENV,383,Environmental Geoscience, Kristin   Sweeney, 11:20 am,12:45 pm, TR
+ENV,384,Remote Sensing and Geographic Information Systems, Kristin   Sweeney, 4:10 pm,6:55 pm, T
+ENV,386,Environmental Chemistry, Kevin   Cantrell, 11:25 am,12:20 pm, MWF
+ENV,391,Topics in Environmental Science: Science Epistemology and the Precautionary Principle, Norah A  Martin, 12:30 pm,1:25 pm, MWF
+ENV,391,Global Perspectives on Environmental Leadership, David Thomas  Houglum, 4:10 pm,5:35 pm, W
+ENV,400,Integrating Seminar in Environmental Studies, Heather M  Carpenter, 11:20 am,12:45 pm, TR
+ENV,400,Integrating Seminar in Environmental Studies, Steven A.  Kolmes, 12:55 pm,2:20 pm, TR
+ENV,408,Innovation for Sustainability, Gregory M  Hill, 7:10 pm,9:55 pm, W
+FA,207,Introduction to Fine Arts, Andrew John  Wardenaar, 9:15 am,10:10 am, MWF
+FA,207,Introduction to Fine Arts, Susan Elizabeth  McDaniel, 10:20 am,11:15 am, MWF
+FA,207,Introduction to Fine Arts, Gregory L  Pulver, 10:20 am,11:15 am, MWF
+FA,207,Introduction to Fine Arts, Jessica   Wallenfels, 11:25 am,12:20 pm, MWF
+FA,207,Introduction to Fine Arts, Don   Norton, 2:40 pm,3:35 pm, MWF
+FA,207,Introduction to Fine Arts, Tracey Dean  Edson, 12:55 pm,2:20 pm, TR
+FA,207,Introduction to Fine Arts, Brian Nathaniel  Guerrero, 12:55 pm,2:20 pm, TR
+FA,207,Introduction to Fine Arts, Nicole H. L.  Hanig, 2:30 pm,3:55 pm, TR
+FA,207,Introduction to Fine Arts, Frederick Tyler  Burnet, 7:10 pm,9:55 pm, W
+FA,207,Introduction to Fine Arts, Nathaniel T  Phillips, 7:10 pm,9:55 pm, R
+FA,215,Introduction to Photography, Patricia L  Bognar, 2:30 pm,4:20 pm, T
+FA,216,Photography Lab, Patricia L  Bognar, 2:40 pm,5:30 pm, W
+FA,226,Painting I, Mark R.  Ghyselinck, 7:10 pm,9:10 pm, T
+FA,226,Painting I, Karen C  Esler, 9:15 am,11:15 am, M
+FA,226,Painting I, Mark R.  Ghyselinck, 11:25 am,1:25 pm, F
+FA,228,Ceramics I, Kowkie   Durst, 9:20 am,11:10 am, R
+FA,228,Ceramics I, Kowkie   Durst, 11:20 am,1:10 pm, R
+FA,242,Drawing I, Mark R.  Ghyselinck, 11:20 am,1:20 pm, T
+FA,242,Drawing I, Mark R.  Ghyselinck, 1:35 pm,3:35 pm, F
+FA,242,Drawing I, Karen C  Esler, 11:25 am,1:25 pm, M
+FA,244,Sculpture I, Mylan   Rakich, 1:35 pm,3:35 pm, W
+FA,310,The Fine Arts Through the Film Medium, Lawrence S  Larsen, 7:10 pm,9:55 pm, M
+FA,315,Black and White Photography II, Patricia L  Bognar, 2:30 pm,5:30 pm, R
+FA,318,Digital Photography, Shawn K  Records, 4:10 pm,6:10 pm, M
+FA,318,Digital Photography, Shawn K  Records, 6:20 pm,8:20 pm, M
+FA,320,Digital VIdeo and Moving Media, Jose Arturo  Velazco, 2:40 pm,4:00 pm, MW
+FA,325,3-D Design, Bruce E  Conkle, 6:10 pm,8:55 pm, M
+FA,327,Painting II, Mark R.  Ghyselinck, 1:35 pm,3:35 pm, M
+FA,329,Ceramics II, Kowkie   Durst, 11:20 am,1:20 pm, T
+FA,330,Mixed Media Experimental Painting, Bruce E  Conkle, 4:10 pm,6:10 pm, M
+FA,344,Figure Drawing, Elaine Astrea  Powell-Ascroft, 12:55 pm,2:55 pm, R
+FA,345,Sculpture II: Stone Carving, Mylan   Rakich, 6:10 pm,8:10 pm, W
+FA,346,Printmaking, Elaine Astrea  Powell-Ascroft, 4:10 pm,6:10 pm, R
+FA,346,Printmaking, Elaine Astrea  Powell-Ascroft, 9:45 am,11:45 am, R
+FA,351,Art History II, Lance Patrick  Pynes, 11:20 am,12:45 pm, TR
+FA,415,Black and White Photography III, Patricia L  Bognar, 2:30 pm,5:30 pm, R
+FA,418,Digital Photography II, Shawn K  Records, 6:20 pm,8:20 pm, M
+FRN,102,Elementary French, Trudie M  Booth, 12:30 pm,1:25 pm, MWF
+FRN,102,Elementary French, Trudie M  Booth, 12:55 pm,2:20 pm, TR
+FRN,181,Maximizing Study Abroad, Jeffrey S  White, 8:10 am,9:05 am, R
+FRN,202,Intermediate French, Trudie M  Booth, 1:35 pm,2:30 pm, MWF
+FRN,302,Advanced French Conversation and Composition, Trudie M  Booth, 2:40 pm,3:35 pm, MWF
+FRN,491,Introduction to Business French, Marianna L  Shagalova, 9:45 am,11:10 am, TR
+FRN,497I,French Internship, Jennifer   Hensley, 5:45 pm,6:55 pm, M
+FRN,497I,French Internship, Jeffrey S  White, 5:45 pm,6:55 pm, W
+GRM,102,Elementary German, Dana Lynne  Capage, 11:25 am,12:20 pm, MWF
+GRM,181,Maximizing Study Abroad, Jeffrey S  White, 8:10 am,9:05 am, R
+GRM,202,Intermediate German, Alexandra M  Hill, 8:10 am,9:05 am, MWF
+GRM,207,Accelerated Intermediate German, Hans   Gabriel, 9:15 am,10:10 am, MWF
+GRM,302,German Conversation and Composition, Jeffrey S  White, 4:10 pm,5:35 pm, MW
+GRM,354,Introduction to Literary and Cultural Analysis, Alexandra M  Hill, 11:20 am,12:45 pm, TR
+GRM,407,Text and Image in the First World War, Laura Ann  McLary, 2:30 pm,3:55 pm, TR
+GRM,497I,German Internship, Jennifer   Hensley, 5:45 pm,6:55 pm, M
+GRM,497I,German Internship, Jeffrey S  White, 5:45 pm,6:55 pm, W
+HPE,120,Beginning Taekwondo/Hapkido, Brian James  Pike, 10:00 am,10:50 am, TR
+HPE,191,Intro to Filipino Martial Arts, Brian James  Pike, 11:00 am,11:50 am, TR
+HPE,191,Jeet Kune Do, Brian James  Pike, 1:00 pm,1:50 pm, TR
+HST,210,United States: Early America, Arthur F  Wheeler, 1:35 pm,2:30 pm, MWF
+HST,210,United States: Early America, Mark A  Eifler, 12:55 pm,2:20 pm, TR
+HST,211,US: Modern America, Christopher Porter  Foss, 8:10 am,9:35 am, TR
+HST,211,US: Modern America, Christin Lee  Hancock, 2:30 pm,3:55 pm, TR
+HST,211,US: Modern America, Jennifer Yi-Heng  Fang, 9:45 am,11:10 am, TR
+HST,220,Foundations of Western Civilization, Bradley Raymond  Franco, 9:15 am,10:10 am, MWF
+HST,220,Foundations of Western Civilization, Bradley Raymond  Franco, 10:20 am,11:15 am, MWF
+HST,314,American Expansion, Mark A  Eifler, 4:10 pm,5:35 pm, TR
+HST,322,American Protest and Reform, Christin Lee  Hancock, 9:45 am,11:10 am, TR
+HST,333,Medieval Europe, Bradley Raymond  Franco, 2:40 pm,4:00 pm, MW
+HST,354,History of Modern Cuba, Blair DeWitt  Woodard, 4:10 pm,6:55 pm, T
+HST,357,Environmental History of the Americas and the World, Blair DeWitt  Woodard, 11:20 am,12:45 pm, TR
+HST,358,Disease and Medicine in World History, Brian J  Els, 11:25 am,12:20 pm, MWF
+HST,358,Disease and Medicine in World History, Brian J  Els, 12:30 pm,1:25 pm, MWF
+HST,365,History of the Second World War, Arthur F  Wheeler, 7:10 pm,9:55 pm, M
+HST,391,British Empire 1815-1997, Arthur F  Wheeler, 7:10 pm,9:55 pm, T
+HST,391,History Archaeology Heritage, Mario   Ramirez Galan, 5:45 pm,7:05 pm, MW
+HST,430,Seminar in European History, Brian J  Els, 2:40 pm,4:00 pm, MW
+HST,450,Seminar in Non-Western History, Blair DeWitt  Woodard, 12:55 pm,2:20 pm, TR
+HST,470,The Practice of History, Mark A  Eifler, 4:10 pm,5:35 pm, MW
+HON,201,Inventing the Future, John C  Orr, 6:00 pm,7:00 pm, W
+HON,391,Archaeology of the Crusades, Mario   Ramirez Galan, 4:00 pm,5:00 pm, M
+HON,391,The Art of Architecture, Elise Marie  Moentmann, 6:00 pm,7:00 pm, T
+INV,225,Introduction to Innovation, Edmund Jerome  Stilwell, 2:30 pm,3:30 pm, R
+LDR,225,Foundations of Leadership, Stephanie A  Salomone, 11:25 am,12:20 pm, M
+LDR,225,Foundations of Leadership, Maureen E  Cullen, 7:10 pm,8:05 pm, M
+LDR,225,Foundations of Leadership, Matthew Terrence  Daily, 5:00 pm,5:55 pm, T
+LDR,225,Foundations of Leadership, Andrew M  Downs, 1:35 pm,2:30 pm, W
+LDR,225,Foundations of Leadership, Gina   Loschiavo, 4:30 pm,5:25 pm, W
+LDR,391,Global Perspectives on Environmental Leadership, David Thomas  Houglum, 4:10 pm,5:35 pm, W
+LDR,392,Developing Academic Skills Leadership, Thomas   Giumenta, 7:10 pm,9:55 pm, M
+LDR,392,Social Justice Leadership, Irene Eneid  Routte, 10:20 am,11:15 am, W
+LDR,392,Sojourner Scholars Program, Eduardo R  Contreras, 9:15 am,10:10 am, F
+LDR,425,Applied Leadership Reflection, Jeromy Alan  Koffler, 7:10 pm,8:05 pm, M
+LDR,425,Applied Leadership Reflection, David Thomas  Houglum, 4:10 pm,5:05 pm, T
+MTH,106,Mathematics for Elementary Teachers, Lisa   Wilson, 8:10 am,9:05 am, MWF
+MTH,106,Mathematics for Elementary Teachers, Lisa   Wilson, 9:15 am,10:10 am, MWF
+MTH,112,Precalculus II, Jason Mark A  Dolor, 11:25 am,12:20 pm, MWF
+MTH,121,Calculus for Business and Social Science, Gary Stephen  Crook, 8:10 am,9:05 am, MWF
+MTH,121,Calculus for Business and Social Science, Gary Stephen  Crook, 9:15 am,10:10 am, MWF
+MTH,141,Finite Mathematics, Stephanie A  Salomone, 9:15 am,10:10 am, MWF
+MTH,141,Finite Mathematics, Peter King  Williams, 8:10 am,9:05 am, MWF
+MTH,141,Finite Mathematics, Jason Mark A  Dolor, 10:20 am,11:15 am, MWF
+MTH,141,Finite Mathematics, Rita K  Wanner Luetkenhaus, 12:30 pm,1:25 pm, MWF
+MTH,161,Elementary Statistics, Christina Jo  Stauffer, 9:15 am,10:10 am, MWF
+MTH,161,Elementary Statistics, Christina Jo  Stauffer, 10:20 am,11:15 am, MWF
+MTH,161,Elementary Statistics, Matthew Jarred  McQuesten, 12:30 pm,1:25 pm, MWF
+MTH,161,Elementary Statistics, Matthew Jarred  McQuesten, 2:40 pm,3:35 pm, MWF
+MTH,161,Elementary Statistics, Michael J  Gutmann, 4:10 pm,5:35 pm, MW
+MTH,161,Elementary Statistics, Matthew Jarred  McQuesten, 11:20 am,12:45 pm, TR
+MTH,161,Elementary Statistics, Christina Jo  Stauffer, 9:45 am,11:10 am, TR
+MTH,161,Elementary Statistics, Christina Jo  Stauffer, 12:55 pm,2:20 pm, TR
+MTH,161,Elementary Statistics, Matthew Jarred  McQuesten, 2:30 pm,3:55 pm, TR
+MTH,161,Elementary Statistics, Pardis   Navi, 4:10 pm,5:35 pm, TR
+MTH,161,Elementary Statistics, Sharron Cay  Selman, 8:10 am,9:05 am, MWF
+MTH,161,Elementary Statistics, Sharron Cay  Selman, 9:15 am,10:10 am, MWF
+MTH,161,Elementary Statistics, Pardis   Navi, 2:30 pm,3:55 pm, TR
+MTH,201,Calculus I, Hannah L.  Highlander, 10:20 am,11:15 am, MWF
+MTH,201,Calculus I, Nermine   Ramadan, 8:10 am,9:05 am, MWF
+MTH,201,Calculus I, Hannah L.  Highlander, 1:35 pm,2:30 pm, MWF
+MTH,201,Calculus I, Carolyn Susanne  James, 1:35 pm,2:30 pm, MWF
+MTH,201,Calculus I, Carolyn Susanne  James, 10:20 am,11:15 am, MWF
+MTH,202,Calculus II, Nermine   Ramadan, 9:15 am,10:10 am, MWF
+MTH,202,Calculus II, Christopher C  Hallstrom, 10:20 am,11:15 am, MWF
+MTH,202,Calculus II, Christopher C  Hallstrom, 2:40 pm,3:35 pm, MWF
+MTH,202,Calculus II, Gregory Scott  Tyler, 8:10 am,9:05 am, MWF
+MTH,202,Calculus II, Jakob J  Kotas, 12:30 pm,1:25 pm, MWF
+MTH,202,Calculus II, Nermine   Ramadan, 2:40 pm,3:35 pm, MWF
+MTH,301,Vector Calculus, Valerie J  Peterson, 10:20 am,11:15 am, MWF
+MTH,301,Vector Calculus, Hans   Nordstrom, 11:25 am,12:20 pm, MWF
+MTH,301,Vector Calculus, Aaron D  Wootton, 2:40 pm,3:35 pm, MWF
+MTH,301,Vector Calculus, Valerie J  Peterson, 2:40 pm,3:35 pm, MWF
+MTH,304,Complex Variables, Christopher R  Lee, 12:55 pm,2:20 pm, TR
+MTH,311,Discrete Structures, Eli   Goldwyn, 1:35 pm,2:30 pm, MWF
+MTH,311,Discrete Structures, Eli   Goldwyn, 12:30 pm,1:25 pm, MWF
+MTH,321,Ordinary Differential Equations, Jakob J  Kotas, 9:45 am,11:10 am, TR
+MTH,321,Ordinary Differential Equations, Herbert Antonio  Medina, 8:10 am,9:35 am, TR
+MTH,321,Ordinary Differential Equations, Hannah L.  Highlander, 2:30 pm,3:55 pm, TR
+MTH,341,Introduction to Linear Algebra, Charles F  McCoy, 10:20 am,11:15 am, MWF
+MTH,341,Introduction to Linear Algebra, Charles F  McCoy, 1:35 pm,2:30 pm, MWF
+MTH,345,Number Theory, Hans   Nordstrom, 2:40 pm,3:35 pm, MWF
+MTH,361,Applied Statistics I, Gregory M  Hill, 11:25 am,12:20 pm, MWF
+MTH,361,Applied Statistics I, Gregory M  Hill, 12:30 pm,1:25 pm, MWF
+MTH,441,Modern Algebra I, Aaron D  Wootton, 12:30 pm,1:25 pm, MWF
+MTH,451,Numerical Methods in Computing I, Heather Elizabeth  Dillon, 9:45 am,11:10 am, TR
+MTH,491,Topics in Algebra & Geometry, Christopher R  Lee, 9:45 am,11:10 am, TR
+MTH,493,Research in Math BIO II, Eli   Goldwyn, 9:15 am,10:10 am, MWF
+ME,222,Engineering Graphics, Christopher James  Hainley, 12:30 pm,1:25 pm, MW
+ME,222,Engineering Graphics, Gregg   Meyer, 4:10 pm,5:35 pm, TR
+ME,222,Engineering Graphics, Christopher James  Hainley, 2:40 pm,3:35 pm, MW
+ME,312,Mechanics of Fluids II, V Dakshina  Murty, 8:10 am,9:05 am, WF
+ME,312,Mechanics of Fluids II, V Dakshina  Murty, 9:15 am,10:10 am, WF
+ME,328,Machine Design, Kenneth E  Lulay, 12:30 pm,1:25 pm, MWF
+ME,328,Machine Design, Kenneth E  Lulay, 1:35 pm,2:30 pm, MWF
+ME,328H,Machine Design (Honors), Kenneth E  Lulay, 12:30 pm,1:25 pm, MWF
+ME,328H,Machine Design (Honors), Kenneth E  Lulay, 12:30 pm,1:25 pm, MWF
+ME,332,Applied Thermodynamics, Jordan Thomas  Farina, 8:10 am,9:05 am, WF
+ME,332,Applied Thermodynamics, Jordan Thomas  Farina, 9:15 am,10:10 am, WF
+ME,336,Heat Transfer, Jordan Thomas  Farina, 9:45 am,11:10 am, TR
+ME,336,Heat Transfer, Heather Elizabeth  Dillon, 11:20 am,12:45 pm, TR
+ME,374,Fluids Laboratory, V Dakshina  Murty, 2:40 pm,4:40 pm, M
+ME,374,Fluids Laboratory, Nikolene Anne  Schulz, 2:40 pm,4:40 pm, T
+ME,374,Fluids Laboratory, V Dakshina  Murty, 11:25 am,1:25 pm, M
+ME,374,Fluids Laboratory, V Dakshina  Murty, 2:40 pm,4:40 pm, W
+ME,376,Thermodynamics Laboratory, Shazib Z  Vijlee, 5:00 pm,7:00 pm, M
+ME,376,Thermodynamics Laboratory, Shazib Z  Vijlee, 5:00 pm,7:10 pm, W
+ME,434,Energy Efficiency in Buildings, Megan Michele  Tosh, 4:10 pm,5:35 pm, TR
+ME,453,Mechanical Vibrations, Hamid   Rad, 7:10 pm,9:55 pm, R
+ME,484,Mechanical Engineering Capstone Project II, Jennifer Elaine  Symons, 2:40 pm,5:40 pm, F
+ME,484,Mechanical Engineering Capstone Project II, Timothy A  Doughty, 2:40 pm,5:40 pm, F
+ME,484,Mechanical Engineering Capstone Project II, Jennifer Elaine  Symons, 2:40 pm,5:40 pm, F
+ME,484H,Mechanical Engineering Capstone II (Honors), Timothy A  Doughty, 2:40 pm,5:40 pm, F
+ME,491,Aircraft Dynamics and Control, Christina M  Ivler, 4:10 pm,5:35 pm, TR
+ME,534,Energy Efficiency in Buildings, Megan Michele  Tosh, 4:10 pm,5:35 pm, TR
+ME,553,Mechanical Vibrations, Hamid   Rad, 7:10 pm,9:55 pm, R
+ME,591,Aircraft Dynamics and Control, Christina M  Ivler, 4:10 pm,5:35 pm, TR
+MSL,102,Foundations of Agile and Adaptive Leadership, Jessy L.  Claerhout, 4:10 pm,5:00 pm, T
+MSL,122,Leadership Laboratory, Jessy L.  Claerhout, 4:10 pm,6:30 pm, R
+MSL,132,Basic Course Physical Fitness, Jessy L.  Claerhout, 6:00 am,7:30 am, MWF
+MSL,202,Army Doctrine and Team Development, Joshua T  Motes, 4:10 pm,6:00 pm, T
+MSL,222,Leadership Laboratory, Joshua T  Motes, 4:10 pm,6:30 pm, R
+MSL,232,Basic Course Physical Fitness, Joshua T  Motes, 6:00 am,7:30 am, MWF
+MSL,302,Applied Leadership in Small Unit Operations, Glenn L  Darr, 4:10 pm,6:50 pm, T
+MSL,322,Advanced Leadership Laboratory, Glenn L  Darr, 4:10 pm,6:30 pm, R
+MSL,332,Advanced Course Physical Fitness, Glenn L  Darr, 6:00 am,7:30 am, MWF
+MSL,402,Company Grade Leadership, Kiernan Patrick  White, 4:10 pm,6:50 pm, T
+MSL,422,Advanced Leadership Laboratory, Kiernan Patrick  White, 4:10 pm,6:30 pm, R
+MSL,432,Advanced Course Physical Fitness, Kiernan Patrick  White, 6:00 am,7:30 am, MWF
+MUS,001,Performance Attendance, Nicole H. L.  Hanig, 12:30 pm,1:30 pm, W
+MUS,102,Music Theory II, David Michael  De Lyser, 11:25 am,12:20 pm, MWF
+MUS,104,Aural Skills II, Jennifer Lynn  Wanner, 9:45 am,11:10 am, TR
+MUS,130,Class Piano I, Tracey Dean  Edson, 9:15 am,10:10 am, MW
+MUS,202,Music Theory IV, Patrick C  Murphy, 9:15 am,10:10 am, MWF
+MUS,230,Class Piano II, Tracey Dean  Edson, 11:25 am,12:20 pm, MW
+MUS,231,Piano Proficiency II, Tracey Dean  Edson, 10:20 am,11:15 am, MW
+MUS,236,Beginning Guitar, Jeffrey Carter  Ashton, 6:10 pm,7:05 pm, R
+MUS,236,Beginning Guitar, Jeffrey Carter  Ashton, 7:10 pm,8:05 pm, R
+MUS,243,Wind Symphony, Patrick C  Murphy, 4:10 pm,5:35 pm, MW
+MUS,244,University of Portland Singers, David Michael  De Lyser, 1:35 pm,2:30 pm, MWF
+MUS,245,University Orchestra, Adam   LaMotte, 7:00 pm,9:30 pm, T
+MUS,246,Chapel Music Ensemble, Maureen Kuffner  Briare, 4:10 pm,5:35 pm, W
+MUS,253,University Jazz Ensemble, Don   Norton, 4:10 pm,5:35 pm, TR
+MUS,302,Music History II, Lucy C  Shanno, 11:20 am,12:45 pm, TR
+MUS,303,Introduction to Classical Music, Lucy C  Shanno, 8:10 am,9:35 am, TR
+MUS,309,World Music, Julia Lynn  Banzi, 9:45 am,11:10 am, TR
+MUS,310,Fundamentals of Music Technology, Harold   Logan, 2:30 pm,3:55 pm, TR
+MUS,341,Fundamentals of Music Education, Patrick C  Murphy, 11:00 am,12:45 pm, R
+MUS,411,History of Rock and Roll, Don   Norton, 12:55 pm,2:20 pm, TR
+MUS,412,History of Musical Theatre, Mead K  Hunter, 1:35 pm,2:30 pm, MWF
+MUS,443,Wind Symphony, Patrick C  Murphy, 4:10 pm,5:35 pm, MW
+MUS,444,University Singers, David Michael  De Lyser, 1:35 pm,2:30 pm, MWF
+MUS,445,University Orchestra, Adam   LaMotte, 7:00 pm,9:30 pm, T
+MUS,446,Chapel Music Ensemble, Maureen Kuffner  Briare, 4:10 pm,5:35 pm, W
+MUS,453,University Jazz Ensemble, Don   Norton, 4:10 pm,5:35 pm, TR
+NRS,072,Lab: Introduction to Professional Nursing Practice, Michelle Elizabeth  King, 8:30 am,11:00 am, M
+NRS,072,Lab: Introduction to Professional Nursing Practice, Michelle Elizabeth  King, 12:30 pm,3:00 pm, M
+NRS,072,Lab: Introduction to Professional Nursing Practice, Emma Christine  Smith, 3:30 pm,6:00 pm, M
+NRS,072,Lab: Introduction to Professional Nursing Practice, Emma Christine  Smith, 8:30 am,11:00 am, T
+NRS,116,Health and Wellness Across the Lifespan I, Pamela Joy  Potter, 8:10 am,9:35 am, TR
+NRS,116,Health and Wellness Across the Lifespan I, Pamela Joy  Potter, 9:45 am,11:10 am, TR
+NRS,116,Health and Wellness Across the Lifespan I, Isabelle Lacy  Soule, 8:10 am,9:05 am, MWF
+NRS,116,Health and Wellness Across the Lifespan I, Isabelle Lacy  Soule, 9:15 am,10:10 am, MWF
+NRS,116,Health and Wellness Across the Lifespan I, Isabelle Lacy  Soule, 12:30 pm,1:25 pm, MWF
+NRS,116,Health and Wellness Across the Lifespan I, Bradley Scott  Huit, 4:10 pm,5:35 pm, MW
+NRS,116,Health and Wellness Across the Lifespan I, Gordon Scott  Williamson, 2:40 pm,4:00 pm, MW
+NRS,202,Nutrition, Karen M  Kessi, 12:55 pm,2:20 pm, TR
+NRS,202,Nutrition, Tanya Rochelle  Bachman, 4:10 pm,6:55 pm, W
+NRS,203,Life Processes Across the Lifespan, Beverly Kaye  Wilson-Anderson, 2:30 pm,3:55 pm, TR
+NRS,291,Mind Body Energy Perspectives, Pamela Joy  Potter, 4:10 pm,6:55 pm, W
+NRS,301,Nursing Theory and Knowing: Concepts and Issues, Laura C  Mood, 10:00 am,11:50 am, R
+NRS,301,Nursing Theory and Knowing: Concepts and Issues, Laura C  Mood, 1:40 pm,3:30 pm, W
+NRS,310,Multicultural Population Health Promotion, Layla Jamil  Garrigues, 10:00 am,11:50 am, W
+NRS,310,Multicultural Population Health Promotion, Layla Jamil  Garrigues, 2:30 pm,4:20 pm, T
+NRS,311,Communication in Nursing, Laura C  Mood, 2:00 pm,3:50 pm, T
+NRS,311,Communication in Nursing, Laura C  Mood, 8:00 am,9:50 am, R
+NRS,312,Introduction to Professional Nursing Practice, Holly Jean  Simpson, 1:30 pm,3:20 pm, MW
+NRS,312,Introduction to Professional Nursing Practice, Anjanette M  Raber, 12:00 pm,1:50 pm, TR
+NRS,313,Pathophysiology, Lorretta C  Krautscheid, 12:00 pm,1:25 pm, TR
+NRS,313,Pathophysiology, Holly Jean  Simpson, 10:00 am,11:25 am, MW
+NRS,315,Pharmacotherapeutics, Halina Zawadzki  Wyss, 12:00 pm,2:45 pm, F
+NRS,315,Pharmacotherapeutics, Briana Marie  Rotter, 8:30 am,11:15 am, M
+NRS,315,Pharmacotherapeutics, Halina Zawadzki  Wyss, 8:30 am,11:15 am, T
+NRS,315,Pharmacotherapeutics, Halina Zawadzki  Wyss, 1:00 pm,3:45 pm, W
+NRS,321,Psychiatric Mental Health Nursing, Sally Stephanie  Rothacker-Peyton, 8:00 am,9:50 am, F
+NRS,321,Psychiatric Mental Health Nursing, Sally Stephanie  Rothacker-Peyton, 12:00 pm,1:50 pm, F
+NRS,321,Psychiatric Mental Health Nursing, Sally Stephanie  Rothacker-Peyton, 1:40 pm,3:30 pm, M
+NRS,321,Psychiatric Mental Health Nursing, Sally Stephanie  Rothacker-Peyton, 10:00 am,11:50 am, T
+NRS,322,Adult and Elder Health I, Lori Ann  Chorpenning, 8:00 am,10:45 am, R
+NRS,322,Adult and Elder Health I, Lori Ann  Chorpenning, 8:15 am,11:00 am, F
+NRS,322,Adult and Elder Health I, Nicole Elaine  Auxier, 12:30 pm,3:15 pm, T
+NRS,322,Adult and Elder Health I, Nicole Elaine  Auxier, 8:15 am,11:00 am, M
+NRS,361,Clinical: Psychiatric Mental Health Nursing, Grace Arden Kwan  Wick, 7:00 am,5:00 pm, TW
+NRS,361,Clinical: Psychiatric Mental Health Nursing, Timothy Franklin  Winslea, 2:00 pm,11:30 pm, TW
+NRS,361,Clinical: Psychiatric Mental Health Nursing, Paulette   Adlard, 7:00 am,5:00 pm, RF
+NRS,361,Clinical: Psychiatric Mental Health Nursing, Beth L  Holloway, 7:00 am,7:30 pm, TW
+NRS,361,Clinical: Psychiatric Mental Health Nursing, Halley Sybil Sharee Aladore  Frishkorn, 7:00 am,5:00 pm, RF
+NRS,361,Clinical: Psychiatric Mental Health Nursing, Nancy Davis  Hodges, 7:00 am,5:00 pm, TW
+NRS,361,Clinical: Psychiatric Mental Health Nursing, Patricia L  Zylawy, 7:00 am,5:00 pm, RF
+NRS,361,Clinical: Psychiatric Mental Health Nursing, Joetta Mae  Moon, 7:00 am,5:00 pm, RF
+NRS,361,Clinical: Psychiatric Mental Health Nursing, Marlena K  Buen, 7:00 am,5:00 pm, TW
+NRS,361,Clinical: Psychiatric Mental Health Nursing, Rebecca Ann  Mickel, 7:00 am,5:00 pm, TW
+NRS,361,Clinical: Psychiatric Mental Health Nursing, Rebecca Ann  Mickel, 7:00 am,5:00 pm, RF
+NRS,361,Clinical: Psychiatric Mental Health Nursing, Karen Alice  Steinke, 7:00 am,5:00 pm, RF
+NRS,361,Clinical: Psychiatric Mental Health Nursing, Grace Arden Kwan  Wick, 7:00 am,5:00 pm, RF
+NRS,361,Clinical: Psychiatric Mental Health Nursing, Nancy Davis  Hodges, 7:00 am,5:00 pm, TW
+NRS,361,Clinical: Psychiatric Mental Health Nursing, Timothy Franklin  Winslea, 2:00 pm,11:30 pm, TW
+NRS,361,Clinical: Psychiatric Mental Health Nursing, Carlyn Day  Chamberlain, 7:00 am,5:00 pm, RF
+NRS,361,Clinical: Psychiatric Mental Health Nursing, Beth L  Holloway, 7:00 am,7:30 pm, TW
+NRS,361,Clinical: Psychiatric Mental Health Nursing, Halley Sybil Sharee Aladore  Frishkorn, 7:00 am,5:00 pm, RF
+NRS,361,Clinical: Psychiatric Mental Health Nursing, Patricia L  Zylawy, 7:00 am,5:00 pm, RF
+NRS,361,Clinical: Psychiatric Mental Health Nursing, Joetta Mae  Moon, 7:00 am,5:00 pm, RF
+NRS,361,Clinical: Psychiatric Mental Health Nursing, Marlena K  Buen, 7:00 am,5:00 pm, TW
+NRS,361,Clinical: Psychiatric Mental Health Nursing, Rebecca Ann  Mickel, 7:00 am,5:00 pm, TW
+NRS,361,Clinical: Psychiatric Mental Health Nursing, Rebecca Ann  Mickel, 7:00 am,5:00 pm, RF
+NRS,361,Clinical: Psychiatric Mental Health Nursing, Karen Alice  Steinke, 7:00 am,5:00 pm, RF
+NRS,361,Clinical: Psychiatric Mental Health Nursing, Grace Arden Kwan  Wick, 7:00 am,5:00 pm, RF
+NRS,361,Clinical: Psychiatric Mental Health Nursing, Joetta Mae  Moon, 7:00 am,5:00 pm, TW
+NRS,362,Clinical: Physiological Nursing, Nikki   Warthen, 7:00 am,5:00 pm, TW
+NRS,362,Clinical: Physiological Nursing, Mary R  Stevenson, 7:00 am,5:00 pm, RF
+NRS,362,Clinical: Physiological Nursing, Mary R  Stevenson, 7:00 am,5:00 pm, RF
+NRS,362,Clinical: Physiological Nursing, Wendy L  Votroubek, 6:00 am,4:00 pm, TW
+NRS,362,Clinical: Physiological Nursing, Deana   Lenihan, 6:00 am,4:00 pm, RF
+NRS,362,Clinical: Physiological Nursing, Dixie N  Hofer, 6:00 am,4:00 pm, TW
+NRS,362,Clinical: Physiological Nursing, Lori Ann  Chorpenning, 7:00 am,5:00 pm, TW
+NRS,362,Clinical: Physiological Nursing, Nikki   Warthen, 7:00 am,5:00 pm, RF
+NRS,362,Clinical: Physiological Nursing, Nikki   Warthen, 7:00 am,5:00 pm, RF
+NRS,362,Clinical: Physiological Nursing, Laura Katherine  Blackhurst, 7:00 am,5:00 pm, TW
+NRS,362,Clinical: Physiological Nursing, Laura Katherine  Blackhurst, 7:00 am,5:00 pm, TW
+NRS,362,Clinical: Physiological Nursing, Holly Jean  Simpson, 1:00 pm,10:30 pm, RF
+NRS,362,Clinical: Physiological Nursing, Lisa Baongan  Le-Vaughan, 7:00 am,5:00 pm, RF
+NRS,362,Clinical: Physiological Nursing, Nikki   Warthen, 7:00 am,5:00 pm, RF
+NRS,362,Clinical: Physiological Nursing, Nikki   Warthen, 7:00 am,5:00 pm, TW
+NRS,362,Clinical: Physiological Nursing, Mary R  Stevenson, 7:00 am,5:00 pm, RF
+NRS,362,Clinical: Physiological Nursing, Nikki   Warthen, 7:00 am,5:00 pm, TW
+NRS,362,Clinical: Physiological Nursing, Mary R  Stevenson, 7:00 am,5:00 pm, RF
+NRS,362,Clinical: Physiological Nursing, Wendy L  Votroubek, 6:00 am,4:00 pm, TW
+NRS,362,Clinical: Physiological Nursing, Deana   Lenihan, 6:00 am,4:00 pm, RF
+NRS,362,Clinical: Physiological Nursing, Dixie N  Hofer, 6:00 am,4:00 pm, TW
+NRS,362,Clinical: Physiological Nursing, Lori Ann  Chorpenning, 7:00 am,5:00 pm, TW
+NRS,362,Clinical: Physiological Nursing, Nikki   Warthen, 7:00 am,5:00 pm, RF
+NRS,362,Clinical: Physiological Nursing, Nikki   Warthen, 7:00 am,5:00 pm, RF
+NRS,362,Clinical: Physiological Nursing, Laura Katherine  Blackhurst, 7:00 am,5:00 pm, TW
+NRS,362,Clinical: Physiological Nursing, Laura Katherine  Blackhurst, 7:00 am,5:00 pm, TW
+NRS,362,Clinical: Physiological Nursing, Molly   Sperry, 1:00 pm,10:30 pm, RF
+NRS,362,Clinical: Physiological Nursing, Lisa Baongan  Le-Vaughan, 7:00 am,5:00 pm, RF
+NRS,362,Clinical: Physiological Nursing, Nikki   Warthen, 7:00 am,5:00 pm, RF
+NRS,392,Applied Leadership in Holistic Wellness, Janet M  Banks, 7:00 pm,8:00 pm, M
+NRS,418,Nursing of Families, September Theresa  Nelson, 1:00 pm,2:50 pm, F
+NRS,418,Nursing of Families, Janet M  Banks, 3:00 pm,4:50 pm, T
+NRS,418,Nursing of Families, Amber Lea  Vermeesch, 10:30 am,12:20 pm, W
+NRS,421,Adult and Elder Health II, Laura Katherine  Blackhurst, 9:00 am,11:45 am, F
+NRS,422,Maternal-Child Nursing, Janet M  Banks, 12:30 pm,2:20 pm, TW
+NRS,422,Maternal-Child Nursing, Theresa Ann  Duda, 8:00 am,9:50 am, TW
+NRS,424,Applied Population Health Nursing in a Multicultural Context, Kala A  Mayer, 8:00 am,10:45 am, R
+NRS,424,Applied Population Health Nursing in a Multicultural Context, Kala A  Mayer, 8:30 am,11:15 am, M
+NRS,424,Applied Population Health Nursing in a Multicultural Context, Layla Jamil  Garrigues, 1:30 pm,4:15 pm, M
+NRS,429,Leadership in Professional Nursing, Kelly Kareen  McCoy, 2:00 pm,4:45 pm, R
+NRS,429,Leadership in Professional Nursing, Joan H  Caley, 2:00 pm,4:45 pm, R
+NRS,429,Leadership in Professional Nursing, Kelly Ann  Fox, 2:00 pm,4:45 pm, R
+NRS,429,Leadership in Professional Nursing, September Theresa  Nelson, 2:00 pm,4:45 pm, R
+NRS,436,Preparation for Professional Practice, Beverly Kaye  Wilson-Anderson, 11:00 am,12:50 pm, R
+NRS,436,Preparation for Professional Practice, Beverly Kaye  Wilson-Anderson, 11:00 am,12:50 pm, R
+NRS,436,Preparation for Professional Practice, Beverly Kaye  Wilson-Anderson, 9:00 am,10:50 am, R
+NRS,436,Preparation for Professional Practice, September Theresa  Nelson, 11:00 am,12:50 pm, R
+NRS,461,Clinical: Advanced Physiological Nursing, Karen Alice  Steinke, 7:00 am,7:30 pm, TW
+NRS,461,Clinical: Advanced Physiological Nursing, Lisa Baongan  Le-Vaughan, 7:00 am,5:00 pm, TW
+NRS,461,Clinical: Advanced Physiological Nursing, Stephanie Anne  Meyer, 7:00 am,5:00 pm, TW
+NRS,461,Clinical: Advanced Physiological Nursing, Diana Lee  Anderson, 7:00 am,5:00 pm, TW
+NRS,461,Clinical: Advanced Physiological Nursing, Karen Alice  Steinke, 7:00 am,7:30 pm, TW
+NRS,461,Clinical: Advanced Physiological Nursing, Stephanie Anne  Meyer, 7:00 am,5:00 pm, TW
+NRS,461,Clinical: Advanced Physiological Nursing, Diana Lee  Anderson, 7:00 am,5:00 pm, TW
+NRS,462,Clinical: Maternal-Child Nursing, Amber Kay  Baker, 6:30 am,7:00 pm, FS
+NRS,462,Clinical: Maternal-Child Nursing, Hannah LeeAnn  Irvine, 7:00 am,7:30 pm, RF
+NRS,462,Clinical: Maternal-Child Nursing, Kim Christine  Vermilya, 7:00 am,7:30 pm, R
+NRS,462,Clinical: Maternal-Child Nursing, Frances J.  Simmons, 6:30 am,7:00 pm, FS
+NRS,462,Clinical: Maternal-Child Nursing, Theresa Ann  Duda, 7:00 am,5:00 pm, RF
+NRS,462,Clinical: Maternal-Child Nursing, Gordon Scott  Williamson, 1:00 pm,11:30 pm, RF
+NRS,462,Clinical: Maternal-Child Nursing, Jill   Walsh, 6:30 am,7:00 pm, FS
+NRS,462,Clinical: Maternal-Child Nursing, Stefanie Marie  Dieffenbach, 7:00 am,7:30 pm, RF
+NRS,462,Clinical: Maternal-Child Nursing, Sherry Lynn  Hutton, 7:00 am,7:30 pm, FS
+NRS,462,Clinical: Maternal-Child Nursing, Frances J.  Simmons, 6:30 am,7:00 pm, FS
+NRS,462,Clinical: Maternal-Child Nursing, Gordon Scott  Williamson, 1:00 pm,11:30 pm, RF
+NRS,464,Clinical: Applied Population Health Nursing in a Multicultural Context, Joan H  Caley, 8:00 am,8:00 pm, TW
+NRS,464,Clinical: Applied Population Health Nursing in a Multicultural Context, Linda J  Smith, 8:00 am,8:00 pm, RF
+NRS,464,Clinical: Applied Population Health Nursing in a Multicultural Context, Frances J.  Simmons, 7:00 am,5:00 pm, TW
+NRS,464,Clinical: Applied Population Health Nursing in a Multicultural Context, Elizabeth Ann  Baynes, 7:00 am,5:00 pm, RF
+NRS,464,Clinical: Applied Population Health Nursing in a Multicultural Context, Mollie Ekern  Swift, 8:00 am,8:00 pm, RF
+NRS,464,Clinical: Applied Population Health Nursing in a Multicultural Context, Susan Lee  Chauvie, 8:00 am,8:00 pm, RF
+NRS,464,Clinical: Applied Population Health Nursing in a Multicultural Context, Margaret   McComb, 8:00 am,8:00 pm, TW
+NRS,464,Clinical: Applied Population Health Nursing in a Multicultural Context, Margaret   McComb, 8:00 am,8:00 pm, RF
+NRS,464,Clinical: Applied Population Health Nursing in a Multicultural Context, Joan H  Caley, 8:00 am,8:00 pm, TW
+NRS,464,Clinical: Applied Population Health Nursing in a Multicultural Context, Linda J  Smith, 8:00 am,8:00 pm, RF
+NRS,464,Clinical: Applied Population Health Nursing in a Multicultural Context, Frances J.  Simmons, 7:00 am,5:00 pm, TW
+NRS,464,Clinical: Applied Population Health Nursing in a Multicultural Context, Elizabeth Ann  Baynes, 7:00 am,5:00 pm, RF
+NRS,464,Clinical: Applied Population Health Nursing in a Multicultural Context, Mollie Ekern  Swift, 8:00 am,8:00 pm, RF
+NRS,464,Clinical: Applied Population Health Nursing in a Multicultural Context, Susan Lee  Chauvie, 8:00 am,8:00 pm, RF
+NRS,464,Clinical: Applied Population Health Nursing in a Multicultural Context, Margaret   McComb, 8:00 am,8:00 pm, TW
+NRS,464,Clinical: Applied Population Health Nursing in a Multicultural Context, Margaret   McComb, 8:00 am,8:00 pm, RF
+NRS,606,Quality Improvement Processes of Practice Improvement, Joanne   Olsen, 3:45 pm,6:45 pm, SU
+NRS,607,Advanced Pathophysiology and Genetics, Luis Fernando  Carrillo, 8:30 am,12:30 pm, SU
+NRS,650,Informatics in a Complex Healthcare Environment, Joanne   Olsen, 1:30 pm,3:30 pm, SU
+NRS,661,DNP Scholarly Project II, Patricia Helen  Cox, 8:15 am,10:15 am, U
+PHL,150,Introductory Philosophy, Dylan   Dodd, 8:10 am,9:05 am, MWF
+PHL,150,Introductory Philosophy, Jessica E  Logue, 9:15 am,10:10 am, MWF
+PHL,150,Introductory Philosophy, Jamie   Hardy, 10:20 am,11:15 am, MWF
+PHL,150,Introductory Philosophy, Jessica E  Logue, 11:25 am,12:20 pm, MWF
+PHL,150,Introductory Philosophy, Jeffrey A  Gauthier, 12:30 pm,1:25 pm, MWF
+PHL,150,Introductory Philosophy, Jeremy   Millington, 12:30 pm,1:25 pm, MWF
+PHL,150,Introductory Philosophy, Jeremy   Millington, 1:35 pm,2:30 pm, MWF
+PHL,150,Introductory Philosophy, Charles   Sullivan, 1:35 pm,2:30 pm, MWF
+PHL,150,Introductory Philosophy, Michael Scott  Pankrast, 2:40 pm,3:35 pm, MWF
+PHL,150,Introductory Philosophy, Jeffrey A  Gauthier, 7:10 pm,8:35 pm, MW
+PHL,150,Introductory Philosophy, Jamie   Hardy, 7:10 pm,8:35 pm, MW
+PHL,150,Introductory Philosophy, Lara M  Trout, 4:10 pm,6:55 pm, W
+PHL,150,Introductory Philosophy, Brett Eugene  Hackett, 7:10 pm,9:55 pm, W
+PHL,150,Introductory Philosophy, Christian Anne  Nelsen, 8:10 am,9:35 am, TR
+PHL,150,Introductory Philosophy, Caery A  Evangelist, 9:45 am,11:10 am, TR
+PHL,150,Introductory Philosophy, Colin M  Patrick, 9:45 am,11:10 am, TR
+PHL,150,Introductory Philosophy, Christopher   Manno, 11:20 am,12:45 pm, TR
+PHL,150,Introductory Philosophy, Colin M  Patrick, 12:55 pm,2:20 pm, TR
+PHL,150,Introductory Philosophy, David   Denny, 2:30 pm,3:55 pm, TR
+PHL,150,Introductory Philosophy, David   Denny, 7:10 pm,8:35 pm, TR
+PHL,150,Introductory Philosophy, Lara M  Trout, 4:10 pm,6:55 pm, T
+PHL,150,Introductory Philosophy, Brett Eugene  Hackett, 7:10 pm,9:55 pm, T
+PHL,220,Ethics, James   Baillie, 8:10 am,9:05 am, MWF
+PHL,220,Ethics, James   Baillie, 9:15 am,10:10 am, MWF
+PHL,220,Ethics, Sruthi Rachel  Rothenfluch, 9:15 am,10:10 am, MWF
+PHL,220,Ethics, Dylan   Dodd, 10:20 am,11:15 am, MWF
+PHL,220,Ethics, Gretchen Marie  Gusich, 10:20 am,11:15 am, MWF
+PHL,220,Ethics, Gretchen Marie  Gusich, 11:25 am,12:20 pm, MWF
+PHL,220,Ethics, Sruthi Rachel  Rothenfluch, 12:30 pm,1:25 pm, MWF
+PHL,220,Ethics, Sruthi Rachel  Rothenfluch, 1:35 pm,2:30 pm, MWF
+PHL,220,Ethics, Jessica E  Logue, 4:10 pm,6:55 pm, M
+PHL,220,Ethics, Patricia   McShane, 8:10 am,9:35 am, TR
+PHL,220,Ethics, Andrew Scott  Eshleman, 11:20 am,12:45 pm, TR
+PHL,220,Ethics, Patricia   McShane, 12:55 pm,2:20 pm, TR
+PHL,220,Ethics, Andrew Scott  Eshleman, 2:30 pm,3:55 pm, TR
+PHL,220,Ethics, Christopher   Manno, 7:10 pm,8:35 pm, TR
+PHL,220,Ethics, Richard R  Askay, 4:10 pm,6:55 pm, T
+PHL,313,Socio-Political Philosophy, Jeffrey A  Gauthier, 11:25 am,12:20 pm, MWF
+PHL,321,Logic, Patricia   McShane, 11:20 am,12:45 pm, TR
+PHL,332,Metaphysics: Philosophy of Mind, James   Baillie, 2:40 pm,4:00 pm, MW
+PHL,333,Metaphysics: Philosophy of Religion, Andrew Scott  Eshleman, 4:10 pm,5:35 pm, MW
+PHL,334,Metaphysics: Problem of Being, Douglas L  Donkel, 4:10 pm,6:55 pm, R
+PHL,335,Metaphysics: Self and Identity, Lara M  Trout, 9:45 am,11:10 am, TR
+PHL,374,Hegel and 19th Century Philosophy, Richard R  Askay, 12:55 pm,2:20 pm, TR
+PHL,391,Metaphysics & Epistemology, Sruthi Rachel  Rothenfluch, 9:45 am,11:10 am, TR
+PHL,391,Heat Hunger and Hurricanes, Norah A  Martin, 4:10 pm,6:55 pm, T
+PHL,391,Metaphysics & Sci Revolution, Caery A  Evangelist, 2:30 pm,3:55 pm, TR
+PHY,109,Powerful Ideas in Physical Science, Tamar   More, 12:55 pm,2:20 pm, TR
+PHY,109,Powerful Ideas in Physical Science, Elliot Eckman  Mylott, 9:15 am,10:10 am, MWF
+PHY,202,College Physics II, Elliot Eckman  Mylott, 8:10 am,9:35 am, TR
+PHY,202,College Physics II, Shannon Kathleen  Mayer, 11:20 am,12:45 pm, TR
+PHY,202,College Physics II, Elliot Eckman  Mylott, 11:20 am,12:45 pm, TR
+PHY,204,General Physics I, Nilushi Lakmali  Dasanayake, 9:15 am,10:10 am, MWF
+PHY,204,General Physics I, Osiel A  Bonfim, 10:20 am,11:15 am, MWF
+PHY,205,General Physics II, Maximilian   Schlosshauer, 10:20 am,11:15 am, MWF
+PHY,205,General Physics II, Tamar   More, 11:25 am,12:20 pm, MWF
+PHY,205,General Physics II, Osiel A  Bonfim, 12:30 pm,1:25 pm, MWF
+PHY,205,General Physics II, Tamar   More, 1:35 pm,2:30 pm, MWF
+PHY,205,General Physics II, Elliot Eckman  Mylott, 2:40 pm,3:35 pm, MWF
+PHY,205,General Physics II, Punam   Ghimire, 9:15 am,10:10 am, MWF
+PHY,205,General Physics II, Maximilian   Schlosshauer, 12:30 pm,1:25 pm, MWF
+PHY,272,College Physics Lab II, Punam   Ghimire, 2:40 pm,5:40 pm, M
+PHY,272,College Physics Lab II, Jose L.  Vazquez Bello, 2:30 pm,5:30 pm, T
+PHY,272,College Physics Lab II, Sean A.  Yeager, 2:40 pm,5:40 pm, W
+PHY,272,College Physics Lab II, Jose L.  Vazquez Bello, 2:30 pm,5:30 pm, R
+PHY,274,General Physics Lab I, Nilushi Lakmali  Dasanayake, 10:20 am,11:15 am, MWF
+PHY,274,General Physics Lab I, Aaron B  Doud, 9:15 am,10:10 am, MWF
+PHY,275,General Physics Lab II, James P.  McPhee, 11:25 am,12:20 pm, MWF
+PHY,275,General Physics Lab II, Aaron B  Doud, 10:20 am,11:15 am, MWF
+PHY,275,General Physics Lab II, James P.  McPhee, 1:35 pm,2:30 pm, MWF
+PHY,275,General Physics Lab II, James P.  McPhee, 12:30 pm,1:25 pm, MWF
+PHY,275,General Physics Lab II, Aaron B  Doud, 1:35 pm,2:30 pm, MWF
+PHY,275,General Physics Lab II, Punam   Ghimire, 8:10 am,9:05 am, MWF
+PHY,275,General Physics Lab II, Aaron B  Doud, 11:25 am,12:20 pm, MWF
+PHY,306,Modern Physics, Osiel A  Bonfim, 11:25 am,12:20 pm, MWF
+PHY,322,Optics, Shannon Kathleen  Mayer, 8:10 am,9:35 am, TR
+PHY,372,Optics Laboratory, Shannon Kathleen  Mayer, 1:35 pm,4:35 pm, M
+PHY,376,Modern Physics Lab, Maximilian   Schlosshauer, 1:35 pm,4:35 pm, W
+PHY,472,Advanced Optics Laboratory, Shannon Kathleen  Mayer, 1:35 pm,4:35 pm, M
+POL,200,Introduction to United States Politics, Jeffrey W  Meiser, 10:20 am,11:15 am, MWF
+POL,200,Introduction to United States Politics, Gary L  Malecha, 8:10 am,9:35 am, TR
+POL,203,Introduction to Political Theory, William M  Curtis, 2:40 pm,4:00 pm, MW
+POL,205,World Politics, Lara-Zuzan   Golesorkhi, 9:15 am,10:10 am, MWF
+POL,205,World Politics, Lara-Zuzan   Golesorkhi, 11:25 am,12:20 pm, MWF
+POL,292,University Mock Trial Team, Curtiss Aaron  Johnson, 7:10 pm,9:55 pm, MR
+POL,314,American Political Thought, Gary L  Malecha, 11:20 am,12:45 pm, TR
+POL,319,Politics and Identity, Lara-Zuzan   Golesorkhi, 12:55 pm,2:20 pm, TR
+POL,321,Politics of Hip Hop, Jeffrey W  Meiser, 1:35 pm,2:30 pm, MWF
+POL,345,Constitutional Law II: Civil Liberties and Rights, William M  Curtis, 9:45 am,11:10 am, TR
+POL,347,The American Court System, Tara Michelle  Costanzo, 7:10 pm,9:55 pm, W
+POL,349,Environmental Policy, John L  Shurts, 4:10 pm,6:55 pm, R
+POL,373,Politics of Latin America, Claude   Pomerleau, 12:55 pm,2:20 pm, TR
+POL,391,Immigration in the US, Lara-Zuzan   Golesorkhi, 12:30 pm,1:25 pm, MWF
+POL,415,Congress and the Legislative Process, Gary L  Malecha, 4:10 pm,6:55 pm, T
+POL,457,The Rise of China, Jeffrey W  Meiser, 2:40 pm,4:00 pm, MW
+PSY,101,General Psychology, Deirdre Ann  Katz, 2:30 pm,3:55 pm, TR
+PSY,101,General Psychology, Sarina Rodrigues  Saturn, 10:20 am,11:15 am, MWF
+PSY,101,General Psychology, Andrew M  Guest, 1:35 pm,2:30 pm, MWF
+PSY,101,General Psychology, Tobias   Ryan, 8:10 am,9:35 am, TR
+PSY,101,General Psychology, Na Yung   Yu, 9:45 am,11:10 am, TR
+PSY,101,General Psychology, Na Yung   Yu, 11:20 am,12:45 pm, TR
+PSY,101,General Psychology, Louisa   Egan Brad, 12:55 pm,2:20 pm, TR
+PSY,101,General Psychology, Justin Daniel  Caouette, 2:30 pm,3:55 pm, TR
+PSY,214,Research Methods: Design, Martin A  Monto, 9:15 am,10:10 am, MWF
+PSY,214,Research Methods: Design, Deana Lynette  Julka, 9:45 am,11:10 am, TR
+PSY,215,Research Methods: Analysis, Joseph N  McRee, 12:55 pm,2:20 pm, TR
+PSY,310,Behavioral Neuroscience, Kathryn Grace  Wallin, 7:10 pm,9:55 pm, M
+PSY,315,Evolutionary Psychology, Zachary Lee  Simmons, 4:10 pm,6:55 pm, R
+PSY,320,Psychology of Learning, Sarina Rodrigues  Saturn, 2:40 pm,4:00 pm, MW
+PSY,320,Psychology of Learning, Sarina Rodrigues  Saturn, 4:10 pm,5:35 pm, MW
+PSY,330,Cognition, Louisa   Egan Brad, 2:30 pm,3:55 pm, TR
+PSY,350,Social Psychology, Deana Lynette  Julka, 11:20 am,12:45 pm, TR
+PSY,360,Life Span Development, Deirdre Ann  Katz, 9:45 am,11:10 am, TR
+PSY,370,Personality, Gregory A  May, 4:10 pm,6:55 pm, R
+PSY,373,Positive Psychology, Gregory A  May, 7:10 pm,9:55 pm, R
+PSY,380,Abnormal Psychology, Kevin James  Ashworth, 4:10 pm,6:55 pm, W
+PSY,392,Motivation and Emotion, Kathleen Cameron  McCulloch, 1:35 pm,2:30 pm, MWF
+PSY,392,Psychological Anthropology, Jason   Hopper, 7:10 pm,9:55 pm, W
+PSY,398,Junior Seminar, Andrew M  Guest, 11:25 am,12:20 pm, M
+PSY,410,Drugs and Behavior, Milky   Kohno, 4:10 pm,6:55 pm, T
+PSY,432,Psychology of Negotiations, Louisa   Egan Brad, 7:10 pm,9:55 pm, T
+PSY,465,Living with Grief Dying and Death, Anissa Taun  Rogers, 9:45 am,11:10 am, TR
+PSY,480,Clinical and Counseling Psychology, Andrew M  Downs, 12:55 pm,2:20 pm, TR
+PSY,497,Internship, Gianna   Russo-Mitma, 4:10 pm,6:55 pm, R
+PSY,498A,Senior Capstone: Applied Projects, Andrew M  Guest, 7:10 pm,9:55 pm, T
+PSY,498S,Senior Capstone: Seminar, Deana Lynette  Julka, 4:10 pm,6:55 pm, R
+SW,205,Social Welfare and Social Justice, Brigitte   Rodriguez, 4:10 pm,6:55 pm, T
+SW,205,Social Welfare and Social Justice, Bobby Ali  Zaman, 4:10 pm,6:55 pm, R
+SW,214,Research Methods: Design, Martin A  Monto, 9:15 am,10:10 am, MWF
+SW,214,Research Methods: Design, Deana Lynette  Julka, 9:45 am,11:10 am, TR
+SW,313,Social Welfare Policy, Alice B.  Gates, 2:40 pm,4:00 pm, MW
+SW,357,Perspectives on Gender and the Body, Bobby Ali  Zaman, 7:10 pm,9:55 pm, T
+SW,386,Interviewing and Counseling, Kevin Richard  Jones, 4:10 pm,5:35 pm, MW
+SW,460,Local and Global Social Justice Practice, Alice B.  Gates, 4:10 pm,6:55 pm, W
+SW,465,LIving with Grief Dying and Death, Anissa Taun  Rogers, 9:45 am,11:10 am, TR
+SW,481,Theory and Methods of Social Work Practice II, Alice B.  Gates, 4:10 pm,6:55 pm, M
+SW,483,Social Work Practicum II, Kevin Richard  Jones, 4:10 pm,6:55 pm, T
+SW,497,Internship, Gianna   Russo-Mitma, 4:10 pm,6:55 pm, R
+SOC,101,Introduction to Sociology, Bryan D  Rookey, 8:10 am,9:05 am, MWF
+SOC,101,Introduction to Sociology, Bryan D  Rookey, 10:20 am,11:15 am, MWF
+SOC,101,Introduction to Sociology, Martin A  Monto, 10:20 am,11:15 am, MWF
+SOC,101,Introduction to Sociology, Lauren Muriel  Alfrey, 8:10 am,9:35 am, TR
+SOC,101,Introduction to Sociology, Nicole   Toussaint, 2:30 pm,3:55 pm, TR
+SOC,101,Introduction to Sociology, Nicole   Toussaint, 4:10 pm,5:35 pm, TR
+SOC,101,Introduction to Sociology, Elizabeth Melissa  Withers, 8:10 am,9:35 am, TR
+SOC,101,Introduction to Sociology, Mychel   Estevez, 2:40 pm,4:00 pm, MW
+SOC,214,Research Methods: Design, Martin A  Monto, 9:15 am,10:10 am, MWF
+SOC,214,Research Methods: Design, Deana Lynette  Julka, 9:45 am,11:10 am, TR
+SOC,215,Research Methods: Analysis, Joseph N  McRee, 12:55 pm,2:20 pm, TR
+SOC,305,Sociology of Crime and Justice, Joseph N  McRee, 4:10 pm,6:55 pm, T
+SOC,336,Race and Racism in the United States, Lauren Muriel  Alfrey, 4:10 pm,6:55 pm, W
+SOC,339,Sociology of the Family, Lauren Muriel  Alfrey, 12:55 pm,2:20 pm, TR
+SOC,350,Social Psychology, Deana Lynette  Julka, 11:20 am,12:45 pm, TR
+SOC,357,Perspectives on Gender and the Body, Bobby Ali  Zaman, 7:10 pm,9:55 pm, T
+SOC,380,Sociological Theory, Martin A  Monto, 11:20 am,12:45 pm, TR
+SOC,392,Psychological Anthropology, Jason   Hopper, 7:10 pm,9:55 pm, W
+SOC,431,Mapping Social Problems, Bryan D  Rookey, 9:45 am,11:10 am, TR
+SOC,497,Internship, Gianna   Russo-Mitma, 4:10 pm,6:55 pm, R
+SOC,497C,Criminology Internship, Gianna   Russo-Mitma, 4:10 pm,6:55 pm, R
+SPN,102,Elementary Spanish, Andrea M  Castanette, 8:10 am,9:05 am, MWF
+SPN,102,Elementary Spanish, Andrea M  Castanette, 9:15 am,10:10 am, MWF
+SPN,102,Elementary Spanish, Fationa   Aliaj, 1:35 pm,2:30 pm, MWF
+SPN,102,Elementary Spanish, Traci Helen  Schick, 2:40 pm,3:35 pm, MWF
+SPN,181,Maximizing Stuyd Abroad, Jeffrey S  White, 8:10 am,9:05 am, R
+SPN,202,Intermediate Spanish, Elizabeth A  Giannone, 8:10 am,9:05 am, MWF
+SPN,202,Intermediate Spanish, Lora L  Looney, 9:15 am,10:10 am, MWF
+SPN,202,Intermediate Spanish, Lora L  Looney, 10:20 am,11:15 am, MWF
+SPN,202,Intermediate Spanish, Andrea M  Castanette, 12:30 pm,1:25 pm, MWF
+SPN,202,Intermediate Spanish, Andrea M  Castanette, 1:35 pm,2:30 pm, MWF
+SPN,202,Intermediate Spanish, Giannina   Reyes-Giardiello, 1:35 pm,2:30 pm, MWF
+SPN,202,Intermediate Spanish, Giannina   Reyes-Giardiello, 12:30 pm,1:25 pm, MWF
+SPN,302,Advanced Spanish Composition Conversation and Culture II, Matthew D.  Warshawsky, 11:20 am,12:45 pm, TR
+SPN,302,Advanced Spanish Composition Conversation and Culture II, Maria Elva  Echenique, 12:30 pm,1:25 pm, MWF
+SPN,302,Advanced Spanish Composition Conversation and Culture II, Maria Elva  Echenique, 1:35 pm,2:30 pm, MWF
+SPN,302,Advanced Spanish Composition Conversation and Culture II, Marcela C  Cinta, 12:55 pm,2:20 pm, TR
+SPN,330,The Three Cultures of Medieval Spain, Matthew D.  Warshawsky, 2:40 pm,4:00 pm, MW
+SPN,341,Twenty-First Century Spanish Literature, Lora L  Looney, 9:45 am,11:10 am, TR
+SPN,361,Latin American Short Story, Maria Elva  Echenique, 4:10 pm,5:35 pm, MW
+SPN,361H,Latin American Short Story (Honors), Maria Elva  Echenique, 4:10 pm,5:35 pm, MW
+SPN,380,Latino Social and Health Issues, Marcela C  Cinta, 4:10 pm,6:55 pm, T
+SPN,451,Survey of Latin American Literature and Civilization, Giannina   Reyes-Giardiello, 7:10 pm,9:55 pm, T
+SPN,480,Medical Translation and Interpretation, Marcela C  Cinta, 4:10 pm,6:55 pm, M
+SPN,480,Medical Translation and Interpretation, Marcela C  Cinta, 2:30 pm,3:55 pm, TR
+SPN,497I,Spanish Internship, Jennifer   Hensley, 5:45 pm,6:55 pm, M
+SPN,497I,Spanish Internship, Jeffrey S  White, 5:45 pm,6:55 pm, W
+THTR,307,Survey of Theatre History, Mead K  Hunter, 12:55 pm,2:20 pm, TR
+THTR,325,Acting for Non-Majors, Michelle   Seaton, 4:10 pm,5:35 pm, TR
+THTR,325,Acting for Non-Majors, Michelle   Seaton, 4:10 pm,5:35 pm, MW
+THTR,333,Directing for Theatre, Andrew W  Golla, 11:20 am,12:45 pm, TR
+THTR,335,Voice for the Stage, Caren   Graham, 11:20 am,12:45 pm, TR
+THTR,337,Stage Movement and Combat, Elizabeth G  Rothan, 2:30 pm,3:55 pm, TR
+THTR,350,Theatre Crafts, Eric Raymond  Lyness, 2:30 pm,3:55 pm, TR
+THTR,350,Theatre Crafts, Susan L  Bonde, 2:30 pm,3:55 pm, TR
+THTR,351,Beginning Stage Lighting and Sound, Lawrence S  Larsen, 12:30 pm,1:15 pm, MWF
+THTR,365,Stage Make Up, Gregory L  Pulver, 11:20 am,12:45 pm, TR
+THTR,391,Ensemble Created Theater, Andrew W  Golla, 12:55 pm,2:20 pm, TR
+THTR,400,Dramaturgy, Mead K  Hunter, 4:10 pm,5:35 pm, MW
+THTR,451,Advanced Stage Lighting and Sound, Harold   Logan, 4:10 pm,5:35 pm, TR
+THTR,471,Theater Management, Carol Ann  Wohlmut, 4:10 pm,6:55 pm, M
+THTR,507,Survey of Theatre History, Mead K  Hunter, 12:55 pm,2:20 pm, TR
+THTR,531,Advanced Production Seminar, Lawrence S  Larsen, 4:10 pm,6:55 pm, R
+THEP,391,Heat Hunger and Hurricanes, Carol J  Dempsey, 4:10 pm,6:55 pm, T
+THE,024,The Character Project Discussion Group, Mark L  Poorman, 4:10 pm,6:55 pm, M
+THE,024,The Character Project Discussion Group, Mark L  Poorman, 4:10 pm,6:55 pm, M
+THE,024,The Character Project Discussion Group, Mark L  Poorman, 4:10 pm,6:55 pm, M
+THE,048,Suffering & Death: Discussion Group, Rebecca J  Gaudino, 5:45 pm,8:30 pm, R
+THE,048,Suffering & Death: Discussion Group, Rebecca J  Gaudino, 5:45 pm,8:30 pm, R
+THE,048,Suffering & Death: Discussion Group, Rebecca J  Gaudino, 5:45 pm,8:30 pm, R
+THE,048,Suffering & Death: Discussion Group, Rebecca J  Gaudino, 5:45 pm,8:30 pm, R
+THE,048,Suffering & Death: Discussion Group, Rebecca J  Gaudino, 5:45 pm,8:30 pm, R
+THE,048,Suffering & Death: Discussion Group, Rebecca J  Gaudino, 5:45 pm,8:30 pm, R
+THE,048,Suffering & Death: Discussion Group, Rebecca J  Gaudino, 5:45 pm,8:30 pm, R
+THE,105,Introduction to Theology, SimonMary Asese  Aihiokhai, 8:10 am,9:05 am, MWF
+THE,105,Introduction to Theology, SimonMary Asese  Aihiokhai, 9:15 am,10:10 am, MWF
+THE,105,Introduction to Theology, Nina Sergeyevna  Henrichs-Tarasenkova, 10:20 am,11:15 am, MWF
+THE,105,Introduction to Theology, George A  Gray, 11:25 am,12:20 pm, MWF
+THE,105,Introduction to Theology, Michael Robert  Prendergast, 12:30 pm,1:25 pm, MWF
+THE,105,Introduction to Theology, George A  Gray, 1:35 pm,2:30 pm, MWF
+THE,105,Introduction to Theology, Nina Sergeyevna  Henrichs-Tarasenkova, 2:40 pm,4:00 pm, MW
+THE,105,Introduction to Theology, Nina Sergeyevna  Henrichs-Tarasenkova, 4:10 pm,5:35 pm, MW
+THE,105,Introduction to Theology, James Bernard  King, 9:45 am,11:10 am, TR
+THE,105,Introduction to Theology, Russell A  Butkus, 11:20 am,12:45 pm, TR
+THE,105,Introduction to Theology, David   Turnbloom, 11:20 am,12:45 pm, TR
+THE,105,Introduction to Theology, David   Turnbloom, 12:55 pm,2:20 pm, TR
+THE,105,Introduction to Theology, James Bernard  King, 2:30 pm,3:55 pm, TR
+THE,105,Introduction to Theology, Jonathan   Stanfill, 4:10 pm,5:35 pm, TR
+THE,105,Introduction to Theology, Russell A  Butkus, 4:10 pm,6:55 pm, W
+THE,105,Introduction to Theology, James Bernard  King, 8:10 am,9:30 am, TR
+THE,105,Introduction to Theology, Jonathan   Stanfill, 2:30 pm,3:55 pm, TR
+THE,205,The Bible Past and Present, George A  Gray, 8:10 am,9:05 am, MWF
+THE,205,The Bible Past and Present, George A  Gray, 9:15 am,10:10 am, MWF
+THE,205,The Bible Past and Present, Carol J  Dempsey, 10:20 am,11:15 am, MWF
+THE,205,The Bible Past and Present, Carol J  Dempsey, 11:25 am,12:20 pm, MWF
+THE,205,The Bible Past and Present, Jennifer Grace  Bird, 12:30 pm,1:25 pm, MWF
+THE,205,The Bible Past and Present, Jennifer Grace  Bird, 1:35 pm,2:30 pm, MWF
+THE,205,The Bible Past and Present, Rebecca J  Gaudino, 2:40 pm,4:00 pm, MW
+THE,205,The Bible Past and Present, Rachel J  Wheeler, 8:10 am,9:35 am, TR
+THE,205,The Bible Past and Present, Willoughby H  Deming, 9:45 am,11:10 am, TR
+THE,205,The Bible Past and Present, Rebecca J  Gaudino, 11:20 am,12:45 pm, TR
+THE,205,The Bible Past and Present, Willoughby H  Deming, 12:55 pm,2:20 pm, TR
+THE,205,The Bible Past and Present, Rachel J  Wheeler, 12:55 pm,2:20 pm, TR
+THE,205,The Bible Past and Present, Glenn Michael  Cameron, 4:10 pm,5:35 pm, TR
+THE,205,The Bible Past and Present, Jonathan   Stanfill, 7:10 pm,8:35 pm, MW
+THE,305,Comparing Religions of the World, Willoughby H  Deming, 2:40 pm,4:00 pm, MW
+THE,320,Christian Personal Values, Matthew J  Baasten, 4:10 pm,6:55 pm, W
+THE,324,The Character Project, Mark L  Poorman, 4:10 pm,6:55 pm, M
+THE,329,Theological Bioethics, Christina Alabanza  Astorga, 4:10 pm,5:35 pm, TR
+THE,336,Liturgy and Ethics, David   Turnbloom, 4:10 pm,5:35 pm, MW
+THE,342,Introduction to Christian Spirituality, Rachel J  Wheeler, 9:45 am,11:10 am, TR
+THE,347,Theological Reflection Seminar, Veronicca M  Bathon, 7:10 pm,8:10 pm, M
+THE,348,Theological Dimensions of Suffering and Death, Rebecca J  Gaudino, 5:45 pm,8:30 pm, R
+THE,353,Religion and Science, James   Slagle, 11:20 am,12:45 pm, TR
+THE,353,Religion and Science, James   Slagle, 12:55 pm,2:20 pm, TR
+THE,359,Theological Themes in Catholic Literature, Charles B  Gordon, 8:10 am,9:35 am, TR
+THE,363,Saint Augustine Teacher of Christianity, Glenn Michael  Cameron, 2:40 pm,4:00 pm, MW
+THE,391,God Our Mother: Biblical Imagery of the Divine Female, Nina Sergeyevna  Henrichs-Tarasenkova, 7:10 pm,8:35 pm, MW
+THE,391,Race and Ethnicity in Ancient Christianity, Jonathan   Stanfill, 7:10 pm,9:55 pm, T
+THE,391,Gender Violence Gender Inequity and Gender Resistance, Christina Alabanza  Astorga, 4:10 pm,6:55 pm, W
+THE,391,Theologies of Encounter: Christianity Encountering Other Religions, SimonMary Asese  Aihiokhai, 1:35 pm,2:30 pm, MWF
+THE,405,Comparing Religions of the World, Willoughby H  Deming, 2:40 pm,4:00 pm, MW
+THE,420,Christian Personal Values, Matthew J  Baasten, 4:10 pm,6:55 pm, W
+THE,424,The Character Project, Mark L  Poorman, 4:10 pm,6:55 pm, M
+THE,429,Theological Bioethics, Christina Alabanza  Astorga, 4:10 pm,5:35 pm, TR
+THE,436,Liturgy and Ethics, David   Turnbloom, 4:10 pm,5:35 pm, MW
+THE,442,Introduction to Christian Spirituality, Rachel J  Wheeler, 9:45 am,11:10 am, TR
+THE,453,Religion and Science, James   Slagle, 11:20 am,12:45 pm, TR
+THE,453,Religion and Science, James   Slagle, 12:55 pm,2:20 pm, TR
+THE,459,Theological Themes in Catholic Literature, Charles B  Gordon, 8:10 am,9:35 am, TR
+THE,463,Saint Augustine Teacher of Christianity, Glenn Michael  Cameron, 2:40 pm,4:00 pm, MW
+THE,491,God Our Mother: Biblical Imagery of the Divine Female, Nina Sergeyevna  Henrichs-Tarasenkova, 7:10 pm,8:35 pm, MW
+THE,491,Race and Ethnicity in Ancient Christianity, Jonathan   Stanfill, 7:10 pm,9:55 pm, T
+THE,491,Gender Violence Gender Inequity and Gender Resistance, Christina Alabanza  Astorga, 4:10 pm,6:55 pm, W
+THE,491,Theologies of Encounter: Christianity Encountering Other Religions, SimonMary Asese  Aihiokhai, 1:35 pm,2:30 pm, MWF

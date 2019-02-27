@@ -16,7 +16,7 @@ def generateFile(p_term):
 	for x in lstCourses:
 		lstFinal.append(x.split(':')[0]) ##Get the codes of all subjects (i.e. majors) offered for the given term to get all the courses for each of them
 	for x in lstFinal:
-				query = params.genQuery (p_term, x, "", "", "", "", "%25", "", "MTHS", "0", "0", "a", "0", "0", "a"
+				query = params.genQuery (p_term, x, "", "", "", "", "%25", "", "MTHS", "0", "0", "a", "0", "0", "a")
 				arrCourses = scraping_schedule.getCourses(query) #get the info of all courses and dump it to a txt file
 				file.write(str(arrCourses))
 				
