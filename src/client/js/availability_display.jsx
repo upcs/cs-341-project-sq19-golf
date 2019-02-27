@@ -8,34 +8,34 @@ import '../css/styles.css';
 export class AvailabilityContainer extends Component {
 	constructor(props) {
 		super(props);
-		
-		 this.state = {
+
+		this.state = {
       showMenu: false,
-	};
-	
-	    this.showMenu = this.showMenu.bind(this);
+	  selected: -1
+		};
+
+	  this.showMenu = this.showMenu.bind(this);
 		this.closeMenu = this.closeMenu.bind(this);
 	}
 
 	showMenu(event) {
 		event.preventDefault();
-		
+
 		this.setState({ showMenu: true }, () => {
 		  document.addEventListener('click', this.closeMenu);
 		});
-	  }
-	  
-	  closeMenu(event) {
-		
+  }
+
+  closeMenu(event) {
 		if (!this.dropdownMenu.contains(event.target)) {
-		  
+
 		  this.setState({ showMenu: false }, () => {
-			document.removeEventListener('click', this.closeMenu);
-		  });  
-		  
+				document.removeEventListener('click', this.closeMenu);
+		  });
+
 		}
-	  }
-	
+  }
+
 	handleSubmit(event) {
 			event.preventDefault();
 			const data = new FormData(event.target);
@@ -79,24 +79,55 @@ export class AvailabilityContainer extends Component {
 			<div id="main">
 				<SelectInput/>
 			  <ReactTable
-					data={data}
-					resolveData={data => data.map(row => row)}
-					columns={columns}
-					showPagination={false}
-					minRows={0}
-					sortable={false}
-					resizable={false}
+				getTrProps={(state, rowInfo, column, instance) => {
+					if (typeof rowInfo !== "undefined") {
+						return {
+							onClick: (e, handleOriginal) => {
+								this.setState({
+								selected: rowInfo.index
+								});
+								if (handleOriginal) {
+								handleOriginal()
+								}
+							},
+							style: {
+								background: rowInfo.index === this.state.selected ? '#00afec' : 'white',
+								color: rowInfo.index === this.state.selected ? 'white' : 'black'
+							},
+						}
+					}
+					else {
+						return {
+							onClick: (e, handleOriginal) => {
+								if (handleOriginal) {
+								handleOriginal()
+								}
+							},
+							style: {
+								background: 'white',
+								color: 'black'
+							},
+						}
+					}
+				}}
+				data={data}
+				resolveData={data => data.map(row => row)}
+				columns={columns}
+				showPagination={false}
+				minRows={0}
+				sortable={false}
+				resizable={false}
 			  />
 			<div>
 				<Link to="/availability" refresh="true">
-					<button type="reset"> 
+					<button type="reset">
 						Reset
-					</button> 
+					</button>
 				</Link>
 				<button onClick={this.showMenu}>
 				  Additional Options
 				</button>
-				
+
 				{
 				  this.state.showMenu
 					? (
@@ -143,7 +174,7 @@ export class AvailabilityContainer extends Component {
 }
 
 //Time Select Input
-class SelectInput extends Component {
+export class SelectInput extends Component {
   render() {
     return (
       <div id="greetingText">Select your unavailability over a typical school week:</div>
