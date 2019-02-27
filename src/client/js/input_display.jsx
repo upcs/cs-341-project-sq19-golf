@@ -3,6 +3,8 @@ import {Link} from 'react-router-dom';
 import '../css/styles.css';
 import $ from 'jquery';
 
+export const Schedules = { 'viableSchedules': null };
+
 //Menu bar
 export class TopNavigation extends Component {
   render() {
@@ -46,7 +48,8 @@ export class InputContainer extends Component {
     event.preventDefault();
     let desiredCourses = this.state.desiredCourses;
 
-    let response = await fetch('/api/scheduleRequest', {
+    let response;
+    await fetch('/api/scheduleRequest', {
       method: 'POST',
       body: JSON.stringify(desiredCourses),
       headers: {
@@ -54,8 +57,9 @@ export class InputContainer extends Component {
         'Content-Type': 'application/json'
       }
     }).then(res => res.json()
-  ).then(resJSON => console.log(resJSON));
-    console.log(response);
+  ).then(resJSON => {
+    Schedules.viableSchedules = resJSON;
+  });
   }
 
   render() {

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
+import { Schedules } from './input_display'
 import '../css/styles.css';
 
 //TODO: Remove this in favor of dynamic data
@@ -69,14 +70,17 @@ export class SchedulesContainer extends Component {
   }
 
   render() {
-    let schedules = this.state.schedules;
+    let schedules = Schedules.viableSchedules;
+    console.log(schedules);
 
-    let schedulesList = schedules.map((schedule, i) => {
-
-      return (
-        <ScheduleDisplay key={"schedule-" + i} schedule={schedule.schedule}/>
-      )
-    });
+    let schedulesList = [];
+    if (schedules) {
+      schedulesList = schedules.map((schedule, i) => {
+        return (
+          <ScheduleDisplay key={"schedule-" + i} schedule={schedule}/>
+        )
+      });
+    }
 
 
     //TODO: Needs date/professor information
@@ -113,7 +117,7 @@ class ScheduleDisplay extends Component {
   render() {
     let schedule = this.state.schedule;
 
-    let classDisplayList = schedule.classes.map((classData, i) => {
+    let classDisplayList = schedule.map((classData, i) => {
       return (
         <ClassDisplay key={"class-" + i} classData={classData}/>
       )
@@ -140,10 +144,10 @@ class ClassDisplay extends Component {
     return (
       <div className="scheduleClass">
         <span className="timeLabel">
-          {classData.startTime} - {classData.endTime}
+          {classData.start} - {classData.end}
         </span>
         <span className="classLabel">
-          {classData.courseName}
+          {classData.title}
           {/*<br/>
           {classData.profName} */}
         </span>
