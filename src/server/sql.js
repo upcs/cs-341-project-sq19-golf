@@ -31,6 +31,10 @@ const Classes = Db.define('course', {
 });
 
 module.exports = {
+  Db: Db,
+
+  Classes: Classes,
+
   updateAllCourseData: (filePath) => {
     let courses = Courses.parseCourseData(filePath);
     Classes.sync({force: true}).then(() => {
