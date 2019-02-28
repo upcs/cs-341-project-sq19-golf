@@ -9,7 +9,6 @@ matrix:
       install:
         - pip install coverage
         - pip install requests
-	- pip install bs4
       script:
         - coverage run ./web_scraper/scraping_schedule.py
         - coverage report
