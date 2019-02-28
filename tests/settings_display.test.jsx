@@ -3,7 +3,7 @@ import { shallow } from 'enzyme';
 
 import {SettingsContainer} from '../src/client/js/settings_display.jsx';
 
-describe('AvailabilityContainer', () => {
+describe('SettingsContainer', () => {
   test('Should render correctly', () => {
     const settingsContainer = shallow(<SettingsContainer/>);
     expect(settingsContainer).toMatchSnapshot();
