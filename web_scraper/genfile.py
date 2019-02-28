@@ -29,7 +29,7 @@ def formatFile():
 	"""
 		Gives proper format to the file where all the course information is dumped (CSV format)
 	"""
-	file = open("dump.csv", "r") #read original content to format
+	file = open("course_dump.csv", "r") #read original content to format
 	data = file.read()
 	data = ("").join(data.split('[')) #get rid of '[' chars
 	data = ("]").join(data.split("]]")) # convert ']]' to ']'
@@ -40,7 +40,7 @@ def formatFile():
 	data = (" - ").join(data.split("',")) #give new format to  "," so we can split easier later every element
 	file.close()
 
-	file = open("dump.csv", "w") #open in write mode to fill with first formatted content
+	file = open("course_dump.csv", "w") #open in write mode to fill with first formatted content
 	file.write(data)
 	file.close()
 
