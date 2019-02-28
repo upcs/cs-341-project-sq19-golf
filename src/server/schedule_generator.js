@@ -2,24 +2,32 @@ const Combinatorics = require('js-combinatorics');
 
 module.exports = {
   generateSchedules: (courseIDs, subjects, classes) => {
-    let possibleClasses = filterClasses(courseIDs, subjects, classes);
-    if (possibleClasses.length < subjects.length) return {};
-
-    let possibleSchedules = Combinatorics.bigCombination(possibleClasses, subjects.length).toArray();
-    return isolateViableSchedules(courseIDs, subjects, possibleSchedules);
+    try {
+      let possibleClasses = filterClasses(courseIDs, subjects, classes);
+      let possibleSchedules = Combinatorics.bigCombination(possibleClasses, subjects.length).toArray();
+      return isolateViableSchedules(courseIDs, subjects, possibleSchedules);
+    }
+    catch (error) {
+      return {};
+    }
   }
 }
 
 //Preliminary removal step purposed to avoid heap overflows
 function filterClasses(courseIDs, subjects, classes) {
-  let possibleClasses = classes.filter(classObj => {
-    let subject = classObj.subject;
-    let courseID = classObj.number;
+  try {
+    let possibleClasses = classes.filter(classObj => {
+      let subject = classObj.subject;
+      let courseID = classObj.number;
 
-    if (subjects.includes(subject) && courseIDs.includes(courseID)) return classObj;
-  });
+      if (subjects.includes(subject) && courseIDs.includes(courseID)) return classObj;
+    });
 
-  return possibleClasses;
+    return possibleClasses;
+  }
+  catch (error) {
+    return {};
+  }
 }
 
 function isolateViableSchedules(courseIDs, subjects, possibleSchedules) {
