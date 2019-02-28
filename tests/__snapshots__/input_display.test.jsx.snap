@@ -1,5 +1,24 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`CourseInput Should render correctly 1`] = `
+<div
+  className="classSelect"
+>
+  <input
+    data-populated="false"
+    onChange={[Function]}
+    placeholder="Course Type"
+    type="text"
+  />
+  <input
+    data-populated="false"
+    onChange={[Function]}
+    placeholder="Course Number"
+    type="number"
+  />
+</div>
+`;
+
 exports[`InputContainer Should render correctly 1`] = `
 <form
   id="main"
@@ -52,6 +71,19 @@ exports[`InputContainer Should render correctly 1`] = `
     type="submit"
   />
 </form>
+`;
+
+exports[`TermInput Should render correctly 1`] = `
+<div
+  id="greetingText"
+>
+  Select your courses for
+  <input
+    defaultValue="Fall 2019"
+    id="termSelect"
+    type="text"
+  />
+</div>
 `;
 
 exports[`TopNavigation Should render correctly 1`] = `

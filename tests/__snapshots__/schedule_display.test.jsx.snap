@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ClassDisplay Should render correctly 1`] = `
+exports[`ClassDisplay Should render correctly with a "populated" classData property 1`] = `
 <div
   className="scheduleClass"
 >
@@ -19,7 +19,37 @@ exports[`ClassDisplay Should render correctly 1`] = `
 </div>
 `;
 
-exports[`ScheduleDisplay Should render correctly 1`] = `
+exports[`ClassDisplay Should render correctly with a null classData property 1`] = `
+<div
+  className="scheduleClass"
+>
+  <span
+    className="timeLabel"
+  >
+     - 
+  </span>
+  <span
+    className="classLabel"
+  />
+</div>
+`;
+
+exports[`ClassDisplay Should render correctly with no classData property 1`] = `
+<div
+  className="scheduleClass"
+>
+  <span
+    className="timeLabel"
+  >
+     - 
+  </span>
+  <span
+    className="classLabel"
+  />
+</div>
+`;
+
+exports[`ScheduleDisplay Should render correctly with a "populated" schedule property 1`] = `
 <span
   className="scheduleOption"
 >
@@ -34,7 +64,19 @@ exports[`ScheduleDisplay Should render correctly 1`] = `
 </span>
 `;
 
-exports[`SchedulesContainer Should render correctly 1`] = `
+exports[`ScheduleDisplay Should render correctly with a null schedule property 1`] = `
+<span
+  className="scheduleOption"
+/>
+`;
+
+exports[`ScheduleDisplay Should render correctly with no schedule property 1`] = `
+<span
+  className="scheduleOption"
+/>
+`;
+
+exports[`SchedulesContainer Should render correctly with a "populated" schedules property 1`] = `
 <section
   id="main"
 >
@@ -60,6 +102,90 @@ exports[`SchedulesContainer Should render correctly 1`] = `
       schedule={Array []}
     />
   </div>
+  <Link
+    replace={false}
+    to="/"
+  >
+    <button
+      id="save"
+      type="button"
+    >
+      Save
+    </button>
+  </Link>
+  <Link
+    replace={false}
+    to="/availability"
+  >
+    <button
+      id="return"
+      type="button"
+    >
+      Return
+    </button>
+  </Link>
+</section>
+`;
+
+exports[`SchedulesContainer Should render correctly with a null schedules property 1`] = `
+<section
+  id="main"
+>
+  <div
+    id="name"
+  >
+    Schedule Name:
+    <input
+      id="scheduleName"
+      placeholder="Enter Schedule Name Here"
+      type="text"
+    />
+  </div>
+  <div
+    className="horiz-container"
+  />
+  <Link
+    replace={false}
+    to="/"
+  >
+    <button
+      id="save"
+      type="button"
+    >
+      Save
+    </button>
+  </Link>
+  <Link
+    replace={false}
+    to="/availability"
+  >
+    <button
+      id="return"
+      type="button"
+    >
+      Return
+    </button>
+  </Link>
+</section>
+`;
+
+exports[`SchedulesContainer Should render correctly with no schedules property 1`] = `
+<section
+  id="main"
+>
+  <div
+    id="name"
+  >
+    Schedule Name:
+    <input
+      id="scheduleName"
+      placeholder="Enter Schedule Name Here"
+      type="text"
+    />
+  </div>
+  <div
+    className="horiz-container"
+  />
   <Link
     replace={false}
     to="/"

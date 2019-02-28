@@ -50,7 +50,7 @@ export class SchedulesContainer extends Component {
 export class ScheduleDisplay extends Component {
   constructor(props) {
     super(props);
-    this.state = { schedule: props.schedule };
+    this.state = { schedule: props.schedule || [] };
   }
 
   render() {
@@ -74,7 +74,7 @@ export class ScheduleDisplay extends Component {
 export class ClassDisplay extends Component {
   constructor(props) {
     super(props);
-    this.state = { classData: props.classData };
+    this.state = { classData: props.classData || {} };
   }
 
   render() {

@@ -92,7 +92,7 @@ export class InputContainer extends Component {
 };
 
 //Academic term input
-class TermInput extends Component {
+export class TermInput extends Component {
   render() {
     return (
       <div id="greetingText">Select your courses for
@@ -103,7 +103,7 @@ class TermInput extends Component {
 };
 
 //Course selection input
-class CourseInput extends Component {
+export class CourseInput extends Component {
   constructor(props) {
     super(props);
     this.handleChange = this.handleChange.bind(this);
