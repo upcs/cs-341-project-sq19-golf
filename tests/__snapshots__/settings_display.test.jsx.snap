@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AvailabilityContainer Should render correctly 1`] = `
+exports[`SettingsContainer Should render correctly 1`] = `
 <section
   id="main"
 >

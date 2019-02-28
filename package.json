@@ -18,7 +18,8 @@
       "**/*.{js,jsx}",
       "!**/coverage/**",
       "!**/mocks/**",
-      "!*.config.js"
+      "!*.config.js",
+      "!**/index.{js,jsx}"
     ],
     "snapshotSerializers": [
       "enzyme-to-json/serializer"
