@@ -10,5 +10,5 @@ matrix:
         - pip install coverage
         - pip install requests
       script:
-        - coverage run ./web_scraper/scraping_schedule.py
-        - coverage report
+        - coverage run --source=web_scraper ./web_scraper/test.py
+	- coverage report

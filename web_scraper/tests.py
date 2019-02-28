@@ -42,7 +42,7 @@ class TestMethods(unittest.TestCase):
 		"""
 		genfile.generateFile("201902")
 		pattern1 = re.compile(".*,.*,.*,.*,.*:.*m,.*:.*m,.*") 
-		file = open("dump.txt", "r")
+		file = open("course_dump.csv", "r")
 		data = file.readlines()
 		correct = True
 		for line in data:
