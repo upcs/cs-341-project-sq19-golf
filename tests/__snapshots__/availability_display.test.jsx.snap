@@ -352,7 +352,6 @@ exports[`AvailabilityContainer Should allow for the menu to be closed and opened
   </div>
   <form
     id="main"
-    onSubmit={[Function]}
   >
     <Link
       replace={false}
@@ -733,7 +732,6 @@ exports[`AvailabilityContainer Should allow for the menu to be closed and opened
   </div>
   <form
     id="main"
-    onSubmit={[Function]}
   >
     <Link
       replace={false}

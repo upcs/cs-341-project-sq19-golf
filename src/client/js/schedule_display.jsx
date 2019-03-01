@@ -7,7 +7,7 @@ import '../css/styles.css';
 export class SchedulesContainer extends Component {
   constructor(props) {
     super(props);
-    this.state = { schedules: props.schedules || [] };
+    this.state = { schedules: this.props.schedules || [] };
   }
 
   render() {
@@ -36,7 +36,7 @@ export class SchedulesContainer extends Component {
             Save
           </button>
         </Link>
-		<Link to="/availability">
+		    <Link to="/availability">
           <button id="return" type="button">
             Return
           </button>
