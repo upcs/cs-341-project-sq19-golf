@@ -1,3 +1,5 @@
+//TODO: This file seems to have unnecessary coupling. AvailabilityContainer should be broken into smaller parts
+
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
 import ReactTable from "react-table";
@@ -10,8 +12,9 @@ export class AvailabilityContainer extends Component {
 		super(props);
 
 		this.state = {
-      showMenu: false,
-	  selected: -1
+      showMenu: this.props.showMenu || false,
+			dropdownMenu: this.props.dropdownMenu || null,
+	  	selected: -1
 		};
 
 	  this.showMenu = this.showMenu.bind(this);
@@ -27,7 +30,7 @@ export class AvailabilityContainer extends Component {
   }
 
   closeMenu(event) {
-		if (!this.dropdownMenu.contains(event.target)) {
+		if (!this.state.dropdownMenu.contains(event.target)) {
 
 		  this.setState({ showMenu: false }, () => {
 				document.removeEventListener('click', this.closeMenu);
@@ -39,7 +42,6 @@ export class AvailabilityContainer extends Component {
 	handleSubmit(event) {
 			event.preventDefault();
 			const data = new FormData(event.target);
-			console.log(data);
 
 			fetch('/api/scheduleRequest', {
 			  method: 'POST',
@@ -129,31 +131,22 @@ export class AvailabilityContainer extends Component {
 				</button>
 
 				{
-				  this.state.showMenu
-					? (
-					  <div
-						className="menu"
-						ref={(element) => {
-						  this.dropdownMenu = element;
-						}}
-					  >
-						<div id="credit">Max Credit Amount:
-							<input type="number" placeholder="Enter Max Credit Value" onChange={this.props.handleChange} data-populated="false"/>
-							<button id="creditButton" form="main" type="creditSave">
-							Save
-							</button>
-						</div>
-						<div id="blacklist">Professor Blacklist:
-							<input id="profBlacklist" type="text" placeholder="Enter Professor Name"/>
-							<button id="profButton" form="main" type="profSave">
-							Save
-							</button>
-						</div>
+				  this.state.showMenu ? (
+					  <div className="menu" ref={(element) => { this.state.dropdownMenu = element }}>
+							<div id="credit">Max Credit Amount:
+								<input type="number" placeholder="Enter Max Credit Value" onChange={this.props.handleChange} data-populated="false"/>
+								<button id="creditButton" form="main" type="creditSave">
+								Save
+								</button>
+							</div>
+							<div id="blacklist">Professor Blacklist:
+								<input id="profBlacklist" type="text" placeholder="Enter Professor Name"/>
+								<button id="profButton" form="main" type="profSave">
+								Save
+								</button>
+							</div>
 					  </div>
-					)
-					: (
-					  null
-					)
+					) : (null)
 				}
 			  </div>
 			  <form id="main" onSubmit={this.handleSubmit}>

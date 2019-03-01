@@ -28,6 +28,9 @@ def genQuery(term_in, sel_subj, sel_crse, sel_title, sel_from_cred,
 				sel_to_cred, sel_levl, sel_dunt_unit, sel_dunt_code,
 				begin_hh, begin_mi, begin_ap,
 				end_hh, end_mi, end_ap):
+	""" 
+		returns a string: an URL POST query for UP Dynamic COurse Schedule server in the proper way the server expects it
+	"""
 	#ADD POSSIBLE LIST OF DAYS?
 	
 	myURL = 'https://selfserve-db.up.edu/prd/bwckschd.p_get_crse_unsec'

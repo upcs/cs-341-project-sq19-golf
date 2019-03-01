@@ -1,3 +1,14 @@
-language: node_js
-node_js:
-  - "10"
+matrix:
+  include:
+    - language: node_js
+      node_js:
+        - "10"
+    - language: python
+      python:
+        - "3.6.5"
+      install:
+        - pip install coverage
+        - pip install requests
+      script:
+        - coverage run --source=web_scraper ./web_scraper/tests.py
+        - coverage report

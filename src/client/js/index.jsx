@@ -18,7 +18,7 @@ const FadeInRoute = ({ component: Component, ...rest }) => (
   )}/>
 );
 
-const pageContainer = (
+const PageContainer = (
   <div id="pageContainer">
     <TopNavigation/>
     <FadeInRoute exact path="/" component={InputContainer}/>
@@ -28,10 +28,10 @@ const pageContainer = (
   </div>
 );
 
-const inputPage = (
+const InputPage = (
     <HashRouter>
-      {pageContainer}
+      {PageContainer}
     </HashRouter>
 );
 
-ReactDOM.render(inputPage, document.getElementById('root'));
+ReactDOM.render(InputPage, document.getElementById('root'));

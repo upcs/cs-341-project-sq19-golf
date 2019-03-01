@@ -1,0 +1,106 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CourseInput Should render correctly 1`] = `
+<div
+  className="classSelect"
+>
+  <input
+    data-populated="false"
+    onChange={[Function]}
+    placeholder="Course Type"
+    type="text"
+  />
+  <input
+    data-populated="false"
+    onChange={[Function]}
+    placeholder="Course Number"
+    type="number"
+  />
+</div>
+`;
+
+exports[`InputContainer Should render correctly 1`] = `
+<form
+  id="main"
+  onSubmit={[Function]}
+>
+  <TermInput />
+  <div
+    id="classGroup"
+  >
+    <CourseInput
+      id={0}
+      key="course-0"
+      onChange={[Function]}
+    />
+    <CourseInput
+      id={1}
+      key="course-1"
+      onChange={[Function]}
+    />
+    <CourseInput
+      id={2}
+      key="course-2"
+      onChange={[Function]}
+    />
+  </div>
+  <Link
+    replace={false}
+    to="/schedules"
+  >
+    <button
+      form="main"
+      type="submit"
+    >
+      Submit
+    </button>
+  </Link>
+  <Link
+    replace={false}
+    to="/availability"
+  >
+    <button
+      form="main"
+      type="submit"
+    >
+      Availability
+    </button>
+  </Link>
+  <button
+    form="main"
+    type="submit"
+  />
+</form>
+`;
+
+exports[`TermInput Should render correctly 1`] = `
+<div
+  id="greetingText"
+>
+  Select your courses for
+  <input
+    defaultValue="Fall 2019"
+    id="termSelect"
+    type="text"
+  />
+</div>
+`;
+
+exports[`TopNavigation Should render correctly 1`] = `
+<section
+  className="topNav"
+>
+  <a
+    id="leftNav"
+  >
+    UP Scheduler
+  </a>
+  <Link
+    id="rightNav"
+    replace={false}
+    to="/settings"
+  >
+    Settings
+  </Link>
+</section>
+`;
