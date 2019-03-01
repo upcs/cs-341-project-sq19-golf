@@ -19,11 +19,11 @@ describe('InputContainer', () => {
 	
 	//Accepts necessary inputs
 	inputContainer.instance().necessaryInputs();
-    expect(inputContainer.instance().props.necessaryInputs).toBe(3);
+    expect(inputContainer.instance().props.necessaryInputs).toEqual();
 	
 	//Handle course input change
     inputContainer.instance().handleCourseInputChange(courseData);
-    expect(inputContainer.instance().props.handleCourseInputChange).toBe(courseData);
+    expect(inputContainer.instance().props.handleCourseInputChange).toEqual();
 
     //Handle submission
     inputContainer.instance().handleSubmit(event);
