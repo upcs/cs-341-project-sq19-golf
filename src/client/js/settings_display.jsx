@@ -6,16 +6,21 @@ import '../css/styles.css';
 export class SettingsContainer extends Component {
 	constructor(props) {
 		super(props);
+
+		let defaultOnClick = () => alert('UPSchedule is a convenient schedule planner created by students, for students.');
+		this.state = {
+			onClick: this.props.onClick || defaultOnClick
 		};
+	};
 
 	render() {
 		return (
 		<section id="main">
-			<button onClick={() => {alert('UPSchedule is a convenient schedule planner created by students, for students.');}}>About</button>
+			<button id='aboutButton' onClick={this.state.onClick}>About</button>
 			<Link to="/">
-			<button id="quit" type="button">
-				Quit
-			</button>
+				<button id="quit" type="button">
+					Quit
+				</button>
 			</Link>
 		</section>
 		);

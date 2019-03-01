@@ -39,7 +39,7 @@ export class AvailabilityContainer extends Component {
 		}
   }
 
-	handleSubmit(event) {
+	/*handleSubmit(event) {
 			event.preventDefault();
 			const data = new FormData(event.target);
 
@@ -47,7 +47,7 @@ export class AvailabilityContainer extends Component {
 			  method: 'POST',
 			  body: data
 			});
-  }
+  }*/
 
 	render() {
 		let data = [];

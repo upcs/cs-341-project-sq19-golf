@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
+import fetch from 'node-fetch';
 import '../css/styles.css';
 import $ from 'jquery';
 
@@ -59,8 +60,10 @@ export class InputContainer extends Component {
     }).then(res => res.json()
   ).then(resJSON => {
     Schedules.viableSchedules = resJSON;
+  }).catch((error) => {
+    //console.log(error);
   });
-  }
+}
 
   render() {
     let courseList = [];

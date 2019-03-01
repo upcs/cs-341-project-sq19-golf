@@ -5,6 +5,7 @@ exports[`SettingsContainer Should render correctly 1`] = `
   id="main"
 >
   <button
+    id="aboutButton"
     onClick={[Function]}
   >
     About
