@@ -35,11 +35,6 @@ describe('CourseInput', () => {
   test('Should render correctly', () => {
     const courseInput = shallow(<CourseInput/>);
     expect(courseInput).toMatchSnapshot();
-	const event = Object.assign(jest.fn(), { preventDefault: () => {}});
-	
-	//Check if populated
-    courseInput.instance().checkIfPopulated(event);
-    expect(courseInput.instance().props.checkIfPopulated).toBe();
   });
 });
 
