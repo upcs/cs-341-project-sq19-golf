@@ -14,20 +14,11 @@ describe('InputContainer', () => {
   test('Should render correctly', () => {
     const inputContainer = shallow(<InputContainer/>);
     expect(inputContainer).toMatchSnapshot();
-	const event = Object.assign(jest.fn(), { preventDefault: () => {}});
-	let courseData = {'inputID': 0, 'courseID': 341, 'subject': 'CS'};
-	
-	//Accepts necessary inputs
-	inputContainer.instance().necessaryInputs();
-    expect(inputContainer.instance().props.necessaryInputs).toEqual();
-	
-	//Handle course input change
-    inputContainer.instance().handleCourseInputChange(courseData);
-    expect(inputContainer.instance().props.handleCourseInputChange).toEqual();
+  });
 
-    //Handle submission
-    inputContainer.instance().handleSubmit(event);
-    expect(inputContainer.instance().props.handleSubmit).toBe();
+  test('Handling course input change', () => {
+    const inputContainer = shallow(<InputContainer/>);
+    expect(inputContainer).toMatchSnapshot();
   });
 });
 
