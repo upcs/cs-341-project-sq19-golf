@@ -18,17 +18,10 @@ describe('InputContainer', () => {
 	//Accepts necessary inputs
 	inputContainer.instance().necessaryInputs();
     expect(inputContainer.instance().props.necessaryInputs).toBe(false);
-	
-	//Handle course input change
-    inputContainer.instance().handleCourseInputChange('inputID', 'courseID', 'subject');
-    expect(inputContainer.instance().props.handleCourseInputChange).toBe(false);
 
     //Handle submission
     inputContainer.instance().handleSubmit(event);
     expect(inputContainer.instance().props.handleSubmit).toBe(false);
-
-    //The component should have reverted to its original state
-    expect(inputContainer).toMatchSnapshot();
   });
 });
 
@@ -44,9 +37,6 @@ describe('CourseInput', () => {
 	//Check if populated
     courseInput.instance().checkIfPopulated(event);
     expect(courseInput.instance().props.checkIfPopulated).toBe(false);
-	
-	//The component should have reverted to its original state
-	expect(inputContainer).toMatchSnapshot();
   });
 });
 
