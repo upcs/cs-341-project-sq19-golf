@@ -36,6 +36,9 @@ describe('CourseInput', () => {
     const courseInput = shallow(<CourseInput/>);
     expect(courseInput).toMatchSnapshot();
 	const event = Object.assign(jest.fn(), { preventDefault: () => {}});
+	let parent = event.target.parentNode;
+    let courseType = $(parent).children()[0].value;
+    let courseID = $(parent).children()[1].value;
 	
 	//Handle change
     courseInput.instance().handleChange(event);
