@@ -27,7 +27,7 @@ describe('InputContainer', () => {
 
     //Handle submission
     inputContainer.instance().handleSubmit(event);
-    expect(inputContainer.instance().props.handleSubmit).toBe('');
+    expect(inputContainer.instance().props.handleSubmit).toBe();
   });
 });
 
@@ -39,11 +39,11 @@ describe('CourseInput', () => {
 	
 	//Handle change
     courseInput.instance().handleChange(event);
-    expect(courseInput.instance().props.handleChange).toBe('');
+    expect(courseInput.instance().props.handleChange).toBe();
 	
 	//Check if populated
     courseInput.instance().checkIfPopulated(event);
-    expect(courseInput.instance().props.checkIfPopulated).toBe('');
+    expect(courseInput.instance().props.checkIfPopulated).toBe();
   });
 });
 
