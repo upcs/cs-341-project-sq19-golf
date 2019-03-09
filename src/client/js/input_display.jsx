@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
+import FadeIn from 'react-fade-in';
 import fetch from 'node-fetch';
 import '../css/styles.css';
 import $ from 'jquery';
@@ -25,8 +26,7 @@ export class InputContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      totalInputs: this.necessaryInputs(),
-      populatedInputs: 0,
+      totalInputs: 5,
       desiredCourses: []
     }
 
@@ -34,15 +34,28 @@ export class InputContainer extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  necessaryInputs() {
-    //$('.classSelect').find('input[data-populated="true"]');
-    return 3;
+  modifyNecessaryInputs() {
+    let inputGroups = $("#classGroup").children();
+
+    let populatedInputs = 0;
+    for (let i = 0; i < inputGroups.length; i++) {
+      let inputChildren = inputGroups[i].children;
+      if (inputChildren[0].value != '' && inputChildren[1].value != '') populatedInputs++;
+    }
+
+    if (populatedInputs >= inputGroups.length) {
+       this.setState({ 'totalInputs': this.state.totalInputs + 1 });
+    }
+    else if (populatedInputs < inputGroups.length - 1 && inputGroups.length > 5) {
+       this.setState({ 'totalInputs': this.state.totalInputs - 1 });
+    }
   }
 
   handleCourseInputChange(inputID, courseID, subject) {
     let desiredCourses = this.state.desiredCourses;
     desiredCourses[inputID] = {'subject': subject, 'courseID': courseID};
     this.setState({ 'desiredCourses': desiredCourses });
+    this.modifyNecessaryInputs();
   }
 
   async handleSubmit(event) {

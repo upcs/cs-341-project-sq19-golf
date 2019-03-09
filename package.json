@@ -40,6 +40,7 @@
     "chai": "^4.2.0",
     "codecov": "^3.2.0",
     "express": "^4.16.3",
+    "horizontal-scroll": "^1.1.0",
     "iconv-lite": "^0.4.24",
     "identity-obj-proxy": "^3.0.0",
     "jest-pytest": "^0.7.0",

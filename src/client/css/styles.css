@@ -84,6 +84,7 @@ a {
     display: flex;
     flex-direction: row;
     margin-bottom: 8px;
+    overflow-x: auto;
 }
 
 #main button {

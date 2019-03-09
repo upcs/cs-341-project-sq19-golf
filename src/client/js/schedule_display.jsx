@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import {Link} from 'react-router-dom';
+import ReactDOM from 'react-dom';
+import { Link } from 'react-router-dom';
+import { HorizontalScroll } from 'horizontal-scroll'
 import { Schedules } from './input_display'
 import '../css/styles.css';
 
@@ -8,6 +10,20 @@ export class SchedulesContainer extends Component {
   constructor(props) {
     super(props);
     this.state = { schedules: this.props.schedules || [] };
+    console.log(HorizontalScroll);
+  }
+
+  componentDidMount() {
+    /*let container = ReactDOM.findDOMNode(<SchedulesContainer>).getElementsByClassName('horiz-container');
+    let scheduleOption = document.getElementsByClassName('scheduleOption');
+
+    console.log(container);
+    console.log(scheduleOption);
+
+    let hs = new HorizontalScroll.default({
+      blocks: this.scheduleOption,
+      container: container
+    });*/
   }
 
   render() {
@@ -25,9 +41,9 @@ export class SchedulesContainer extends Component {
     //TODO: Needs date/professor information
     return (
       <section id="main">
-		<div id="name">Schedule Name:
-			<input id="scheduleName" type="text" placeholder="Enter Schedule Name Here"/>
-		</div>
+    		<div id="name">Schedule Name:
+    			<input id="scheduleName" type="text" placeholder="Enter Schedule Name Here"/>
+    		</div>
         <div className="horiz-container">
           {schedulesList}
         </div>
