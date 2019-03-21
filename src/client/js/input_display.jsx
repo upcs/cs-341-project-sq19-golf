@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom';
 import FadeIn from 'react-fade-in';
 import fetch from 'node-fetch';
 import $ from 'jquery';
-import autoComplete from 'js-autocomplete';
+import InputPredict from 'react-inline-predict';
 import {store, modifySchedules} from './redux';
 import '../css/styles.css';
 
@@ -27,10 +27,8 @@ export class InputContainer extends Component {
     super(props);
     this.state = {
       totalInputs: 5,
-      allCourses: {
-          raw: [],
-          filtered: []
-      },
+      allCoursesRaw: [],
+      allCoursesFiltered: [],
       desiredCourses: []
     }
 
@@ -39,26 +37,14 @@ export class InputContainer extends Component {
     this.retrieveAllSchedules = this.retrieveAllSchedules.bind(this);
 
     //Retrieve course data for auto-complete purposes
-    this.retrieveAllSchedules(() => {
-      let courses = this.state.allCourses.filtered;
-      let data = courses.map((course, i) => {
-        return course.subject;
-      })
+    this.retrieveAllSchedules();
+  }
 
-      let test = new autoComplete({
-        selector: '#courseType',
-        minChars: 2,
-        source: function(term, suggest){
-          console.log('a');
-          term = term.toUpperCase();
-          var choices = data;
-          var suggestions = [];
-          for (i=0;i<choices.length;i++)
-            if (~choices[i].toLowerCase().indexOf(term)) suggestions.push(choices[i]);
-          suggest(suggestions);
-        }
-      })
-    });
+  handleCourseInputChange(inputID, courseID, subject) {
+    let desiredCourses = this.state.desiredCourses;
+    desiredCourses[inputID] = {'subject': subject.toUpperCase(), 'courseID': courseID};
+    this.setState({ 'desiredCourses': desiredCourses });
+    this.modifyNecessaryInputs();
   }
 
   //Determine whether inputs should be added or removed, onChange()
@@ -68,8 +54,10 @@ export class InputContainer extends Component {
     //Iterate over all inputs to determine fill status
     let populatedInputs = 0;
     for (let i = 0; i < inputGroups.length; i++) {
-      let inputChildren = inputGroups[i].children;
-      if (inputChildren[0].value != '' && inputChildren[1].value != '') populatedInputs++;
+      let subjectInput = inputGroups[i].firstChild.children[0];
+      let courseInput = inputGroups[i].lastChild.children[0];
+
+      if (subjectInput.value != '' && courseInput.value != '') populatedInputs++;
     }
 
     //Add or remove inputs as necessary
@@ -79,13 +67,6 @@ export class InputContainer extends Component {
     else if (populatedInputs < inputGroups.length - 1 && inputGroups.length > 5) {
        this.setState({ 'totalInputs': this.state.totalInputs - 1 });
     }
-  }
-
-  handleCourseInputChange(inputID, courseID, subject) {
-    let desiredCourses = this.state.desiredCourses;
-    desiredCourses[inputID] = {'subject': subject, 'courseID': courseID};
-    this.setState({ 'desiredCourses': desiredCourses });
-    this.modifyNecessaryInputs();
   }
 
   async retrieveAllSchedules(callback) {
@@ -102,11 +83,8 @@ export class InputContainer extends Component {
       let courses = resJSON.map(course => {
         return { 'subject': course.subject, 'number': course.number }
       });
-      this.setState({'allCourses.raw': resJSON});
-      this.setState({'allCourses.filtered': courses});
-
-      //Use filtered data once finished
-      callback();
+      this.setState({'allCoursesRaw': resJSON});
+      this.setState({'allCoursesFiltered': courses});
     }).catch((error) => {
       console.log(error);
     });
@@ -114,8 +92,7 @@ export class InputContainer extends Component {
 
   async handleSubmit(event) {
     let desiredCourses = this.state.desiredCourses;
-
-    let response;
+    console.log(desiredCourses);
     await fetch('/api/scheduleRequest', {
       method: 'POST',
       body: JSON.stringify(desiredCourses),
@@ -126,6 +103,7 @@ export class InputContainer extends Component {
     }).then(res => res.json()
     ).then(resJSON => {
       store.dispatch({ type: "CLEAR_SCHEDULES" }); //Hack to fix React's dumbass key-based rendering
+      console.log(resJSON);
       store.dispatch(modifySchedules(resJSON));
     }).catch((error) => {
       console.log(error);
@@ -135,7 +113,7 @@ export class InputContainer extends Component {
   render() {
     let courseList = [];
     for (let i = 0; i < this.state.totalInputs; i++) {
-      let course = <CourseInput key={"course-" + i} id={i} value={this.state["course-" + i]} onChange={this.handleCourseInputChange}/>
+      let course = <CourseInput key={"course-" + i} id={i} value={this.state["course-" + i]} courses={this.state.allCoursesFiltered} onChange={this.handleCourseInputChange}/>
       courseList.push(course);
     }
 
@@ -179,22 +157,32 @@ export class CourseInput extends Component {
   }
 
   handleChange(event) {
-    let parent = event.target.parentNode;
-    let courseType = $(parent).children()[0].value;
-    let courseID = $(parent).children()[1].value;
+    let parent = event.target.parentNode.parentNode;
+    let courseType = parent.firstChild.children[0].value;
+    let courseID = parent.lastChild.children[0].value;
 
     this.props.onChange(this.props.id, courseID, courseType)
   }
 
-  checkIfPopulated(event) {
-    event.target.dataset.populated = (event.target.value !== "") ? "true" : "false";
-  }
-
   render() {
+    let subjects = this.props.courses.map(course => course.subject);
+    let courses = this.props.courses.map(course => course.number);
+
+    //console.log(subjects);
     return (
-      <div className="classSelect">
-        <input id="courseType" type="text" placeholder="Course Type" onChange={this.handleChange} data-populated="false"/>
-        <input className="courseNum" type="number" placeholder="Course Number" onChange={this.handleChange} data-populated="false"/>
+      <div className="classSelect" onChange={this.handleChange}>
+        <InputPredict
+          type="text"
+          name="name"
+          placeholder="Course Type"
+          dictionary={subjects}
+        />
+        <InputPredict
+          type="number"
+          name="name"
+          placeholder="Course Number"
+          dictionary={courses}
+        />
       </div>
     );
   }
