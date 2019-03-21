@@ -1,11 +1,10 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import FadeIn from 'react-fade-in';
 import fetch from 'node-fetch';
-import '../css/styles.css';
 import $ from 'jquery';
-
-export const Schedules = { 'viableSchedules': null };
+import {store, modifySchedules} from './redux';
+import '../css/styles.css';
 
 //Menu bar
 export class TopNavigation extends Component {
@@ -34,15 +33,18 @@ export class InputContainer extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  //Determine whether inputs should be added or removed, onChange()
   modifyNecessaryInputs() {
     let inputGroups = $("#classGroup").children();
 
+    //Iterate over all inputs to determine fill status
     let populatedInputs = 0;
     for (let i = 0; i < inputGroups.length; i++) {
       let inputChildren = inputGroups[i].children;
       if (inputChildren[0].value != '' && inputChildren[1].value != '') populatedInputs++;
     }
 
+    //Add or remove inputs as necessary
     if (populatedInputs >= inputGroups.length) {
        this.setState({ 'totalInputs': this.state.totalInputs + 1 });
     }
@@ -59,7 +61,6 @@ export class InputContainer extends Component {
   }
 
   async handleSubmit(event) {
-    event.preventDefault();
     let desiredCourses = this.state.desiredCourses;
 
     let response;
@@ -72,9 +73,10 @@ export class InputContainer extends Component {
       }
     }).then(res => res.json()
   ).then(resJSON => {
-    Schedules.viableSchedules = resJSON;
+    store.dispatch({ type: "CLEAR_SCHEDULES" }); //Hack to fix React's dumbass key-based rendering
+    store.dispatch(modifySchedules(resJSON));
   }).catch((error) => {
-    //console.log(error);
+    console.log(error);
   });
 }
 
@@ -86,13 +88,13 @@ export class InputContainer extends Component {
     }
 
     return (
-      <form id="main" onSubmit={this.handleSubmit}>
+      <form id="main">
         <TermInput/>
         <div id="classGroup">
           {courseList}
         </div>
         <Link to='/schedules'>
-          <button form="main" type="submit">
+          <button form="main" onClick={this.handleSubmit}>
             Submit
           </button>
         </Link>
@@ -101,7 +103,6 @@ export class InputContainer extends Component {
             Availability
           </button>
         </Link>
-        <button form="main" type="submit"/>
       </form>
     );
   }

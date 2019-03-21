@@ -1,42 +1,34 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
-import { Link } from 'react-router-dom';
-import { HorizontalScroll } from 'horizontal-scroll'
-import { Schedules } from './input_display'
+import {Link} from 'react-router-dom';
+import {connect} from "react-redux";
+import {Schedules} from './input_display';
+import {store, modifySchedules} from './redux';
 import '../css/styles.css';
 
 //All possible schedules
 export class SchedulesContainer extends Component {
   constructor(props) {
     super(props);
-    this.state = { schedules: this.props.schedules || [] };
-    console.log(HorizontalScroll);
+    this.connectSchedules = this.connectSchedules.bind(this);
   }
 
-  componentDidMount() {
-    /*let container = ReactDOM.findDOMNode(<SchedulesContainer>).getElementsByClassName('horiz-container');
-    let scheduleOption = document.getElementsByClassName('scheduleOption');
+  connectSchedules() {
+    const mapStateToProps = state => {
+      return { viableSchedules: state.viableSchedules };
+    };
 
-    console.log(container);
-    console.log(scheduleOption);
+    const schedulesList = ({ viableSchedules }) => {
+      return viableSchedules.map((schedule, i) => {
+        return <ScheduleDisplay key={"schedule-" + i} schedule={schedule}/>
+      });
+    };
 
-    let hs = new HorizontalScroll.default({
-      blocks: this.scheduleOption,
-      container: container
-    });*/
+    return connect(mapStateToProps)(schedulesList);
   }
 
   render() {
-    let schedules = Schedules.viableSchedules || this.state.schedules;
-
-    let schedulesList = [];
-    if (schedules) {
-      schedulesList = schedules.map((schedule, i) => {
-        return (
-          <ScheduleDisplay key={"schedule-" + i} schedule={schedule}/>
-        )
-      });
-    }
+    const Schedules = this.connectSchedules();
 
     //TODO: Needs date/professor information
     return (
@@ -45,7 +37,7 @@ export class SchedulesContainer extends Component {
     			<input id="scheduleName" type="text" placeholder="Enter Schedule Name Here"/>
     		</div>
         <div className="horiz-container">
-          {schedulesList}
+          <Schedules/>
         </div>
         <Link to="/">
           <button id="save" type="button">

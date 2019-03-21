@@ -53,10 +53,12 @@
     "react-dom": "^16.5.2",
     "react-fade-in": "^0.1.6",
     "react-native": "^0.58.6",
+    "react-redux": "^6.0.1",
     "react-router": "^4.3.1",
     "react-router-dom": "^4.3.1",
     "react-router-native": "^4.3.0",
     "react-table": "^6.9.2",
+    "redux": "^4.0.1",
     "sequelize": "^4.42.0",
     "sinon": "^7.2.5",
     "tedious": "^5.0.3"
