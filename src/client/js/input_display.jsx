@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom';
 import FadeIn from 'react-fade-in';
 import fetch from 'node-fetch';
 import $ from 'jquery';
+import autoComplete from 'js-autocomplete';
 import {store, modifySchedules} from './redux';
 import '../css/styles.css';
 
@@ -26,11 +27,38 @@ export class InputContainer extends Component {
     super(props);
     this.state = {
       totalInputs: 5,
+      allCourses: {
+          raw: [],
+          filtered: []
+      },
       desiredCourses: []
     }
 
     this.handleCourseInputChange = this.handleCourseInputChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.retrieveAllSchedules = this.retrieveAllSchedules.bind(this);
+
+    //Retrieve course data for auto-complete purposes
+    this.retrieveAllSchedules(() => {
+      let courses = this.state.allCourses.filtered;
+      let data = courses.map((course, i) => {
+        return course.subject;
+      })
+
+      let test = new autoComplete({
+        selector: '#courseType',
+        minChars: 2,
+        source: function(term, suggest){
+          console.log('a');
+          term = term.toUpperCase();
+          var choices = data;
+          var suggestions = [];
+          for (i=0;i<choices.length;i++)
+            if (~choices[i].toLowerCase().indexOf(term)) suggestions.push(choices[i]);
+          suggest(suggestions);
+        }
+      })
+    });
   }
 
   //Determine whether inputs should be added or removed, onChange()
@@ -60,6 +88,30 @@ export class InputContainer extends Component {
     this.modifyNecessaryInputs();
   }
 
+  async retrieveAllSchedules(callback) {
+    await fetch('/api/allCoursesRequest', {
+      method: 'POST',
+      body: '',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      }
+    }).then(res => res.json()
+    ).then(resJSON => {
+      //Gather and filter data
+      let courses = resJSON.map(course => {
+        return { 'subject': course.subject, 'number': course.number }
+      });
+      this.setState({'allCourses.raw': resJSON});
+      this.setState({'allCourses.filtered': courses});
+
+      //Use filtered data once finished
+      callback();
+    }).catch((error) => {
+      console.log(error);
+    });
+  }
+
   async handleSubmit(event) {
     let desiredCourses = this.state.desiredCourses;
 
@@ -72,12 +124,12 @@ export class InputContainer extends Component {
         'Content-Type': 'application/json'
       }
     }).then(res => res.json()
-  ).then(resJSON => {
-    store.dispatch({ type: "CLEAR_SCHEDULES" }); //Hack to fix React's dumbass key-based rendering
-    store.dispatch(modifySchedules(resJSON));
-  }).catch((error) => {
-    console.log(error);
-  });
+    ).then(resJSON => {
+      store.dispatch({ type: "CLEAR_SCHEDULES" }); //Hack to fix React's dumbass key-based rendering
+      store.dispatch(modifySchedules(resJSON));
+    }).catch((error) => {
+      console.log(error);
+    });
 }
 
   render() {
@@ -141,8 +193,8 @@ export class CourseInput extends Component {
   render() {
     return (
       <div className="classSelect">
-        <input type="text" placeholder="Course Type" onChange={this.handleChange} data-populated="false"/>
-        <input type="number" placeholder="Course Number" onChange={this.handleChange} data-populated="false"/>
+        <input id="courseType" type="text" placeholder="Course Type" onChange={this.handleChange} data-populated="false"/>
+        <input className="courseNum" type="number" placeholder="Course Number" onChange={this.handleChange} data-populated="false"/>
       </div>
     );
   }
