@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import ReactDOM from 'react-dom';
 import {Link} from 'react-router-dom';
 import FadeIn from 'react-fade-in';
 import fetch from 'node-fetch';
@@ -111,9 +112,10 @@ export class InputContainer extends Component {
 }
 
   render() {
-    let courseList = [];
-    for (let i = 0; i < this.state.totalInputs; i++) {
-      let course = <CourseInput key={"course-" + i} id={i} value={this.state["course-" + i]} courses={this.state.allCoursesFiltered} onChange={this.handleCourseInputChange}/>
+    let courseList = [], references = {}, lastKey = {'key': null};
+    for (let i = 0, idx = 0; i < this.state.totalInputs; i++, idx += 2) {
+      let course = <CourseInput key={"course-" + i} idx={idx} value={this.state["course-" + i]} lastKey={lastKey}
+                    courses={this.state.allCoursesFiltered} references={references} onChange={this.handleCourseInputChange}/>
       courseList.push(course);
     }
 
@@ -164,11 +166,34 @@ export class CourseInput extends Component {
     this.props.onChange(this.props.id, courseID, courseType)
   }
 
+  createRef(id) {
+    if (!this.props.references.hasOwnProperty(id)) {
+      return this.props.references[id] = React.createRef();
+    }
+  }
+
+  //Focuses next input box
+  _handleKeyPress(e, idx) {
+    if (this.props.lastKey.key === "Shift" && e.key === "Tab") {
+      let inputs = this.props.references;
+      if (inputs.hasOwnProperty(idx - 1)) {
+        ReactDOM.findDOMNode(inputs[idx - 1].current).children[0].focus();
+      }
+    }
+    else if (e.key === "Tab") {
+      let inputs = this.props.references;
+      if (inputs.hasOwnProperty(idx + 1)) {
+        ReactDOM.findDOMNode(inputs[idx + 1].current).children[0].focus();
+      }
+    }
+
+    this.props.lastKey['key'] = e.key;
+  }
+
   render() {
     let subjects = this.props.courses.map(course => course.subject);
     let courses = this.props.courses.map(course => course.number);
 
-    //console.log(subjects);
     return (
       <div className="classSelect" onChange={this.handleChange}>
         <InputPredict
@@ -176,12 +201,16 @@ export class CourseInput extends Component {
           name="name"
           placeholder="Course Type"
           dictionary={subjects}
+          ref={this.createRef(this.props.idx)}
+          onKeyDown={(e) => this._handleKeyPress(e, this.props.idx)}
         />
         <InputPredict
           type="number"
           name="name"
           placeholder="Course Number"
           dictionary={courses}
+          ref={this.createRef(this.props.idx + 1)}
+          onKeyDown={(e) => this._handleKeyPress(e, this.props.idx + 1)}
         />
       </div>
     );
