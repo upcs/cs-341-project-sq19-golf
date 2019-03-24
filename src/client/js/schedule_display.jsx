@@ -37,7 +37,7 @@ export class SchedulesContainer extends Component {
         const imgData = canvas.toDataURL('image/png');
         const pdf = new jsPDF();
         pdf.addImage(imgData, 'JPEG', 0, 0);
-        // pdf.output('dataurlnewwindow');
+        pdf.output('dataurlnewwindow');
         pdf.save("download.pdf");
       })
     ;
@@ -65,7 +65,9 @@ export class SchedulesContainer extends Component {
             Return
           </button>
         </Link>
-		  <button onClick={this.printDocument}>Print</button>
+		  <button onClick={this.printDocument}>Save As PDF</button>
+		  <div id="divToPrint" className="pdfdim">
+		  </div>
       </section>
     );
   }
