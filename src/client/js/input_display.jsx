@@ -22,25 +22,19 @@ export class TopNavigation extends Component {
       <section className="topNav">
         <a id="leftNav">UP Scheduler</a>
         <div id='rightNav'>
-          <table class = "navbar">
-              <tr>
-                <td>
-                  <a class="dropdown">
-                    <div class="dropmenu">
-                      <div class="name"><b>Options</b></div>
-                        <div class="content">
-                          <div class="setting" id="schedules">Schedules</div>
-                          <div class="setting" id="help">Help</div>
-                          <div class="setting" id="about" onClick={this.state.onClick}>About</div>
-                          <Link to="/">
-                            <div class="setting" id="quit">Quit</div>
-                          </Link>
-                        </div>
-                      </div>
-                    </a>
-                </td>
-              </tr>
-            </table>
+          <div className="dropdown">
+            <div className="dropmenu">
+              <div className="name"><b>Options</b></div>
+                <div className="content">
+                  <div className="setting" id="schedules">Schedules</div>
+                  <div className="setting" id="help">Help</div>
+                  <div className="setting" id="about" onClick={this.state.onClick}>About</div>
+                  <Link to="/">
+                    <div className="setting" id="quit">Quit</div>
+                  </Link>
+                </div>
+              </div>
+            </div>
           </div>
       </section>
     );
@@ -105,20 +99,30 @@ export class InputContainer extends Component {
         <div id="classGroup">
           {courseList}
         </div>
-        <table align="center"><tr>
+        <table align="center">
+        <tbody>
+        <tr>
         <td>
-        <Link to='/schedules'>
-          <button form="main" type="submit">
-            Submit
-          </button>
-        </Link></td>
+          <Link to='/schedules'>
+            <button form="main" type="submit">
+              Submit
+            </button>
+          </Link>
+        </td>
         <td>
-        <Link to='/availability'>
-          <button form="main" type="submit">
-            Availability
+          <Link to='/availability'>
+            <button form="main" type="submit">
+              Availability
+            </button>
+          </Link>
+        </td>
+        <td>
+          <button form="main" type="button">
+            Add field
           </button>
-        </Link></td>
-        </tr></table>
+        </td>
+        </tr>
+        </tbody></table>
       </form>
     );
   }

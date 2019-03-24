@@ -30,11 +30,12 @@ export class SchedulesContainer extends Component {
     //TODO: Needs date/professor information
     return (
       <section id="main">
-        <div class="scheduleBox">
+        <div className="scheduleBox">
         <div className="horiz-container">
           {schedulesList}
         </div>
           <table>
+          <tbody>
             <tr>
           		<td>
                 <div id="name"><b>Schedule Name </b>
@@ -49,6 +50,7 @@ export class SchedulesContainer extends Component {
                 </Link>
               </td>
             </tr>
+            </tbody>
           </table>
         </div>
       </section>

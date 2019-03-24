@@ -138,7 +138,7 @@ export class AvailabilityContainer extends Component {
 
 				{
 				  this.state.showMenu ? (
-						<table class = "optable">
+						<table className = "optable">
 					  <div className="menu" ref={(element) => { this.state.dropdownMenu = element }}>
 						<tr>
 								<div id="credit"><b>Max Credit Amount</b>
