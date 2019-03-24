@@ -116,11 +116,6 @@ export class InputContainer extends Component {
             </button>
           </Link>
         </td>
-        <td>
-          <button form="main" type="button">
-            Add field
-          </button>
-        </td>
         </tr>
         </tbody></table>
       </form>
