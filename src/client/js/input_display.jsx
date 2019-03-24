@@ -22,18 +22,25 @@ export class TopNavigation extends Component {
       <section className="topNav">
         <a id="leftNav">UP Scheduler</a>
         <div id='rightNav'>
-        <div class="dropdown">
-          <button class="dropmenu">
-            <div class="name">Settings</div>
-              <div class="content">
-                <div class="setting" id="schedules">Schedules</div>
-                <div class="setting" id="help">Help</div>
-                <div class="setting" id="about" onClick={this.state.onClick}>About</div>
-                <Link to="/">
-                  <div class="setting" id="quit">Quit</div>
-                </Link>
-              </div>
-          </button></div>
+          <table>
+              <tr>
+                <td>
+                  <div class="dropdown">
+                    <button class="dropmenu">
+                      <div class="name"><b>Options</b></div>
+                        <div class="content">
+                          <div class="setting" id="schedules">Schedules</div>
+                          <div class="setting" id="help">Help</div>
+                          <div class="setting" id="about" onClick={this.state.onClick}>About</div>
+                          <Link to="/">
+                            <div class="setting" id="quit">Quit</div>
+                          </Link>
+                        </div>
+                      </button>
+                    </div>
+                </td>
+              </tr>
+            </table>
           </div>
       </section>
     );
