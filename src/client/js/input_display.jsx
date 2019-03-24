@@ -45,6 +45,9 @@ export class InputContainer extends Component {
     let desiredCourses = this.state.desiredCourses;
     desiredCourses[inputID] = {'subject': subject.toUpperCase(), 'courseID': courseID};
     this.setState({ 'desiredCourses': desiredCourses });
+    console.log(desiredCourses);
+
+
     this.modifyNecessaryInputs();
   }
 
@@ -58,7 +61,7 @@ export class InputContainer extends Component {
       let subjectInput = inputGroups[i].firstChild.children[0];
       let courseInput = inputGroups[i].lastChild.children[0];
 
-      if (subjectInput.value != '' && courseInput.value != '') populatedInputs++;
+      if (subjectInput.value !== '' && courseInput.value !== '') populatedInputs++;
     }
 
     //Add or remove inputs as necessary
@@ -70,7 +73,7 @@ export class InputContainer extends Component {
     }
   }
 
-  async retrieveAllSchedules(callback) {
+  async retrieveAllSchedules() {
     await fetch('/api/allCoursesRequest', {
       method: 'POST',
       body: '',
@@ -80,6 +83,7 @@ export class InputContainer extends Component {
       }
     }).then(res => res.json()
     ).then(resJSON => {
+      //console.log(resJSON);
       //Gather and filter data
       let courses = resJSON.map(course => {
         return { 'subject': course.subject, 'number': course.number }
@@ -87,13 +91,12 @@ export class InputContainer extends Component {
       this.setState({'allCoursesRaw': resJSON});
       this.setState({'allCoursesFiltered': courses});
     }).catch((error) => {
-      console.log(error);
+      //console.log(error);
     });
   }
 
   async handleSubmit(event) {
     let desiredCourses = this.state.desiredCourses;
-    console.log(desiredCourses);
     await fetch('/api/scheduleRequest', {
       method: 'POST',
       body: JSON.stringify(desiredCourses),
@@ -107,14 +110,14 @@ export class InputContainer extends Component {
       console.log(resJSON);
       store.dispatch(modifySchedules(resJSON));
     }).catch((error) => {
-      console.log(error);
+      //console.log(error);
     });
 }
 
   render() {
     let courseList = [], references = {}, lastKey = {'key': null};
     for (let i = 0, idx = 0; i < this.state.totalInputs; i++, idx += 2) {
-      let course = <CourseInput key={"course-" + i} idx={idx} value={this.state["course-" + i]} lastKey={lastKey}
+      let course = <CourseInput key={"course-" + i} id={i} idx={idx} value={this.state["course-" + i]} lastKey={lastKey}
                     courses={this.state.allCoursesFiltered} references={references} onChange={this.handleCourseInputChange}/>
       courseList.push(course);
     }
@@ -167,7 +170,7 @@ export class CourseInput extends Component {
   }
 
   createRef(id) {
-    if (!this.props.references.hasOwnProperty(id)) {
+    if (this.props.references && !this.props.references.hasOwnProperty(id)) {
       return this.props.references[id] = React.createRef();
     }
   }
