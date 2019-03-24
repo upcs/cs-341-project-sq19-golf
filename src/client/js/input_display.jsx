@@ -22,11 +22,11 @@ export class TopNavigation extends Component {
       <section className="topNav">
         <a id="leftNav">UP Scheduler</a>
         <div id='rightNav'>
-          <table>
+          <table class = "navbar">
               <tr>
                 <td>
-                  <div class="dropdown">
-                    <button class="dropmenu">
+                  <a class="dropdown">
+                    <div class="dropmenu">
                       <div class="name"><b>Options</b></div>
                         <div class="content">
                           <div class="setting" id="schedules">Schedules</div>
@@ -36,8 +36,8 @@ export class TopNavigation extends Component {
                             <div class="setting" id="quit">Quit</div>
                           </Link>
                         </div>
-                      </button>
-                    </div>
+                      </div>
+                    </a>
                 </td>
               </tr>
             </table>
