@@ -39,8 +39,7 @@ export class SchedulesContainer extends Component {
         pdf.addImage(imgData, 'JPEG', 0, 0);
         pdf.output('dataurlnewwindow');
         pdf.save("download.pdf");
-      })
-    ;
+      });
   }
 
   render() {
@@ -103,37 +102,36 @@ export class ClassDisplay extends Component {
     super(props);
     this.state = { classData: props.classData || {} };
   }
-
+  
+  scheduleHover() {
+	  const hover = ({ onHover, children }) => (
+		<div className="hover">
+			<div className="hover__no-hover">{children}</div>
+			<div className="hover__hover">{onHover}</div>
+		</div>
+	  )
+  }
+  
   render() {
     let classData = this.state.classData;
-
     return (
-      <div className="scheduleClass">
-        <span className="timeLabel">
-          {classData.start} - {classData.end}
-        </span>
-        <span className="classLabel">
-          {classData.title}
-          <br/>
-          {classData.profName}
-        </span>
-      </div>
+	  <hover onHover = {
+		  <div className="profName">
+			{classData.profName} 
+		  </div>}>
+		  <div className="scheduleClass">
+			<span className="timeLabel">
+			  {classData.start} - {classData.end}
+			</span>
+			<span className="classLabel">
+			  {classData.title}  
+			</span>
+		  </div>
+	  </hover>
     );
   }
 };
 
-//Horizontal
-const list = [
-  { name: 'item1' },
-  { name: 'item2' },
-  { name: 'item3' },
-  { name: 'item4' },
-  { name: 'item5' },
-  { name: 'item6' },
-  { name: 'item7' },
-  { name: 'item8' },
-  { name: 'item9' }
-];
 
 const MenuItem = ({ text, selected }) => {
   return (
