@@ -80,6 +80,7 @@ export class AvailabilityContainer extends Component {
 		return (
 			<div id="main">
 				<SelectInput/>
+			 	<div id="tableCap"></div>
 			  <ReactTable
 				getTrProps={(state, rowInfo, column, instance) => {
 					if (typeof rowInfo !== "undefined") {
@@ -138,7 +139,7 @@ export class AvailabilityContainer extends Component {
 
 				{
 				  this.state.showMenu ? (
-						<table className = "optable">
+						<table className = "optable"><tbody>
 					  <div className="menu" ref={(element) => { this.state.dropdownMenu = element }}>
 						<tr>
 								<div id="credit"><b>Max Credit Amount</b>
@@ -151,7 +152,6 @@ export class AvailabilityContainer extends Component {
 								</td>
 								</div>
 							</tr>
-
 							<tr>
 									<div id="blacklist"><b>Professor Blacklist</b>
 										<td>
@@ -164,7 +164,7 @@ export class AvailabilityContainer extends Component {
 										</td>
 									</div>
 								</tr>
-							  </div>
+							  </div></tbody>
 						</table>
 					) : (null)
 				}
