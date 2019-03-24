@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import html2canvas from 'html2canvas';
-import jsPDF from 'jspdf';
+import * as jsPDF from 'jspdf';
 import ScrollMenu from 'react-horizontal-scrolling-menu';
 import {Link} from 'react-router-dom';
 import {connect} from "react-redux";
