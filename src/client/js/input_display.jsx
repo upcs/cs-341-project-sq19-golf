@@ -8,13 +8,31 @@ export const Schedules = { 'viableSchedules': null };
 
 //Menu bar
 export class TopNavigation extends Component {
+  constructor(props) {
+		super(props);
+
+		let defaultOnClick = () => alert('UPSchedule is a convenient schedule planner created by students, for students.');
+		this.state = {
+			onClick: this.props.onClick || defaultOnClick
+		};
+	};
+
   render() {
     return (
       <section className="topNav">
         <a id="leftNav">UP Scheduler</a>
-        <Link id='rightNav' to='/settings'>
-          Settings
-        </Link>
+        <div id='rightNav'>
+        <div class="dropdown">
+          <button class="dropmenu">
+            <div class="name">Settings</div>
+              <div class="content">
+                <div class="setting" id="about" onClick={this.state.onClick}>About</div>
+                <Link to="/">
+                  <div class="setting" id="quit">Quit</div>
+                </Link>
+              </div>
+          </button></div>
+          </div>
       </section>
     );
   }
@@ -88,7 +106,6 @@ export class InputContainer extends Component {
             Availability
           </button>
         </Link>
-        <button form="main" type="submit"/>
       </form>
     );
   }

@@ -2,8 +2,13 @@
 
 body {
     margin: 2vh;
-    background-color: #DDDEDE;
+    background-color: #885ead;
     font-size: 18px;
+}
+
+div{
+  outline: 0;
+  outline: none;
 }
 
 /*Header Style*/
@@ -12,10 +17,12 @@ body {
     padding: 8px;
     font: 18px "Lucida Grande", Helvetica, Arial, sans-serif; /*sets font of header to Arial, sized 35*/
     background-color: #232122;
+    border-radius: 5px;
 }
 
 a {
     color: #DDDEDE; /*sets font color in header to white*/
+    text-decoration: none;
 }
 
 #leftNav {
@@ -27,21 +34,96 @@ a {
 
 #rightNav {
     float: right;
-    cursor: pointer; /*changes mouse to pointer when hovering over "Settings"*/
-    margin: 0 6px;
+    display:inline-block;
+    margin: 0.6px;
     text-decoration: none;
 }
 
+/*Settings menu*/
+.dropdown{
+	position: absolute;
+	display: inline-block;
+  border:none;
+  z-index: 1;
+  outline: 0;
+  outline: none;
+}
 
+.dropmenu{
+	font-weight:bold;
+  text-align: center;
+  position: absolute;
+  display: inline-block;
+  right: 20px;
+  padding-bottom: 10px;
+	background-color: black;
+	color: #DDDEDE;
+	border: none;
+  height: 29px;
+  width: 100px;
+  font: 18px "Lucida Grande", Helvetica, Arial, sans-serif; /*sets font of header to Arial, sized 35*/
+  font-weight: bold;
+  background-color: #232122;
+  z-index: 1;
+  outline: 0;
+  outline: none;
+}
+
+.content{
+	visibility:hidden;
+	display:none;
+  position: relative;
+  cursor: pointer;
+  margin-top: 7px;
+	background-color: #aa8cc5;
+  font-weight: normal;
+  font-size: 15px;
+  text-decoration: none;
+  color: white;
+	min-width:100px;
+  z-index: 1;
+  outline: 0;
+  outline: none;
+}
+
+.content div{
+	color:white;
+	padding:5px;
+	display:block;
+}
+
+.content div:hover{
+	background-color:#ba9cd5;
+	display:block;
+}
+
+.dropdown:hover .dropmenu{
+  color: white;
+  display:inline-block;
+}
+
+.dropdown:hover .content{
+	display:inline-block;
+	visibility:visible;
+  left:-6px;
+}
 
 /*Body Style*/
+form {
+  text-align: center;
+  background-color: #DDDEDE;
+  padding: 5px;
+  margin-top: 12px;
+  border-radius: 5px;
+  z-index: 10;
+}
 #main {
   padding-top: 16px;
-  margin-left: 16px;
 }
 
 #greetingText {
   margin-bottom: 12px;
+  font:16px "Helvetica", sans-serif;
 }
 
 #main input, #main button  {
@@ -55,10 +137,18 @@ a {
   border: none;
 }
 
+#classGroup{
+  padding: 5px;
+  margin: 10px;
+  border: none
+}
+
 #termSelect {
   background-color: #968f8f !important;
   width: 60px;
+  position: relative;
   text-align: center;
+  left: 3px;
 }
 
 ::-webkit-input-placeholder { /* Chrome */
