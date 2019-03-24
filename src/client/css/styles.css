@@ -49,7 +49,6 @@ a {
   color: white;
   border-radius: 5px;
   text-decoration: none;
-  text-align: right;
   padding: 6px 12px;
   margin: 3px;
   border: none;
@@ -59,6 +58,16 @@ a {
   background-color: #968f8f !important;
   width: 60px;
   text-align: center;
+}
+
+.input-predict-container {
+  display: inline-block !important;
+}
+
+.input-predict-suggestion {
+  background: #aa8cc5 !important;
+  left: 0;
+  color: #d3d3d3 !important;
 }
 
 ::-webkit-input-placeholder { /* Chrome */
@@ -84,6 +93,7 @@ a {
     display: flex;
     flex-direction: row;
     margin-bottom: 8px;
+    overflow-x: auto;
 }
 
 #main button {
@@ -99,6 +109,7 @@ input::-webkit-inner-spin-button {
 
 input[type=number] {
     -moz-appearance:textfield; /* Firefox */
+    width: auto;
 }
 
 .scheduleClass {
@@ -117,4 +128,30 @@ input[type=number] {
   color: white;
   border-radius: 5px;
   padding: 16px;
+}
+
+.pdfdim {
+	width: 210mm;
+	min-height: 297mm;
+	margin-left: auto;
+	margin-right: aut;
+}
+
+.menu-item {
+  padding: 0 40px;
+  margin: 5px 10px;
+  user-select: none;
+  cursor: pointer;
+  border: none;
+}
+.menu-item-wrapper.active {
+  border: 1px blue solid;
+}
+.menu-item.active {
+  border: 1px green solid;
+}
+ 
+.scroll-menu-arrow {
+  padding: 20px;
+  cursor: pointer;
 }
