@@ -6,6 +6,26 @@ body {
     font-size: 18px;
 }
 
+/*index css*/
+.bottom {
+  background-color: #DDDEDE;
+  text-align: center;
+  border-radius: 5px;
+  padding: 8px;
+  margin-top: 12px;
+}
+
+.bottom button {
+  background-color: #885ead;
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+  text-align: right;
+  padding: 6px 12px;
+  margin: 3px;
+  border: none;
+}
+
 /*Header Style*/
 .topNav {
     height: 22px;
@@ -241,11 +261,13 @@ form {
 .horiz-container {
     display: flex;
     flex-direction: row;
+    margin-top: 8px;
     margin-bottom: 8px;
+    border-color: #885ead;
+    border-radius: 5px;
 }
 
 #main button {
-  margin-top: 12px;
   background-color: #885ead;
 }
 

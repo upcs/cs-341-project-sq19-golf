@@ -122,6 +122,11 @@ export class AvailabilityContainer extends Component {
 			  />
 			<div>
 				<div id = "option-container">
+					<Link to="/">
+						<button id="save" type="button">
+							Save
+						</button>
+					</Link>
 					<Link to="/availability" refresh="true">
 						<button type="reset">
 							Reset
@@ -166,18 +171,6 @@ export class AvailabilityContainer extends Component {
 
 			</div>
 			  </div>
-			  <form id="main" onSubmit={this.handleSubmit}>
-					<Link to='/schedules'>
-					  <button id="submitButton" form="main" type="submit">
-							Submit
-					  </button>
-					</Link>
-					<Link to='/'>
-						<button form="main" type="submit">
-							Return
-						</button>
-					</Link>
-			  </form>
 			</div>
 		);
   }

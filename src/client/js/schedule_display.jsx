@@ -30,23 +30,26 @@ export class SchedulesContainer extends Component {
     //TODO: Needs date/professor information
     return (
       <section id="main">
-      <div class="scheduleBox">
-    		<div id="name"><b>Schedule Name </b>
-    			<input id="scheduleName" type="text" placeholder="Enter Schedule Name Here"/>
-    		</div>
-          <div className="horiz-container">
-            {schedulesList}
-          </div>
-          <div class="save-return">
-          <Link to="/">
-            <button id="save" type="button">
-              Save
-            </button>
-          </Link>
-            <button type="button" onclick={this.state.onClick} id="return" >
-              Return
-            </button>
-          </div>
+        <div class="scheduleBox">
+        <div className="horiz-container">
+          {schedulesList}
+        </div>
+          <table>
+            <tr>
+          		<td>
+                <div id="name"><b>Schedule Name </b>
+            			<input id="scheduleName" type="text" placeholder="Enter Schedule Name Here"/>
+            		</div>
+              </td>
+              <td>
+                <Link to="/">
+                  <button id="save" type="button">
+                    Save
+                  </button>
+                </Link>
+              </td>
+            </tr>
+          </table>
         </div>
       </section>
     );
