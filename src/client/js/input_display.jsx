@@ -96,16 +96,20 @@ export class InputContainer extends Component {
         <div id="classGroup">
           {courseList}
         </div>
+        <table align="center"><tr>
+        <td>
         <Link to='/schedules'>
           <button form="main" type="submit">
             Submit
           </button>
-        </Link>
+        </Link></td>
+        <td>
         <Link to='/availability'>
           <button form="main" type="submit">
             Availability
           </button>
-        </Link>
+        </Link></td>
+        </tr></table>
       </form>
     );
   }

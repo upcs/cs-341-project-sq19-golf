@@ -6,11 +6,6 @@ body {
     font-size: 18px;
 }
 
-div{
-  outline: 0;
-  outline: none;
-}
-
 /*Header Style*/
 .topNav {
     height: 22px;
@@ -81,7 +76,9 @@ a {
   text-decoration: none;
   color: white;
 	min-width:100px;
-  z-index: 1;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  z-index: 2;
   outline: 0;
   outline: none;
 }
@@ -94,6 +91,8 @@ a {
 
 .content div:hover{
 	background-color:#ba9cd5;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
 	display:block;
 }
 
@@ -117,13 +116,18 @@ form {
   border-radius: 5px;
   z-index: 10;
 }
+
 #main {
   padding-top: 16px;
 }
 
 #greetingText {
+  background-color: #DDDEDE;
   margin-bottom: 12px;
+  padding: 8px;
+  border-radius: 5px;
   font:16px "Helvetica", sans-serif;
+  font-weight: bold;
 }
 
 #main input, #main button  {
@@ -167,7 +171,71 @@ form {
 }
 
 /*Table Style*/
+.rt-table {
+  background-color: #885ead;
+  border:#885ead;
+}
 
+.rt-thead -header {
+  background-color: #885ead;
+  border:#885ead;
+}
+
+.rt-tr {
+  background-color: #885ead;
+  border:#885ead;
+}
+
+.rt-th {
+  background-color: #aa8cc5;
+  border:#885ead;
+  font: 18px "Lucida Grande", Helvetica, Arial, sans-serif;
+  color: black;
+}
+
+.rt-tbody {
+  background-color: #885ead;
+  border:#885ead;
+}
+
+.rt-tr-group: {
+  background-color: #DDDEDE;
+  border:#885ead;
+}
+
+.rt-td {
+  background-color: #DDDEDE;
+  border:#885ead;
+  font: 18px "Helvetica", sans-serif;
+  color: black;
+  text-align: center;
+}
+
+#option-container {
+  text-align: center;
+  background-color: #DDDEDE;
+  margin-bottom: 12px;
+  padding: 8px;
+  border-color: #885ead;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  align-content: center;
+  height: auto;
+  margin-left: 1px;
+  margin-right: 1px;
+  font:16px "Helvetica", sans-serif;
+}
+
+.optable {
+  text-align: center;
+  font:15px "Helvetica", sans-serif;
+  background-color: #DDDEDE;
+  border-color: #885ead;
+  border-radius: 5px;
+  margin-top: 8px;
+  margin-left: auto;
+  margin-right: auto;
+}
 
 /*Schedule Style */
 .horiz-container {

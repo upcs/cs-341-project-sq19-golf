@@ -121,33 +121,50 @@ export class AvailabilityContainer extends Component {
 				resizable={false}
 			  />
 			<div>
-				<Link to="/availability" refresh="true">
-					<button type="reset">
-						Reset
-					</button>
-				</Link>
-				<button onClick={this.showMenu}>
-				  Additional Options
-				</button>
+				<div id = "option-container">
+					<Link to="/availability" refresh="true">
+						<button type="reset">
+							Reset
+						</button>
+					</Link>
+						<button onClick={this.showMenu}>
+						  Additional Options
+						</button>
 
 				{
 				  this.state.showMenu ? (
+						<table class = "optable">
 					  <div className="menu" ref={(element) => { this.state.dropdownMenu = element }}>
-							<div id="credit">Max Credit Amount:
-								<input type="number" placeholder="Enter Max Credit Value" onChange={this.props.handleChange} data-populated="false"/>
-								<button id="creditButton" form="main" type="creditSave">
-								Save
-								</button>
-							</div>
-							<div id="blacklist">Professor Blacklist:
-								<input id="profBlacklist" type="text" placeholder="Enter Professor Name"/>
-								<button id="profButton" form="main" type="profSave">
-								Save
-								</button>
-							</div>
-					  </div>
+						<tr>
+								<div id="credit"><b>Max Credit Amount</b>
+								<td>
+									<input type="number" placeholder="Enter Max Credit Value" onChange={this.props.handleChange} data-populated="false"/>
+									</td><td>
+									<button id="creditButton" form="main" type="creditSave">
+									Save
+									</button>
+								</td>
+								</div>
+							</tr>
+
+							<tr>
+									<div id="blacklist"><b>Professor Blacklist</b>
+										<td>
+											<input id="profBlacklist" type="text" placeholder="Enter Professor Name"/>
+										</td>
+										<td>
+											<button id="profButton" form="main" type="profSave">
+											Save
+											</button>
+										</td>
+									</div>
+								</tr>
+							  </div>
+						</table>
 					) : (null)
 				}
+
+			</div>
 			  </div>
 			  <form id="main" onSubmit={this.handleSubmit}>
 					<Link to='/schedules'>
@@ -170,7 +187,7 @@ export class AvailabilityContainer extends Component {
 export class SelectInput extends Component {
   render() {
     return (
-      <div id="greetingText">Select your unavailability over a typical school week:</div>
+      <div id="greetingText">Select your unavailability over a typical school week.</div>
     );
   }
 };
