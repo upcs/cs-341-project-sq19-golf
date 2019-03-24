@@ -8,7 +8,12 @@ export class SchedulesContainer extends Component {
   constructor(props) {
     super(props);
     this.state = { schedules: this.props.schedules || [] };
-  }
+
+    let defaultOnClick = () => window.history.back();
+    this.state = {
+      onClick: this.props.onClick || defaultOnClick
+    };
+  };
 
   render() {
     let schedules = Schedules.viableSchedules || this.state.schedules;
@@ -25,22 +30,24 @@ export class SchedulesContainer extends Component {
     //TODO: Needs date/professor information
     return (
       <section id="main">
-		<div id="name">Schedule Name:
-			<input id="scheduleName" type="text" placeholder="Enter Schedule Name Here"/>
-		</div>
-        <div className="horiz-container">
-          {schedulesList}
+      <div class="scheduleBox">
+    		<div id="name"><b>Schedule Name </b>
+    			<input id="scheduleName" type="text" placeholder="Enter Schedule Name Here"/>
+    		</div>
+          <div className="horiz-container">
+            {schedulesList}
+          </div>
+          <div class="save-return">
+          <Link to="/">
+            <button id="save" type="button">
+              Save
+            </button>
+          </Link>
+            <button type="button" onclick={this.state.onClick} id="return" >
+              Return
+            </button>
+          </div>
         </div>
-        <Link to="/">
-          <button id="save" type="button">
-            Save
-          </button>
-        </Link>
-		    <Link to="/availability">
-          <button id="return" type="button">
-            Return
-          </button>
-        </Link>
       </section>
     );
   }
