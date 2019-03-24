@@ -76,7 +76,7 @@ a {
 	border: none;
   height: 29px;
   width: 100px;
-  font: 18px "Lucida Grande", Helvetica, Arial, sans-serif; /*sets font of header to Arial, sized 35*/
+  font: 18px "Lucida Grande", Helvetica, Arial, sans-serif;
   font-weight: bold;
   background-color: #232122;
   z-index: 1;
@@ -265,6 +265,7 @@ form {
     margin-bottom: 8px;
     border-color: #885ead;
     border-radius: 5px;
+    font:16px "Helvetica", sans-serif;
 }
 
 #main button {
