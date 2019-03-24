@@ -77,6 +77,49 @@ export class ScheduleDisplay extends Component {
   constructor(props) {
     super(props);
     this.state = { schedule: props.schedule || [] };
+	state = {
+		selected: 0
+	  };
+	  
+	  onSelect = key => {
+		this.setState({ selected: key });
+	  }
+  }
+  
+  horizScroll() {
+	  const MenuItem = ({ text, selected }) => {
+		  return (
+			<div
+			  className="menu-item"
+			>
+			  {text}
+			</div>
+		  );
+		};
+
+		// All items component
+		// Important! add unique key
+		const Menu = (list) => list.map(el => {
+		  const { name } = el;
+
+		  return (
+			<MenuItem
+			  text={name}
+			  key={name}
+			/>
+		  );
+		});
+
+		const Arrow = ({ text, className }) => {
+		  return (
+			<div
+			  className={className}
+			>{text}</div>
+		  );
+		};
+
+		const ArrowLeft = Arrow({ text: '<', className: 'arrow-prev' });
+		const ArrowRight = Arrow({ text: '>', className: 'arrow-next' });
   }
 
   render() {
@@ -88,9 +131,20 @@ export class ScheduleDisplay extends Component {
       )
     });
 
+	const { selected } = this.state;
+    // Create menu from items
+    const menu = Menu(classDisplayList, selected)
+	
     return (
       <span className="scheduleOption">
         {classDisplayList}
+		<ScrollMenu
+          data={menu}
+          arrowLeft={ArrowLeft}
+          arrowRight={ArrowRight}
+          selected={selected}
+          onSelect={this.onSelect}
+        />
       </span>
     )
   }
@@ -133,41 +187,7 @@ export class ClassDisplay extends Component {
 };
 
 
-const MenuItem = ({ text, selected }) => {
-  return (
-    <div
-      className="menu-item"
-    >
-      {text}
-    </div>
-  );
-};
 
-// All items component
-// Important! add unique key
-export const Menu = (list) => list.map(el => {
-  const { name } = el;
-
-  return (
-    <MenuItem
-      text={name}
-      key={name}
-    />
-  );
-});
-
-
-const Arrow = ({ text, className }) => {
-  return (
-    <div
-      className={className}
-    >{text}</div>
-  );
-};
-
-
-const ArrowLeft = Arrow({ text: '<', className: 'arrow-prev' });
-const ArrowRight = Arrow({ text: '>', className: 'arrow-next' });
 
 class App extends Component {
   state = {
