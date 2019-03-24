@@ -87,39 +87,39 @@ export class ScheduleDisplay extends Component {
   }
   
   horizScroll() {
-	  const MenuItem = ({ text, selected }) => {
-		  return (
-			<div
-			  className="menu-item"
-			>
-			  {text}
-			</div>
-		  );
-		};
+  const MenuItem = ({ text, selected }) => {
+	  return (
+		<div
+		  className="menu-item"
+		>
+		  {text}
+		</div>
+	  );
+	};
 
-		// All items component
-		// Important! add unique key
-		const Menu = (list) => list.map(el => {
-		  const { name } = el;
+	// All items component
+	// Important! add unique key
+	const Menu = (list) => list.map(el => {
+	  const { name } = el;
 
-		  return (
-			<MenuItem
-			  text={name}
-			  key={name}
-			/>
-		  );
-		});
+	  return (
+		<MenuItem
+		  text={name}
+		  key={name}
+		/>
+	  );
+	});
 
-		const Arrow = ({ text, className }) => {
-		  return (
-			<div
-			  className={className}
-			>{text}</div>
-		  );
-		};
+	const Arrow = ({ text, className }) => {
+	  return (
+		<div
+		  className={className}
+		>{text}</div>
+	  );
+	};
 
-		const ArrowLeft = Arrow({ text: '<', className: 'arrow-prev' });
-		const ArrowRight = Arrow({ text: '>', className: 'arrow-next' });
+	const ArrowLeft = Arrow({ text: '<', className: 'arrow-prev' });
+	const ArrowRight = Arrow({ text: '>', className: 'arrow-next' });
   }
 
   render() {
@@ -185,35 +185,3 @@ export class ClassDisplay extends Component {
     );
   }
 };
-
-
-
-
-class App extends Component {
-  state = {
-    selected: 0
-  };
-  
-  onSelect = key => {
-    this.setState({ selected: key });
-  }
-
-  
-  render() {
-    const { selected } = this.state;
-    // Create menu from items
-    const menu = Menu(list, selected);
-
-    return (
-      <div className="App">
-        <ScrollMenu
-          data={menu}
-          arrowLeft={ArrowLeft}
-          arrowRight={ArrowRight}
-          selected={selected}
-          onSelect={this.onSelect}
-        />
-      </div>
-    );
-  }
-}
