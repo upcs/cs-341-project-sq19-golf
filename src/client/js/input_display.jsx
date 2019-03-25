@@ -12,12 +12,11 @@ import '../css/styles.css';
 export class TopNavigation extends Component {
   constructor(props) {
 		super(props);
-
-		let defaultOnClick = () => alert('UPSchedule is a convenient schedule planner created by students, for students.');
-		this.state = {
-			onClick: this.props.onClick || defaultOnClick
-		};
 	};
+
+  aboutClick() {
+    alert('UPSchedule is a convenient schedule planner created by students, for students.');
+  }
 
   render() {
     return (
@@ -30,7 +29,7 @@ export class TopNavigation extends Component {
                 <div className="content">
                   <div className="setting" id="schedules">Schedules</div>
                   <div className="setting" id="help">Help</div>
-                  <div className="setting" id="about" onClick={this.state.onClick}>About</div>
+                  <div className="setting" id="about" onClick={this.aboutClick}>About</div>
                   <Link to="/">
                     <div className="setting" id="quit">Quit</div>
                   </Link>
@@ -144,31 +143,24 @@ export class InputContainer extends Component {
     }
 
     return (
-      <form id="main">
-        <TermInput/>
-        <div id="classGroup">
-          {courseList}
-        </div>
-        <table align="center">
-        <tbody>
-        <tr>
-        <td>
+      <div>
+        <form id="main">
+          <TermInput/>
+          <div id="classGroup">
+            {courseList}
+          </div>
           <Link to='/schedules'>
-            <button form="main" type="submit">
+            <button form="main">
               Submit
             </button>
           </Link>
-        </td>
-        <td>
           <Link to='/availability'>
-            <button form="main" type="submit">
+            <button form="main">
               Availability
             </button>
           </Link>
-        </td>
-        </tr>
-        </tbody></table>
-      </form>
+        </form>
+      </div>
     );
   }
 };

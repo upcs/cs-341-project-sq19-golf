@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import {Link} from 'react-router-dom';
 import {connect} from "react-redux";
-import {Schedules} from './input_display';
+import Return from './return.jsx';
 import {store, modifySchedules} from './redux';
 import '../css/styles.css';
 
@@ -17,7 +17,6 @@ export class SchedulesContainer extends Component {
       onClick: this.props.onClick || defaultOnClick
     };
   };
->>>>>>> b649418300fa1c6b5661a7f1d761f1a0af149c76
 
   connectSchedules() {
     const mapStateToProps = state => {
@@ -62,6 +61,7 @@ export class SchedulesContainer extends Component {
             </tbody>
           </table>
         </div>
+        <Return/>
       </section>
     );
   }
