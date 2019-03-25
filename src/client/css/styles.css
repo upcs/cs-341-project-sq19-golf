@@ -113,16 +113,18 @@ input[type=number] {
 }
 
 .pdfdim {
-	width: 210mm;
-	min-height: 297mm;
 	margin-left: auto;
-	margin-right: aut;
+	margin-right: auto;
 }
 
 .scheduleClass {
   display: flex;
   flex-direction: row;
   margin-right: 48px;
+}
+
+.daysLabel {
+  float: right; /*sets all days of classes to right of page, align with classes*/
 }
 
 .timeLabel {
