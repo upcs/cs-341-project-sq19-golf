@@ -112,10 +112,21 @@ input[type=number] {
     width: auto;
 }
 
+.pdfdim {
+	width: '210mm';
+	min-height: '298mm';
+	margin-left: auto;
+	margin-right: auto;
+}
+
 .scheduleClass {
   display: flex;
   flex-direction: row;
   margin-right: 48px;
+}
+
+.daysLabel {
+  float: right; /*sets all days of classes to right of page, align with classes*/
 }
 
 .timeLabel {
@@ -128,4 +139,47 @@ input[type=number] {
   color: white;
   border-radius: 5px;
   padding: 16px;
+}
+
+.hover {
+  position: relative;
+
+  &:hover &__no-hover {
+    opacity: 0;
+  }
+
+  &:hover &__hover {
+    opacity: 1;
+  }
+
+  &__hover {
+    position: absolute;
+    top: 0;
+    opacity: 0;
+  }
+
+  &__no-hover {
+    opacity: 1;
+  }
+}
+
+
+
+.menu-item {
+  padding: 0 40px;
+  margin: 5px 10px;
+  user-select: none;
+  cursor: pointer;
+  border: none;
+}
+.menu-item-wrapper.active {
+  border: 1px blue solid;
+}
+.menu-item.active {
+  border: 1px green solid;
+}
+
+.scroll-menu-arrow {
+  padding: 20px;
+  cursor: pointer;
 }

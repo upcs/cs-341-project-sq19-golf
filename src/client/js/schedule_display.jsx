@@ -1,5 +1,8 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
+import * as jsPDF from 'jspdf';
+import * as html2canvas from 'html2canvas';
+import Popup from 'reactjs-popup'
 import {Link} from 'react-router-dom';
 import {connect} from "react-redux";
 import {Schedules} from './input_display';
@@ -27,18 +30,31 @@ export class SchedulesContainer extends Component {
     return connect(mapStateToProps)(schedulesList);
   }
 
+  printDocument() {
+    const input = document.getElementById('divToPrint');
+    html2canvas(input)
+      .then((canvas) => {
+        const imgData = canvas.toDataURL('image/png');
+        const pdf = new jsPDF("1", "mm", "a4");
+        pdf.addImage(imgData, 'JPEG', 20, 20, 180, 150);
+        pdf.output('/schedules');
+        pdf.save("download.pdf");
+      });
+  }
+
   render() {
     const Schedules = this.connectSchedules();
 
-    //TODO: Needs date/professor information
     return (
       <section id="main">
     		<div id="name">Schedule Name:
     			<input id="scheduleName" type="text" placeholder="Enter Schedule Name Here"/>
     		</div>
-        <div className="horiz-container">
-          <Schedules/>
-        </div>
+    		<div id="divToPrint" className="pdfdim">
+    			<div className="horiz-container">
+    			  <Schedules/>
+    			</div>
+    		</div>
         <Link to="/">
           <button id="save" type="button">
             Save
@@ -49,6 +65,7 @@ export class SchedulesContainer extends Component {
             Return
           </button>
         </Link>
+		<button onClick={this.printDocument}>Save As PDF</button>
       </section>
     );
   }
@@ -80,25 +97,36 @@ export class ScheduleDisplay extends Component {
 
 //A single course
 export class ClassDisplay extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { classData: props.classData || {} };
-  }
+    constructor(props) {
+		super(props);
+		this.state = { classData: props.classData || {},
+			hover: false};
+    }
+	handleMouseIn() {
+		this.setState({ hover: true })
+    }
+
+    handleMouseOut() {
+		this.setState({ hover: false })
+	}
 
   render() {
     let classData = this.state.classData;
+	const tooltipStyle = {
+		display: this.state.hover ? 'block' : 'none'
+	}
 
     return (
-      <div className="scheduleClass">
-        <span className="timeLabel">
-          {classData.start} - {classData.end}
-        </span>
-        <span className="classLabel">
-          {classData.title}
-          {/*<br/>
-          {classData.profName} */}
-        </span>
-      </div>
+		  <div className="scheduleClass">
+			<button onClick={this.handleMouseIn.bind(this)} className="classLabel">
+				{classData.subject}{classData.number}<br/>
+				{classData.days} {classData.start} - {classData.end}
+			</button>
+			<div className="timeLabel" style={tooltipStyle}>
+				{classData.title}<br/>
+				Instructor: {classData.professor}
+			</div>
+		  </div>
     );
   }
 };
