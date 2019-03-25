@@ -37,7 +37,7 @@ export class SchedulesContainer extends Component {
         const imgData = canvas.toDataURL('image/png');
         const pdf = new jsPDF();
         pdf.addImage(imgData, 'JPEG', 0, 0);
-        pdf.output('dataurlnewwindow');
+        pdf.output('/schedules');
         pdf.save("download.pdf");
       });
   }
@@ -45,15 +45,16 @@ export class SchedulesContainer extends Component {
   render() {
     const Schedules = this.connectSchedules();
 	
-    //TODO: Needs date/professor information
     return (
       <section id="main">
     		<div id="name">Schedule Name:
     			<input id="scheduleName" type="text" placeholder="Enter Schedule Name Here"/>
     		</div>
-        <div className="horiz-container">
-          <Schedules/>
-        </div>
+		<div id="divToPrint" className="pdfdim">
+			<div className="horiz-container">
+			  <Schedules/>
+			</div>
+		</div>
         <Link to="/">
           <button id="save" type="button">
             Save
@@ -64,9 +65,7 @@ export class SchedulesContainer extends Component {
             Return
           </button>
         </Link>
-		  <button onClick={this.printDocument}>Save As PDF</button>
-		  <div id="divToPrint" className="pdfdim">
-		  </div>
+		<button onClick={this.printDocument}>Save As PDF</button> 
       </section>
     );
   }
@@ -77,51 +76,9 @@ export class ScheduleDisplay extends Component {
   constructor(props) {
     super(props);
     this.state = { schedule: props.schedule || [] };
-	state = {
-		selected: 0
-	  };
-	  
-	  onSelect = key => {
-		this.setState({ selected: key });
-	  }
   }
   
-  horizScroll() {
-  const MenuItem = ({ text, selected }) => {
-	  return (
-		<div
-		  className="menu-item"
-		>
-		  {text}
-		</div>
-	  );
-	};
-
-	// All items component
-	// Important! add unique key
-	const Menu = (list) => list.map(el => {
-	  const { name } = el;
-
-	  return (
-		<MenuItem
-		  text={name}
-		  key={name}
-		/>
-	  );
-	});
-
-	const Arrow = ({ text, className }) => {
-	  return (
-		<div
-		  className={className}
-		>{text}</div>
-	  );
-	};
-
-	const ArrowLeft = Arrow({ text: '<', className: 'arrow-prev' });
-	const ArrowRight = Arrow({ text: '>', className: 'arrow-next' });
-  }
-
+  
   render() {
     let schedule = this.state.schedule;
 
@@ -130,21 +87,10 @@ export class ScheduleDisplay extends Component {
         <ClassDisplay key={"class-" + i} classData={classData}/>
       )
     });
-
-	const { selected } = this.state;
-    // Create menu from items
-    const menu = Menu(classDisplayList, selected)
 	
     return (
       <span className="scheduleOption">
-        {classDisplayList}
-		<ScrollMenu
-          data={menu}
-          arrowLeft={ArrowLeft}
-          arrowRight={ArrowRight}
-          selected={selected}
-          onSelect={this.onSelect}
-        />
+        {classDisplayList}	
       </span>
     )
   }
@@ -170,16 +116,22 @@ export class ClassDisplay extends Component {
     let classData = this.state.classData;
     return (
 	  <hover onHover = {
-		  <div className="profName">
-			{classData.profName} 
+		  <div className="hoverInfo">
+			<span className="titleLabel">
+			{classData.title}
+			</span>
+			<span className="profLabel">
+			Instructor: {classData.professor}
+			</span>
 		  </div>}>
 		  <div className="scheduleClass">
-			<span className="timeLabel">
-			  {classData.start} - {classData.end}
-			</span>
 			<span className="classLabel">
-			  {classData.title}  
+			{classData.subject}{classData.number}
 			</span>
+			<span className="timeLabel">
+			  {classData.days} <br/>
+			  {classData.start} - {classData.end}
+			</span>	
 		  </div>
 	  </hover>
     );
