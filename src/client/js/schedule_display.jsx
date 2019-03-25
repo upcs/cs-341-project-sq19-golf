@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import * as jsPDF from 'jspdf';
 import * as html2canvas from 'html2canvas';
+import Popup from 'reactjs-popup'
 import {Link} from 'react-router-dom';
 import {connect} from "react-redux";
 import {Schedules} from './input_display';
@@ -98,44 +99,36 @@ export class ScheduleDisplay extends Component {
 export class ClassDisplay extends Component {
   constructor(props) {
     super(props);
-    this.state = { classData: props.classData || {} };
+    this.state = { classData: props.classData || {},
+		hover: false };
   }
+		
+	handleMouseIn() {
+		this.setState({ hover: true })
+    }
   
-  onMouseEnter() {
-    this.setState({message: 'Mouse Enter'})
-  }
-
-  onMouseLeave() {
-    this.setState({message: 'Mouse Leave'})
-  }
-  
-  scheduleHover() {
-	  const hover = ({ onHover, children }) => (
-		<div className="hover">
-			<div className="hover__no-hover">{children}</div>
-			<div className="hover__hover">{onHover}</div>
-		</div>
-	  )
-  }
+    handleMouseOut() {
+		this.setState({ hover: false })
+	}  
   
   render() {
     let classData = this.state.classData;
+	const tooltipStyle = {
+		display: this.state.hover ? 'block' : 'none'
+	}
+	
     return (
-	  <hover onHover = {
-		  <div className="hoverInfo">
-		  </div>}>
 		  <div className="scheduleClass">
-			<span className="classLabel">
-			{classData.subject}{classData.number}<br/>
-			{classData.title}<br/>
-			Instructor: {classData.professor}
-			</span>
-			<span className="timeLabel">
-			  {classData.days} <br/>
-			  {classData.start} - {classData.end}
-			</span>	
+			<button onMouseOver={this.handleMouseIn.bind(this)} onMouseOut={this.handleMouseOut.bind(this)} className="classLabel">
+				{classData.subject}{classData.number}<br/>
+				{classData.days} {classData.start} - {classData.end}
+			</button>
+			<div className="timeLabel" style={tooltipStyle}>
+				{classData.title}<br/>
+				Instructor: {classData.professor}
+			</div>
 		  </div>
-	  </hover>
     );
   }
 };
+
