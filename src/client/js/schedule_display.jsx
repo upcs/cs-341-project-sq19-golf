@@ -65,7 +65,7 @@ export class SchedulesContainer extends Component {
             Return
           </button>
         </Link>
-		<button onClick={this.printDocument}>Save As PDF</button>
+	      <button onClick={this.printDocument}>Save As PDF</button>
       </section>
     );
   }
