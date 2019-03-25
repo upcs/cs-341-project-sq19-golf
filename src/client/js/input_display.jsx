@@ -10,13 +10,34 @@ import '../css/styles.css';
 
 //Menu bar
 export class TopNavigation extends Component {
+  constructor(props) {
+		super(props);
+
+		let defaultOnClick = () => alert('UPSchedule is a convenient schedule planner created by students, for students.');
+		this.state = {
+			onClick: this.props.onClick || defaultOnClick
+		};
+	};
+
   render() {
     return (
       <section className="topNav">
         <a id="leftNav">UP Scheduler</a>
-        <Link id='rightNav' to='/settings'>
-          Settings
-        </Link>
+        <div id='rightNav'>
+          <div className="dropdown">
+            <div className="dropmenu">
+              <div className="name"><b>Options</b></div>
+                <div className="content">
+                  <div className="setting" id="schedules">Schedules</div>
+                  <div className="setting" id="help">Help</div>
+                  <div className="setting" id="about" onClick={this.state.onClick}>About</div>
+                  <Link to="/">
+                    <div className="setting" id="quit">Quit</div>
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
       </section>
     );
   }
@@ -128,16 +149,25 @@ export class InputContainer extends Component {
         <div id="classGroup">
           {courseList}
         </div>
-        <Link to='/schedules'>
-          <button form="main" onClick={this.handleSubmit}>
-            Submit
-          </button>
-        </Link>
-        <Link to='/availability'>
-          <button form="main" type="submit">
-            Availability
-          </button>
-        </Link>
+        <table align="center">
+        <tbody>
+        <tr>
+        <td>
+          <Link to='/schedules'>
+            <button form="main" type="submit">
+              Submit
+            </button>
+          </Link>
+        </td>
+        <td>
+          <Link to='/availability'>
+            <button form="main" type="submit">
+              Availability
+            </button>
+          </Link>
+        </td>
+        </tr>
+        </tbody></table>
       </form>
     );
   }
