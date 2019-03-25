@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import * as jsPDF from 'jspdf';
 import * as html2canvas from 'html2canvas';
-import ScrollMenu from 'react-horizontal-scrolling-menu';
 import {Link} from 'react-router-dom';
 import {connect} from "react-redux";
 import {Schedules} from './input_display';
@@ -78,7 +77,6 @@ export class ScheduleDisplay extends Component {
     this.state = { schedule: props.schedule || [] };
   }
   
-  
   render() {
     let schedule = this.state.schedule;
 
@@ -103,6 +101,14 @@ export class ClassDisplay extends Component {
     this.state = { classData: props.classData || {} };
   }
   
+  onMouseEnter() {
+    this.setState({message: 'Mouse Enter'})
+  }
+
+  onMouseLeave() {
+    this.setState({message: 'Mouse Leave'})
+  }
+  
   scheduleHover() {
 	  const hover = ({ onHover, children }) => (
 		<div className="hover">
@@ -117,16 +123,12 @@ export class ClassDisplay extends Component {
     return (
 	  <hover onHover = {
 		  <div className="hoverInfo">
-			<span className="titleLabel">
-			{classData.title}
-			</span>
-			<span className="profLabel">
-			Instructor: {classData.professor}
-			</span>
 		  </div>}>
 		  <div className="scheduleClass">
 			<span className="classLabel">
-			{classData.subject}{classData.number}
+			{classData.subject}{classData.number}<br/>
+			{classData.title}<br/>
+			Instructor: {classData.professor}
 			</span>
 			<span className="timeLabel">
 			  {classData.days} <br/>
