@@ -354,3 +354,40 @@ input[type=number] {
   border-top-right-radius: 5px;
   padding: 8px;
 }
+
+/*help page*/
+a {
+  color: #885ead;
+}
+
+.textContainer {
+  background-color: #DDDEDE;
+  border-radius: 5px;
+  padding: 8px;
+  color: black;
+}
+
+.contentsTable {
+  background-color: #DDDEDE;
+  border: 1px solid #aa8cc5;
+  border-radius: 5px;
+  padding: 8px;
+  font:12px "Helvetica", sans-serif;
+}
+
+#tableTitle {
+  font: 15px "Helvetica", sans-serif;
+}
+
+.helpSet {
+  color:black;
+  background-color:#DDDEDE;
+  border: 1px solid #aa8cc5;
+  border-radius: 5px;
+  padding: 8px;
+  font:15px "Helvetica", sans-serif;
+}
+
+.helpContent {
+  font:12px "Helvetica", sans-serif;
+}
