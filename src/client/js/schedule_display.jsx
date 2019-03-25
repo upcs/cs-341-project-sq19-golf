@@ -35,8 +35,8 @@ export class SchedulesContainer extends Component {
     html2canvas(input)
       .then((canvas) => {
         const imgData = canvas.toDataURL('image/png');
-        const pdf = new jsPDF();
-        pdf.addImage(imgData, 'JPEG', 0, 0);
+        const pdf = new jsPDF("1", "mm", "a4");
+        pdf.addImage(imgData, 'JPEG', 20, 20, 180, 150);
         pdf.output('/schedules');
         pdf.save("download.pdf");
       });
@@ -97,12 +97,11 @@ export class ScheduleDisplay extends Component {
 
 //A single course
 export class ClassDisplay extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { classData: props.classData || {},
-		hover: false };
-  }
-		
+    constructor(props) {
+		super(props);
+		this.state = { classData: props.classData || {},
+			hover: false};
+    }
 	handleMouseIn() {
 		this.setState({ hover: true })
     }
@@ -119,7 +118,7 @@ export class ClassDisplay extends Component {
 	
     return (
 		  <div className="scheduleClass">
-			<button onMouseOver={this.handleMouseIn.bind(this)} onMouseOut={this.handleMouseOut.bind(this)} className="classLabel">
+			<button onClick={this.handleMouseIn.bind(this)} className="classLabel">
 				{classData.subject}{classData.number}<br/>
 				{classData.days} {classData.start} - {classData.end}
 			</button>
