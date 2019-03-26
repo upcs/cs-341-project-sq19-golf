@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
-import Return from './return.jsx'
 import '../css/styles.css';
 
 //Options for About Page and Quit to Initial Page

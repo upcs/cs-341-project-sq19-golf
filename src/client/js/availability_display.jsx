@@ -121,7 +121,7 @@ export class AvailabilityContainer extends Component {
 				sortable={false}
 				resizable={false}
 			  />
-				<div class="bottom" id="option-container">
+				<div className="bottom" id="option-container">
 					<Link to="/">
 						<button id="save" type="button">
 							Save

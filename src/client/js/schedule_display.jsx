@@ -5,7 +5,6 @@ import * as html2canvas from 'html2canvas';
 import Popup from 'reactjs-popup'
 import {Link} from 'react-router-dom';
 import {connect} from "react-redux";
-import Return from './return.jsx';
 import {store, modifySchedules} from './redux';
 import '../css/styles.css';
 
@@ -48,10 +47,6 @@ export class SchedulesContainer extends Component {
       });
   }
 
-  goBack() {
-    window.history.back();
-  }
-
   handleScheduleName(event) {
     this.setState({scheduleName: event.target.value});
   }
@@ -71,9 +66,8 @@ export class SchedulesContainer extends Component {
     		</div>
         <div className="bottom">
           <button onClick={this.printDocument}>Save As PDF</button>
-          <button className="return" onClick={this.goBack}>Return</button>
+          <button className="return" onClick={() => window.history.back()}>Return</button>
         </div>
-        <Return/>
       </section>
     );
   }

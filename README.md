@@ -46,6 +46,9 @@
   - Even more information is available on on click
   - Added the ability to name your schedule
       - This name is used when exporting your file as a PDF
+  - Added the ability to horizontally scroll schedules which extend off the page
+- Hosted the WebApp on GCP
+  - Used a bucket and startup script to automate this process
 
 ## **Current Tech Stack:**
 

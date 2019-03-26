@@ -65,9 +65,6 @@ export class InputContainer extends Component {
     let desiredCourses = this.state.desiredCourses;
     desiredCourses[inputID] = {'subject': subject.toUpperCase(), 'courseID': courseID};
     this.setState({ 'desiredCourses': desiredCourses });
-    console.log(desiredCourses);
-
-
     this.modifyNecessaryInputs();
   }
 
@@ -150,7 +147,7 @@ export class InputContainer extends Component {
             {courseList}
           </div>
         </form>
-        <div class="bottom">
+        <div className="bottom">
           <Link to='/schedules'>
             <button form="main" onClick={this.handleSubmit}>
               Submit

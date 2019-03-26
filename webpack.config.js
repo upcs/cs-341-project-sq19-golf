@@ -37,15 +37,13 @@ module.exports = {
     open: true,
     proxy: {
       '/api': 'http://localhost:8080'
-    },
-    hot: true
+    }
   },
   plugins: [
     new CleanWebpackPlugin([outputDirectory]),
     new HtmlWebpackPlugin({
       template: './src/client/html/index.html',
       favicon: './src/client/icons/scheduleIcon.png'
-    }),
-    new webpack.HotModuleReplacementPlugin()
+    })
   ]
 };
