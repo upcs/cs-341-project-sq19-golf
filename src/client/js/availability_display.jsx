@@ -80,6 +80,7 @@ export class AvailabilityContainer extends Component {
 		return (
 			<div id="main">
 				<SelectInput/>
+			 	<div id="tableCap"></div>
 			  <ReactTable
 				getTrProps={(state, rowInfo, column, instance) => {
 					if (typeof rowInfo !== "undefined") {
@@ -120,47 +121,41 @@ export class AvailabilityContainer extends Component {
 				sortable={false}
 				resizable={false}
 			  />
-			<div>
-				<Link to="/availability" refresh="true">
-					<button type="reset">
-						Reset
-					</button>
-				</Link>
-				<button onClick={this.showMenu}>
-				  Additional Options
-				</button>
-
-				{
-				  this.state.showMenu ? (
-					  <div className="menu" ref={(element) => { this.state.dropdownMenu = element }}>
-							<div id="credit">Max Credit Amount:
-								<input type="number" placeholder="Enter Max Credit Value" onChange={this.props.handleChange} data-populated="false"/>
-								<button id="creditButton" form="main" type="creditSave">
-								Save
-								</button>
-							</div>
-							<div id="blacklist">Professor Blacklist:
-								<input id="profBlacklist" type="text" placeholder="Enter Professor Name"/>
-								<button id="profButton" form="main" type="profSave">
-								Save
-								</button>
-							</div>
-					  </div>
-					) : (null)
-				}
-			  </div>
-			  <form id="main" onSubmit={this.handleSubmit}>
-					<Link to='/schedules'>
-					  <button id="submitButton" form="main" type="submit">
-							Submit
-					  </button>
-					</Link>
-					<Link to='/'>
-						<button form="main" type="submit">
-							Return
+				<div className="bottom" id="option-container">
+					<Link to="/">
+						<button id="save" type="button">
+							Save
 						</button>
 					</Link>
-			  </form>
+					<Link to="/availability" refresh="true">
+						<button type="reset">
+							Reset
+						</button>
+					</Link>
+					<button onClick={this.showMenu}>
+					  Additional Options
+					</button>
+					{
+					  this.state.showMenu ? (
+						  <div className="menu" ref={(element) => { this.state.dropdownMenu = element }}>
+								<span id="credit">
+									<div className="inputHeader">Max Credit Amount</div>
+									<input type="number" placeholder="Enter Max Credit Value" onChange={this.props.handleChange} data-populated="false"/>
+									<button id="creditButton" form="main" type="creditSave">
+										Save
+									</button>
+								</span>
+								<span id="blacklist">
+									<div className="inputHeader">Professor Blacklist</div>
+									<input id="profBlacklist" type="text" placeholder="Enter Professor Name"/>
+									<button id="profButton" form="main" type="profSave">
+										Save
+									</button>
+								</span>
+					  	</div>
+						) : (null)
+					}
+				</div>
 			</div>
 		);
   }
@@ -170,7 +165,7 @@ export class AvailabilityContainer extends Component {
 export class SelectInput extends Component {
   render() {
     return (
-      <div id="greetingText">Select your unavailability over a typical school week:</div>
+      <div id="greetingText">Select your unavailability over a typical school week.</div>
     );
   }
 };

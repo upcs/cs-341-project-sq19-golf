@@ -93,14 +93,7 @@ exports[`SchedulesContainer Should render correctly with a "populated" schedules
   <div
     className="horiz-container"
   >
-    <ScheduleDisplay
-      key="schedule-0"
-      schedule={Array []}
-    />
-    <ScheduleDisplay
-      key="schedule-1"
-      schedule={Array []}
-    />
+    <Connect(schedulesList) />
   </div>
   <Link
     replace={false}
@@ -143,7 +136,9 @@ exports[`SchedulesContainer Should render correctly with a null schedules proper
   </div>
   <div
     className="horiz-container"
-  />
+  >
+    <Connect(schedulesList) />
+  </div>
   <Link
     replace={false}
     to="/"
@@ -185,7 +180,9 @@ exports[`SchedulesContainer Should render correctly with no schedules property 1
   </div>
   <div
     className="horiz-container"
-  />
+  >
+    <Connect(schedulesList) />
+  </div>
   <Link
     replace={false}
     to="/"

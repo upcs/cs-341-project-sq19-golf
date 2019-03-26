@@ -32,7 +32,6 @@ const Classes = Db.define('course', {
 
 module.exports = {
   Db: Db,
-
   Classes: Classes,
 
   updateAllCourseData: (filePath) => {
