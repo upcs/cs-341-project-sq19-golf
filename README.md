@@ -25,10 +25,27 @@
 - Populated a MySQL server, storing all scraped data from Self Serve
   - Successfully utilized the python scraping scripts developed in the previous sprint
 - Developed MySQL queries to gather schedule data on POST and .js objects to represent these schedules
-  - Involved the development of a comprehensivce algorithm to efficently generate all possible schedules given a desiredClasses input
+  - Involved the development of a comprehensive algorithm to efficiently generate all possible schedules given a desiredClasses input
   - The front-end is now fully connected to the back-end, rendering UP_Scheduler a fully functional app if only a little clunky
 - Added better test scoping and coverage
 - Integrated and documented many new automation, styling and serving tools as detailed below
+
+## **Tasks Completed for Sprint 3:**
+
+- Added dynamic user input
+  - The form now scales its user inputs, adding one or removing one when necessary
+  - The user input fields have access to the back-end course data
+    - This is used to provide an autocomplete feature
+    - It also helps to offload some scheduling workload onto the client
+  - Tab/Shift-tab functionality was added back in (trust me, this was a fair bit of work)
+- GUI overhaul
+  - Re-designed the entire GUI to feature a more cohesive material-design-esque layout
+  - Re-routed buttons such that they return based upon history, not to static locations
+- Enhanced schedule visualization
+  - Added a cleaner schedule layout with more information
+  - Even more information is available on on click
+  - Added the ability to name your schedule
+      - This name is used when exporting your file as a PDF
 
 ## **Current Tech Stack:**
 
@@ -39,6 +56,7 @@
   - Express.js - Provides back-end routing
 - Front-end
   - React.js - Provides a templating alongside logical separation of scripts and views
+  - Redux - Allows for clean/safe management of state
 - Development Utility
   - Travis-CI - Continuous integration suite to levy testing/coverage capabilities
   - Jest - Facilitates .js and Python unit testing
@@ -46,3 +64,4 @@
   - Husky - Automates pre-hooks to fire prior to each commit
   - Prettier - Beautifies code, configured to function as a pre-hook triggered before each commit
   - Nodemon - Automatically serves server .js files when updated, allowing for "real-time" back-end edits
+  - Webpack - Bundles the client side .js, allowing for less packets and hot client-side module updates during development

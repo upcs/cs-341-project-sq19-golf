@@ -13,7 +13,13 @@ import '../css/styles.css';
 export class SchedulesContainer extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      scheduleName: 'schedules'
+    }
+
     this.connectSchedules = this.connectSchedules.bind(this);
+    this.printDocument = this.printDocument.bind(this);
+    this.handleScheduleName = this.handleScheduleName.bind(this);
   }
 
   connectSchedules() {
@@ -38,8 +44,16 @@ export class SchedulesContainer extends Component {
         const pdf = new jsPDF("1", "mm", "a4");
         pdf.addImage(imgData, 'JPEG', 20, 20, 180, 150);
         pdf.output('/schedules');
-        pdf.save("download.pdf");
+        pdf.save(this.state.scheduleName + ".pdf");
       });
+  }
+
+  goBack() {
+    window.history.back();
+  }
+
+  handleScheduleName(event) {
+    this.setState({scheduleName: event.target.value});
   }
 
   render() {
@@ -48,24 +62,17 @@ export class SchedulesContainer extends Component {
     return (
       <section id="main">
     		<div id="name">Schedule Name:
-    			<input id="scheduleName" type="text" placeholder="Enter Schedule Name Here"/>
+    			<input id="scheduleName" type="text" placeholder="Enter Schedule Name Here" onChange={this.handleScheduleName}/>
     		</div>
     		<div id="divToPrint" className="pdfdim">
     			<div className="horiz-container">
     			  <Schedules/>
     			</div>
     		</div>
-        <Link to="/">
-          <button id="save" type="button">
-            Save
-          </button>
-        </Link>
-		    <Link to="/availability">
-          <button id="return" type="button">
-            Return
-          </button>
-        </Link>
-	      <button onClick={this.printDocument}>Save As PDF</button>
+        <div className="bottom">
+          <button onClick={this.printDocument}>Save As PDF</button>
+          <button className="return" onClick={this.goBack}>Return</button>
+        </div>
       </section>
     );
   }

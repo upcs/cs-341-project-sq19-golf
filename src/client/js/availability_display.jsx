@@ -121,8 +121,7 @@ export class AvailabilityContainer extends Component {
 				sortable={false}
 				resizable={false}
 			  />
-			<div>
-				<div id = "option-container">
+				<div class="bottom" id="option-container">
 					<Link to="/">
 						<button id="save" type="button">
 							Save
@@ -133,44 +132,30 @@ export class AvailabilityContainer extends Component {
 							Reset
 						</button>
 					</Link>
-						<button onClick={this.showMenu}>
-						  Additional Options
-						</button>
-
-				{
-				  this.state.showMenu ? (
-						<table className = "optable"><tbody>
-					  <div className="menu" ref={(element) => { this.state.dropdownMenu = element }}>
-						<tr>
-								<div id="credit"><b>Max Credit Amount</b>
-								<td>
+					<button onClick={this.showMenu}>
+					  Additional Options
+					</button>
+					{
+					  this.state.showMenu ? (
+						  <div className="menu" ref={(element) => { this.state.dropdownMenu = element }}>
+								<span id="credit">
+									<div className="inputHeader">Max Credit Amount</div>
 									<input type="number" placeholder="Enter Max Credit Value" onChange={this.props.handleChange} data-populated="false"/>
-									</td><td>
 									<button id="creditButton" form="main" type="creditSave">
-									Save
+										Save
 									</button>
-								</td>
-								</div>
-							</tr>
-							<tr>
-									<div id="blacklist"><b>Professor Blacklist</b>
-										<td>
-											<input id="profBlacklist" type="text" placeholder="Enter Professor Name"/>
-										</td>
-										<td>
-											<button id="profButton" form="main" type="profSave">
-											Save
-											</button>
-										</td>
-									</div>
-								</tr>
-							  </div></tbody>
-						</table>
-					) : (null)
-				}
-
-			</div>
-			  </div>
+								</span>
+								<span id="blacklist">
+									<div className="inputHeader">Professor Blacklist</div>
+									<input id="profBlacklist" type="text" placeholder="Enter Professor Name"/>
+									<button id="profButton" form="main" type="profSave">
+										Save
+									</button>
+								</span>
+					  	</div>
+						) : (null)
+					}
+				</div>
 			</div>
 		);
   }

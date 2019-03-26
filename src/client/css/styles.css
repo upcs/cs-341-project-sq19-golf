@@ -2,7 +2,7 @@
 
 body {
     margin: 2vh;
-    background-color: #885ead;
+    background-color: #cfbede;
     font-size: 18px;
 }
 
@@ -163,12 +163,12 @@ a {
 
 /*Body Style*/
 form {
+  position: relative;
   text-align: center;
   background-color: #DDDEDE;
   padding: 5px;
   margin-top: 12px;
   border-radius: 5px;
-  z-index: 10;
 }
 
 #main {
@@ -184,8 +184,8 @@ form {
   font-weight: bold;
 }
 
-#main input, #main button  {
-  background-color: #aa8cc5;
+input, button  {
+  background-color: #aa8cc5 !important;
   color: white;
   border-radius: 5px;
   text-decoration: none;
@@ -193,6 +193,11 @@ form {
   margin: 3px;
   border: none;
 }
+
+button {
+  background-color: #885ead !important;
+}
+
 
 #classGroup{
   padding: 5px;
@@ -312,10 +317,6 @@ form {
     font:16px "Helvetica", sans-serif;
 }
 
-#main button {
-  background-color: #885ead;
-}
-
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
     -webkit-appearance: none;
@@ -408,6 +409,12 @@ input[type=number] {
 .scroll-menu-arrow {
   padding: 20px;
   cursor: pointer;
+}
+
+ .inputHeader {
+   font-weight: bold;
+   padding-top: 12px;
+ }
 
 #tableCap {
   background-color: #DDDEDE;
@@ -420,9 +427,9 @@ input[type=number] {
 }
 
 /*help page*/
-a {
+/*a {
   color: #885ead;
-}
+}*/
 
 .textContainer {
   background-color: #DDDEDE;

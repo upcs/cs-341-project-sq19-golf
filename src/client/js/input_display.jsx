@@ -144,22 +144,26 @@ export class InputContainer extends Component {
     }
 
     return (
-      <form id="main">
-        <TermInput/>
-        <div id="classGroup">
-          {courseList}
+      <div>
+        <form id="main">
+          <TermInput/>
+          <div id="classGroup">
+            {courseList}
+          </div>
+        </form>
+        <div class="bottom">
+          <Link to='/schedules'>
+            <button form="main" onClick={this.handleSubmit}>
+              Submit
+            </button>
+          </Link>
+          <Link to='/availability'>
+            <button form="main" type="submit">
+              Availability
+            </button>
+          </Link>
         </div>
-        <Link to='/schedules'>
-          <button form="main" onClick={this.handleSubmit}>
-            Submit
-          </button>
-        </Link>
-        <Link to='/availability'>
-          <button form="main" type="submit">
-            Availability
-          </button>
-        </Link>
-      </form>
+      </div>
     );
   }
 };
