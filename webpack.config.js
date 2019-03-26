@@ -1,7 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
-
+const webpack = require('webpack');
 const outputDirectory = 'dist';
 
 module.exports = {
@@ -37,13 +37,15 @@ module.exports = {
     open: true,
     proxy: {
       '/api': 'http://localhost:8080'
-    }
+    },
+    hot: true
   },
   plugins: [
     new CleanWebpackPlugin([outputDirectory]),
     new HtmlWebpackPlugin({
       template: './src/client/html/index.html',
       favicon: './src/client/icons/scheduleIcon.png'
-    })
+    }),
+    new webpack.HotModuleReplacementPlugin()
   ]
 };

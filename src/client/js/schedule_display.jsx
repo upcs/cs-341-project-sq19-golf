@@ -5,7 +5,7 @@ import * as html2canvas from 'html2canvas';
 import Popup from 'reactjs-popup'
 import {Link} from 'react-router-dom';
 import {connect} from "react-redux";
-import {Schedules} from './input_display';
+import Return from './return.jsx';
 import {store, modifySchedules} from './redux';
 import '../css/styles.css';
 
@@ -73,6 +73,7 @@ export class SchedulesContainer extends Component {
           <button onClick={this.printDocument}>Save As PDF</button>
           <button className="return" onClick={this.goBack}>Return</button>
         </div>
+        <Return/>
       </section>
     );
   }
