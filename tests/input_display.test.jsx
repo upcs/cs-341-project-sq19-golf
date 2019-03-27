@@ -1,5 +1,5 @@
 import React from 'react';
-import {shallow} from 'enzyme';
+import { shallow, render, setState } from 'enzyme';
 import {store} from '../src/client/js/redux';
 import {TopNavigation, InputContainer, CourseInput, TermInput} from '../src/client/js/input_display.jsx';
 
@@ -7,7 +7,10 @@ describe('TopNavigation', () => {
   test('Should render correctly', () => {
     const topNav = shallow(<TopNavigation/>);
     expect(topNav).toMatchSnapshot();
-  });
+
+    //topNav.instance().aboutClick('e');
+	  //expect(topNav.instance().state.aboutClick).toEqual('e');
+  //});
 });
 
 describe('InputContainer', () => {
@@ -40,11 +43,11 @@ describe('CourseInput', () => {
     let key = {'key': null};
     const courseInput = shallow(<CourseInput courses={[]} lastKey={key}/>);
     expect(courseInput).toMatchSnapshot();
-	
+
     courseInput.instance()._handleKeyPress({key: "Enter"}, 0);
      expect(courseInput.instance().props.lastKey['key']).toEqual("Enter");
   });
-  
+
 });
 
 describe('TermInput', () => {
