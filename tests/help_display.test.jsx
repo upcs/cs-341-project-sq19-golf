@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { shallow, render, setState } from 'enzyme';
 import Sinon from 'sinon';
 
 import {HelpContainer} from '../src/client/js/help_display.jsx';

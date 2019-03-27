@@ -65,7 +65,7 @@ export class SchedulesContainer extends Component {
     			</div>
     		</div>
         <div className="bottom">
-          <button onClick={this.printDocument}>Save As PDF</button>
+          <button className="print" onClick={this.printDocument}>Save As PDF</button>
           <button className="return" onClick={() => window.history.back()}>Return</button>
         </div>
       </section>
