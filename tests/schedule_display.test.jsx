@@ -3,12 +3,13 @@ import { shallow, render, setState } from 'enzyme';
 
 import {SchedulesContainer, ScheduleDisplay, ClassDisplay} from '../src/client/js/schedule_display.jsx';
 
-//Mocked functions
-beforeEach(() => {
-});
-
 //Tests
 describe('SchedulesContainer', () => {
+  //Mocked functions
+  beforeEach(() => {
+    HTMLCanvasElement.prototype.getContext = jest.fn();
+  });
+
   test('Should render correctly with a "populated" schedules property', () => {
     //Mocks class data state through providing abitrary properties
     let schedules = [[], []];
