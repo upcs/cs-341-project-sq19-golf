@@ -31,36 +31,42 @@ describe('SchedulesContainer', () => {
 	  let schedules = [[], []];
 	  const schedulesContainer = shallow(<SchedulesContainer {...props}/>);
 	  expect(schedulesContainer).toMatchSnapshot();
-	  const props = { connectSchedules: false };
+	  const props = { connectSchedules: undefined };
 	  
 	  schedulesContainer.instance().connectSchedules();
-	  expect(schedulesContainer.instance().props.connectSchedules).toBe(false);
+	  expect(schedulesContainer.instance().props.connectSchedules).toBe();
   });
   
   test('Should not produce pdf of page properly', () => {
 	  const schedulesContainer = shallow(<SchedulesContainer {...props}/>);
 	  expect(schedulesContainer).toMatchSnapshot();
-	  const props = { printDocument: false };
+	  const props = { printDocument: printDocument };
 	  
 	  schedulesContainer.instance().printDocument();
-	  expect(schedulesContainer.instance().props.printDocument).toBe(false);
+	  expect(schedulesContainer.instance().props.printDocument).toBe(printDocument);
   });
   
   test('Should title schedule name on pdf', () => {
 	   const schedulesContainer = shallow(<SchedulesContainer {...props}/>);
        expect(schedulesContainer).toMatchSnapshot();
        const event = Object.assign(jest.fn(), { preventDefault: () => {}});
-	   const props = { handleScheduleName: '' };
+	   const props = { handleScheduleName: undefined };
 	   
 	   schedulesContainer.instance().handleScheduleName(event);
-	   expect(schedulesContainer.instance().props.handleScheduleName).toBe('');
+	   expect(schedulesContainer.instance().props.handleScheduleName).toBe();
   });
   
-  SchedulesContainer.find('.print').simulate("click");
+  test('Should support onClick event on buttons', () => {
+      const clickCallback = Sinon.spy();
+      const schedulesContainer = shallow(<schedulesContainer onClick={clickCallback}/>);
+
+      //Simulate an onClick event
+      schedulesContainer.find('.print').simulate("click");
   
-  SchedulesContainer.find('.return').simulate("click");
-  
-  SchedulesContainer.find('.classLabel').simulate("click");
+	  schedulesContainer.find('.return').simulate("click");
+
+      Sinon.assert.called(clickCallback);
+  });
 });
 
 describe('ScheduleDisplay', () => {
@@ -105,12 +111,22 @@ describe('ClassDisplay', () => {
   test('Allow for mouse hovering', () => {
 	  const classDisplay = shallow(<ClassDisplay {...props}/>);
 	  expect(classDisplay).toMatchSnapshot();
-	  const props = { handleMouseIn: false, handleMouseOut: false };
+	  const props = { handleMouseIn: undefined, handleMouseOut: undefined };
 	  
 	  classDisplay.instance().handleMouseIn();
-	  expect(classDisplay.instance().props.handleMouseIn).toBe(false);
+	  expect(classDisplay.instance().props.handleMouseIn).toBe();
 	  
 	  classDisplay.instance().handleMouseOut();
-	  expect(classDisplay.instance().props.handleMouseOut).toBe(false);
+	  expect(classDisplay.instance().props.handleMouseOut).toBe();
+  });
+  
+  test('Should support onClick event on About button', () => {
+      const clickCallback = Sinon.spy();
+      const classDisplay = shallow(<ClassDisplay onClick={clickCallback}/>);
+
+      //Simulate an onClick event
+      classDisplay.find('.classLabel').simulate("click");
+
+      Sinon.assert.called(clickCallback);
   });
 });
