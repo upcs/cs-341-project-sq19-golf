@@ -9,7 +9,7 @@ describe('TopNavigation', () => {
     expect(topNav).toMatchSnapshot();
 
     topNav.instance().aboutClick();
-	  expect(topNav.instance().state.aboutClick).toBe('UPSchedule is a convenient schedule planner created by students, for students.');
+	  expect(topNav.instance().state.aboutClick).toBe(null);
   });
 });
 
@@ -45,17 +45,17 @@ describe('CourseInput', () => {
     const event = Object.assign(jest.fn(), { preventDefault: () => {}});
     const props = { idx: 0 }
 
-    termInput.instance().handleChange(event);
-    expect(termInput.instance().props.handleChange).toBe(0);
+    courseInput.instance().handleChange(event);
+    expect(courseInput.instance().props.handleChange).toBe(0);
 
-    termInput.instance().createRef(idx);
-    expect(termInput.instance().props.createRef).toBe();
+    courseInput.instance().createRef(idx);
+    expect(courseInput.instance().props.createRef).toBe();
   });
 });
 
 describe('TermInput', () => {
   test('Should render correctly', () => {
-    const termInput = shallow(<TermInput {...props}/>);
+    const termInput = shallow(<TermInput/>);
     expect(termInput).toMatchSnapshot();
   });
 });
