@@ -10,8 +10,6 @@ const app = Express();
 app.use(Express.static('dist'));
 app.use(BodyParser.json());
 
-updateDB();
-
 //Client Side Post
 app.post('/api/scheduleRequest', (req, res) => {
   getViableSchedulesAsync(req.body, viableSchedules => {
