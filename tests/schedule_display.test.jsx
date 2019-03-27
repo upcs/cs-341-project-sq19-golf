@@ -30,8 +30,8 @@ describe('SchedulesContainer', () => {
   SchedulesContainer.instance().connectSchedules();
   expect(SchedulesContainer.instance().props.connectSchedules).toBe(schedules);
   
-  SchedulesContainer.instance().printDocument();
-  expect(SchedulesContainer.instance().props.printDocument).toBe();
+  SchedulesContainer.printDocument();
+  expect(SchedulesContainer.props.printDocument).toBe();
 });
 
 describe('ScheduleDisplay', () => {
@@ -56,7 +56,7 @@ describe('ScheduleDisplay', () => {
 
 describe('ClassDisplay', () => {
   test('Should render correctly with a "populated" classData property', () => {
-    //Mocks class data state through providing abitrary properties
+    //Mocks class data state through providing arbitrary properties
     let classData = {'start': 0, 'end': 1, 'title': 'class'};
 	
     const classDisplay = shallow(<ClassDisplay classData={classData}/>);
@@ -73,9 +73,9 @@ describe('ClassDisplay', () => {
     expect(classDisplay).toMatchSnapshot();
   });
   
-  ClassDisplay.instance().handleMouseIn();
-  expect(ClassDisplay.instance().props.handleMouseIn).toBe();
+  ClassDisplay.handleMouseIn();
+  expect(ClassDisplay.handleMouseIn).toBe();
   
-  ClassDisplay.instance().handleMouseOut();
-  expect(ClassDisplay.instance().props.handleMouseOut).toBe();
+  ClassDisplay.handleMouseOut();
+  expect(ClassDisplay.handleMouseOut).toBe();
 });
