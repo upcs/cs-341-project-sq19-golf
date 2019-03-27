@@ -56,5 +56,6 @@ describe('CourseInput', () => {
 describe('TermInput', () => {
   test('Should render correctly', () => {
     const termInput = shallow(<TermInput {...props}/>);
-    expect(termInput).toMatchSnapshot();  
+    expect(termInput).toMatchSnapshot();
+  });
 });
