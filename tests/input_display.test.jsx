@@ -1,5 +1,5 @@
 import React from 'react';
-import {shallow} from 'enzyme';
+import { shallow, render, setState } from 'enzyme';
 import {store} from '../src/client/js/redux';
 import {TopNavigation, InputContainer, CourseInput, TermInput} from '../src/client/js/input_display.jsx';
 
@@ -7,6 +7,9 @@ describe('TopNavigation', () => {
   test('Should render correctly', () => {
     const topNav = shallow(<TopNavigation/>);
     expect(topNav).toMatchSnapshot();
+
+    topNav.instance().aboutClick();
+	  expect(topNav.instance().state.aboutClick).toBe('UPSchedule is a convenient schedule planner created by students, for students.');
   });
 });
 
@@ -39,12 +42,19 @@ describe('CourseInput', () => {
   test('Should render correctly', () => {
     const courseInput = shallow(<CourseInput courses={[]}/>);
     expect(courseInput).toMatchSnapshot();
+    const event = Object.assign(jest.fn(), { preventDefault: () => {}});
+    const props = { idx: 0 }
+
+    termInput.instance().handleChange(event);
+    expect(termInput.instance().props.handleChange).toBe(0);
+
+    termInput.instance().createRef(idx);
+    expect(termInput.instance().props.createRef).toBe();
   });
 });
 
 describe('TermInput', () => {
   test('Should render correctly', () => {
-    const termInput = shallow(<TermInput/>);
-    expect(termInput).toMatchSnapshot();
-  });
+    const termInput = shallow(<TermInput {...props}/>);
+    expect(termInput).toMatchSnapshot();  
 });
