@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow, render, setState } from 'enzyme';
-
+import Sinon from 'sinon';
 import {SchedulesContainer, ScheduleDisplay, ClassDisplay} from '../src/client/js/schedule_display.jsx';
 
 //Tests
@@ -46,6 +46,16 @@ describe('ScheduleDisplay', () => {
   test('Should render correctly with a null schedule property', () => {
     const scheduleDisplay = shallow(<ScheduleDisplay schedule={null}/>);
     expect(scheduleDisplay).toMatchSnapshot();
+  });
+  
+  test('Should support onClick event on Save as PDF button', () => {
+      const clickCallback = Sinon.spy();
+      const scheduleDisplay = shallow(<ScheduleDisplay onClick={clickCallback}/>);
+
+      //Simulate an onClick event
+      scheduleDisplay.find([class="return"]).simulate("click");
+
+      Sinon.assert.called(clickCallback);
   });
 });
 

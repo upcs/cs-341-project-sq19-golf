@@ -37,9 +37,13 @@ describe('InputContainer', () => {
 
 describe('CourseInput', () => {
   test('Should render correctly', () => {
-    const courseInput = shallow(<CourseInput courses={[]}/>);
+    const courseInput = shallow(<CourseInput courses={[]} lastKey={[key: null]}/>);
     expect(courseInput).toMatchSnapshot();
+	
+	courseInput.instance()._handleKeyPress({key: "Enter"});
+	expect(courseInput.instance().lastKey['key'].toEqual("Enter"));
   });
+  
 });
 
 describe('TermInput', () => {
