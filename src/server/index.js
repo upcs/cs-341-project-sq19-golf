@@ -10,6 +10,8 @@ const app = Express();
 app.use(Express.static('dist'));
 app.use(BodyParser.json());
 
+updateDB();
+
 //Client Side Post
 app.post('/api/scheduleRequest', (req, res) => {
   getViableSchedulesAsync(req.body, viableSchedules => {
@@ -38,7 +40,7 @@ app.listen(process.env.PORT || 8080, () => console.log(`Listening on port ${proc
 //TODO: Update from desiredClasses to courseID/subject
 async function updateDB() {
   //Update course data
-  let dataPath = Path.join('web_scraper', 'course_dump.csv');
+  let dataPath = Path.join('web_scraper', 'dump.csv');
   await Sql.updateAllCourseData(dataPath);
 }
 
