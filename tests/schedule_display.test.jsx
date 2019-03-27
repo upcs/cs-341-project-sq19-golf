@@ -12,6 +12,7 @@ describe('SchedulesContainer', () => {
   test('Should render correctly with a "populated" schedules property', () => {
     //Mocks class data state through providing abitrary properties
     let schedules = [[], []];
+	const imgData = canvas.toDataURL('image/png');
 
     const schedulesContainer = shallow(<SchedulesContainer schedules={schedules}/>);
     expect(schedulesContainer).toMatchSnapshot();
@@ -26,6 +27,12 @@ describe('SchedulesContainer', () => {
     const schedulesContainer = shallow(<SchedulesContainer schedules={null}/>);
     expect(schedulesContainer).toMatchSnapshot();
   });
+  
+  schedulesContainer.instance().connectSchedules();
+  expect(classDisplay.instance().props.connectSchedules).toBe(schedules);
+  
+  schedulesContainer.instance().printDocument();
+  expect(classDisplay.instance().props.printDocument).toBe(imgData);
 });
 
 describe('ScheduleDisplay', () => {
@@ -52,7 +59,7 @@ describe('ClassDisplay', () => {
   test('Should render correctly with a "populated" classData property', () => {
     //Mocks class data state through providing abitrary properties
     let classData = {'start': 0, 'end': 1, 'title': 'class'};
-
+	
     const classDisplay = shallow(<ClassDisplay classData={classData}/>);
     expect(classDisplay).toMatchSnapshot();
   });
@@ -66,4 +73,10 @@ describe('ClassDisplay', () => {
     const classDisplay = shallow(<ClassDisplay classData={null}/>);
     expect(classDisplay).toMatchSnapshot();
   });
+  
+  classDisplay.instance().handleMouseIn();
+  expect(classDisplay.instance().props.handleMouseIn).toBe();
+  
+  classDisplay.instance().handleMouseOut();
+  expect(classDisplay.instance().props.handleMouseOut).toBe();
 });
