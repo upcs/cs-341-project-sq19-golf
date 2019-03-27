@@ -4,18 +4,28 @@ exports[`ClassDisplay Should render correctly with a "populated" classData prope
 <div
   className="scheduleClass"
 >
-  <span
-    className="timeLabel"
+  <button
+    className="classLabel"
+    onClick={[Function]}
   >
+    <br />
+     
     0
      - 
     1
-  </span>
-  <span
-    className="classLabel"
+  </button>
+  <div
+    className="timeLabel"
+    style={
+      Object {
+        "display": "none",
+      }
+    }
   >
     class
-  </span>
+    <br />
+    Instructor: 
+  </div>
 </div>
 `;
 
@@ -23,14 +33,25 @@ exports[`ClassDisplay Should render correctly with a null classData property 1`]
 <div
   className="scheduleClass"
 >
-  <span
-    className="timeLabel"
-  >
-     - 
-  </span>
-  <span
+  <button
     className="classLabel"
-  />
+    onClick={[Function]}
+  >
+    <br />
+     
+     - 
+  </button>
+  <div
+    className="timeLabel"
+    style={
+      Object {
+        "display": "none",
+      }
+    }
+  >
+    <br />
+    Instructor: 
+  </div>
 </div>
 `;
 
@@ -38,14 +59,25 @@ exports[`ClassDisplay Should render correctly with no classData property 1`] = `
 <div
   className="scheduleClass"
 >
-  <span
-    className="timeLabel"
-  >
-     - 
-  </span>
-  <span
+  <button
     className="classLabel"
-  />
+    onClick={[Function]}
+  >
+    <br />
+     
+     - 
+  </button>
+  <div
+    className="timeLabel"
+    style={
+      Object {
+        "display": "none",
+      }
+    }
+  >
+    <br />
+    Instructor: 
+  </div>
 </div>
 `;
 
@@ -86,37 +118,36 @@ exports[`SchedulesContainer Should render correctly with a "populated" schedules
     Schedule Name:
     <input
       id="scheduleName"
+      onChange={[Function]}
       placeholder="Enter Schedule Name Here"
       type="text"
     />
   </div>
   <div
-    className="horiz-container"
+    className="pdfdim"
+    id="divToPrint"
   >
-    <Connect(schedulesList) />
-  </div>
-  <Link
-    replace={false}
-    to="/"
-  >
-    <button
-      id="save"
-      type="button"
+    <div
+      className="horiz-container"
     >
-      Save
-    </button>
-  </Link>
-  <Link
-    replace={false}
-    to="/availability"
+      <Connect(schedulesList) />
+    </div>
+  </div>
+  <div
+    className="bottom"
   >
     <button
-      id="return"
-      type="button"
+      onClick={[Function]}
+    >
+      Save As PDF
+    </button>
+    <button
+      className="return"
+      onClick={[Function]}
     >
       Return
     </button>
-  </Link>
+  </div>
 </section>
 `;
 
@@ -130,37 +161,36 @@ exports[`SchedulesContainer Should render correctly with a null schedules proper
     Schedule Name:
     <input
       id="scheduleName"
+      onChange={[Function]}
       placeholder="Enter Schedule Name Here"
       type="text"
     />
   </div>
   <div
-    className="horiz-container"
+    className="pdfdim"
+    id="divToPrint"
   >
-    <Connect(schedulesList) />
-  </div>
-  <Link
-    replace={false}
-    to="/"
-  >
-    <button
-      id="save"
-      type="button"
+    <div
+      className="horiz-container"
     >
-      Save
-    </button>
-  </Link>
-  <Link
-    replace={false}
-    to="/availability"
+      <Connect(schedulesList) />
+    </div>
+  </div>
+  <div
+    className="bottom"
   >
     <button
-      id="return"
-      type="button"
+      onClick={[Function]}
+    >
+      Save As PDF
+    </button>
+    <button
+      className="return"
+      onClick={[Function]}
     >
       Return
     </button>
-  </Link>
+  </div>
 </section>
 `;
 
@@ -174,36 +204,35 @@ exports[`SchedulesContainer Should render correctly with no schedules property 1
     Schedule Name:
     <input
       id="scheduleName"
+      onChange={[Function]}
       placeholder="Enter Schedule Name Here"
       type="text"
     />
   </div>
   <div
-    className="horiz-container"
+    className="pdfdim"
+    id="divToPrint"
   >
-    <Connect(schedulesList) />
-  </div>
-  <Link
-    replace={false}
-    to="/"
-  >
-    <button
-      id="save"
-      type="button"
+    <div
+      className="horiz-container"
     >
-      Save
-    </button>
-  </Link>
-  <Link
-    replace={false}
-    to="/availability"
+      <Connect(schedulesList) />
+    </div>
+  </div>
+  <div
+    className="bottom"
   >
     <button
-      id="return"
-      type="button"
+      onClick={[Function]}
+    >
+      Save As PDF
+    </button>
+    <button
+      className="return"
+      onClick={[Function]}
     >
       Return
     </button>
-  </Link>
+  </div>
 </section>
 `;
