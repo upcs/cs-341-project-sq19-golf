@@ -18,6 +18,12 @@ app.post('/api/scheduleRequest', (req, res) => {
   });
 });
 
+app.post('/api/allCoursesRequest', (req, res) => {
+  getAllCoursesAsync(courses => {
+    res.json(courses);
+  });
+});
+
 //Redirect to 404
 app.all("*", function (req, res, next) {
     return res.send('page not found');
@@ -34,6 +40,12 @@ async function updateDB() {
   //Update course data
   let dataPath = Path.join('web_scraper', 'course_dump.csv');
   await Sql.updateAllCourseData(dataPath);
+}
+
+async function getAllCoursesAsync(callback) {
+  //Get all courses
+  let courses = await Sql.getAllCourseData();
+  callback(courses);
 }
 
 async function getViableSchedulesAsync(desiredClasses, callback) {

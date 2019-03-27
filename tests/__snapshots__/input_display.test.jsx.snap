@@ -3,16 +3,19 @@
 exports[`CourseInput Should render correctly 1`] = `
 <div
   className="classSelect"
+  onChange={[Function]}
 >
-  <input
-    data-populated="false"
-    onChange={[Function]}
+  <InputPredict
+    dictionary={Array []}
+    name="name"
+    onKeyDown={[Function]}
     placeholder="Course Type"
     type="text"
   />
-  <input
-    data-populated="false"
-    onChange={[Function]}
+  <InputPredict
+    dictionary={Array []}
+    name="name"
+    onKeyDown={[Function]}
     placeholder="Course Number"
     type="number"
   />
@@ -22,26 +25,70 @@ exports[`CourseInput Should render correctly 1`] = `
 exports[`InputContainer Should render correctly 1`] = `
 <form
   id="main"
-  onSubmit={[Function]}
 >
   <TermInput />
   <div
     id="classGroup"
   >
     <CourseInput
-      id={0}
+      courses={Array []}
+      idx={0}
       key="course-0"
+      lastKey={
+        Object {
+          "key": null,
+        }
+      }
       onChange={[Function]}
+      references={Object {}}
     />
     <CourseInput
-      id={1}
+      courses={Array []}
+      idx={2}
       key="course-1"
+      lastKey={
+        Object {
+          "key": null,
+        }
+      }
       onChange={[Function]}
+      references={Object {}}
     />
     <CourseInput
-      id={2}
+      courses={Array []}
+      idx={4}
       key="course-2"
+      lastKey={
+        Object {
+          "key": null,
+        }
+      }
       onChange={[Function]}
+      references={Object {}}
+    />
+    <CourseInput
+      courses={Array []}
+      idx={6}
+      key="course-3"
+      lastKey={
+        Object {
+          "key": null,
+        }
+      }
+      onChange={[Function]}
+      references={Object {}}
+    />
+    <CourseInput
+      courses={Array []}
+      idx={8}
+      key="course-4"
+      lastKey={
+        Object {
+          "key": null,
+        }
+      }
+      onChange={[Function]}
+      references={Object {}}
     />
   </div>
   <Link
@@ -50,7 +97,7 @@ exports[`InputContainer Should render correctly 1`] = `
   >
     <button
       form="main"
-      type="submit"
+      onClick={[Function]}
     >
       Submit
     </button>
@@ -66,10 +113,6 @@ exports[`InputContainer Should render correctly 1`] = `
       Availability
     </button>
   </Link>
-  <button
-    form="main"
-    type="submit"
-  />
 </form>
 `;
 

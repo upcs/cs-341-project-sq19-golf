@@ -5,7 +5,6 @@ import * as html2canvas from 'html2canvas';
 import Popup from 'reactjs-popup'
 import {Link} from 'react-router-dom';
 import {connect} from "react-redux";
-import {Schedules} from './input_display';
 import {store, modifySchedules} from './redux';
 import '../css/styles.css';
 
@@ -13,7 +12,13 @@ import '../css/styles.css';
 export class SchedulesContainer extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      scheduleName: 'schedules'
+    }
+
     this.connectSchedules = this.connectSchedules.bind(this);
+    this.printDocument = this.printDocument.bind(this);
+    this.handleScheduleName = this.handleScheduleName.bind(this);
   }
 
   connectSchedules() {
@@ -26,10 +31,10 @@ export class SchedulesContainer extends Component {
         return <ScheduleDisplay key={"schedule-" + i} schedule={schedule}/>
       });
     };
-	
+
     return connect(mapStateToProps)(schedulesList);
   }
-  
+
   printDocument() {
     const input = document.getElementById('divToPrint');
     html2canvas(input)
@@ -38,34 +43,31 @@ export class SchedulesContainer extends Component {
         const pdf = new jsPDF("1", "mm", "a4");
         pdf.addImage(imgData, 'JPEG', 20, 20, 180, 150);
         pdf.output('/schedules');
-        pdf.save("download.pdf");
+        pdf.save(this.state.scheduleName + ".pdf");
       });
+  }
+
+  handleScheduleName(event) {
+    this.setState({scheduleName: event.target.value});
   }
 
   render() {
     const Schedules = this.connectSchedules();
-	
+
     return (
       <section id="main">
     		<div id="name">Schedule Name:
-    			<input id="scheduleName" type="text" placeholder="Enter Schedule Name Here"/>
+    			<input id="scheduleName" type="text" placeholder="Enter Schedule Name Here" onChange={this.handleScheduleName}/>
     		</div>
-		<div id="divToPrint" className="pdfdim">
-			<div className="horiz-container">
-			  <Schedules/>
-			</div>
-		</div>
-        <Link to="/">
-          <button id="save" type="button">
-            Save
-          </button>
-        </Link>
-		    <Link to="/availability">
-          <button id="return" type="button">
-            Return
-          </button>
-        </Link>
-		<button onClick={this.printDocument}>Save As PDF</button> 
+    		<div id="divToPrint" className="pdfdim">
+    			<div className="horiz-container">
+    			  <Schedules/>
+    			</div>
+    		</div>
+        <div className="bottom">
+          <button onClick={this.printDocument}>Save As PDF</button>
+          <button className="return" onClick={() => window.history.back()}>Return</button>
+        </div>
       </section>
     );
   }
@@ -77,7 +79,7 @@ export class ScheduleDisplay extends Component {
     super(props);
     this.state = { schedule: props.schedule || [] };
   }
-  
+
   render() {
     let schedule = this.state.schedule;
 
@@ -86,10 +88,10 @@ export class ScheduleDisplay extends Component {
         <ClassDisplay key={"class-" + i} classData={classData}/>
       )
     });
-	
+
     return (
       <span className="scheduleOption">
-        {classDisplayList}	
+        {classDisplayList}
       </span>
     )
   }
@@ -105,17 +107,17 @@ export class ClassDisplay extends Component {
 	handleMouseIn() {
 		this.setState({ hover: true })
     }
-  
+
     handleMouseOut() {
 		this.setState({ hover: false })
-	}  
-  
+	}
+
   render() {
     let classData = this.state.classData;
 	const tooltipStyle = {
 		display: this.state.hover ? 'block' : 'none'
 	}
-	
+
     return (
 		  <div className="scheduleClass">
 			<button onClick={this.handleMouseIn.bind(this)} className="classLabel">
@@ -130,4 +132,3 @@ export class ClassDisplay extends Component {
     );
   }
 };
-

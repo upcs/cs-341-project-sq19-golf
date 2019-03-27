@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom';
 import '../css/styles.css';
 
 //Options for About Page and Quit to Initial Page
-export class SettingsContainer extends Component {
+export class HelpContainer extends Component {
 	constructor(props) {
 		super(props);
 
@@ -16,12 +16,20 @@ export class SettingsContainer extends Component {
 	render() {
 		return (
 		<section id="main">
-			<button id='aboutButton' onClick={this.state.onClick}>About</button>
-			<Link to="/">
-				<button id="quit" type="button">
-					Quit
-				</button>
-			</Link>
+			<div className="textContainer">
+				<div className="contentsTable">
+					<b id="tableTitle">Help Directory</b>
+					<ul>
+					<li><a href="#q1">Question 1</a></li>
+					</ul>
+				</div>
+				<br />
+				<div className="helpSet" id="h1">
+					<a id="q1">Question</a>
+					<p className="helpContent" id="a1">Answer</p>
+				</div>
+
+			</div>
 		</section>
 		);
 	}
