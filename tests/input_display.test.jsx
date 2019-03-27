@@ -8,8 +8,8 @@ describe('TopNavigation', () => {
     const topNav = shallow(<TopNavigation/>);
     expect(topNav).toMatchSnapshot();
 
-    topNav.instance().aboutClick('');
-	  expect(topNav.instance().state.aboutClick).toBe('');
+    topNav.instance().aboutClick('e');
+	  expect(topNav.instance().state.aboutClick).toEqual('e');
   });
 });
 
@@ -47,8 +47,8 @@ describe('CourseInput', () => {
     //courseInput.instance().handleChange(event);
     //expect(courseInput.instance().props.handleChange).toBe(0);
 
-    courseInput.instance().createRef(0);
-    expect(courseInput.instance().state.createRef).toBe();
+    courseInput.instance().createRef(1);
+    expect(courseInput.instance().state.createRef).toEqual(1);
   });
 });
 
