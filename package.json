@@ -19,7 +19,9 @@
       "!**/coverage/**",
       "!**/mocks/**",
       "!*.config.js",
-      "!**/index.{js,jsx}"
+      "!**/index.{js,jsx}",
+      "!**/node_modules/**",
+      "!**/dist/**"
     ],
     "snapshotSerializers": [
       "enzyme-to-json/serializer"

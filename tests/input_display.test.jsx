@@ -37,11 +37,12 @@ describe('InputContainer', () => {
 
 describe('CourseInput', () => {
   test('Should render correctly', () => {
-    const courseInput = shallow(<CourseInput courses={[]} lastKey={key:null}/>);
+    let key = {'key': null};
+    const courseInput = shallow(<CourseInput courses={[]} lastKey={key}/>);
     expect(courseInput).toMatchSnapshot();
 	
-	courseInput.instance()._handleKeyPress({key: "Enter"}, 0);
-	expect(courseInput.instance().lastKey['key'].toEqual("Enter"));
+    courseInput.instance()._handleKeyPress({key: "Enter"}, 0);
+     expect(courseInput.instance().props.lastKey['key']).toEqual("Enter");
   });
   
 });
