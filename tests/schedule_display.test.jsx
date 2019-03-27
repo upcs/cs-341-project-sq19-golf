@@ -27,11 +27,32 @@ describe('SchedulesContainer', () => {
     expect(schedulesContainer).toMatchSnapshot();
   });
   
-  SchedulesContainer.connectSchedules();
-  expect(SchedulesContainer.connectSchedules).toBe(schedules);
+  test('Should connect to schedule database properly', () => {
+	  let schedules = [[], []];
+	  const schedulesContainer = shallow(<SchedulesContainer {...props}/>);
+	  expect(schedulesContainer).toMatchSnapshot();
+	  
+	  schedulesContainer.instance().connectSchedules();
+	  expect(schedulesContainer.instance().props.connectSchedules).toBe(schedules);
+  });
   
-  SchedulesContainer.printDocument();
-  expect(SchedulesContainer.props.printDocument).toBe();
+  test('Should produce pdf of page properly', () => {
+	  const schedulesContainer = shallow(<SchedulesContainer {...props}/>);
+	  expect(schedulesContainer).toMatchSnapshot();
+	  
+	  schedulesContainer.instance().printDocument();
+	  expect(schedulesContainer.instance().props.printDocument).toBe();
+  });
+  
+  test('Should title schedule name on pdf', () => {
+	   const schedulesContainer = shallow(<SchedulesContainer {...props}/>);
+       expect(schedulesContainer).toMatchSnapshot();
+       const event = Object.assign(jest.fn(), { preventDefault: () => {}});
+	   let scheduleName = '';
+	   
+	   schedulesContainer.instance().handleScheduleName(event);
+	   expect(schedulesContainer.instance().props.handleScheduleName).toBe(scheduleName);
+  });
   
   SchedulesContainer.find('.print').simulate("click");
   
@@ -79,9 +100,14 @@ describe('ClassDisplay', () => {
     expect(classDisplay).toMatchSnapshot();
   });
   
-  ClassDisplay.state.handleMouseIn();
-  expect(ClassDisplay.state.handleMouseIn).toBe();
-  
-  ClassDisplay.state.handleMouseOut();
-  expect(ClassDisplay.state.handleMouseOut).toBe();
+  test('Should render correctly with a null schedules property', () => {
+	  const classDisplay = shallow(<ClassDisplay {...props}/>);
+	  expect(classDisplay).toMatchSnapshot();
+	  
+	  classDisplay.instance().handleMouseIn();
+	  expect(classDisplay.instance().props.handleMouseIn).toBe();
+	  
+	  classDisplay.instance().handleMouseOut();
+	  expect(classDisplay.instance().props.handleMouseOut).toBe();
+  });
 });
