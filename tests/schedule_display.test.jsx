@@ -1,6 +1,8 @@
 import React from 'react';
 import { shallow, render, setState } from 'enzyme';
 import Sinon from 'sinon';
+import * as jsPDF from 'jspdf';
+import * as html2canvas from 'html2canvas';
 
 import {SchedulesContainer, ScheduleDisplay, ClassDisplay} from '../src/client/js/schedule_display.jsx';
 
@@ -41,9 +43,10 @@ describe('SchedulesContainer', () => {
   test('Should not produce pdf of page properly', () => {
 	  const schedulesContainer = shallow(<SchedulesContainer/>);
 	  expect(schedulesContainer).toMatchSnapshot();
+	  let pdf = new jsPDF();
 	  
 	  schedulesContainer.instance().printDocument();
-	  expect(schedulesContainer.instance().state.printDocument).toBe();
+	  expect(schedulesContainer.instance().state.printDocument).toBe(pdf);
   });
   
   test('Should title schedule name on pdf', () => {
@@ -52,7 +55,7 @@ describe('SchedulesContainer', () => {
        const event = Object.assign(jest.fn(), { preventDefault: () => {}});
 	   
 	   schedulesContainer.instance().handleScheduleName(event);
-	   expect(schedulesContainer.instance().state.handleScheduleName).toEqual({'scheduleName': 'schedules'});
+	   expect(schedulesContainer.instance().state.handleScheduleName).toEqual({scheduleName: event.target.value});
   });
   
   test('Should support onClick event on buttons', () => {
