@@ -27,31 +27,33 @@ describe('SchedulesContainer', () => {
     expect(schedulesContainer).toMatchSnapshot();
   });
   
-  test('Should connect to schedule database properly', () => {
+  test('Should not connect to schedule database properly', () => {
 	  let schedules = [[], []];
 	  const schedulesContainer = shallow(<SchedulesContainer {...props}/>);
 	  expect(schedulesContainer).toMatchSnapshot();
+	  const props = { connectSchedules: false };
 	  
 	  schedulesContainer.instance().connectSchedules();
-	  expect(schedulesContainer.instance().props.connectSchedules).toBe(schedules);
+	  expect(schedulesContainer.instance().props.connectSchedules).toBe(false);
   });
   
-  test('Should produce pdf of page properly', () => {
+  test('Should not produce pdf of page properly', () => {
 	  const schedulesContainer = shallow(<SchedulesContainer {...props}/>);
 	  expect(schedulesContainer).toMatchSnapshot();
+	  const props = { printDocument: false };
 	  
 	  schedulesContainer.instance().printDocument();
-	  expect(schedulesContainer.instance().props.printDocument).toBe();
+	  expect(schedulesContainer.instance().props.printDocument).toBe(false);
   });
   
   test('Should title schedule name on pdf', () => {
 	   const schedulesContainer = shallow(<SchedulesContainer {...props}/>);
        expect(schedulesContainer).toMatchSnapshot();
        const event = Object.assign(jest.fn(), { preventDefault: () => {}});
-	   let scheduleName = '';
+	   const props = { handleScheduleName: '' };
 	   
 	   schedulesContainer.instance().handleScheduleName(event);
-	   expect(schedulesContainer.instance().props.handleScheduleName).toBe(scheduleName);
+	   expect(schedulesContainer.instance().props.handleScheduleName).toBe('');
   });
   
   SchedulesContainer.find('.print').simulate("click");
@@ -100,14 +102,15 @@ describe('ClassDisplay', () => {
     expect(classDisplay).toMatchSnapshot();
   });
   
-  test('Should render correctly with a null schedules property', () => {
+  test('Allow for mouse hovering', () => {
 	  const classDisplay = shallow(<ClassDisplay {...props}/>);
 	  expect(classDisplay).toMatchSnapshot();
+	  const props = { handleMouseIn: false, handleMouseOut: false };
 	  
 	  classDisplay.instance().handleMouseIn();
-	  expect(classDisplay.instance().props.handleMouseIn).toBe();
+	  expect(classDisplay.instance().props.handleMouseIn).toBe(false);
 	  
 	  classDisplay.instance().handleMouseOut();
-	  expect(classDisplay.instance().props.handleMouseOut).toBe();
+	  expect(classDisplay.instance().props.handleMouseOut).toBe(false);
   });
 });
