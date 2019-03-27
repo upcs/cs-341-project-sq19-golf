@@ -1,5 +1,6 @@
 import React from 'react';
 import { shallow, render, setState } from 'enzyme';
+import Sinon from 'sinon';
 
 import {SchedulesContainer, ScheduleDisplay, ClassDisplay} from '../src/client/js/schedule_display.jsx';
 
@@ -40,20 +41,20 @@ describe('SchedulesContainer', () => {
   test('Should not produce pdf of page properly', () => {
 	  const schedulesContainer = shallow(<SchedulesContainer {...props}/>);
 	  expect(schedulesContainer).toMatchSnapshot();
-	  const props = { printDocument: printDocument };
+	  const props = { printDocument: undefined };
 	  
 	  schedulesContainer.instance().printDocument();
-	  expect(schedulesContainer.instance().props.printDocument).toBe(printDocument);
+	  expect(schedulesContainer.instance().props.printDocument).toBe();
   });
   
   test('Should title schedule name on pdf', () => {
 	   const schedulesContainer = shallow(<SchedulesContainer {...props}/>);
        expect(schedulesContainer).toMatchSnapshot();
        const event = Object.assign(jest.fn(), { preventDefault: () => {}});
-	   const props = { handleScheduleName: undefined };
+	   const props = { handleScheduleName: '' };
 	   
 	   schedulesContainer.instance().handleScheduleName(event);
-	   expect(schedulesContainer.instance().props.handleScheduleName).toBe();
+	   expect(schedulesContainer.instance().props.handleScheduleName).toBe('');
   });
   
   test('Should support onClick event on buttons', () => {
@@ -120,7 +121,7 @@ describe('ClassDisplay', () => {
 	  expect(classDisplay.instance().props.handleMouseOut).toBe();
   });
   
-  test('Should support onClick event on About button', () => {
+  test('Should support onClick event on classes', () => {
       const clickCallback = Sinon.spy();
       const classDisplay = shallow(<ClassDisplay onClick={clickCallback}/>);
 
