@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import * as jsPDF from 'jspdf';
-import * as html2canvas from 'html2canvas';
+import jsPDF from 'jspdf';
+import html2canvas from 'html2canvas';
 import Popup from 'reactjs-popup'
 import {Link} from 'react-router-dom';
 import {connect} from "react-redux";

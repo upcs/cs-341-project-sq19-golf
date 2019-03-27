@@ -1,6 +1,6 @@
 import {createStore, combineReducers} from "redux";
 
-const actionTypes = {
+export const actionTypes = {
   MODIFY_SCHEDULES: 'MODIFY_SCHEDULES',
   CLEAR_SCHEDULES: 'CLEAR_SCHEDULES'
 };
