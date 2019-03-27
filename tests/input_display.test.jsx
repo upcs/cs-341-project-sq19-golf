@@ -8,8 +8,8 @@ describe('TopNavigation', () => {
     const topNav = shallow(<TopNavigation/>);
     expect(topNav).toMatchSnapshot();
 
-    topNav.instance().aboutClick();
-	  expect(topNav.instance().state.aboutClick).toBe();
+    topNav.instance().aboutClick('');
+	  expect(topNav.instance().state.aboutClick).toBe('');
   });
 });
 
@@ -43,13 +43,12 @@ describe('CourseInput', () => {
     const courseInput = shallow(<CourseInput courses={[]}/>);
     expect(courseInput).toMatchSnapshot();
     const event = Object.assign(jest.fn(), { preventDefault: () => {}});
-    const props = { idx: 0 }
 
     //courseInput.instance().handleChange(event);
     //expect(courseInput.instance().props.handleChange).toBe(0);
 
-    courseInput.instance().createRef(idx);
-    expect(courseInput.instance().props.createRef).toBe();
+    courseInput.instance().createRef(0);
+    expect(courseInput.instance().state.createRef).toBe();
   });
 });
 
