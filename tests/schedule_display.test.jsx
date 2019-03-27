@@ -39,7 +39,7 @@ describe('SchedulesContainer', () => {
   });
   
   test('Should not produce pdf of page properly', () => {
-	  const schedulesContainer = shallow(<SchedulesContainer {...props}/>);
+	  const schedulesContainer = shallow(<SchedulesContainer/>);
 	  expect(schedulesContainer).toMatchSnapshot();
 	  
 	  schedulesContainer.instance().printDocument();
@@ -47,7 +47,7 @@ describe('SchedulesContainer', () => {
   });
   
   test('Should title schedule name on pdf', () => {
-	   const schedulesContainer = shallow(<SchedulesContainer {...props}/>);
+	   const schedulesContainer = shallow(<SchedulesContainer/>);
        expect(schedulesContainer).toMatchSnapshot();
        const event = Object.assign(jest.fn(), { preventDefault: () => {}});
 	   
