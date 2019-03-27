@@ -27,11 +27,17 @@ describe('SchedulesContainer', () => {
     expect(schedulesContainer).toMatchSnapshot();
   });
   
-  SchedulesContainer.instance().connectSchedules();
-  expect(SchedulesContainer.instance().props.connectSchedules).toBe(schedules);
+  SchedulesContainer.connectSchedules();
+  expect(SchedulesContainer.connectSchedules).toBe(schedules);
   
   SchedulesContainer.printDocument();
   expect(SchedulesContainer.props.printDocument).toBe();
+  
+  SchedulesContainer.find('.print').simulate("click");
+  
+  SchedulesContainer.find('.return').simulate("click");
+  
+  SchedulesContainer.find('.classLabel').simulate("click");
 });
 
 describe('ScheduleDisplay', () => {
@@ -73,9 +79,9 @@ describe('ClassDisplay', () => {
     expect(classDisplay).toMatchSnapshot();
   });
   
-  ClassDisplay.handleMouseIn();
-  expect(ClassDisplay.handleMouseIn).toBe();
+  ClassDisplay.state.handleMouseIn();
+  expect(ClassDisplay.state.handleMouseIn).toBe();
   
-  ClassDisplay.handleMouseOut();
-  expect(ClassDisplay.handleMouseOut).toBe();
+  ClassDisplay.state.handleMouseOut();
+  expect(ClassDisplay.state.handleMouseOut).toBe();
 });
