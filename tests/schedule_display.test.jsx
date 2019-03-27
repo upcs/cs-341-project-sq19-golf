@@ -12,7 +12,6 @@ describe('SchedulesContainer', () => {
   test('Should render correctly with a "populated" schedules property', () => {
     //Mocks class data state through providing abitrary properties
     let schedules = [[], []];
-	const imgData = canvas.toDataURL('image/png');
 
     const schedulesContainer = shallow(<SchedulesContainer schedules={schedules}/>);
     expect(schedulesContainer).toMatchSnapshot();
@@ -28,11 +27,11 @@ describe('SchedulesContainer', () => {
     expect(schedulesContainer).toMatchSnapshot();
   });
   
-  schedulesContainer.instance().connectSchedules();
-  expect(classDisplay.instance().props.connectSchedules).toBe(schedules);
+  SchedulesContainer.instance().connectSchedules();
+  expect(SchedulesContainer.instance().props.connectSchedules).toBe(schedules);
   
-  schedulesContainer.instance().printDocument();
-  expect(classDisplay.instance().props.printDocument).toBe(imgData);
+  SchedulesContainer.instance().printDocument();
+  expect(SchedulesContainer.instance().props.printDocument).toBe();
 });
 
 describe('ScheduleDisplay', () => {
@@ -74,9 +73,9 @@ describe('ClassDisplay', () => {
     expect(classDisplay).toMatchSnapshot();
   });
   
-  classDisplay.instance().handleMouseIn();
-  expect(classDisplay.instance().props.handleMouseIn).toBe();
+  ClassDisplay.instance().handleMouseIn();
+  expect(ClassDisplay.instance().props.handleMouseIn).toBe();
   
-  classDisplay.instance().handleMouseOut();
-  expect(classDisplay.instance().props.handleMouseOut).toBe();
+  ClassDisplay.instance().handleMouseOut();
+  expect(ClassDisplay.instance().props.handleMouseOut).toBe();
 });
