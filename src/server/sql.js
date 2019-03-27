@@ -2,8 +2,8 @@ const Sequelize = require('sequelize');
 const Courses = require('./courses');
 
 //MySQL ORM Interface
-const Db = new Sequelize('REGISTRATION', 'student', 'intoPDX411', {
-  host: '35.236.96.52',
+const Db = new Sequelize('REGISTRATION', 'root', 'Gatolocoe#4209', {
+  host: '35.203.158.166',
   dialect: 'mysql',
   pool: {
     max: 5,

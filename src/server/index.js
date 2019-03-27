@@ -34,9 +34,6 @@ app.all("*", function (req, res, next) {
 
 app.listen(process.env.PORT || 8080, () => console.log(`Listening on port ${process.env.PORT || 8080}!`));
 
-//let desiredClasses = [['BIO', '278'], ['BIO', '304'], ['BIO', '277']];
-//let viableSchedules = getViableSchedulesAsync(desiredClasses);
-
 //TODO: Update from desiredClasses to courseID/subject
 async function updateDB() {
   //Update course data
