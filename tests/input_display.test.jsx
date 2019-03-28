@@ -10,7 +10,7 @@ describe('TopNavigation', () => {
 
     //topNav.instance().aboutClick('e');
 	  //expect(topNav.instance().state.aboutClick).toEqual('e');
-  //});
+  });
 });
 
 describe('InputContainer', () => {
@@ -40,6 +40,20 @@ describe('InputContainer', () => {
 
 describe('CourseInput', () => {
   test('Should render correctly', () => {
+    const courseInput = shallow(<CourseInput courses={[]} />);
+    expect(courseInput).toMatchSnapshot();
+  });
+
+  test('Should handle a TAB key press correctly', () => {
+    let key = {'key': null};
+    const courseInput = shallow(<CourseInput courses={[]} references={{}} lastKey={key}/>);
+    expect(courseInput).toMatchSnapshot();
+
+    courseInput.instance()._handleKeyPress({key: "Enter"}, 0);
+     expect(courseInput.instance().props.lastKey['key']).toEqual("Enter");
+  });
+
+  test('Should handle an arbitrary key press correctly', () => {
     let key = {'key': null};
     const courseInput = shallow(<CourseInput courses={[]} lastKey={key}/>);
     expect(courseInput).toMatchSnapshot();

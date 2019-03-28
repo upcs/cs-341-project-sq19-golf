@@ -1,5 +1,3 @@
-//TODO: This file seems to have unnecessary coupling. AvailabilityContainer should be broken into smaller parts
-
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
 import ReactTable from "react-table";

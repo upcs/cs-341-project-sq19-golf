@@ -1,5 +1,49 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`CourseInput Should handle a TAB key press correctly 1`] = `
+<div
+  className="classSelect"
+  onChange={[Function]}
+>
+  <InputPredict
+    dictionary={Array []}
+    name="name"
+    onKeyDown={[Function]}
+    placeholder="Course Type"
+    type="text"
+  />
+  <InputPredict
+    dictionary={Array []}
+    name="name"
+    onKeyDown={[Function]}
+    placeholder="Course Number"
+    type="number"
+  />
+</div>
+`;
+
+exports[`CourseInput Should handle an arbitrary key press correctly 1`] = `
+<div
+  className="classSelect"
+  onChange={[Function]}
+>
+  <InputPredict
+    dictionary={Array []}
+    name="name"
+    onKeyDown={[Function]}
+    placeholder="Course Type"
+    type="text"
+  />
+  <InputPredict
+    dictionary={Array []}
+    name="name"
+    onKeyDown={[Function]}
+    placeholder="Course Number"
+    type="number"
+  />
+</div>
+`;
+
 exports[`CourseInput Should render correctly 1`] = `
 <div
   className="classSelect"
