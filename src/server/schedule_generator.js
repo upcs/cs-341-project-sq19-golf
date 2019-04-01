@@ -8,7 +8,7 @@ module.exports = {
       return isolateViableSchedules(courseIDs, subjects, possibleSchedules);
     }
     catch (error) {
-      return {};
+      return [];
     }
   }
 }
@@ -26,7 +26,7 @@ function filterClasses(courseIDs, subjects, classes) {
     return possibleClasses;
   }
   catch (error) {
-    return {};
+    return [];
   }
 }
 

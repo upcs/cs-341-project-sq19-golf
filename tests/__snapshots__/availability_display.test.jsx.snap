@@ -5,6 +5,9 @@ exports[`AvailabilityContainer Should allow for the menu to be closed and opened
   id="main"
 >
   <SelectInput />
+  <div
+    id="tableCap"
+  />
   <ReactTable
     AggregatedComponent={[Function]}
     ExpanderComponent={[Function]}
@@ -332,7 +335,21 @@ exports[`AvailabilityContainer Should allow for the menu to be closed and opened
     style={Object {}}
     subRowsKey="_subRows"
   />
-  <div>
+  <div
+    className="bottom"
+    id="option-container"
+  >
+    <Link
+      replace={false}
+      to="/"
+    >
+      <button
+        id="save"
+        type="button"
+      >
+        Save
+      </button>
+    </Link>
     <Link
       refresh="true"
       replace={false}
@@ -350,33 +367,6 @@ exports[`AvailabilityContainer Should allow for the menu to be closed and opened
       Additional Options
     </button>
   </div>
-  <form
-    id="main"
-  >
-    <Link
-      replace={false}
-      to="/schedules"
-    >
-      <button
-        form="main"
-        id="submitButton"
-        type="submit"
-      >
-        Submit
-      </button>
-    </Link>
-    <Link
-      replace={false}
-      to="/"
-    >
-      <button
-        form="main"
-        type="submit"
-      >
-        Return
-      </button>
-    </Link>
-  </form>
 </div>
 `;
 
@@ -385,6 +375,9 @@ exports[`AvailabilityContainer Should allow for the menu to be closed and opened
   id="main"
 >
   <SelectInput />
+  <div
+    id="tableCap"
+  />
   <ReactTable
     AggregatedComponent={[Function]}
     ExpanderComponent={[Function]}
@@ -712,7 +705,21 @@ exports[`AvailabilityContainer Should allow for the menu to be closed and opened
     style={Object {}}
     subRowsKey="_subRows"
   />
-  <div>
+  <div
+    className="bottom"
+    id="option-container"
+  >
+    <Link
+      replace={false}
+      to="/"
+    >
+      <button
+        id="save"
+        type="button"
+      >
+        Save
+      </button>
+    </Link>
     <Link
       refresh="true"
       replace={false}
@@ -730,33 +737,6 @@ exports[`AvailabilityContainer Should allow for the menu to be closed and opened
       Additional Options
     </button>
   </div>
-  <form
-    id="main"
-  >
-    <Link
-      replace={false}
-      to="/schedules"
-    >
-      <button
-        form="main"
-        id="submitButton"
-        type="submit"
-      >
-        Submit
-      </button>
-    </Link>
-    <Link
-      replace={false}
-      to="/"
-    >
-      <button
-        form="main"
-        type="submit"
-      >
-        Return
-      </button>
-    </Link>
-  </form>
 </div>
 `;
 
@@ -767,8 +747,11 @@ exports[`AvailabilityContainer Should render correctly with a menu 1`] = `
   <div
     id="greetingText"
   >
-    Select your unavailability over a typical school week:
+    Select your unavailability over a typical school week.
   </div>
+  <div
+    id="tableCap"
+  />
   <div
     class="ReactTable"
   >
@@ -1693,7 +1676,20 @@ exports[`AvailabilityContainer Should render correctly with a menu 1`] = `
       </div>
     </div>
   </div>
-  <div>
+  <div
+    class="bottom"
+    id="option-container"
+  >
+    <a
+      href="#/"
+    >
+      <button
+        id="save"
+        type="button"
+      >
+        Save
+      </button>
+    </a>
     <a
       href="#/availability"
       refresh="true"
@@ -1710,10 +1706,14 @@ exports[`AvailabilityContainer Should render correctly with a menu 1`] = `
     <div
       class="menu"
     >
-      <div
+      <span
         id="credit"
       >
-        Max Credit Amount:
+        <div
+          class="inputHeader"
+        >
+          Max Credit Amount
+        </div>
         <input
           data-populated="false"
           placeholder="Enter Max Credit Value"
@@ -1726,11 +1726,15 @@ exports[`AvailabilityContainer Should render correctly with a menu 1`] = `
         >
           Save
         </button>
-      </div>
-      <div
+      </span>
+      <span
         id="blacklist"
       >
-        Professor Blacklist:
+        <div
+          class="inputHeader"
+        >
+          Professor Blacklist
+        </div>
         <input
           id="profBlacklist"
           placeholder="Enter Professor Name"
@@ -1743,34 +1747,9 @@ exports[`AvailabilityContainer Should render correctly with a menu 1`] = `
         >
           Save
         </button>
-      </div>
+      </span>
     </div>
   </div>
-  <form
-    id="main"
-  >
-    <a
-      href="#/schedules"
-    >
-      <button
-        form="main"
-        id="submitButton"
-        type="submit"
-      >
-        Submit
-      </button>
-    </a>
-    <a
-      href="#/"
-    >
-      <button
-        form="main"
-        type="submit"
-      >
-        Return
-      </button>
-    </a>
-  </form>
 </div>
 `;
 
@@ -1781,8 +1760,11 @@ exports[`AvailabilityContainer Should render correctly without a menu 1`] = `
   <div
     id="greetingText"
   >
-    Select your unavailability over a typical school week:
+    Select your unavailability over a typical school week.
   </div>
+  <div
+    id="tableCap"
+  />
   <div
     class="ReactTable"
   >
@@ -2707,7 +2689,20 @@ exports[`AvailabilityContainer Should render correctly without a menu 1`] = `
       </div>
     </div>
   </div>
-  <div>
+  <div
+    class="bottom"
+    id="option-container"
+  >
+    <a
+      href="#/"
+    >
+      <button
+        id="save"
+        type="button"
+      >
+        Save
+      </button>
+    </a>
     <a
       href="#/availability"
       refresh="true"
@@ -2722,31 +2717,6 @@ exports[`AvailabilityContainer Should render correctly without a menu 1`] = `
       Additional Options
     </button>
   </div>
-  <form
-    id="main"
-  >
-    <a
-      href="#/schedules"
-    >
-      <button
-        form="main"
-        id="submitButton"
-        type="submit"
-      >
-        Submit
-      </button>
-    </a>
-    <a
-      href="#/"
-    >
-      <button
-        form="main"
-        type="submit"
-      >
-        Return
-      </button>
-    </a>
-  </form>
 </div>
 `;
 
@@ -2754,6 +2724,6 @@ exports[`SelectInput Should render correctly 1`] = `
 <div
   id="greetingText"
 >
-  Select your unavailability over a typical school week:
+  Select your unavailability over a typical school week.
 </div>
 `;

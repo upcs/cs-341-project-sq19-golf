@@ -2,63 +2,220 @@
 
 body {
     margin: 2vh;
-    background-color: #DDDEDE;
+    background-color: #cfbede;
     font-size: 18px;
+}
+
+/*index css*/
+.section {
+  background-color: #DDDEDE;
+  text-align: center;
+  border-radius: 5px;
+  padding: 8px;
+  margin-top: 12px;
 }
 
 /*Header Style*/
 .topNav {
-    height: 22px;
+    height: 26px;
     padding: 8px;
     font: 18px "Lucida Grande", Helvetica, Arial, sans-serif; /*sets font of header to Arial, sized 35*/
     background-color: #232122;
+    border-radius: 5px;
 }
 
 a {
     color: #DDDEDE; /*sets font color in header to white*/
+    text-decoration: none;
 }
 
 #leftNav {
     float: left;
     font-weight: bold;
     font-size: 22px;
-    margin-left: 6px;
+    margin-left: 12px;
 }
 
 #rightNav {
     float: right;
-    cursor: pointer; /*changes mouse to pointer when hovering over "Settings"*/
-    margin: 0 6px;
+    display:inline-block;
+    margin: 0.6px;
     text-decoration: none;
 }
 
+/*navbar*/
+.dropdown{
+	position: absolute;
+	display: inline-block;
+  border:none;
+  z-index: 1;
+  margin-bottom: 10px;
+  outline: 0;
+  outline: none;
+}
 
+.dropmenu{
+	font-weight:bold;
+  text-align: center;
+  position: absolute;
+  display: inline-block;
+	color: #DDDEDE;
+	border: none;
+  right: 0px;
+  height: 27px;
+  width: 100px;
+  font: 18px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-weight: bold;
+  z-index: 1;
+  outline: 0;
+  outline: none;
+}
+
+.content{
+	visibility:hidden;
+	display:none;
+  position: inline-block;
+  cursor: pointer;
+  margin-top: 9px;
+	background-color: #aa8cc5;
+  font-weight: normal;
+  font-size: 15px;
+  text-decoration: none;
+  color: white;
+	min-width:100px;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  z-index: 2;
+  outline: 0;
+  outline: none;
+}
+
+.content div{
+	color:white;
+	padding:5px;
+	display:block;
+}
+
+.content div:hover{
+	background-color:#ba9cd5;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+	display:block;
+}
+
+.dropdown:hover .dropmenu{
+  color: white;
+  display:inline-block;
+}
+
+.dropdown:hover .content{
+	display:inline-block;
+	visibility:visible;
+  left:-6px;
+}
+
+/*popup box*/
+.popup {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  min-height: 100px;
+  min-width: 300px;
+  background-color: #885ead;
+  border-radius: 5px;
+}
+
+.popupContent {
+  background-color: #DDDEDE;
+  font:16px "Helvetica", sans-serif;
+  margin: 20% auto;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.close{
+  color: #DDDEDE;
+  float: right;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.close:hover, .close:focus{
+  cursor: pointer;
+  text-decoration: none;
+  color: #aa8cc5;
+}
 
 /*Body Style*/
+.bottom, form {
+  position: relative;
+  text-align: center;
+  background-color: #DDDEDE;
+  padding: 5px;
+  margin-top: 12px;
+  border-radius: 5px;
+}
+
 #main {
   padding-top: 16px;
-  margin-left: 16px;
+  position: relative;
 }
 
 #greetingText {
+  background-color: #DDDEDE;
   margin-bottom: 12px;
+  padding: 8px;
+  border-radius: 5px;
+  font:16px "Helvetica", sans-serif;
+  font-weight: bold;
 }
 
-#main input, #main button  {
-  background-color: #aa8cc5;
+input, button  {
+  background-color: #aa8cc5 !important;
   color: white;
   border-radius: 5px;
   text-decoration: none;
-  text-align: right;
   padding: 6px 12px;
   margin: 3px;
   border: none;
 }
 
+button {
+  background-color: #885ead !important;
+}
+
+
+#classGroup{
+  padding: 5px;
+  margin: 10px;
+  border: none
+}
+
 #termSelect {
   background-color: #968f8f !important;
   width: 60px;
+  position: relative;
   text-align: center;
+  left: 3px;
+}
+
+.input-predict-container {
+  display: inline-block !important;
+}
+
+.input-predict-input {
+  position: relative;
+  background: transparent !important;
+  z-index: 2 !important;
+}
+
+.input-predict-suggestion {
+  background: #aa8cc5 !important;
+  left: 0;
+  color: lightgray !important;
+  z-index: 1 !important;
 }
 
 ::-webkit-input-placeholder { /* Chrome */
@@ -77,18 +234,82 @@ a {
 }
 
 /*Table Style*/
+.rt-table {
+  background-color: #885ead;
+  border:#885ead;
+}
 
+.rt-thead -header {
+  background-color: #885ead;
+  border:#885ead;
+}
+
+.rt-tr {
+  background-color: #885ead;
+  border:#885ead;
+}
+
+.rt-th {
+  background-color: #aa8cc5;
+  border:#885ead;
+  font: 18px "Lucida Grande", Helvetica, Arial, sans-serif;
+  color: black;
+}
+
+.rt-tbody {
+  background-color: #885ead;
+  border:#885ead;
+}
+
+.rt-tr-group: {
+  background-color: #DDDEDE;
+  border:#885ead;
+}
+
+.rt-td {
+  background-color: #DDDEDE;
+  border:#885ead;
+  font: 18px "Helvetica", sans-serif;
+  color: black;
+  text-align: center;
+}
+
+#option-container {
+  text-align: center;
+  background-color: #DDDEDE;
+  margin-bottom: 12px;
+  padding: 8px;
+  border-color: #885ead;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  align-content: center;
+  height: auto;
+  margin-left: 1px;
+  margin-right: 1px;
+  font:16px "Helvetica", sans-serif;
+}
+
+.optable {
+  text-align: center;
+  font:15px "Helvetica", sans-serif;
+  background-color: #DDDEDE;
+  border-color: #885ead;
+  border-radius: 5px;
+  margin-top: 8px;
+  margin-left: auto;
+  margin-right: auto;
+}
 
 /*Schedule Style */
 .horiz-container {
     display: flex;
     flex-direction: row;
+    margin-top: 8px;
     margin-bottom: 8px;
-}
-
-#main button {
-  margin-top: 12px;
-  background-color: #885ead;
+    overflow-x: auto;
+    border-color: #885ead;
+    border-radius: 5px;
+    font:16px "Helvetica", sans-serif;
 }
 
 input::-webkit-outer-spin-button,
@@ -99,12 +320,35 @@ input::-webkit-inner-spin-button {
 
 input[type=number] {
     -moz-appearance:textfield; /* Firefox */
+    width: auto;
+}
+
+.pdfdim {
+	width: '210mm';
+	min-height: '298mm';
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.scheduleBox {
+  background-color: #DDDEDE;
+  font:15px "Helvetica", sans-serif;
+  border-radius: 5px;
+  padding:8px;
+}
+
+.save-return {
+  text-align: center;
 }
 
 .scheduleClass {
   display: flex;
   flex-direction: row;
   margin-right: 48px;
+}
+
+.daysLabel {
+  float: right; /*sets all days of classes to right of page, align with classes*/
 }
 
 .timeLabel {
@@ -117,4 +361,99 @@ input[type=number] {
   color: white;
   border-radius: 5px;
   padding: 16px;
+}
+
+.hover {
+  position: relative;
+
+  &:hover &__no-hover {
+    opacity: 0;
+  }
+
+  &:hover &__hover {
+    opacity: 1;
+  }
+
+  &__hover {
+    position: absolute;
+    top: 0;
+    opacity: 0;
+  }
+
+  &__no-hover {
+    opacity: 1;
+  }
+}
+
+
+
+.menu-item {
+  padding: 0 40px;
+  margin: 5px 10px;
+  user-select: none;
+  cursor: pointer;
+  border: none;
+}
+.menu-item-wrapper.active {
+  border: 1px blue solid;
+}
+.menu-item.active {
+  border: 1px green solid;
+}
+
+.scroll-menu-arrow {
+  padding: 20px;
+  cursor: pointer;
+}
+
+ .inputHeader {
+   font-weight: bold;
+   padding-top: 12px;
+ }
+
+#tableCap {
+  background-color: #DDDEDE;
+  border-top: 1px solid #885ead;
+  border-left: 1px solid #885ead;
+  border-right: 1px solid #885ead;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  padding: 8px;
+}
+
+/*help page*/
+/*a {
+  color: #885ead;
+}*/
+
+.textContainer {
+  background-color: #DDDEDE;
+  border-radius: 5px;
+  padding: 8px;
+  color: black;
+}
+
+.contentsTable {
+  background-color: #DDDEDE;
+  border: 1px solid #aa8cc5;
+  border-radius: 5px;
+  padding: 8px;
+  font:12px "Helvetica", sans-serif;
+}
+
+#tableTitle {
+  font: 15px "Helvetica", sans-serif;
+}
+
+.helpSet {
+  color:black;
+  background-color:#DDDEDE;
+  border: 1px solid #aa8cc5;
+  border-radius: 5px;
+  padding: 8px;
+  font:15px "Helvetica", sans-serif;
+}
+
+.helpContent {
+  font:12px "Helvetica", sans-serif;
 }

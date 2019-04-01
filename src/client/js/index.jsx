@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import ReactTable from "react-table";
-
 import {HashRouter, Route} from 'react-router-dom';
 import FadeIn from 'react-fade-in';
+import {Provider} from "react-redux";
 
+import {store} from './redux';
 import {SettingsContainer} from './settings_display';
 import {TopNavigation, InputContainer} from './input_display';
 import {AvailabilityContainer} from './availability_display';
@@ -29,9 +29,11 @@ const PageContainer = (
 );
 
 const InputPage = (
+  <Provider store={store}>
     <HashRouter>
       {PageContainer}
     </HashRouter>
+  </Provider>
 );
 
 ReactDOM.render(InputPage, document.getElementById('root'));

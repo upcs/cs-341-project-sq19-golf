@@ -29,6 +29,6 @@ describe('ScheduleGenerator', () => {
   });
 
   test('Should generate no schedules when given empty object input', () => {
-    expect(ScheduleGenerator.generateSchedules(['304', '305'], ['BIO', 'BIO'], {})).toEqual({});
+    expect(ScheduleGenerator.generateSchedules(['304', '305'], ['BIO', 'BIO'], {})).toEqual([]);
   });
 });

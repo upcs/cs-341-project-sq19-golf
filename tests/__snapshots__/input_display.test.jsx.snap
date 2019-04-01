@@ -1,18 +1,65 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`CourseInput Should render correctly 1`] = `
+exports[`CourseInput Should handle a TAB key press correctly 1`] = `
 <div
   className="classSelect"
+  onChange={[Function]}
 >
-  <input
-    data-populated="false"
-    onChange={[Function]}
+  <InputPredict
+    dictionary={Array []}
+    name="name"
+    onKeyDown={[Function]}
     placeholder="Course Type"
     type="text"
   />
-  <input
-    data-populated="false"
-    onChange={[Function]}
+  <InputPredict
+    dictionary={Array []}
+    name="name"
+    onKeyDown={[Function]}
+    placeholder="Course Number"
+    type="number"
+  />
+</div>
+`;
+
+exports[`CourseInput Should handle an arbitrary key press correctly 1`] = `
+<div
+  className="classSelect"
+  onChange={[Function]}
+>
+  <InputPredict
+    dictionary={Array []}
+    name="name"
+    onKeyDown={[Function]}
+    placeholder="Course Type"
+    type="text"
+  />
+  <InputPredict
+    dictionary={Array []}
+    name="name"
+    onKeyDown={[Function]}
+    placeholder="Course Number"
+    type="number"
+  />
+</div>
+`;
+
+exports[`CourseInput Should render correctly 1`] = `
+<div
+  className="classSelect"
+  onChange={[Function]}
+>
+  <InputPredict
+    dictionary={Array []}
+    name="name"
+    onKeyDown={[Function]}
+    placeholder="Course Type"
+    type="text"
+  />
+  <InputPredict
+    dictionary={Array []}
+    name="name"
+    onKeyDown={[Function]}
     placeholder="Course Number"
     type="number"
   />
@@ -20,57 +67,107 @@ exports[`CourseInput Should render correctly 1`] = `
 `;
 
 exports[`InputContainer Should render correctly 1`] = `
-<form
-  id="main"
-  onSubmit={[Function]}
->
-  <TermInput />
+<div>
+  <form
+    id="main"
+  >
+    <TermInput />
+    <div
+      id="classGroup"
+    >
+      <CourseInput
+        courses={Array []}
+        id={0}
+        idx={0}
+        key="course-0"
+        lastKey={
+          Object {
+            "key": null,
+          }
+        }
+        onChange={[Function]}
+        references={Object {}}
+      />
+      <CourseInput
+        courses={Array []}
+        id={1}
+        idx={2}
+        key="course-1"
+        lastKey={
+          Object {
+            "key": null,
+          }
+        }
+        onChange={[Function]}
+        references={Object {}}
+      />
+      <CourseInput
+        courses={Array []}
+        id={2}
+        idx={4}
+        key="course-2"
+        lastKey={
+          Object {
+            "key": null,
+          }
+        }
+        onChange={[Function]}
+        references={Object {}}
+      />
+      <CourseInput
+        courses={Array []}
+        id={3}
+        idx={6}
+        key="course-3"
+        lastKey={
+          Object {
+            "key": null,
+          }
+        }
+        onChange={[Function]}
+        references={Object {}}
+      />
+      <CourseInput
+        courses={Array []}
+        id={4}
+        idx={8}
+        key="course-4"
+        lastKey={
+          Object {
+            "key": null,
+          }
+        }
+        onChange={[Function]}
+        references={Object {}}
+      />
+    </div>
+  </form>
   <div
-    id="classGroup"
+    className="bottom"
   >
-    <CourseInput
-      id={0}
-      key="course-0"
-      onChange={[Function]}
-    />
-    <CourseInput
-      id={1}
-      key="course-1"
-      onChange={[Function]}
-    />
-    <CourseInput
-      id={2}
-      key="course-2"
-      onChange={[Function]}
-    />
+    <Link
+      replace={false}
+      to="/schedules"
+    >
+      <button
+        form="main"
+        onClick={[Function]}
+      >
+        Submit
+      </button>
+    </Link>
+    <Link
+      replace={false}
+      to="/availability"
+    >
+      <button
+        form="main"
+      >
+        Availability
+      </button>
+    </Link>
   </div>
-  <Link
-    replace={false}
-    to="/schedules"
-  >
-    <button
-      form="main"
-      type="submit"
-    >
-      Submit
-    </button>
-  </Link>
-  <Link
-    replace={false}
-    to="/availability"
-  >
-    <button
-      form="main"
-      type="submit"
-    >
-      Availability
-    </button>
-  </Link>
-  <button
-    form="main"
-    type="submit"
-  />
-</form>
+</div>
 `;
 
 exports[`TermInput Should render correctly 1`] = `
@@ -95,12 +192,58 @@ exports[`TopNavigation Should render correctly 1`] = `
   >
     UP Scheduler
   </a>
-  <Link
+  <div
     id="rightNav"
-    replace={false}
-    to="/settings"
   >
-    Settings
-  </Link>
+    <div
+      className="dropdown"
+    >
+      <div
+        className="dropmenu"
+      >
+        <div
+          className="name"
+        >
+          <b>
+            Options
+          </b>
+        </div>
+        <div
+          className="content"
+        >
+          <div
+            className="setting"
+            id="schedules"
+          >
+            Schedules
+          </div>
+          <div
+            className="setting"
+            id="help"
+          >
+            Help
+          </div>
+          <div
+            className="setting"
+            id="about"
+            onClick={[Function]}
+          >
+            About
+          </div>
+          <Link
+            replace={false}
+            to="/"
+          >
+            <div
+              className="setting"
+              id="quit"
+            >
+              Quit
+            </div>
+          </Link>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 `;
