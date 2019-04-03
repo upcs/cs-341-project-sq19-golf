@@ -13,14 +13,28 @@ app.use(BodyParser.json());
 //Client Side Post
 app.post('/api/scheduleRequest', (req, res) => {
   getViableSchedulesAsync(req.body, viableSchedules => {
-    console.log(viableSchedules);
     res.json(viableSchedules);
   });
 });
 
 app.post('/api/allCoursesRequest', (req, res) => {
   getAllCoursesAsync(courses => {
-    res.json(courses);
+    let subjMap = { all: [] }, numMap = { all: [] };
+    courses.forEach(course => {
+      let courseSubj = course.subject, courseNum = course.number;
+
+      //Populate course subject map
+      if (subjMap[courseSubj]) subjMap[courseSubj].push(courseNum);
+      else subjMap[courseSubj] = [courseNum];
+      subjMap.all.push(courseNum);
+
+      //Populate course number map
+      if (numMap[courseNum]) numMap[courseNum].push(courseSubj);
+      else numMap[courseNum] = [courseSubj];
+      numMap.all.push(courseSubj);
+    });
+
+    res.json({ subjMap, numMap });
   });
 });
 

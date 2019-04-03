@@ -48,17 +48,19 @@ export class InputContainer extends Component {
     super(props);
     this.state = {
       totalInputs: 5,
-      allCoursesRaw: [],
-      allCoursesFiltered: [],
+      allCourses: {
+        subjectMap: {},
+        numberMap: {},
+      },
       desiredCourses: []
     }
 
     this.handleCourseInputChange = this.handleCourseInputChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.retrieveAllSchedules = this.retrieveAllSchedules.bind(this);
+    this.retrieveAllCourses = this.retrieveAllCourses.bind(this);
 
     //Retrieve course data for auto-complete purposes
-    this.retrieveAllSchedules();
+    this.retrieveAllCourses();
   }
 
   handleCourseInputChange(inputID, courseID, subject) {
@@ -90,7 +92,7 @@ export class InputContainer extends Component {
     }
   }
 
-  async retrieveAllSchedules() {
+  async retrieveAllCourses() {
     await fetch('/api/allCoursesRequest', {
       method: 'POST',
       body: '',
@@ -100,13 +102,9 @@ export class InputContainer extends Component {
       }
     }).then(res => res.json()
     ).then(resJSON => {
-      //console.log(resJSON);
-      //Gather and filter data
-      let courses = resJSON.map(course => {
-        return { 'subject': course.subject, 'number': course.number }
-      });
-      this.setState({'allCoursesRaw': resJSON});
-      this.setState({'allCoursesFiltered': courses});
+      console.log(resJSON);
+
+      this.setState({'allCourses': {'subjectMap': resJSON.subjMap, 'numberMap': resJSON.numMap} });
     }).catch((error) => {
       //console.log(error);
     });
@@ -135,7 +133,7 @@ export class InputContainer extends Component {
     let courseList = [], references = {}, lastKey = {'key': null};
     for (let i = 0, idx = 0; i < this.state.totalInputs; i++, idx += 2) {
       let course = <CourseInput key={"course-" + i} id={i} idx={idx} value={this.state["course-" + i]} lastKey={lastKey}
-                    courses={this.state.allCoursesFiltered} references={references} onChange={this.handleCourseInputChange}/>
+                    courses={this.state.allCourses} references={references} onChange={this.handleCourseInputChange}/>
       courseList.push(course);
     }
 
@@ -179,7 +177,15 @@ export class TermInput extends Component {
 export class CourseInput extends Component {
   constructor(props) {
     super(props);
+    this.state ={
+      input: {
+        subject: null,
+        number: null
+      }
+    }
+
     this.handleChange = this.handleChange.bind(this);
+    this.handleInput = this.handleInput.bind(this);
   }
 
   handleChange(event) {
@@ -214,26 +220,38 @@ export class CourseInput extends Component {
     this.props.lastKey['key'] = e.key;
   }
 
+  handleInput(value, context) {
+    let input = this.state.input;
+    input[context] = value.toString();
+    this.setState({ input });
+  }
+
   render() {
-    let subjects = this.props.courses.map(course => course.subject);
-    let courses = this.props.courses.map(course => course.number);
+    let input = this.state.input;
+    let courses = this.props.courses;
+
+    let numbers = (courses.subjectMap[input.subject]) ? courses.subjectMap[input.subject] : courses.subjectMap.all;
+    let subjects = (courses.numberMap[input.number]) ? courses.numberMap[input.number] : courses.numberMap.all;
 
     return (
       <div className="classSelect" onChange={this.handleChange}>
         <InputPredict
           type="text"
           name="name"
-          placeholder="Course Type"
+          placeholder="Course Subject"
           dictionary={subjects}
           ref={this.createRef(this.props.idx)}
+          onValueChange={((value) => this.handleInput(value, 'subject'))}
           onKeyDown={(e) => this._handleKeyPress(e, this.props.idx)}
         />
         <InputPredict
-          type="number"
+          type="text"
           name="name"
+          pattern="[0-9]*"
           placeholder="Course Number"
-          dictionary={courses}
+          dictionary={numbers}
           ref={this.createRef(this.props.idx + 1)}
+          onValueChange={((value) => this.handleInput(value, 'number'))}
           onKeyDown={(e) => this._handleKeyPress(e, this.props.idx + 1)}
         />
       </div>
