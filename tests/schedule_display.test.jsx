@@ -27,6 +27,47 @@ describe('SchedulesContainer', () => {
     const schedulesContainer = shallow(<SchedulesContainer schedules={null}/>);
     expect(schedulesContainer).toMatchSnapshot();
   });
+
+  test('Should not connect to schedule database properly', () => {
+	  let schedules = [[], []];
+	  const schedulesContainer = shallow(<SchedulesContainer {...props}/>);
+	  expect(schedulesContainer).toMatchSnapshot();
+	  const props = { connectSchedules: undefined };
+
+	  schedulesContainer.instance().connectSchedules();
+	  expect(schedulesContainer.instance().props.connectSchedules).toBe();
+  });
+
+  /* test('Should not produce pdf of page properly', () => {
+	  const schedulesContainer = shallow(<SchedulesContainer {...props}/>);
+	  expect(schedulesContainer).toMatchSnapshot();
+	  const props = { printDocument: null };
+
+	  schedulesContainer.instance().printDocument();
+	  expect(schedulesContainer.instance().props.printDocument).toEqual(null);
+  });
+
+  test('Should title schedule name on pdf', () => {
+	   const schedulesContainer = shallow(<SchedulesContainer {...props}/>);
+       expect(schedulesContainer).toMatchSnapshot();
+       const event = Object.assign(jest.fn(), { preventDefault: () => {}});
+	   const props = { handleScheduleName: null };
+
+	   schedulesContainer.instance().handleScheduleName(event);
+	   expect(schedulesContainer.instance().props.handleScheduleName).toEqual(null);
+  }); */
+
+  /* test('Should support onClick event on buttons', () => {
+      const clickCallback = Sinon.spy();
+      const schedulesContainer = shallow(<schedulesContainer onClick={clickCallback}/>);
+
+      //Simulate an onClick event
+      schedulesContainer.find('.print').simulate('click');
+
+	  schedulesContainer.find('.return').simulate('click');
+
+      Sinon.assert.called(clickCallback);
+  }); */
 });
 
 describe('ScheduleDisplay', () => {
@@ -47,7 +88,7 @@ describe('ScheduleDisplay', () => {
     const scheduleDisplay = shallow(<ScheduleDisplay schedule={null}/>);
     expect(scheduleDisplay).toMatchSnapshot();
   });
-  
+
  /* test('Should support onClick event on Save as PDF button', () => {
       const clickCallback = Sinon.spy();
       const scheduleDisplay = shallow(<ScheduleDisplay onClick={clickCallback}/>);
@@ -61,7 +102,7 @@ describe('ScheduleDisplay', () => {
 
 describe('ClassDisplay', () => {
   test('Should render correctly with a "populated" classData property', () => {
-    //Mocks class data state through providing abitrary properties
+    //Mocks class data state through providing arbitrary properties
     let classData = {'start': 0, 'end': 1, 'title': 'class'};
 
     const classDisplay = shallow(<ClassDisplay classData={classData}/>);
@@ -77,7 +118,29 @@ describe('ClassDisplay', () => {
     const classDisplay = shallow(<ClassDisplay classData={null}/>);
     expect(classDisplay).toMatchSnapshot();
   });
-  
+
+  test('Allow for mouse hovering', () => {
+	  const classDisplay = shallow(<ClassDisplay {...props}/>);
+	  expect(classDisplay).toMatchSnapshot();
+	  const props = { handleMouseIn: undefined, handleMouseOut: undefined };
+
+	  classDisplay.instance().handleMouseIn();
+	  expect(classDisplay.instance().props.handleMouseIn).toBe();
+
+	  classDisplay.instance().handleMouseOut();
+	  expect(classDisplay.instance().props.handleMouseOut).toBe();
+  });
+
+  /* test('Should support onClick event on classes', () => {
+      const clickCallback = Sinon.spy();
+      const classDisplay = shallow(<ClassDisplay onClick={clickCallback}/>);
+
+      //Simulate an onClick event
+      classDisplay.find('.classLabel').simulate('click');
+
+      Sinon.assert.called(clickCallback);
+  }); */
+
   test('Should handle mouseIn and mouseOut', () => {
 	  const classDisplay = shallow(<ClassDisplay/>);
 	  classDisplay.simulate("mouseIn");

@@ -1,7 +1,5 @@
-import Sequelize from 'sequelize';
+import { sequelize, dataTypes, checkModelName, checkPropertyExists } from 'sequelize-test-helpers';
 import { Classes } from '../src/server/sql.js';
-
-//TODO: Fix this mockup
 
 describe('Classes model', () => {
   test('Loading a class object', () => {
@@ -14,5 +12,10 @@ describe('Classes model', () => {
       end: 'end',
       days: 'days'
     });*/
+  });
+
+  test('Verify the model definition is correct', () => {
+    const model = new Classes();
+    expect(checkPropertyExists(model.course));
   });
 });

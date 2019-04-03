@@ -4,7 +4,7 @@
   "main": "src/server/index.js",
   "scripts": {
     "build": "webpack --mode production",
-    "start": "npm run dev",
+    "start": "npm run build && sudo PORT=80 node ./src/server/index.js",
     "client": "webpack-dev-server --mode development --devtool inline-source-map --hot",
     "server": "nodemon src/server/index.js",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
@@ -19,7 +19,9 @@
       "!**/coverage/**",
       "!**/mocks/**",
       "!*.config.js",
-      "!**/index.{js,jsx}"
+      "!**/index.{js,jsx}",
+      "!**/node_modules/**",
+      "!**/dist/**"
     ],
     "snapshotSerializers": [
       "enzyme-to-json/serializer"
@@ -38,7 +40,6 @@
     "babel-preset-env": "^1.7.0",
     "babel-regenerator-runtime": "^6.5.0",
     "body-parser": "^1.18.3",
-    "chai": "^4.2.0",
     "codecov": "^3.2.0",
     "express": "^4.16.3",
     "horizontal-scroll": "^1.1.0",
@@ -67,7 +68,6 @@
     "reactjs-popup": "^1.3.2",
     "redux": "^4.0.1",
     "sequelize": "^4.42.0",
-    "sinon": "^7.2.5",
     "tedious": "^5.0.3"
   },
   "devDependencies": {
@@ -85,6 +85,7 @@
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
     "canvas": "^2.4.1",
+    "chai": "^4.2.0",
     "clean-webpack-plugin": "^1.0.0",
     "concurrently": "^4.0.0",
     "css-loader": "^2.0.0",
@@ -105,6 +106,7 @@
     "nodemon": "^1.17.3",
     "react-test-renderer": "^16.8.3",
     "sequelize-test-helpers": "^1.0.10",
+    "sinon": "^7.3.0",
     "style-loader": "^0.23.1",
     "url-loader": "^1.0.1",
     "webpack": "^4.5.0",

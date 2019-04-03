@@ -1,5 +1,31 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`ClassDisplay Allow for mouse hovering 1`] = `
+<div
+  className="scheduleClass"
+>
+  <button
+    className="classLabel"
+    onClick={[Function]}
+  >
+    <br />
+     
+     - 
+  </button>
+  <div
+    className="timeLabel"
+    style={
+      Object {
+        "display": "none",
+      }
+    }
+  >
+    <br />
+    Instructor: 
+  </div>
+</div>
+`;
+
 exports[`ClassDisplay Should render correctly with a "populated" classData property 1`] = `
 <div
   className="scheduleClass"
@@ -108,6 +134,50 @@ exports[`ScheduleDisplay Should render correctly with no schedule property 1`] =
 />
 `;
 
+exports[`SchedulesContainer Should not connect to schedule database properly 1`] = `
+<section
+  id="main"
+>
+  <div
+    id="name"
+  >
+    Schedule Name:
+    <input
+      id="scheduleName"
+      onChange={[Function]}
+      placeholder="Enter Schedule Name Here"
+      type="text"
+    />
+  </div>
+  <div
+    className="pdfdim"
+    id="divToPrint"
+  >
+    <div
+      className="horiz-container"
+    >
+      <Connect(schedulesList) />
+    </div>
+  </div>
+  <div
+    className="bottom"
+  >
+    <button
+      className="print"
+      onClick={[Function]}
+    >
+      Save As PDF
+    </button>
+    <button
+      className="return"
+      onClick={[Function]}
+    >
+      Return
+    </button>
+  </div>
+</section>
+`;
+
 exports[`SchedulesContainer Should render correctly with a "populated" schedules property 1`] = `
 <section
   id="main"
@@ -137,6 +207,7 @@ exports[`SchedulesContainer Should render correctly with a "populated" schedules
     className="bottom"
   >
     <button
+      className="print"
       onClick={[Function]}
     >
       Save As PDF
@@ -180,6 +251,7 @@ exports[`SchedulesContainer Should render correctly with a null schedules proper
     className="bottom"
   >
     <button
+      className="print"
       onClick={[Function]}
     >
       Save As PDF
@@ -223,6 +295,7 @@ exports[`SchedulesContainer Should render correctly with no schedules property 1
     className="bottom"
   >
     <button
+      className="print"
       onClick={[Function]}
     >
       Save As PDF
