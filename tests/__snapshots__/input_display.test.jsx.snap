@@ -3,21 +3,25 @@
 exports[`CourseInput Should handle a TAB key press correctly 1`] = `
 <div
   className="classSelect"
-  onChange={[Function]}
 >
   <InputPredict
-    dictionary={Array []}
+    dictionary={null}
     name="name"
     onKeyDown={[Function]}
-    placeholder="Course Type"
+    onKeyUp={[Function]}
+    onValueChange={[Function]}
+    placeholder="Course Subject"
     type="text"
   />
   <InputPredict
-    dictionary={Array []}
+    dictionary={null}
     name="name"
     onKeyDown={[Function]}
+    onKeyUp={[Function]}
+    onValueChange={[Function]}
+    pattern="[0-9]*"
     placeholder="Course Number"
-    type="number"
+    type="text"
   />
 </div>
 `;
@@ -25,21 +29,25 @@ exports[`CourseInput Should handle a TAB key press correctly 1`] = `
 exports[`CourseInput Should handle an arbitrary key press correctly 1`] = `
 <div
   className="classSelect"
-  onChange={[Function]}
 >
   <InputPredict
-    dictionary={Array []}
+    dictionary={null}
     name="name"
     onKeyDown={[Function]}
-    placeholder="Course Type"
+    onKeyUp={[Function]}
+    onValueChange={[Function]}
+    placeholder="Course Subject"
     type="text"
   />
   <InputPredict
-    dictionary={Array []}
+    dictionary={null}
     name="name"
     onKeyDown={[Function]}
+    onKeyUp={[Function]}
+    onValueChange={[Function]}
+    pattern="[0-9]*"
     placeholder="Course Number"
-    type="number"
+    type="text"
   />
 </div>
 `;
@@ -47,21 +55,25 @@ exports[`CourseInput Should handle an arbitrary key press correctly 1`] = `
 exports[`CourseInput Should render correctly 1`] = `
 <div
   className="classSelect"
-  onChange={[Function]}
 >
   <InputPredict
-    dictionary={Array []}
+    dictionary={null}
     name="name"
     onKeyDown={[Function]}
-    placeholder="Course Type"
+    onKeyUp={[Function]}
+    onValueChange={[Function]}
+    placeholder="Course Subject"
     type="text"
   />
   <InputPredict
-    dictionary={Array []}
+    dictionary={null}
     name="name"
     onKeyDown={[Function]}
+    onKeyUp={[Function]}
+    onValueChange={[Function]}
+    pattern="[0-9]*"
     placeholder="Course Number"
-    type="number"
+    type="text"
   />
 </div>
 `;
@@ -76,67 +88,67 @@ exports[`InputContainer Should render correctly 1`] = `
       id="classGroup"
     >
       <CourseInput
-        courses={Array []}
+        courses={
+          Object {
+            "numberMap": Object {},
+            "subjectMap": Object {},
+          }
+        }
         id={0}
         idx={0}
         key="course-0"
-        lastKey={
-          Object {
-            "key": null,
-          }
-        }
         onChange={[Function]}
         references={Object {}}
       />
       <CourseInput
-        courses={Array []}
+        courses={
+          Object {
+            "numberMap": Object {},
+            "subjectMap": Object {},
+          }
+        }
         id={1}
         idx={2}
         key="course-1"
-        lastKey={
-          Object {
-            "key": null,
-          }
-        }
         onChange={[Function]}
         references={Object {}}
       />
       <CourseInput
-        courses={Array []}
+        courses={
+          Object {
+            "numberMap": Object {},
+            "subjectMap": Object {},
+          }
+        }
         id={2}
         idx={4}
         key="course-2"
-        lastKey={
-          Object {
-            "key": null,
-          }
-        }
         onChange={[Function]}
         references={Object {}}
       />
       <CourseInput
-        courses={Array []}
+        courses={
+          Object {
+            "numberMap": Object {},
+            "subjectMap": Object {},
+          }
+        }
         id={3}
         idx={6}
         key="course-3"
-        lastKey={
-          Object {
-            "key": null,
-          }
-        }
         onChange={[Function]}
         references={Object {}}
       />
       <CourseInput
-        courses={Array []}
+        courses={
+          Object {
+            "numberMap": Object {},
+            "subjectMap": Object {},
+          }
+        }
         id={4}
         idx={8}
         key="course-4"
-        lastKey={
-          Object {
-            "key": null,
-          }
-        }
         onChange={[Function]}
         references={Object {}}
       />
