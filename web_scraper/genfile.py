@@ -37,6 +37,12 @@ def formatFile():
 	data = ("'. '").join(data.split("', '")) #replace "', '" so it doesn't match with ", '" at the beginning of some lines
 	data = ("").join(data.split(", '")) #get rid of the remaining ", '" at the beginning of some lines
 	data = ("', '").join(data.split("'. '")) #undo replace "', '"
+	###### START OF UPDATED CODE
+	data = ('').join(data.split(",,"));
+	data = (', ').join(data.split(", u"));
+	data = (',').join(data.split(",u"));
+	data = (',').join(data.split(", "));
+	##### END OF UPDATED CODE
 	data = (" - ").join(data.split("',")) #give new format to  "," so we can split easier later every element
 	file.close()
 
@@ -51,25 +57,24 @@ def formatFile():
 		if "NULL" not in line: # centinel NULL values for useless course data. Defined in scraping_schedule.py
 			aux = line.split(" - ") #now evert attribute for each course is separated by  -
 			line = aux
-			title = line[0]
-			if " " in line[2]: #COURSE CRN (i.e. "CS 341") in third element
-				subj = line[2].split(" ")[0]
-				number = line[2].split(" ")[1]
-			else:
-				subj = line[3].split(" ")[0] #COURSE CRN (i.e. "CS 341") in fourth element
-				number = line[3].split(" ")[1]
-			if (len(line) == 8):
-				teacher = line[7]
-				start = line[4]
-				end = line[5]
-				days = line[6]
+			section = line[2]
+			subj = line[0]
+			number = line[1]
+			title = line[3]
+			crn = line[4]
+			
+			if (len(line) == 9):
+				start = line[5]
+				end = line[6]
+				days = line[7]
+				prof = line[8]
 			else: #new centinel
 				teacher = "TEST"
 				days = "TEST"
 				start = "TEST"
 				end = "TEST"
 
-			line = subj + ',' + number + ',' + title + ',' + teacher + ',' + start + ',' + end + ',' + days
+			line = (subj + ',' + number + ',' + section + ',' + title + ',' + crn  + ',' + start + ',' + end + ',' + days + ',' + prof)
 			if "TEST" not in line and "NULL" not in line and "&nbsp;" not in line and "=" not in line:
 					#Final check for useless course info, centinel values + courses that aren't defined in the web page
 					newdata.append(line)
