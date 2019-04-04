@@ -13,7 +13,7 @@ def scrapeClass(html):
 	classes = html.split('<a href', 1)
 	classes = classes[1].split('">', 1)
 	name = classes[1].split("</a", 1)[0]
-	##START OF UPDATED CODE#
+##START OF UPDATED CODE#
 	name = name.split(" - ");
 	
 	if (len(name) > 4):
@@ -30,6 +30,10 @@ def scrapeClass(html):
 		name = name[0];
 	##END OF UPDATED CODE
 	name = ("").join(name.split(",")) #take commas out of name
+	
+	credits = classes[1].split("Credits", 1)
+	credits = credits[0].rsplit("<br />", 1)[1]; ##split from right
+	credits = "".join(credits.split())
 	classes = classes[1].split('Instructors</th>', 1)
 
 	#grab the second desired data about the time alotted for the class
@@ -38,7 +42,7 @@ def scrapeClass(html):
 	## We'll choose to fill it in with "NULL" values -> our centinel value
 	################################################################
 	if (len(classes) == 1):
-		return(["NULL", "NULL", "NULL", "NULL", "NULL", "NULL", "NULL", "NULL"])
+		return(["NULL", "NULL", "NULL", "NULL", "NULL", "NULL", "NULL", "NULL", "NULL", "NULL"])
 	time = classes[1].split('</td>', 1)
 	time = time[1].split('</td>', 1)
 	time = time[0].split('">')[1]
@@ -57,9 +61,15 @@ def scrapeClass(html):
 	instr = instr[1].split('</td>', 1)
 	instr = instr[1].split('(<ABBR', 1)
 	instr = instr[0].split('">')[1]
-	arr = [subject, number, section, name, crn, time, days, instr];
-	#return the desired data: name, time, days, instructor
 	
+	location = classes[1].split(days, 1)
+	location = location[1].split('">', 1)
+	location = location[1].split("</td>", 1)[0]
+	
+	
+	arr = [subject, number, section, name, crn, time, days, instr, location, credits]
+	
+	#return the desired data: name, time, days, instructor
 	return arr
 
 

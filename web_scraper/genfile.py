@@ -63,18 +63,23 @@ def formatFile():
 			title = line[3]
 			crn = line[4]
 			
-			if (len(line) == 9):
+			if (len(line) == 11):
 				start = line[5]
 				end = line[6]
 				days = line[7]
 				prof = line[8]
+				location = line[9]
+				credits = line[10]
 			else: #new centinel
 				teacher = "TEST"
 				days = "TEST"
 				start = "TEST"
 				end = "TEST"
+				location = "TEST"
+				credits = "TEST"
 
-			line = (subj + ',' + number + ',' + section + ',' + title + ',' + crn  + ',' + start + ',' + end + ',' + days + ',' + prof)
+			line = (subj + ',' + number + ',' + section + ',' + title + ',' + crn  +
+					',' + start + ',' + end + ',' + days + ',' + prof + ',' + location + ',' + credits)
 			if "TEST" not in line and "NULL" not in line and "&nbsp;" not in line and "=" not in line:
 					#Final check for useless course info, centinel values + courses that aren't defined in the web page
 					newdata.append(line)
