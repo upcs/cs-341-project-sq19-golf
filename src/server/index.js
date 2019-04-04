@@ -7,6 +7,8 @@ const ScheduleGen = require('./schedule_generator');
 
 const app = Express();
 
+updateDB();
+
 app.use(Express.static('dist'));
 app.use(BodyParser.json());
 
@@ -49,7 +51,7 @@ app.listen(process.env.PORT || 8080, () => console.log(`Listening on port ${proc
 //TODO: Update from desiredClasses to courseID/subject
 async function updateDB() {
   //Update course data
-  let dataPath = Path.join('web_scraper', 'dump.csv');
+  let dataPath = Path.join('web_scraper', 'course_dump.csv');
   await Sql.updateAllCourseData(dataPath);
 }
 
