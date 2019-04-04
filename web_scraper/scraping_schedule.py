@@ -15,7 +15,7 @@ def scrapeClass(html):
 	name = classes[1].split("</a", 1)[0]
 	##START OF UPDATED CODE#
 	name = name.split(" - ");
-	print(name);
+	
 	if (len(name) > 4):
 		crn = name[2];
 		subject = name[3].split(" ")[0];
@@ -59,7 +59,7 @@ def scrapeClass(html):
 	instr = instr[0].split('">')[1]
 	arr = [subject, number, section, name, crn, time, days, instr];
 	#return the desired data: name, time, days, instructor
-	print(arr[7]);
+	
 	return arr
 
 
