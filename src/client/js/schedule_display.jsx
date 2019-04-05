@@ -40,8 +40,8 @@ export class SchedulesContainer extends Component {
     html2canvas(input)
       .then((canvas) => {
         const imgData = canvas.toDataURL('image/png');
-        const pdf = new jsPDF("1", "mm", "a4");
-        pdf.addImage(imgData, 'JPEG', 20, 20, 180, 150);
+        const pdf = new jsPDF('landscape');
+        pdf.addImage(imgData, 'JPEG', 20, 20);
         pdf.output('/schedules');
         pdf.save(this.state.scheduleName + ".pdf");
       });
@@ -77,9 +77,14 @@ export class SchedulesContainer extends Component {
 export class ScheduleDisplay extends Component {
   constructor(props) {
     super(props);
-    this.state = { schedule: props.schedule || [] };
+    this.state = { schedule: props.schedule || [],
+		hover: false};
   }
 
+  handleMouseIn() {
+		this.setState({ hover: true })
+    }
+  
   render() {
     let schedule = this.state.schedule;
 
@@ -88,10 +93,12 @@ export class ScheduleDisplay extends Component {
         <ClassDisplay key={"class-" + i} classData={classData}/>
       )
     });
-
+	
     return (
       <span className="scheduleOption">
-        {classDisplayList}
+		<button onClick={this.handleMouseIn.bind(this)} className="selectableSchedule">
+			{classDisplayList}
+		</button>
       </span>
     )
   }
@@ -104,6 +111,7 @@ export class ClassDisplay extends Component {
 		this.state = { classData: props.classData || {},
 			hover: false};
     }
+	
 	handleMouseIn() {
 		this.setState({ hover: true })
     }
@@ -120,14 +128,14 @@ export class ClassDisplay extends Component {
 
     return (
 		  <div className="scheduleClass">
-			<button onClick={this.handleMouseIn.bind(this)} className="classLabel">
-				{classData.subject}{classData.number}<br/>
-				{classData.days} {classData.start} - {classData.end}
-			</button>
-			<div className="timeLabel" style={tooltipStyle}>
-				{classData.title}<br/>
-				Instructor: {classData.professor}
-			</div>
+				<button onMouseIn={this.handleMouseIn.bind(this)} onMouseOut={this.handleMouseOut.bind(this)} className="classLabel">
+					{classData.subject}{classData.number}<br/>
+					{classData.days} {classData.start} - {classData.end}
+				</button>
+				<div className="timeLabel" style={tooltipStyle}>
+					{classData.title}<br/>
+					Instructor: {classData.professor}
+				</div>
 		  </div>
     );
   }
