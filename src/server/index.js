@@ -7,20 +7,36 @@ const ScheduleGen = require('./schedule_generator');
 
 const app = Express();
 
+updateDB();
+
 app.use(Express.static('dist'));
 app.use(BodyParser.json());
 
 //Client Side Post
 app.post('/api/scheduleRequest', (req, res) => {
   getViableSchedulesAsync(req.body, viableSchedules => {
-    console.log(viableSchedules);
     res.json(viableSchedules);
   });
 });
 
 app.post('/api/allCoursesRequest', (req, res) => {
   getAllCoursesAsync(courses => {
-    res.json(courses);
+    let subjMap = { all: [] }, numMap = { all: [] };
+    courses.forEach(course => {
+      let courseSubj = course.subject, courseNum = course.number;
+
+      //Populate course subject map
+      if (subjMap[courseSubj]) subjMap[courseSubj].push(courseNum);
+      else subjMap[courseSubj] = [courseNum];
+      subjMap.all.push(courseNum);
+
+      //Populate course number map
+      if (numMap[courseNum]) numMap[courseNum].push(courseSubj);
+      else numMap[courseNum] = [courseSubj];
+      numMap.all.push(courseSubj);
+    });
+
+    res.json({ subjMap, numMap });
   });
 });
 
@@ -35,7 +51,7 @@ app.listen(process.env.PORT || 8080, () => console.log(`Listening on port ${proc
 //TODO: Update from desiredClasses to courseID/subject
 async function updateDB() {
   //Update course data
-  let dataPath = Path.join('web_scraper', 'dump.csv');
+  let dataPath = Path.join('web_scraper', 'course_dump.csv');
   await Sql.updateAllCourseData(dataPath);
 }
 
