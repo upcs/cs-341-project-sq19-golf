@@ -33,7 +33,7 @@ class TestMethods(unittest.TestCase):
 		"""
 		testurl = params.genQuery("201902", "CS", "", "", "", "", "%25", "", "MTHS", "0", "0", "a", "0", "0", "a")
 		lstCourses = scraping_schedule.getCourses(testurl)
-		self.assertTrue("CS Capstone Workshop" in lstCourses[0][0])
+		self.assertTrue("CS Capstone Workshop" in lstCourses[0][3])
 	
 	def test_genfile(self):
 		"""
@@ -41,7 +41,7 @@ class TestMethods(unittest.TestCase):
 			Use regular expression to make sure our dumped data format is the proper one in every line
 		"""
 		genfile.generateFile("201902")
-		pattern1 = re.compile(".*,.*,.*,.*,.*:.*m,.*:.*m,.*") 
+		pattern1 = re.compile(".*,.*,.*,.*,*,.*:.*m,.*:.*m,.*,.*,.*,.*")
 		file = open("course_dump.csv", "r")
 		data = file.readlines()
 		correct = True
