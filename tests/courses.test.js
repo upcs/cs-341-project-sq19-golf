@@ -19,7 +19,6 @@ describe('Courses', () => {
     expect(testCourses[0].subject).toBe("TEST1");
 	expect(testCourses[1].number).toEqual("number2");
     expect(testCourses[2].section).toBe("title3");
-	expect(testCourses[3].title).toBe("TEST4");
 	expect(testCourses[4].start).toEqual("number5");
 	expect(testCourses[5].end).toEqual("number6");
 	expect(testCourses[6].days).toBe("days3");
