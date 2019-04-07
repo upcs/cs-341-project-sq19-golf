@@ -26,7 +26,6 @@ export class TopNavigation extends Component {
         <div id="leftNav"><a>UP Scheduler</a></div>
 
         <div id='rightNav'>
-
         <Popup
           trigger={<button id="nav"> Help </button>}
           modal
@@ -36,6 +35,7 @@ export class TopNavigation extends Component {
         <span> <font color="black"><ul align="left">
           <div><b>Availability Page</b></div>
           <div>Enter the times when you are unavailable into the table.</div>
+          <ul>• Teacher Blacklist: Prevent certain teachers from being included into your schedule.</ul>
           <br />
           <div><b>Schedule Page</b></div>
           <div>View, name, and save your generated schedule.</div>
