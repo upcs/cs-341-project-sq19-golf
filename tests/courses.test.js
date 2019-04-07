@@ -19,10 +19,6 @@ describe('Courses', () => {
     expect(testCourses[0].subject).toBe("TEST1");
 	expect(testCourses[1].number).toEqual("number2");
     expect(testCourses[2].section).toBe("title3");
-	expect(testCourses[6].days).toBe("days3");
-	expect(testCourses[7].professor).toBe("TEST8");
-	expect(testCourses[8].location).toBe("TEST9");
-	expect(testCourses[9].credits).toEqual("number10");
 
     //But not on the start field
     expect(testCourses[1].start).toBe("start2");
