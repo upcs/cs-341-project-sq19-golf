@@ -133,6 +133,7 @@ export class AvailabilityContainer extends Component {
 					<button onClick={this.showMenu}>
 					  Additional Options
 					</button>
+
 					{
 					  this.state.showMenu ? (
 						  <div className="menu" ref={(element) => { this.state.dropdownMenu = element }}>

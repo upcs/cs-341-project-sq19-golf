@@ -15,37 +15,41 @@ export class TopNavigation extends Component {
 		super(props);
 	};
 
-  aboutClick() {
-    alert('UPSchedule is a convenient schedule planner created by students, for students.');
+  backClick() {
+    window.history.back();
   }
 
-  aboutClick2(){
-    
-  }
 
   render() {
     return (
       <section className="topNav">
-        <a id="leftNav">UP Scheduler</a>
+        <div id="leftNav"><a>UP Scheduler</a></div>
 
         <div id='rightNav'>
-        <div className="menu">
-          <Popup
-            trigger={<div className="menu-item"> <b>Options</b> </div>}
-            on="hover"
-            closeOnDocumentClick
-            mouseLeaveDelay={300}
-            mouseEnterDelay={0}
-            contentStyle={{ padding: '0px', border: 'none' }}
-            arrow={false}
-          >
-            <div className="menu">
-              <div className="menu-item"> Help</div>
-              <div className="menu-item" onClick={this.aboutClick}> About</div>
-              <div className="menu-item">Quit</div>
-            </div>
-          </Popup>
-        </div>
+
+        <Popup
+          trigger={<button id="nav"> Help </button>}
+          modal
+          closeOnDocumentClick
+        >
+        <div className="header"><ul><font color="black"><h3><b>Help</b></h3><hr /></font></ul></div>
+        <span> <font color="black"><ul align="left">
+          <div><b>Availability Page</b></div>
+          <div>Enter the times when you are unavailable into the table.</div>
+          <br />
+          <div><b>Schedule Page</b></div>
+          <div>View, name, and save your generated schedule.</div>
+          </ul>
+          </font></span>
+        </Popup>
+        <Popup
+          trigger={<button id="nav"> About </button>}
+          modal
+          closeOnDocumentClick
+        >
+          <div className="header"><ul><font color="black"><h3><b>About</b></h3><hr /></font></ul></div>
+          <span> <ul><font color="black">UPSchedule is a convenient schedule planner created by students, for students.<br /></font></ul></span>
+        </Popup>
         </div>
       </section>
     );
