@@ -23,6 +23,6 @@ describe('Courses', () => {
     //But not on the start field
     expect(testCourses[1].start).toBe("end2");
 	expect(testCourses[1].end).toBe("DAYS2");
-	expect(testCourses[1].crn).toBe("title3");
+	expect(testCourses[1].crn).toBe("start2");
   });
 });
