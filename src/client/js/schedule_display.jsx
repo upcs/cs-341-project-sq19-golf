@@ -124,14 +124,14 @@ export class ClassDisplay extends Component {
 		  <div className="scheduleClass">
 			<button onClick={this.handleMouseIn.bind(this)} onMouseOut={this.handleMouseOut.bind(this)} className="classLabel">
 				{classData.subject}{classData.number}{classData.section}<br/>
-				{classData.days} {classData.start} - {classData.end}<br/>
-				{classData.location}
+				{classData.start} - {classData.end}<br/>
+				{classData.loc}
 			</button>
 			<div className="timeLabel" style={tooltipStyle}>
 				{classData.title}<br/>
+				Instructor: {classData.prof}<br/>
 				CRN: {classData.crn}<br/>
-				Instructor: {classData.professor}<br/>
-				Credits: {classData.credits}		
+				Credits: {classData.cred}		
 			</div>
 		  </div>
     );
