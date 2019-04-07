@@ -41,8 +41,7 @@ export class SchedulesContainer extends Component {
       .then((canvas) => {
         const imgData = canvas.toDataURL('image/png');
         const pdf = new jsPDF('landscape');
-        pdf.addImage(imgData, 'JPEG', 20, 20, 180, 150);
-        pdf.output('/schedules');
+        pdf.addImage(imgData, 'JPEG', 0, 0, 180, 150);
         pdf.save(this.state.scheduleName + ".pdf");
       });
   }
@@ -124,14 +123,14 @@ export class ClassDisplay extends Component {
 		  <div className="scheduleClass">
 			<button onClick={this.handleMouseIn.bind(this)} onMouseOut={this.handleMouseOut.bind(this)} className="classLabel">
 				{classData.subject}{classData.number}{classData.section}<br/>
-				{classData.start} - {classData.end}<br/>
-				{classData.loc}
+				{classData.days} {classData.start} - {classData.end}<br/>
+				{classData.location}
 			</button>
 			<div className="timeLabel" style={tooltipStyle}>
 				{classData.title}<br/>
-				Instructor: {classData.prof}<br/>
+				Instructor: {classData.instr}<br/>
 				CRN: {classData.crn}<br/>
-				Credits: {classData.cred}		
+				Credits: {classData.credits}		
 			</div>
 		  </div>
     );
