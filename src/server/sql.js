@@ -19,11 +19,15 @@ const Db = new Sequelize('REGISTRATION', 'root', 'Gatolocoe#4209', {
 const Classes = Db.define('course', {
     subject: Sequelize.STRING,
     number: Sequelize.STRING,
+	section: Sequelize.STRING,
     title: Sequelize.STRING,
-    professor: Sequelize.STRING,
+	crn: Sequelize.STRING,
     start: Sequelize.STRING,
     end: Sequelize.STRING,
-    days: Sequelize.STRING
+    days: Sequelize.STRING,
+	professor: Sequelize.STRING,
+	location: Sequelize.STRING,
+	credits: Sequelize.STRING
   }, {
     timestamps: false,
     freezeTableName: true, //Allows the tableName to be defined strictly (not just the query + 's')
