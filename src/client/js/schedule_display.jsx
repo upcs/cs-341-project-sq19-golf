@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import jsPDF from 'jspdf';
-import html2canvas from 'html2canvas';
+import * as jsPDF from 'jspdf';
+import * as html2canvas from 'html2canvas';
 import Popup from 'reactjs-popup'
 import {Link} from 'react-router-dom';
 import {connect} from "react-redux";
@@ -41,7 +41,7 @@ export class SchedulesContainer extends Component {
       .then((canvas) => {
         const imgData = canvas.toDataURL('image/png');
         const pdf = new jsPDF('landscape');
-        pdf.addImage(imgData, 'JPEG', 20, 20);
+        pdf.addImage(imgData, 'JPEG', 20, 20, 180, 150);
         pdf.output('/schedules');
         pdf.save(this.state.scheduleName + ".pdf");
       });
@@ -65,7 +65,7 @@ export class SchedulesContainer extends Component {
     			</div>
     		</div>
         <div className="bottom">
-          <button className="print" onClick={this.printDocument}>Save As PDF</button>
+          <button onClick={this.printDocument}>Save As PDF</button>
           <button className="return" onClick={() => window.history.back()}>Return</button>
         </div>
       </section>
@@ -77,14 +77,9 @@ export class SchedulesContainer extends Component {
 export class ScheduleDisplay extends Component {
   constructor(props) {
     super(props);
-    this.state = { schedule: props.schedule || [],
-		hover: false};
+    this.state = { schedule: props.schedule || [] };
   }
 
-  handleMouseIn() {
-		this.setState({ hover: true })
-    }
-  
   render() {
     let schedule = this.state.schedule;
 
@@ -93,10 +88,10 @@ export class ScheduleDisplay extends Component {
         <ClassDisplay key={"class-" + i} classData={classData}/>
       )
     });
-	
+
     return (
       <span className="scheduleOption">
-		<button onClick={this.handleMouseIn.bind(this)} className="selectableSchedule">
+		<button className="scheduleContainer">
 			{classDisplayList}
 		</button>
       </span>
@@ -111,7 +106,6 @@ export class ClassDisplay extends Component {
 		this.state = { classData: props.classData || {},
 			hover: false};
     }
-	
 	handleMouseIn() {
 		this.setState({ hover: true })
     }
@@ -128,14 +122,17 @@ export class ClassDisplay extends Component {
 
     return (
 		  <div className="scheduleClass">
-				<button onMouseIn={this.handleMouseIn.bind(this)} onMouseOut={this.handleMouseOut.bind(this)} className="classLabel">
-					{classData.subject}{classData.number}<br/>
-					{classData.days} {classData.start} - {classData.end}
-				</button>
-				<div className="timeLabel" style={tooltipStyle}>
-					{classData.title}<br/>
-					Instructor: {classData.professor}
-				</div>
+			<button onClick={this.handleMouseIn.bind(this)} onMouseOut={this.handleMouseOut.bind(this)} className="classLabel">
+				{classData.subject}{classData.number}{classData.section}<br/>
+				{classData.days} {classData.start} - {classData.end}<br/>
+				{classData.loc}
+			</button>
+			<div className="timeLabel" style={tooltipStyle}>
+				{classData.title}<br/>
+				CRN: {classData.crn}<br/>
+				Instructor: {classData.professor}<br/>
+				Credits: {classData.credits}		
+			</div>
 		  </div>
     );
   }
