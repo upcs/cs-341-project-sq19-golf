@@ -59,9 +59,7 @@ export class SchedulesContainer extends Component {
     			<input id="scheduleName" type="text" placeholder="Enter Schedule Name Here" onChange={this.handleScheduleName}/>
     		</div>
     		<div id="divToPrint" className="pdfdim">
-    			<div className="horiz-container">
     			  <Schedules/>
-    			</div>
     		</div>
         <div className="bottom">
           <button onClick={this.printDocument}>Save As PDF</button>
@@ -121,14 +119,14 @@ export class ClassDisplay extends Component {
 
     return (
 		  <div className="scheduleClass">
-			<button onClick={this.handleMouseIn.bind(this)} onMouseOut={this.handleMouseOut.bind(this)} className="classLabel">
+			<button onMouseEnter={this.handleMouseIn.bind(this)} onMouseOut={this.handleMouseOut.bind(this)} className="classLabel">
 				{classData.subject}{classData.number}{classData.section}<br/>
 				{classData.days} {classData.start} - {classData.end}<br/>
 				{classData.location}
 			</button>
 			<div className="timeLabel" style={tooltipStyle}>
 				{classData.title}<br/>
-				Instructor: {classData.instr}<br/>
+				Instructor: {classData.professor}<br/>
 				CRN: {classData.crn}<br/>
 				Credits: {classData.credits}		
 			</div>
