@@ -79,7 +79,7 @@ export class ScheduleDisplay extends Component {
     super(props);
     this.state = { schedule: props.schedule || [] };
   }
-
+  
   render() {
     let schedule = this.state.schedule;
 
@@ -125,7 +125,7 @@ export class ClassDisplay extends Component {
 			<button onClick={this.handleMouseIn.bind(this)} onMouseOut={this.handleMouseOut.bind(this)} className="classLabel">
 				{classData.subject}{classData.number}{classData.section}<br/>
 				{classData.days} {classData.start} - {classData.end}<br/>
-				{classData.loc}
+				{classData.location}
 			</button>
 			<div className="timeLabel" style={tooltipStyle}>
 				{classData.title}<br/>
