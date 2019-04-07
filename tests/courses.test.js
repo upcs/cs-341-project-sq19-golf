@@ -21,6 +21,7 @@ describe('Courses', () => {
     expect(testCourses[2].section).toBe("title3");
 
     //But not on the start field
-    expect(testCourses[1].start).toBe("start2");
+    expect(testCourses[1].start).toBe("end2");
+	expect(testCourses[1].end).toBe("end2");
   });
 });
