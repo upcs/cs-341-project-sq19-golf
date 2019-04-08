@@ -1,57 +1,76 @@
 const Combinatorics = require('js-combinatorics');
-import './courses';
 
+const Courses = require('./courses');
 module.exports = {
   generateSchedules: (courseIDs, subjects, classes) => {
     try {
-		let possibleClasses = filterClasses(courseIDs, subjects, classes);
-		let possibleSchedules = permute(inputCourses);
-		possibleSchedules = isolateViableSchedules(courseIDs, subjects, possibleSchedules);
-		let mask = "0".repeat(168);
-		let initialFreeHours = [mask, mask, mask, mask, mask]; //a mask for each day of the week
-
-		Course cmbSchedules[][]; // dynamic array, only store viable schedules. Each schedule is an array of Courses
-		for(var i = 0; i < possibleSchedules.length; i++){
-			Schedule tmp = new Schedule(cmb[i], initialFreeHours);
-			if (tmp.viable){
-				cmbSchedules.push(tmp.courses); //only add viable schedules
-			}
-		}
-		return cmbSchedules
+      let possibleClasses = filterClasses(courseIDs, subjects, classes);
+      let possibleSchedules = Combinatorics.bigCombination(possibleClasses, subjects.length).toArray();
+	  //let possibleSchedules = permute(possibleClasses);
+	  //console.log("Start + \n" + possibleSchedules + "\nEnd")
+      possibleSchedules = isolateViableSchedules(courseIDs, subjects, possibleSchedules);
+	  //filteredSchedules = filterSchedules(possibleSchedules);  => Using combinations it's unnecessary, I coded it for using permutations
+	  let arraySchedules = new Array();
+	  let mask = "0".repeat(168);
+	  let freeHours = [mask, mask, mask, mask, mask]; //a mask for each day of the week
+	  
+	  //CODE CRASHES IN COMMENTED AREA DOWN HERE: SCHEDULE EXPECTS A COURSE OBJECT, WITH ATTRIBUTE .ones
+	  /*for (var i = 0; i < possibleSchedules.length; i++){
+		  //console.log(possibleSchedules);
+		//let sch = new Schedule(possibleSchedules[i], freeHours);
+		//console.log(sch.totalOnes);
+		   //if (sch.viable==true){arraySchedules.push(sch);}
+	  }
+	 // return filteredSchedules;*/
+	  return possibleSchedules;
     }
-	catch (error) {
-		return [];
+    catch (error) {
+		console.log(error);
+      return [];
     }
   }
 }
 
 
-class Schedule {
-  constructor(courses, week){
-    this.courses = courses;
-	this.week = week;
-	this.totalOnes = [0, 0, 0, 0, 0];
-	var arrayMasks = new Array(courses.length);
-	//get the mask of every course in the array into a new array to perform bitwise operation
-	for(var i = 0; i < courses.length; i++){
-    //mask is five dimensional array
-		arrayMasks[i] = courses[i].mask;
-		this.totalOnes[0] += courses[i].ones[0];
-		this.totalOnes[1] += courses[i].ones[1];
-		this.totalOnes[2] += courses[i].ones[2];
-		this.totalOnes[3] += courses[i].ones[3];
-		this.totalOnes[4] += courses[i].ones[4];
+ 
+ function filterSchedules(permutations){
+  var filtered = new Array();
+	for(var i = 0; i < permutations.length; i++){
+	  var obj = {};
+	  for(var j = 0; j < permutations[i].length; j++){
+		  
+		  obj[permutations[i][j].subject + permutations[i][j].number] = permutations[i][j];
+      //console.log(obj[permutations[i][j].subject + permutations[i][j].number])
+	  }
+	  var tmp  = obj;
+	  filtered.push(Object.values(obj));
 	}
 	
-	this.viable = checkMask(arrayMasks, this.totalOnes);
-	
-  }
+	return filtered;
 }
+
 
 //Preliminary removal step purposed to avoid heap overflows
 function filterClasses(courseIDs, subjects, classes) {
   try {
-    let possibleClasses = classes.filter(classObj => {
+	  
+	  //TRIED TO CREATE COURSE INSTANCES, CRASHES APP
+    /*let possibleClasses = classes.filter(classObj => {
+      let subject = classObj.subject;
+      let courseID = classObj.number;
+
+     if (subjects.includes(subject) && courseIDs.includes(courseID)) {
+		  let course = new Course(classObj.subject, classObj.number, classObj.section,
+										classObj.title, classObj.crn, classObj.start, classObj.end, 
+										classObj.days, classObj.professor, classObj.loc, classObj.credits)
+			return classObj;
+	}
+		  
+    });
+
+    return possibleClasses;*/
+	
+	let possibleClasses = classes.filter(classObj => {
       let subject = classObj.subject;
       let courseID = classObj.number;
 
@@ -96,7 +115,55 @@ function findMatchingIdx(arr1, arr2, query1, query2) {
   return -1;
 }
 
+/*
+	Efficient permutation from  Solution 61: https://stackoverflow.com/questions/9960908/permutations-in-javascript
+	based on: http://homepage.math.uiowa.edu/~goodman/22m150.dir/2007/Permutation%20Generation%20Methods.pdf
+	*/
 
+function permute(permutation) {
+  var length = permutation.length,
+      result = [permutation.slice()],
+      c = new Array(length).fill(0),
+      i = 1, k, p;
+
+  while (i < length) {
+    if (c[i] < i) {
+      k = i % 2 && c[i];
+      p = permutation[i];
+      permutation[i] = permutation[k];
+      permutation[k] = p;
+      ++c[i];
+      i = 1;
+      result.push(permutation.slice());
+    } else {
+      c[i] = 0;
+      ++i;
+    }
+  }
+  return result;
+}
+
+class Schedule {
+  constructor(courses, week){
+    this.courses = courses;
+	this.week = week;
+	this.totalOnes = [0, 0, 0, 0, 0];
+	var arrayMasks = new Array(courses.length);
+	//get the mask of every course in the array into a new array to perform bitwise operation
+	for(var i = 0; i < courses.length; i++){
+    //mask is five dimensional array
+		arrayMasks[i] = courses[i].mask;
+		this.totalOnes[0] += courses[i].ones[0];
+		this.totalOnes[1] += courses[i].ones[1];
+		this.totalOnes[2] += courses[i].ones[2];
+		this.totalOnes[3] += courses[i].ones[3];
+		this.totalOnes[4] += courses[i].ones[4];
+	}
+	
+	this.viable = checkMask(arrayMasks, this.totalOnes);
+	
+  }
+}
 
 function countOnes(mask){
 		
@@ -199,31 +266,3 @@ function checkMask(arrayMasks, totalOnes){
 	
 }
 
-
-/*
-	Efficient permutation from  Solution 61: https://stackoverflow.com/questions/9960908/permutations-in-javascript
-	based on: http://homepage.math.uiowa.edu/~goodman/22m150.dir/2007/Permutation%20Generation%20Methods.pdf
-	*/
-
-function permute(permutation) {
-  var length = permutation.length,
-      result = [permutation.slice()],
-      c = new Array(length).fill(0),
-      i = 1, k, p;
-
-  while (i < length) {
-    if (c[i] < i) {
-      k = i % 2 && c[i];
-      p = permutation[i];
-      permutation[i] = permutation[k];
-      permutation[k] = p;
-      ++c[i];
-      i = 1;
-      result.push(permutation.slice());
-    } else {
-      c[i] = 0;
-      ++i;
-    }
-  }
-  return result;
-}
