@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import jsPDF from 'jspdf';
-import html2canvas from 'html2canvas';
+import * as jsPDF from 'jspdf';
+import * as html2canvas from 'html2canvas';
 import Popup from 'reactjs-popup'
 import {Link} from 'react-router-dom';
 import {connect} from "react-redux";
@@ -40,9 +40,8 @@ export class SchedulesContainer extends Component {
     html2canvas(input)
       .then((canvas) => {
         const imgData = canvas.toDataURL('image/png');
-        const pdf = new jsPDF("1", "mm", "a4");
-        pdf.addImage(imgData, 'JPEG', 20, 20, 180, 150);
-        pdf.output('/schedules');
+        const pdf = new jsPDF('landscape');
+        pdf.addImage(imgData, 'JPEG', 0, 0, 180, 150);
         pdf.save(this.state.scheduleName + ".pdf");
       });
   }
@@ -60,12 +59,10 @@ export class SchedulesContainer extends Component {
     			<input id="scheduleName" type="text" placeholder="Enter Schedule Name Here" onChange={this.handleScheduleName}/>
     		</div>
     		<div id="divToPrint" className="pdfdim">
-    			<div className="horiz-container">
-    			  <Schedules/>
-    			</div>
+  			  <Schedules/>
     		</div>
         <div className="bottom">
-          <button className="print" onClick={this.printDocument}>Save As PDF</button>
+          <button onClick={this.printDocument}>Save As PDF</button>
           <button className="return" onClick={() => window.history.back()}>Return</button>
         </div>
       </section>
@@ -77,7 +74,16 @@ export class SchedulesContainer extends Component {
 export class ScheduleDisplay extends Component {
   constructor(props) {
     super(props);
-    this.state = { schedule: props.schedule || [] };
+    this.state = {
+      schedule: props.schedule || [],
+      selected: false
+    };
+
+    this.updateDisplay = this.updateDisplay.bind(this);
+  }
+
+  updateDisplay(truthVal) {
+    this.setState({ selected: truthVal })
   }
 
   render() {
@@ -85,13 +91,15 @@ export class ScheduleDisplay extends Component {
 
     let classDisplayList = schedule.map((classData, i) => {
       return (
-        <ClassDisplay key={"class-" + i} classData={classData}/>
+        <ClassDisplay key={"class-" + i} classData={classData} updateDisplay={this.updateDisplay} selected={this.state.selected}/>
       )
     });
 
     return (
       <span className="scheduleOption">
-        {classDisplayList}
+    		<div className="scheduleContainer">
+    			{classDisplayList}
+    		</div>
       </span>
     )
   }
@@ -99,35 +107,36 @@ export class ScheduleDisplay extends Component {
 
 //A single course
 export class ClassDisplay extends Component {
-    constructor(props) {
-		super(props);
-		this.state = { classData: props.classData || {},
-			hover: false};
-    }
-	handleMouseIn() {
-		this.setState({ hover: true })
-    }
+  constructor(props) {
+  	super(props);
+  	this.state = { classData: props.classData || {},
+  		hover: false};
+  }
 
-    handleMouseOut() {
-		this.setState({ hover: false })
-	}
+  handleMouseClick() {
+    let selected = this.props.selected;
+	  this.props.updateDisplay(!selected);
+  }
 
   render() {
     let classData = this.state.classData;
-	const tooltipStyle = {
-		display: this.state.hover ? 'block' : 'none'
-	}
+	  const tooltipStyle = {
+		  display: this.props.selected ? 'block' : 'none'
+	  }
 
     return (
 		  <div className="scheduleClass">
-			<button onClick={this.handleMouseIn.bind(this)} className="classLabel">
-				{classData.subject}{classData.number}<br/>
-				{classData.days} {classData.start} - {classData.end}
-			</button>
-			<div className="timeLabel" style={tooltipStyle}>
-				{classData.title}<br/>
-				Instructor: {classData.professor}
-			</div>
+  			<div onClick={this.handleMouseClick.bind(this)} className="classLabel">
+  				{classData.subject} {classData.number}{classData.section}<br/>
+  				{classData.days} {classData.start} - {classData.end}<br/>
+  				{classData.location}
+  			</div>
+  			<div className="timeLabel" style={tooltipStyle}>
+  				{classData.title}<br/>
+  				{classData.professor}<br/>
+  				CRN: {classData.crn}<br/>
+  				Credits: {classData.credits}
+  			</div>
 		  </div>
     );
   }

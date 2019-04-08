@@ -14,16 +14,39 @@ const Db = new Sequelize('REGISTRATION', 'root', 'Gatolocoe#4209', {
   operatorsAliases: false, //Allows for string refs to be used in addition to Sybmol() objects
   logging: false //Prevents annoying SQL statements unnecessarily filling the server's console
 });
-
 //Sequelize Table Reference
+
 const Classes = Db.define('course', {
     subject: Sequelize.STRING,
     number: Sequelize.STRING,
+	  section: Sequelize.STRING,
     title: Sequelize.STRING,
-    professor: Sequelize.STRING,
+	  crn: Sequelize.STRING,
     start: Sequelize.STRING,
     end: Sequelize.STRING,
-    days: Sequelize.STRING
+    days: Sequelize.STRING,
+	  professor: Sequelize.STRING,
+	  location: Sequelize.STRING,
+	  credits: Sequelize.STRING,
+    mask: {
+      type: Sequelize.STRING(1000),
+      get: function() {
+        return JSON.parse(this.getDataValue('mask'));
+      },
+      set: function(val) {
+        return this.setDataValue('mask', JSON.stringify(val));
+      }
+    },
+    ones: {
+      type: Sequelize.STRING(176),
+      get: function() {
+        let onesStr = JSON.parse(this.getDataValue('ones'));
+        return onesStr.map(el => parseInt(el));
+      },
+      set: function(val) {
+        return this.setDataValue('ones', JSON.stringify(val));
+      }
+    }
   }, {
     timestamps: false,
     freezeTableName: true, //Allows the tableName to be defined strictly (not just the query + 's')

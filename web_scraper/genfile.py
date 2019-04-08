@@ -101,6 +101,7 @@ def formatFile():
 	data = ("").join(data.split(" \n"))
 	data = ("").join(data.split('"\n'))
 	data = ("").join(data.split('"'))
+	data = ("\n").join(data.split("\n\n"))
 	data = ("").join(data.split('dddefault'))
 	data = ("").join(data.split('<ABBR'))
 

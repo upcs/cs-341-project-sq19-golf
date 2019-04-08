@@ -44,6 +44,13 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './src/client/html/index.html',
       favicon: './src/client/icons/scheduleIcon.png'
-    })
-  ]
+    }),
+    new webpack.DefinePlugin({ // <-- key to reducing React's size
+      'process.env': {
+        'NODE_ENV': JSON.stringify('production')
+      }
+    }),
+    new webpack.optimize.AggressiveMergingPlugin(),
+  ],
+  externals: ["fs", "tls", "net"],
 };
