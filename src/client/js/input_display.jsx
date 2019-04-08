@@ -6,6 +6,7 @@ import fetch from 'node-fetch';
 import $ from 'jquery';
 import InputPredict from 'react-inline-predict';
 import {store, modifySchedules, modifyLastKey} from './redux';
+import Popup from 'reactjs-popup'
 import '../css/styles.css';
 
 //Menu bar
@@ -14,29 +15,42 @@ export class TopNavigation extends Component {
 		super(props);
 	};
 
-  aboutClick() {
-    alert('UPSchedule is a convenient schedule planner created by students, for students.');
+  backClick() {
+    window.history.back();
   }
+
 
   render() {
     return (
       <section className="topNav">
-        <a id="leftNav">UP Scheduler</a>
+        <div id="leftNav"><a>UP Scheduler</a></div>
+
         <div id='rightNav'>
-          <div className="dropdown">
-            <div className="dropmenu">
-              <div className="name"><b>Options</b></div>
-                <div className="content">
-                  <div className="setting" id="schedules">Schedules</div>
-                  <div className="setting" id="help">Help</div>
-                  <div className="setting" id="about" onClick={this.aboutClick}>About</div>
-                  <Link to="/">
-                    <div className="setting" id="quit">Quit</div>
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </div>
+        <Popup
+          trigger={<button id="nav"> Help </button>}
+          modal
+          closeOnDocumentClick
+        >
+        <div className="header"><ul><font color="black"><h3><b>Help</b></h3><hr /></font></ul></div>
+        <span> <font color="black"><ul align="left">
+          <div><b>Availability Page</b></div>
+          <div>Enter the times when you are unavailable into the table.</div>
+          <ul>• Teacher Blacklist: Prevent certain teachers from being included into your schedule.</ul>
+          <br />
+          <div><b>Schedule Page</b></div>
+          <div>View, name, and save your generated schedule.</div>
+          </ul>
+          </font></span>
+        </Popup>
+        <Popup
+          trigger={<button id="nav"> About </button>}
+          modal
+          closeOnDocumentClick
+        >
+          <div className="header"><ul><font color="black"><h3><b>About</b></h3><hr /></font></ul></div>
+          <span> <ul><font color="black">UPSchedule is a convenient schedule planner created by students, for students.<br /></font></ul></span>
+        </Popup>
+        </div>
       </section>
     );
   }
@@ -243,7 +257,7 @@ export class CourseInput extends Component {
       <div className="classSelect">
         <InputPredict
           type="text"
-          name="name"
+          name="subject"
           placeholder="Course Subject"
           dictionary={subjects}
           ref={this.createRef(this.props.idx)}
@@ -253,7 +267,7 @@ export class CourseInput extends Component {
         />
         <InputPredict
           type="text"
-          name="name"
+          name="number"
           pattern="[0-9]*"
           placeholder="Course Number"
           dictionary={numbers}
