@@ -6,23 +6,23 @@ module.exports = {
     try {
       let possibleClasses = filterClasses(courseIDs, subjects, classes);
       let possibleSchedules = Combinatorics.bigCombination(possibleClasses, subjects.length).toArray();
-	  //let possibleSchedules = permute(possibleClasses);
-	  //console.log("Start + \n" + possibleSchedules + "\nEnd")
+  	  //let possibleSchedules = permute(possibleClasses);
+  	  //console.log("Start + \n" + possibleSchedules + "\nEnd")
       possibleSchedules = isolateViableSchedules(courseIDs, subjects, possibleSchedules);
-	  //filteredSchedules = filterSchedules(possibleSchedules);  => Using combinations it's unnecessary, I coded it for using permutations
-	  let arraySchedules = new Array();
-	  let mask = "0".repeat(168);
-	  let freeHours = [mask, mask, mask, mask, mask]; //a mask for each day of the week
-	  
-	  //CODE CRASHES IN COMMENTED AREA DOWN HERE: SCHEDULE EXPECTS A COURSE OBJECT, WITH ATTRIBUTE .ones
-	  /*for (var i = 0; i < possibleSchedules.length; i++){
-		  //console.log(possibleSchedules);
-		//let sch = new Schedule(possibleSchedules[i], freeHours);
-		//console.log(sch.totalOnes);
-		   //if (sch.viable==true){arraySchedules.push(sch);}
-	  }
-	 // return filteredSchedules;*/
-	  return possibleSchedules;
+  	  //filteredSchedules = filterSchedules(possibleSchedules);  => Using combinations it's unnecessary, I coded it for using permutations
+  	  let arraySchedules = new Array();
+  	  let mask = "0".repeat(168);
+  	  let freeHours = [mask, mask, mask, mask, mask]; //a mask for each day of the week
+
+  	  //CODE CRASHES IN COMMENTED AREA DOWN HERE: SCHEDULE EXPECTS A COURSE OBJECT, WITH ATTRIBUTE .ones
+  	  /*for (var i = 0; i < possibleSchedules.length; i++){
+  		  //console.log(possibleSchedules);
+  		//let sch = new Schedule(possibleSchedules[i], freeHours);
+  		//console.log(sch.totalOnes);
+  		   //if (sch.viable==true){arraySchedules.push(sch);}
+  	  }
+  	 // return filteredSchedules;*/
+  	 return possibleSchedules;
     }
     catch (error) {
 		console.log(error);
@@ -32,20 +32,20 @@ module.exports = {
 }
 
 
- 
+
  function filterSchedules(permutations){
   var filtered = new Array();
 	for(var i = 0; i < permutations.length; i++){
 	  var obj = {};
 	  for(var j = 0; j < permutations[i].length; j++){
-		  
+
 		  obj[permutations[i][j].subject + permutations[i][j].number] = permutations[i][j];
       //console.log(obj[permutations[i][j].subject + permutations[i][j].number])
 	  }
 	  var tmp  = obj;
 	  filtered.push(Object.values(obj));
 	}
-	
+
 	return filtered;
 }
 
@@ -53,7 +53,7 @@ module.exports = {
 //Preliminary removal step purposed to avoid heap overflows
 function filterClasses(courseIDs, subjects, classes) {
   try {
-	  
+
 	  //TRIED TO CREATE COURSE INSTANCES, CRASHES APP
     /*let possibleClasses = classes.filter(classObj => {
       let subject = classObj.subject;
@@ -61,15 +61,15 @@ function filterClasses(courseIDs, subjects, classes) {
 
      if (subjects.includes(subject) && courseIDs.includes(courseID)) {
 		  let course = new Course(classObj.subject, classObj.number, classObj.section,
-										classObj.title, classObj.crn, classObj.start, classObj.end, 
+										classObj.title, classObj.crn, classObj.start, classObj.end,
 										classObj.days, classObj.professor, classObj.loc, classObj.credits)
 			return classObj;
 	}
-		  
+
     });
 
     return possibleClasses;*/
-	
+
 	let possibleClasses = classes.filter(classObj => {
       let subject = classObj.subject;
       let courseID = classObj.number;
@@ -146,86 +146,84 @@ function permute(permutation) {
 class Schedule {
   constructor(courses, week){
     this.courses = courses;
-	this.week = week;
-	this.totalOnes = [0, 0, 0, 0, 0];
-	var arrayMasks = new Array(courses.length);
-	//get the mask of every course in the array into a new array to perform bitwise operation
-	for(var i = 0; i < courses.length; i++){
-    //mask is five dimensional array
-		arrayMasks[i] = courses[i].mask;
-		this.totalOnes[0] += courses[i].ones[0];
-		this.totalOnes[1] += courses[i].ones[1];
-		this.totalOnes[2] += courses[i].ones[2];
-		this.totalOnes[3] += courses[i].ones[3];
-		this.totalOnes[4] += courses[i].ones[4];
-	}
-	
+  	this.week = week;
+  	this.totalOnes = [0, 0, 0, 0, 0];
+  	var arrayMasks = new Array(courses.length);
+  	//get the mask of every course in the array into a new array to perform bitwise operation
+  	for(var i = 0; i < courses.length; i++){
+      //mask is five dimensional array
+  		arrayMasks[i] = courses[i].mask;
+  		this.totalOnes[0] += courses[i].ones[0];
+  		this.totalOnes[1] += courses[i].ones[1];
+  		this.totalOnes[2] += courses[i].ones[2];
+  		this.totalOnes[3] += courses[i].ones[3];
+  		this.totalOnes[4] += courses[i].ones[4];
+  	}
+
 	this.viable = checkMask(arrayMasks, this.totalOnes);
-	
+
   }
 }
 
 function countOnes(mask){
-		
-			return (mask.split('1').length - 1); //count total 1s in the mask of a day
-		
-	}
-	
+	return (mask.split('1').length - 1); //count total 1s in the mask of a day
+}
+
 function maskWeek(course, freeHours){
-		if (course.days.includes("M")){
-			freeHours[0] = maskDay(course, freeHours[0]);
-		}
-		
-		if (course.days.includes("T")){
-			freeHours[1] = maskDay(course, freeHours[1]);
-		}
-  
-		if (course.days.includes("W")){
-			freeHours[2] = maskDay(course, freeHours[2]);
-		}
-  
-		if (course.days.includes("R")){
-			freeHours[3] = maskDay(course, freeHours[3]);
-		}
-  
-		if (course.days.includes("F")){
-			freeHours[4] = maskDay(course, freeHours[4]);
-		}
-		return freeHours;
+	if (course.days.includes("M")){
+		freeHours[0] = maskDay(course, freeHours[0]);
 	}
-	
-	function maskDay(course, mask){
-		/*MASKS: 
+
+	if (course.days.includes("T")){
+		freeHours[1] = maskDay(course, freeHours[1]);
+	}
+
+	if (course.days.includes("W")){
+		freeHours[2] = maskDay(course, freeHours[2]);
+	}
+
+	if (course.days.includes("R")){
+		freeHours[3] = maskDay(course, freeHours[3]);
+	}
+
+	if (course.days.includes("F")){
+		freeHours[4] = maskDay(course, freeHours[4]);
+	}
+	return freeHours;
+}
+
+function maskDay(course, mask){
+		/*MASKS:
             *binary string of 168b :
-      
-            - classes only between 8 am and 10 pm = 14 hours 
+
+            - classes only between 8 am and 10 pm = 14 hours
             - split hours in chunks of 5 min -> 12 chunks * 14 hours = 168 chunks
-            
+
             *Logic from hour to array and from array to hour:
-            
-            - mask positions 0-11 are for 8 am 
-            - mask positions 12-23 are for 9 am 
+
+            - mask positions 0-11 are for 8 am
+            - mask positions 12-23 are for 9 am
             - ...
             -  mask index i -> minute : hour
                             floor(i/12) : 5x(i(mod 12))
-                            
-            - hour : minute -> mask index i 
+
+            - hour : minute -> mask index i
                 if hour > 15 : i = ( 12 x (hour(mod 8) + 8) ) + floor(minute/5)
                 else: i = ( 12 x hour(mod 8) ) + floor(minute/5)
 		*/
- 
+
 		var startHour = parseInt(course.start.split(":")[0]);
 
 		var startMinute = parseInt(course.start.split(":")[1].split(" ")[0]);
 		var endHour = parseInt(course.end.split(":")[0]);
 		var endMinute = parseInt(course.end.split(":")[1].split(" ")[0]);
-  
+
 		var leftIndex = 12 * (startHour % 8) + Math.floor(startMinute/5);
 		if (startHour > 15) {leftIndex += 12*8;}
-  
+
 		var rightIndex = 12 * (endHour % 8) + Math.floor(endMinute/5);
 		if (endHour > 15) {rightIndex += 12*8;}
-  
+
 		//console.log(course.number.toString() + " " +  leftIndex.toString() + " " + rightIndex.toString())
 		filledMask = fillMask(mask, leftIndex, rightIndex);
 		return filledMask
@@ -233,7 +231,7 @@ function maskWeek(course, freeHours){
 
 	function fillMask(mask, start, end){
 		aux = mask.split('');
-		for (var i = start; i <= end; i++){ 
+		for (var i = start; i <= end; i++){
 			// <= end requires 5 minutes between classes
 			// < end allows overlap (end at 2:15, start next at 2:15)
 			aux[i] = "1";
@@ -248,7 +246,7 @@ function checkMask(arrayMasks, totalOnes){
   var dayMask = [[],[],[],[],[]];
     for(var i = 0; i < arrayMasks.length; i++){
         //join all masks corresponding to the same day of week
-      
+
          dayMask[0].push(arrayMasks[i][0]);
          dayMask[1].push(arrayMasks[i][1]);
          dayMask[2].push(arrayMasks[i][2]);
@@ -263,6 +261,5 @@ function checkMask(arrayMasks, totalOnes){
 			}
       }
   return true;
-	
-}
 
+}

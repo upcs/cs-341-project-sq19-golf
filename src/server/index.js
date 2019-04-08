@@ -50,7 +50,7 @@ app.all("*", function (req, res, next) {
 });
 
 app.listen(process.env.PORT || 8080, () => console.log(`Listening on port ${process.env.PORT || 8080}!`));
-updateDB();
+
 //TODO: Update from desiredClasses to courseID/subject
 async function updateDB() {
   //Update course data
