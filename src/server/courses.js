@@ -34,7 +34,7 @@ function ampm(time){
 	var minute = time.split(":")[1];
 	var ap = minute.split(" ")[1];
 	minute = minute.split(" ")[0];
-	if (ap.localeCompare("pm") == 0){
+	if (ap.localeCompare("pm") == 0 && hour != 12){
 		hour = (parseInt(hour) + 12).toString();
 	}
 	return hour;
@@ -65,22 +65,22 @@ function maskWeek(course, freeHours){
 
 function maskDay(course, mask){
 	/*MASKS:
-          *binary string of 168b :
+    *binary string of 168b :
 
-          - classes only between 8 am and 10 pm = 14 hours
-          - split hours in chunks of 5 min -> 12 chunks * 14 hours = 168 chunks
+    - classes only between 8 am and 10 pm = 14 hours
+    - split hours in chunks of 5 min -> 12 chunks * 14 hours = 168 chunks
 
-          *Logic from hour to array and from array to hour:
+    *Logic from hour to array and from array to hour:
 
-          - mask positions 0-11 are for 8 am
-          - mask positions 12-23 are for 9 am
-          - ...
-          -  mask index i -> minute : hour
-                          floor(i/12) : 5x(i(mod 12))
+    - mask positions 0-11 are for 8 am
+    - mask positions 12-23 are for 9 am
+    - ...
+    -  mask index i -> minute : hour
+                    floor(i/12) : 5x(i(mod 12))
 
-          - hour : minute -> mask index i
-              if hour > 15 : i = ( 12 x (hour(mod 8) + 8) ) + floor(minute/5)
-              else: i = ( 12 x hour(mod 8) ) + floor(minute/5)
+    - hour : minute -> mask index i
+        if hour > 15 : i = ( 12 x (hour(mod 8) + 8) ) + floor(minute/5)
+        else: i = ( 12 x hour(mod 8) ) + floor(minute/5)
 	*/
 
 	var startHour = parseInt(course.start.split(":")[0]);

@@ -59,7 +59,7 @@ export class SchedulesContainer extends Component {
     			<input id="scheduleName" type="text" placeholder="Enter Schedule Name Here" onChange={this.handleScheduleName}/>
     		</div>
     		<div id="divToPrint" className="pdfdim">
-    			  <Schedules/>
+  			  <Schedules/>
     		</div>
         <div className="bottom">
           <button onClick={this.printDocument}>Save As PDF</button>
@@ -74,23 +74,32 @@ export class SchedulesContainer extends Component {
 export class ScheduleDisplay extends Component {
   constructor(props) {
     super(props);
-    this.state = { schedule: props.schedule || [] };
+    this.state = {
+      schedule: props.schedule || [],
+      selected: false
+    };
+
+    this.updateDisplay = this.updateDisplay.bind(this);
   }
-  
+
+  updateDisplay(truthVal) {
+    this.setState({ selected: truthVal })
+  }
+
   render() {
     let schedule = this.state.schedule;
 
     let classDisplayList = schedule.map((classData, i) => {
       return (
-        <ClassDisplay key={"class-" + i} classData={classData}/>
+        <ClassDisplay key={"class-" + i} classData={classData} updateDisplay={this.updateDisplay} selected={this.state.selected}/>
       )
     });
 
     return (
       <span className="scheduleOption">
-		<button className="scheduleContainer">
-			{classDisplayList}
-		</button>
+    		<div className="scheduleContainer">
+    			{classDisplayList}
+    		</div>
       </span>
     )
   }
@@ -98,38 +107,36 @@ export class ScheduleDisplay extends Component {
 
 //A single course
 export class ClassDisplay extends Component {
-    constructor(props) {
-		super(props);
-		this.state = { classData: props.classData || {},
-			hover: false};
-    }
-	handleMouseIn() {
-		this.setState({ hover: true })
-    }
+  constructor(props) {
+  	super(props);
+  	this.state = { classData: props.classData || {},
+  		hover: false};
+  }
 
-    handleMouseOut() {
-		this.setState({ hover: false })
-	}
+  handleMouseClick() {
+    let selected = this.props.selected;
+	  this.props.updateDisplay(!selected);
+  }
 
   render() {
     let classData = this.state.classData;
-	const tooltipStyle = {
-		display: this.state.hover ? 'block' : 'none'
-	}
+	  const tooltipStyle = {
+		  display: this.props.selected ? 'block' : 'none'
+	  }
 
     return (
 		  <div className="scheduleClass">
-			<button onClick={this.handleMouseIn.bind(this)} onMouseOut={this.handleMouseOut.bind(this)} className="classLabel">
-				{classData.subject}{classData.number}{classData.section}<br/>
-				{classData.days} {classData.start} - {classData.end}<br/>
-				{classData.location}
-			</button>
-			<div className="timeLabel" style={tooltipStyle}>
-				{classData.title}<br/>
-				{classData.professor}<br/>
-				CRN: {classData.crn}<br/>
-				{classData.credits}		
-			</div>
+  			<div onClick={this.handleMouseClick.bind(this)} className="classLabel">
+  				{classData.subject} {classData.number}{classData.section}<br/>
+  				{classData.days} {classData.start} - {classData.end}<br/>
+  				{classData.location}
+  			</div>
+  			<div className="timeLabel" style={tooltipStyle}>
+  				{classData.title}<br/>
+  				{classData.professor}<br/>
+  				CRN: {classData.crn}<br/>
+  				Credits: {classData.credits}
+  			</div>
 		  </div>
     );
   }

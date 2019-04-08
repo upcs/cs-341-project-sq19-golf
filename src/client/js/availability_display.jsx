@@ -70,40 +70,6 @@ export class AvailabilityContainer extends Component {
 			let col = {
 				Header: accessor.charAt(0).toUpperCase() + accessor.slice(1),
 				accessor: accessor,
-				getProps: {(state, rowInfo) => ({
-					if (typeof rowInfo !== "undefined") {
-						return {
-								onClick: (e, handleOriginal) => {
-									this.setState({
-										selected: rowInfo.row.accessor = 1;
-									});
-									var timePref = [][];
-									function addPref (rowInfo, rowInfo.row.accessor) {
-										timePref[rowInfo.row.acessor].push(rowInfo);
-									}
-									if(handleOriginal) {
-										handleOriginal()
-									}
-								},
-								style: {
-									background: rowInfo.row.accessor === this.row.acessor? '#730ac9' : 'white',
-									color: rowInfo.row === this.row.accessor? 'white' : 'black'
-								},
-							}
-					}
-					else {
-						return {
-							onClick: (e, handleOriginal) => {
-								if (handleOriginal) {
-									handleOriginal()
-								}
-							},
-							style: {
-								background: 'white',
-								color: 'black'
-						},
-					}
-					})}
 			}
 
 			columns.push(col);
@@ -114,7 +80,37 @@ export class AvailabilityContainer extends Component {
 				<SelectInput/>
 			 	<div id="tableCap"></div>
 			  <ReactTable
-
+				getTrProps={(state, rowInfo, column, instance) => {
+					if (typeof rowInfo !== "undefined") {
+						return {
+							onClick: (e, handleOriginal) => {
+								this.setState({
+								selected: rowInfo.index
+								});
+								if (handleOriginal) {
+								handleOriginal()
+								}
+							},
+							style: {
+								background: rowInfo.index === this.state.selected ? '#00afec' : 'white',
+								color: rowInfo.index === this.state.selected ? 'white' : 'black'
+							},
+						}
+					}
+					else {
+						return {
+							onClick: (e, handleOriginal) => {
+								if (handleOriginal) {
+								handleOriginal()
+								}
+							},
+							style: {
+								background: 'white',
+								color: 'black'
+							},
+						}
+					}
+				}}
 				data={data}
 				resolveData={data => data.map(row => row)}
 				columns={columns}
@@ -137,20 +133,21 @@ export class AvailabilityContainer extends Component {
 					<button onClick={this.showMenu}>
 					  Additional Options
 					</button>
+
 					{
 					  this.state.showMenu ? (
 						  <div className="menu" ref={(element) => { this.state.dropdownMenu = element }}>
+								<span id="credit">
+									<div className="inputHeader">Max Credit Amount</div>
+									<input type="number" placeholder="Enter Max Credit Value" onChange={this.props.handleChange} data-populated="false"/>
+									<button id="creditButton" form="main" type="creditSave">
+										Save
+									</button>
+								</span>
 								<span id="blacklist">
 									<div className="inputHeader">Professor Blacklist</div>
 									<input id="profBlacklist" type="text" placeholder="Enter Professor Name"/>
-									<button onClick={
-										//possible check to make sure that user has indeed provided valid input.
-											var profBL = document.getElementById("profBlacklist").value;
-											var blacklistArray = [];
-											function addProf (profBL) {
-												blacklistArray.push(profBL);
-												console.log("Blacklist: " + blacklistArray.join(", ") );
-											}} id="profButton" form="main" type="profSave">
+									<button id="profButton" form="main" type="profSave">
 										Save
 									</button>
 								</span>
@@ -168,7 +165,6 @@ export class SelectInput extends Component {
   render() {
     return (
       <div id="greetingText">Select your unavailability over a typical school week.</div>
-
     );
   }
 };

@@ -6,6 +6,7 @@ import fetch from 'node-fetch';
 import $ from 'jquery';
 import InputPredict from 'react-inline-predict';
 import {store, modifySchedules, modifyLastKey} from './redux';
+import Popup from 'reactjs-popup'
 import '../css/styles.css';
 
 //Menu bar
@@ -14,29 +15,36 @@ export class TopNavigation extends Component {
 		super(props);
 	};
 
-  aboutClick() {
-    alert('UPSchedule is a convenient schedule planner created by students, for students.');
+  backClick() {
+    window.history.back();
   }
 
   render() {
     return (
       <section className="topNav">
-        <a id="leftNav">UP Scheduler</a>
+        <div id="leftNav"><a>UP Scheduler</a></div>
         <div id='rightNav'>
-          <div className="dropdown">
-            <div className="dropmenu">
-              <div className="name"><b>Options</b></div>
-                <div className="content">
-                  <div className="setting" id="schedules">Schedules</div>
-                  <div className="setting" id="help">Help</div>
-                  <div className="setting" id="about" onClick={this.aboutClick}>About</div>
-                  <Link to="/">
-                    <div className="setting" id="quit">Quit</div>
-                  </Link>
-                </div>
-              </div>
+          <Popup trigger={<button className="navEl"> Help </button>} modal closeOnDocumentClick>
+            <div>
+              <div className="header">Help<hr/></div>
+              <span><ul align="left">
+                <b>Availability Page</b><br/>
+                Enter times you are unavailable, or professors you would like to avoid.
+                Schedules matching these fields will not be generated
+                <br/><br/>
+                <b>Schedule Page</b><br/>
+                View, name, and save your generated schedule
+                </ul>
+              </span>
             </div>
-          </div>
+          </Popup>
+          <Popup trigger={<button className="navEl"> About </button>} modal closeOnDocumentClick>
+            <div>
+              <div className="header">About<hr/></div>
+              <ul align="left">UPSchedule is a convenient schedule planner created by students, for students.</ul>
+            </div>
+          </Popup>
+        </div>
       </section>
     );
   }
@@ -64,12 +72,10 @@ export class InputContainer extends Component {
   }
 
   handleCourseInputChange(inputID, courseID, subject) {
-    if (subject != "" && courseID != "") {
-      let desiredCourses = this.state.desiredCourses;
-      desiredCourses[inputID] = {'subject': subject.toUpperCase(), 'courseID': courseID};
-      this.setState({ 'desiredCourses': desiredCourses });
-      this.modifyNecessaryInputs();
-    }
+    let desiredCourses = this.state.desiredCourses;
+    desiredCourses[inputID] = {'subject': subject.toUpperCase(), 'courseID': courseID};
+    this.setState({ 'desiredCourses': desiredCourses });
+    this.modifyNecessaryInputs();
   }
 
   //Determine whether inputs should be added or removed, onChange()
@@ -113,8 +119,7 @@ export class InputContainer extends Component {
   }
 
   async handleSubmit(event) {
-    let desiredCourses = this.state.desiredCourses.filter(() => true); //Remove undefined entries
-    console.log(desiredCourses);
+    let desiredCourses = this.state.desiredCourses.filter(course => course.subject && course.courseID); //Remove undefined entries
     await fetch('/api/scheduleRequest', {
       method: 'POST',
       body: JSON.stringify(desiredCourses),
@@ -225,7 +230,10 @@ export class CourseInput extends Component {
 
   handleInput(value, context) {
     let input = this.state.input;
-    input[context] = value.toString();
+    if (context == 'subject') {
+      input[context] = value.toString().toUpperCase();
+    }
+    else input[context] = value.toString();
     this.setState({ input });
 
     //Send input back up to parent component
@@ -243,7 +251,7 @@ export class CourseInput extends Component {
       <div className="classSelect">
         <InputPredict
           type="text"
-          name="name"
+          name="subject"
           placeholder="Course Subject"
           dictionary={subjects}
           ref={this.createRef(this.props.idx)}
@@ -253,7 +261,7 @@ export class CourseInput extends Component {
         />
         <InputPredict
           type="text"
-          name="name"
+          name="number"
           pattern="[0-9]*"
           placeholder="Course Number"
           dictionary={numbers}
