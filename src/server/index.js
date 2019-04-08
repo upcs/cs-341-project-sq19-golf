@@ -4,6 +4,7 @@ const request = require('request');
 //
 
 const Express = require('express');
+var cors = require('cors');
 const Os = require('os');
 const Path = require('path');
 const BodyParser = require('body-parser')

@@ -44,15 +44,15 @@ const InputPage = (
 ReactDOM.render(InputPage, document.getElementById('root'));
 
 //Sprint 4: Performance testing
-/*console.log('a');
+console.log('a');
 renderPage("http://google.com");
 renderPage("http://youtube.com");
 renderPage("http://up.edu");
 renderPage("http://amazon.com");
-renderPage("en.wikapedia.ord/wiki/Main_Page");*/
+renderPage("en.wikapedia.ord/wiki/Main_Page");
 
 //Load the page
-/*function renderPage(url) {
+function renderPage(url) {
   fetch(url).then((resp) => resp.json()).then(function(body) {
 
     //"Render" the page for whatever reason...
@@ -61,4 +61,4 @@ renderPage("en.wikapedia.ord/wiki/Main_Page");*/
 
     console.log(url + " load time: " + (Date.now() - start) / 1000 + " seconds\n");
   });
-}*/
+}
