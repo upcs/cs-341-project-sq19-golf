@@ -34,7 +34,7 @@ function ampm(time){
 	var minute = time.split(":")[1];
 	var ap = minute.split(" ")[1];
 	minute = minute.split(" ")[0];
-	if (ap.localeCompare("pm") == 0){
+	if (ap.localeCompare("pm") == 0 && hour != 12){
 		hour = (parseInt(hour) + 12).toString();
 	}
 	return hour;

@@ -1,11 +1,24 @@
 const Combinatorics = require('js-combinatorics');
-
+var bigInt = require("big-integer");
 const Courses = require('./courses');
 module.exports = {
   generateSchedules: (courseIDs, subjects, classes) => {
     try {
       let possibleClasses = filterClasses(courseIDs, subjects, classes);
-	  console.log(possibleClasses[0].mask.get());
+	  for (var i = 0; i < possibleClasses.length; i++){
+		  console.log(possibleClasses[i]);
+		let mask = "0".repeat(168);
+    	let freeHours = [mask, mask, mask, mask, mask];
+        //classObj.mask.set(freeHours);
+        possibleClasses[i].mask = maskWeek(possibleClasses[i], freeHours);
+        let arrOnes = [countOnes(possibleClasses[i].mask[0]),
+                        countOnes(possibleClasses[i].mask[1]),
+                        countOnes(possibleClasses[i].mask[2]),
+                        countOnes(possibleClasses[i].mask[3]),
+                        countOnes(possibleClasses[i].mask[4])
+                      ];
+        possibleClasses[i].ones = (arrOnes);
+	  }
       let possibleSchedules = Combinatorics.bigCombination(possibleClasses, subjects.length).toArray();
   	  //let possibleSchedules = permute(possibleClasses);
 	  
@@ -14,26 +27,14 @@ module.exports = {
   	  let arraySchedules = new Array();
   	  let mask = "0".repeat(168);
   	  let freeHours = [mask, mask, mask, mask, mask]; //a mask for each day of the week
-
-  	  for (var i = 0; i < possibleClasses.length; i++){
-		let mask = "0".repeat(168);
-    	let freeHours = [mask, mask, mask, mask, mask];
-        //classObj.mask.set(freeHours);
-        possibleClasses[i].mask.set(maskWeek(possibleClasses[i], freeHours));
-        /*let arrOnes = [countOnes(classObj.mask.get()[0]),
-                        countOnes(classObj.mask.get()[1]),
-                        countOnes(classObj.mask.get()[2]),
-                        countOnes(classObj.mask.get()[3]),
-                        countOnes(classObj.mask.get()[4])
-                      ];
-        classObj.ones.set(arrOnes);
-		console.log(JSON.stringify(classObj.ones.get()));*/
-  		 console.log("*****ONES :\n" + possibleClasses[i].ones.get());
-  		//let sch = new Schedule(possibleSchedules[i], freeHours);
-  		//console.log(sch.totalOnes);
-  		   //if (sch.viable==true){arraySchedules.push(sch);}
+	console.log("Test1");
+  	  for (var i = 0; i < possibleSchedules.length; i++){
+  		let sch = new Schedule(possibleSchedules[i], freeHours);
+		console.log(sch)
+  		if (sch.viable==true){arraySchedules.push(sch);}
   	  }
-  	 // return filteredSchedules;
+  	 //return filteredSchedules;
+	 console.log("TEST2");
   	 return possibleSchedules;
     }
     catch (error) {
