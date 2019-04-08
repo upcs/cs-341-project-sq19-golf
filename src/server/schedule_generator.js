@@ -119,7 +119,7 @@ function findMatchingIdx(arr1, arr2, query1, query2) {
 	based on: http://homepage.math.uiowa.edu/~goodman/22m150.dir/2007/Permutation%20Generation%20Methods.pdf
 	*/
 
-function permute(permutation) {
+/*function permute(permutation) {
   var length = permutation.length,
       result = [permutation.slice()],
       c = new Array(length).fill(0),
@@ -140,7 +140,7 @@ function permute(permutation) {
     }
   }
   return result;
-}
+}*/
 
 class Schedule {
   constructor(courses, week){
@@ -253,10 +253,10 @@ function checkMask(arrayMasks, totalOnes){
          dayMask[4].push(arrayMasks[i][4]);
     }
       for(var j = 0; j < 5; j++){
-			console.log("**** dayMask" + j + "\n" + dayMask[j]);
+			//console.log("**** dayMask" + j + "\n" + dayMask[j]);
 				//accumulator and current are binary strings
 			var orMask = dayMask[j].reduce(function(accumulator, current) { return (bigInt(accumulator, 2).or(bigInt(current, 2))).toString(2);}); //bitwise AND on all masks
-			console.log(totalOnes[j] + " : " + countOnes(orMask));
+			//console.log(totalOnes[j] + " : " + countOnes(orMask));
 			if (parseInt(totalOnes[j]) != parseInt(countOnes(orMask))){
 				return false; // if putting the schedules together yields less occupied hours than each course total hours -> some courses overlap
 			}
