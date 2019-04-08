@@ -29,13 +29,17 @@ app.post('/api/allCoursesRequest', (req, res) => {
       let courseSubj = course.subject, courseNum = course.number;
 
       //Populate course subject map
-      if (subjMap[courseSubj]) subjMap[courseSubj].push(courseNum);
-      else subjMap[courseSubj] = [courseNum];
+      if (subjMap[courseSubj] && !subjMap[courseSubj].includes(courseNum)) {
+        subjMap[courseSubj].push(courseNum);
+      }
+      else if (!subjMap[courseSubj]) subjMap[courseSubj] = [courseNum];
       subjMap.all.push(courseNum);
 
       //Populate course number map
-      if (numMap[courseNum]) numMap[courseNum].push(courseSubj);
-      else numMap[courseNum] = [courseSubj];
+      if (numMap[courseNum] && !numMap[courseNum].includes(courseSubj)) {
+        numMap[courseNum].push(courseSubj);
+      }
+      else if (!numMap[courseNum]) numMap[courseNum] = [courseSubj];
       numMap.all.push(courseSubj);
     });
 

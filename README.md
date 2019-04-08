@@ -50,6 +50,22 @@
 - Hosted the WebApp on GCP
   - Used a bucket and startup script to automate this process
 
+## **Tasks Completed for Sprint 4:**
+
+- Added contextual user input
+  - Respective "course subject" and "course number" fields now update the data context of one another
+  This ensures only viable course subject and course number suggestions are contextually generated
+  - Course data is now ferried to the user on page load, allowing for large schedule generation queries to be easily handled
+- Enhanced schedule generation algorithm
+  - Uses binary representations of schedule times to allow for masking operations instead of looping during schedule generation, this effectively optimizes both memory and runtime
+- Further cleaned up small GUI inconsistencies
+- Added a Help and About modal
+- Converted most of the remaining react stateful code to a redux store
+- Optimized the schedule display
+  - Data useful to schedule comparison and scheduling reference have been effectively separated
+- Added performance metric analysis
+- Added a Cloudflare CDN to help deliver static assets
+
 ## **Current Tech Stack:**
 
 - Web-Scraper

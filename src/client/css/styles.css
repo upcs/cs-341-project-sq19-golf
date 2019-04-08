@@ -46,9 +46,18 @@ a {
 .navEl {
   background: none !important;
   padding: 0px 8px;
+  font-size: 16px;
 }
 
+.popup-content {
+  background-color: #DDDEDE !important;
+  padding: 12px 24px !important;
+}
 
+.header {
+  font-weight: bold;
+  font-size: 22px;
+}
 
 /*navbar*/
 
@@ -138,8 +147,7 @@ a {
   background-color: #DDDEDE;
   margin-bottom: 12px;
   padding: 8px;
-  border-radius: 5px;
-  font:16px "Helvetica", sans-serif;
+  font: 17px "Helvetica", sans-serif;
   font-weight: bold;
 }
 
@@ -295,8 +303,8 @@ input[type=number] {
 }
 
 .pdfdim {
-	width: '210mm';
-	min-height: '298mm';
+  display: flex;
+  flex-direction: row;
 	margin-left: auto;
 	margin-right: auto;
 }
@@ -313,8 +321,7 @@ input[type=number] {
 }
 
 .scheduleClass {
-  display: flex;
-  flex-direction: row;
+  min-width: '250px';
   margin-right: 48px;
 }
 
@@ -360,21 +367,6 @@ input[type=number] {
    font-weight: bold;
    padding-top: 12px;
  }
-
-/*
-#tableCap {
-  background-color: #aa8cc5;
-  border: none;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-  margin-bottom: -1px;
-  padding: 1px;
-}*/
-
-/*help page*/
-/*a {
-  color: #885ead;
-}*/
 
 .textContainer {
   background-color: #DDDEDE;

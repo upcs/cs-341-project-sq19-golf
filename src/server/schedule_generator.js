@@ -20,20 +20,20 @@ module.exports = {
 	  }
       let possibleSchedules = Combinatorics.bigCombination(possibleClasses, subjects.length).toArray();
   	  //let possibleSchedules = permute(possibleClasses);
-	  
+
       possibleSchedules = isolateViableSchedules(courseIDs, subjects, possibleSchedules);
   	  //filteredSchedules = filterSchedules(possibleSchedules);  => Using combinations it's unnecessary, I coded it for using permutations
   	  let arraySchedules = new Array();
   	  let mask = "0".repeat(168);
   	  let freeHours = [mask, mask, mask, mask, mask]; //a mask for each day of the week
-	
+
   	  for (var i = 0; i < possibleSchedules.length; i++){
   		let sch = new Schedule(possibleSchedules[i], freeHours);
-		
+
   		if (sch.viable==true){arraySchedules.push(sch.courses);}
   	  }
   	 //return filteredSchedules;
-	 
+
   	 return arraySchedules;
     }
     catch (error) {
@@ -52,7 +52,7 @@ module.exports = {
 	  for(var j = 0; j < permutations[i].length; j++){
 
 		  obj[permutations[i][j].subject + permutations[i][j].number] = permutations[i][j];
-
+      //console.log(obj[permutations[i][j].subject + permutations[i][j].number])
 	  }
 	  var tmp  = obj;
 	  filtered.push(Object.values(obj));
@@ -71,7 +71,7 @@ function filterClasses(courseIDs, subjects, classes) {
       let courseID = classObj.number;
 
       if (subjects.includes(subject) && courseIDs.includes(courseID)){
-        
+
         return classObj
       };
     });
@@ -119,7 +119,7 @@ function findMatchingIdx(arr1, arr2, query1, query2) {
 	based on: http://homepage.math.uiowa.edu/~goodman/22m150.dir/2007/Permutation%20Generation%20Methods.pdf
 	*/
 
-function permute(permutation) {
+/*function permute(permutation) {
   var length = permutation.length,
       result = [permutation.slice()],
       c = new Array(length).fill(0),
@@ -140,7 +140,7 @@ function permute(permutation) {
     }
   }
   return result;
-}
+}*/
 
 class Schedule {
   constructor(courses, week){
@@ -258,10 +258,10 @@ function checkMask(arrayMasks, totalOnes){
 			var orMask = dayMask[j].reduce(function(accumulator, current) { return (bigInt(accumulator, 2).or(bigInt(current, 2))).toString(2);}); //bitwise AND on all masks
 			//console.log(totalOnes[j] + " : " + countOnes(orMask));
 			if (parseInt(totalOnes[j]) != parseInt(countOnes(orMask))){
-				//console.log(totalOnes[j] + " : " + countOnes(orMask));
 				return false; // if putting the schedules together yields less occupied hours than each course total hours -> some courses overlap
 			}
       }
   return true;
 
 }
+

@@ -10,6 +10,11 @@ import {TopNavigation, InputContainer} from './input_display';
 import {AvailabilityContainer} from './availability_display';
 import {SchedulesContainer} from './schedule_display';
 
+//Sprint 4: Performance testing
+
+var start = Date.now();
+//
+
 const FadeInRoute = ({ component: Component, ...rest }) => (
   <Route {...rest} render={(props) => (
     <FadeIn>
