@@ -5,18 +5,29 @@ module.exports = {
   generateSchedules: (courseIDs, subjects, classes) => {
     try {
       let possibleClasses = filterClasses(courseIDs, subjects, classes);
+	  console.log(possibleClasses[0].mask.get());
       let possibleSchedules = Combinatorics.bigCombination(possibleClasses, subjects.length).toArray();
   	  //let possibleSchedules = permute(possibleClasses);
-  	  //console.log("Start + \n" + possibleSchedules + "\nEnd")
+	  
       possibleSchedules = isolateViableSchedules(courseIDs, subjects, possibleSchedules);
   	  //filteredSchedules = filterSchedules(possibleSchedules);  => Using combinations it's unnecessary, I coded it for using permutations
   	  let arraySchedules = new Array();
   	  let mask = "0".repeat(168);
   	  let freeHours = [mask, mask, mask, mask, mask]; //a mask for each day of the week
 
-  	  //CODE CRASHES IN COMMENTED AREA DOWN HERE: SCHEDULE EXPECTS A COURSE OBJECT, WITH ATTRIBUTE .ones
   	  for (var i = 0; i < possibleClasses.length; i++){
-      
+		let mask = "0".repeat(168);
+    	let freeHours = [mask, mask, mask, mask, mask];
+        //classObj.mask.set(freeHours);
+        possibleClasses[i].mask.set(maskWeek(possibleClasses[i], freeHours));
+        /*let arrOnes = [countOnes(classObj.mask.get()[0]),
+                        countOnes(classObj.mask.get()[1]),
+                        countOnes(classObj.mask.get()[2]),
+                        countOnes(classObj.mask.get()[3]),
+                        countOnes(classObj.mask.get()[4])
+                      ];
+        classObj.ones.set(arrOnes);
+		console.log(JSON.stringify(classObj.ones.get()));*/
   		 console.log("*****ONES :\n" + possibleClasses[i].ones.get());
   		//let sch = new Schedule(possibleSchedules[i], freeHours);
   		//console.log(sch.totalOnes);
@@ -55,38 +66,12 @@ module.exports = {
 function filterClasses(courseIDs, subjects, classes) {
   try {
 
-	  //TRIED TO CREATE COURSE INSTANCES, CRASHES APP
-    /*let possibleClasses = classes.filter(classObj => {
-      let subject = classObj.subject;
-      let courseID = classObj.number;
-
-     if (subjects.includes(subject) && courseIDs.includes(courseID)) {
-		  let course = new Course(classObj.subject, classObj.number, classObj.section,
-										classObj.title, classObj.crn, classObj.start, classObj.end,
-										classObj.days, classObj.professor, classObj.loc, classObj.credits);
-			return course;
-	}
-
-    });
-
-    return possibleClasses;*/
-
 	let possibleClasses = classes.filter(classObj => {
       let subject = classObj.subject;
       let courseID = classObj.number;
 
       if (subjects.includes(subject) && courseIDs.includes(courseID)){
-        let mask = "0".repeat(168);
-    	  let freeHours = [mask, mask, mask, mask, mask];
-        classObj.mask.set(freeHours);
-        classObj.mask.set(maskWeek(classObj, classObj.mask.get()));
-        let arrOnes = [countOnes(classObj.mask.get()[0]),
-                        countOnes(classObj.mask.get()[1]),
-                        countOnes(classObj.mask.get()[2]),
-                        countOnes(classObj.mask.get()[3]),
-                        countOnes(classObj.mask.get()[4])
-                      ];
-        classObj.ones.set(arrOnes);
+        
         return classObj
       };
     });
