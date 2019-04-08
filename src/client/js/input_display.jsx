@@ -19,7 +19,6 @@ export class TopNavigation extends Component {
     window.history.back();
   }
 
-
   render() {
     return (
       <section className="topNav">
@@ -73,12 +72,10 @@ export class InputContainer extends Component {
   }
 
   handleCourseInputChange(inputID, courseID, subject) {
-    if (subject != "" && courseID != "") {
-      let desiredCourses = this.state.desiredCourses;
-      desiredCourses[inputID] = {'subject': subject.toUpperCase(), 'courseID': courseID};
-      this.setState({ 'desiredCourses': desiredCourses });
-      this.modifyNecessaryInputs();
-    }
+    let desiredCourses = this.state.desiredCourses;
+    desiredCourses[inputID] = {'subject': subject.toUpperCase(), 'courseID': courseID};
+    this.setState({ 'desiredCourses': desiredCourses });
+    this.modifyNecessaryInputs();
   }
 
   //Determine whether inputs should be added or removed, onChange()
@@ -122,8 +119,7 @@ export class InputContainer extends Component {
   }
 
   async handleSubmit(event) {
-    let desiredCourses = this.state.desiredCourses.filter(() => true); //Remove undefined entries
-    console.log(desiredCourses);
+    let desiredCourses = this.state.desiredCourses.filter(course => course.subject && course.courseID); //Remove undefined entries
     await fetch('/api/scheduleRequest', {
       method: 'POST',
       body: JSON.stringify(desiredCourses),
@@ -244,6 +240,8 @@ export class CourseInput extends Component {
   render() {
     let input = this.state.input;
     let courses = this.props.courses;
+
+    console.log(courses);
 
     let numbers = (courses.subjectMap[input.subject]) ? courses.subjectMap[input.subject] : courses.subjectMap.all;
     let subjects = (courses.numberMap[input.number]) ? courses.numberMap[input.number] : courses.numberMap.all;

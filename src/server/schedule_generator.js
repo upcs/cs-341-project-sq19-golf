@@ -1,33 +1,43 @@
 const Combinatorics = require('js-combinatorics');
-
+var bigInt = require("big-integer");
 const Courses = require('./courses');
 module.exports = {
   generateSchedules: (courseIDs, subjects, classes) => {
     try {
       let possibleClasses = filterClasses(courseIDs, subjects, classes);
-      console.log(possibleClasses.length);
-      console.log(subjects.length);
+	  for (var i = 0; i < possibleClasses.length; i++){
+		let mask = "0".repeat(168);
+    	let freeHours = [mask, mask, mask, mask, mask];
+        //classObj.mask.set(freeHours);
+        possibleClasses[i].mask = maskWeek(possibleClasses[i], freeHours);
+        let arrOnes = [countOnes(possibleClasses[i].mask[0]),
+                        countOnes(possibleClasses[i].mask[1]),
+                        countOnes(possibleClasses[i].mask[2]),
+                        countOnes(possibleClasses[i].mask[3]),
+                        countOnes(possibleClasses[i].mask[4])
+                      ];
+        possibleClasses[i].ones = (arrOnes);
+	  }
       let possibleSchedules = Combinatorics.bigCombination(possibleClasses, subjects.length).toArray();
   	  //let possibleSchedules = permute(possibleClasses);
-  	  //console.log("Start + \n" + possibleSchedules + "\nEnd")
+
       possibleSchedules = isolateViableSchedules(courseIDs, subjects, possibleSchedules);
   	  //filteredSchedules = filterSchedules(possibleSchedules);  => Using combinations it's unnecessary, I coded it for using permutations
   	  let arraySchedules = new Array();
   	  let mask = "0".repeat(168);
   	  let freeHours = [mask, mask, mask, mask, mask]; //a mask for each day of the week
 
-  	  //CODE CRASHES IN COMMENTED AREA DOWN HERE: SCHEDULE EXPECTS A COURSE OBJECT, WITH ATTRIBUTE .ones
-  	  for (var i = 0; i < possibleClasses.length; i++){
-  		  console.log(possibleClasses[i].ones.get());
+  	  for (var i = 0; i < possibleSchedules.length; i++){
   		let sch = new Schedule(possibleSchedules[i], freeHours);
-  		console.log(sch.totalOnes);
-  		  if (sch.viable==true){arraySchedules.push(sch);}
-  	 }
-  	 // return filteredSchedules;
-  	 return arraySchedules;
+
+  		if (sch.viable==true){arraySchedules.push(sch.courses);}
+  	  }
+  	 //return filteredSchedules;
+
+  	 return possibleSchedules;
     }
     catch (error) {
-		  console.log(error);
+		console.log(error);
       return [];
     }
   }
@@ -56,36 +66,12 @@ module.exports = {
 function filterClasses(courseIDs, subjects, classes) {
   try {
 
-	  //TRIED TO CREATE COURSE INSTANCES, CRASHES APP
-    /*let possibleClasses = classes.filter(classObj => {
-      let subject = classObj.subject;
-      let courseID = classObj.number;
-     if (subjects.includes(subject) && courseIDs.includes(courseID)) {
-		  let course = new Course(classObj.subject, classObj.number, classObj.section,
-										classObj.title, classObj.crn, classObj.start, classObj.end,
-										classObj.days, classObj.professor, classObj.loc, classObj.credits);
-			return course;
-	}
-    });
-    return possibleClasses;*/
-
 	let possibleClasses = classes.filter(classObj => {
       let subject = classObj.subject;
       let courseID = classObj.number;
 
       if (subjects.includes(subject) && courseIDs.includes(courseID)){
-        /*let mask = "0".repeat(168);
-    	  let freeHours = [mask, mask, mask, mask, mask];
-        classObj.mask.set(freeHours);
-        classObj.mask.set(maskWeek(classObj, classObj.mask.get()));
-        let arrOnes = [countOnes(classObj.mask.get()[0]),
-                        countOnes(classObj.mask.get()[1]),
-                        countOnes(classObj.mask.get()[2]),
-                        countOnes(classObj.mask.get()[3]),
-                        countOnes(classObj.mask.get()[4])
-                      ];
-        classObj.ones.set(arrOnes);
-		*/console.log(classObj.ones.get());
+
         return classObj
       };
     });
@@ -172,7 +158,7 @@ class Schedule {
   		this.totalOnes[3] += courses[i].ones[3];
   		this.totalOnes[4] += courses[i].ones[4];
   	}
-
+	this.viable = false;
 	this.viable = checkMask(arrayMasks, this.totalOnes);
 
   }
@@ -205,78 +191,21 @@ function maskWeek(course, freeHours){
 	return freeHours;
 }
 
-module.exports = {
-  generateSchedules: (courseIDs, subjects, classes) => {
-    try {
-      let possibleClasses = filterClasses(courseIDs, subjects, classes);
-      let possibleSchedules = Combinatorics.bigCombination(possibleClasses, subjects.length).toArray();
-      return isolateViableSchedules(courseIDs, subjects, possibleSchedules);
-    }
-    catch (error) {
-      return [];
-    }
-  }
-}
-
-//Preliminary removal step purposed to avoid heap overflows
-function filterClasses(courseIDs, subjects, classes) {
-  try {
-    let possibleClasses = classes.filter(classObj => {
-      let subject = classObj.subject;
-      let courseID = classObj.number;
-
-      if (subjects.includes(subject) && courseIDs.includes(courseID)) return classObj;
-    });
-
-    return possibleClasses;
-  }
-  catch (error) {
-    return [];
-  }
-}
-
-function isolateViableSchedules(courseIDs, subjects, possibleSchedules) {
-  let viableSchedules = possibleSchedules.filter(scheduleArr => {
-    let tmpSubjects = subjects.slice(0);
-    let tmpCourseIDs = courseIDs.slice(0);
-    let len = tmpSubjects.length;
-
-    for (let i = 0; i < len; i++) {
-      let courseID = scheduleArr[i].number;
-      let subject = scheduleArr[i].subject;
-
-      let idx = findMatchingIdx(tmpSubjects, tmpCourseIDs, subject, courseID);
-      if (idx !== -1) {
-        tmpSubjects.splice(idx, 1); //Remove the desired element
-        tmpCourseIDs.splice(idx, 1);
-      }
-      else break;
-    }
-
-    if (tmpSubjects.length === 0) return scheduleArr;
-  });
-
-  return viableSchedules;
-}
-
-function findMatchingIdx(arr1, arr2, query1, query2) {
-  for (let i = 0; i < arr2.length; i++) {
-    if (arr1[i] === query1 && arr2[i] === query2) return i;
-  }
-  return -1;
-}
-
 function maskDay(course, mask){
 		/*MASKS:
             *binary string of 168b :
+
             - classes only between 8 am and 10 pm = 14 hours
             - split hours in chunks of 5 min -> 12 chunks * 14 hours = 168 chunks
+
             *Logic from hour to array and from array to hour:
+
             - mask positions 0-11 are for 8 am
             - mask positions 12-23 are for 9 am
             - ...
             -  mask index i -> minute : hour
                             floor(i/12) : 5x(i(mod 12))
+
             - hour : minute -> mask index i
                 if hour > 15 : i = ( 12 x (hour(mod 8) + 8) ) + floor(minute/5)
                 else: i = ( 12 x hour(mod 8) ) + floor(minute/5)
@@ -324,9 +253,11 @@ function checkMask(arrayMasks, totalOnes){
          dayMask[4].push(arrayMasks[i][4]);
     }
       for(var j = 0; j < 5; j++){
+			console.log("**** dayMask" + j + "\n" + dayMask[j]);
 				//accumulator and current are binary strings
 			var orMask = dayMask[j].reduce(function(accumulator, current) { return (bigInt(accumulator, 2).or(bigInt(current, 2))).toString(2);}); //bitwise AND on all masks
-			if (totalOnes[j] != countOnes(orMask)){
+			console.log(totalOnes[j] + " : " + countOnes(orMask));
+			if (parseInt(totalOnes[j]) != parseInt(countOnes(orMask))){
 				return false; // if putting the schedules together yields less occupied hours than each course total hours -> some courses overlap
 			}
       }

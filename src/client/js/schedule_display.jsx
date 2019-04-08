@@ -37,13 +37,16 @@ export class SchedulesContainer extends Component {
 
   printDocument() {
     const input = document.getElementById('divToPrint');
-    html2canvas(input)
-      .then((canvas) => {
-        const imgData = canvas.toDataURL('image/png');
-        const pdf = new jsPDF('landscape');
-        pdf.addImage(imgData, 'JPEG', 0, 0, 180, 150);
-        pdf.save(this.state.scheduleName + ".pdf");
-      });
+
+    if (input.children.length > 0) {
+      html2canvas(input)
+        .then((canvas) => {
+          const imgData = canvas.toDataURL('image/png');
+          const pdf = new jsPDF('landscape');
+          pdf.addImage(imgData, 'JPEG', 0, 0, 180, 150);
+          pdf.save(this.state.scheduleName + ".pdf");
+        });
+    }
   }
 
   handleScheduleName(event) {
@@ -120,7 +123,7 @@ export class ClassDisplay extends Component {
     return (
 		  <div className="scheduleClass">
   			<div onClick={this.handleMouseIn.bind(this)} onMouseOut={this.handleMouseOut.bind(this)} className="classLabel">
-  				{classData.subject}{classData.number}{classData.section}<br/>
+  				{classData.subject} {classData.number}{classData.section}<br/>
   				{classData.days} {classData.start} - {classData.end}<br/>
   				{classData.location}
   			</div>
