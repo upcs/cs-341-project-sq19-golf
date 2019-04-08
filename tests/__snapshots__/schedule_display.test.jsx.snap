@@ -7,7 +7,6 @@ exports[`ClassDisplay Allow for mouse hovering 1`] = `
   <div
     className="classLabel"
     onClick={[Function]}
-    onMouseOut={[Function]}
   >
      
     <br />
@@ -39,7 +38,6 @@ exports[`ClassDisplay Should render correctly with a "populated" classData prope
   <div
     className="classLabel"
     onClick={[Function]}
-    onMouseOut={[Function]}
   >
      
     <br />
@@ -74,7 +72,6 @@ exports[`ClassDisplay Should render correctly with a null classData property 1`]
   <div
     className="classLabel"
     onClick={[Function]}
-    onMouseOut={[Function]}
   >
      
     <br />
@@ -106,7 +103,6 @@ exports[`ClassDisplay Should render correctly with no classData property 1`] = `
   <div
     className="classLabel"
     onClick={[Function]}
-    onMouseOut={[Function]}
   >
      
     <br />
@@ -141,10 +137,14 @@ exports[`ScheduleDisplay Should render correctly with a "populated" schedule pro
     <ClassDisplay
       classData={Array []}
       key="class-0"
+      selected={false}
+      updateDisplay={[Function]}
     />
     <ClassDisplay
       classData={Array []}
       key="class-1"
+      selected={false}
+      updateDisplay={[Function]}
     />
   </div>
 </span>

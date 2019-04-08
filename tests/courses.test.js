@@ -17,12 +17,12 @@ describe('Courses', () => {
 
     //The parsing script calls toUpper() on the title and day fields
     expect(testCourses[0].subject).toBe("TEST1");
-	expect(testCourses[1].number).toBe("number2");
+	  expect(testCourses[1].number).toBe("number2");
     expect(testCourses[2].section).toBe("title3");
 
     //But not on the start field
     expect(testCourses[1].start).toBe("end2");
-	expect(testCourses[1].end).toBe("DAYS2");
-	expect(testCourses[1].crn).toBe("start2");
+  	expect(testCourses[1].end).toBe("DAYS2");
+  	expect(testCourses[1].crn).toBe("start2");
   });
 });

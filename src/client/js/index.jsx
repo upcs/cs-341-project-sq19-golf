@@ -1,3 +1,7 @@
+//Sprint 4: Performance testing
+//var start = Date.now();
+//
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {HashRouter, Route} from 'react-router-dom';
@@ -9,11 +13,6 @@ import {SettingsContainer} from './settings_display';
 import {TopNavigation, InputContainer} from './input_display';
 import {AvailabilityContainer} from './availability_display';
 import {SchedulesContainer} from './schedule_display';
-
-//Sprint 4: Performance testing
-
-var start = Date.now();
-//
 
 const FadeInRoute = ({ component: Component, ...rest }) => (
   <Route {...rest} render={(props) => (
@@ -42,3 +41,18 @@ const InputPage = (
 );
 
 ReactDOM.render(InputPage, document.getElementById('root'));
+
+/*//Sprint 4: Performance testing
+var webshot = require('webshot');
+renderPage("http://google.com");
+renderPage("http://youtube.com");
+renderPage("http://up.edu");
+renderPage("http://amazon.com");
+renderPage("en.wikapedia.ord/wiki/Main_Page");
+//
+
+function renderPage(url) {
+  webshot(url, url + '.png', function(err) {
+    console.log(url + " load time: " + (Date.now() - start) / 1000 + " seconds");
+  });
+}*/
