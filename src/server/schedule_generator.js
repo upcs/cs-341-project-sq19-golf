@@ -34,7 +34,7 @@ module.exports = {
   	  }
   	 //return filteredSchedules;
 	 
-  	 return possibleSchedules;
+  	 return arraySchedules;
     }
     catch (error) {
 		console.log(error);
@@ -52,7 +52,7 @@ module.exports = {
 	  for(var j = 0; j < permutations[i].length; j++){
 
 		  obj[permutations[i][j].subject + permutations[i][j].number] = permutations[i][j];
-      //console.log(obj[permutations[i][j].subject + permutations[i][j].number])
+
 	  }
 	  var tmp  = obj;
 	  filtered.push(Object.values(obj));
@@ -253,11 +253,12 @@ function checkMask(arrayMasks, totalOnes){
          dayMask[4].push(arrayMasks[i][4]);
     }
       for(var j = 0; j < 5; j++){
-			console.log("**** dayMask" + j + "\n" + dayMask[j]);
+			//console.log("**** dayMask" + j + "\n" + dayMask[j]);
 				//accumulator and current are binary strings
 			var orMask = dayMask[j].reduce(function(accumulator, current) { return (bigInt(accumulator, 2).or(bigInt(current, 2))).toString(2);}); //bitwise AND on all masks
-			console.log(totalOnes[j] + " : " + countOnes(orMask));
+			//console.log(totalOnes[j] + " : " + countOnes(orMask));
 			if (parseInt(totalOnes[j]) != parseInt(countOnes(orMask))){
+				//console.log(totalOnes[j] + " : " + countOnes(orMask));
 				return false; // if putting the schedules together yields less occupied hours than each course total hours -> some courses overlap
 			}
       }
