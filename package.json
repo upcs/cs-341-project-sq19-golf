@@ -21,11 +21,7 @@
       "!*.config.js",
       "!**/index.{js,jsx}",
       "!**/node_modules/**",
-      "!**/dist/**",
-      "!**/courses.js",
-      "!**/schedule_generator.js",
-      "!**/sql.js",
-      "!**/functions.js"
+      "!**/dist/**"
     ],
     "snapshotSerializers": [
       "enzyme-to-json/serializer"
