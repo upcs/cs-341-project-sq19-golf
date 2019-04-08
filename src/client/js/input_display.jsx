@@ -26,23 +26,23 @@ export class TopNavigation extends Component {
         <div id="leftNav"><a>UP Scheduler</a></div>
 
         <div id='rightNav'>
-        <Popup trigger={<button id="nav"> Help </button>} modal closeOnDocumentClick>
-          <div className="header"><ul><font color="black"><h3><b>Help</b></h3><hr /></font></ul></div>
-          <span> <font color="black"><ul align="left">
-            <div><b>Availability Page</b></div>
-            <div>Enter the times when you are unavailable into the table.</div>
-            <ul>• Teacher Blacklist: Prevent certain teachers from being included into your schedule.</ul>
-            <br />
-            <div><b>Schedule Page</b></div>
-            <div>View, name, and save your generated schedule.</div>
-            </ul>
-            </font>
-          </span>
-        </Popup>
-        <Popup trigger={<button id="nav"> About </button>} modal closeOnDocumentClick>
-          <div className="header"><ul><font color="black"><h3><b>About</b></h3><hr /></font></ul></div>
-          <span> <ul><font color="black">UPSchedule is a convenient schedule planner created by students, for students.<br /></font></ul></span>
-        </Popup>
+          <Popup trigger={<button className="navEl"> Help </button>} modal closeOnDocumentClick>
+            <div className="header"><ul><font color="black"><h3><b>Help</b></h3><hr /></font></ul></div>
+            <span> <font color="black"><ul align="left">
+              <div><b>Availability Page</b></div>
+              <div>Enter the times when you are unavailable into the table</div>
+              <ul>• Teacher Blacklist: Prevent certain teachers from being included into your schedule</ul>
+              <br />
+              <div><b>Schedule Page</b></div>
+              <div>View, name, and save your generated schedule.</div>
+              </ul>
+              </font>
+            </span>
+          </Popup>
+          <Popup trigger={<button className="navEl"> About </button>} modal closeOnDocumentClick>
+            <div className="header"><ul><font color="black"><h3><b>About</b></h3><hr /></font></ul></div>
+            <span> <ul><font color="black">UPSchedule is a convenient schedule planner created by students, for students.<br /></font></ul></span>
+          </Popup>
         </div>
       </section>
     );
