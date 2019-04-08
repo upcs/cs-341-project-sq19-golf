@@ -20,7 +20,7 @@ module.exports = {
   		//let sch = new Schedule(possibleSchedules[i], freeHours);
   		//console.log(sch.totalOnes);
   		   //if (sch.viable==true){arraySchedules.push(sch);}
-  	  //}
+  	 // }
   	 // return filteredSchedules;
   	 return possibleSchedules;
     }
@@ -75,7 +75,7 @@ function filterClasses(courseIDs, subjects, classes) {
       let courseID = classObj.number;
 
       if (subjects.includes(subject) && courseIDs.includes(courseID)){
-        let mask = "0".repeat(168);
+        /*let mask = "0".repeat(168);
     	  let freeHours = [mask, mask, mask, mask, mask];
         classObj.mask.set(freeHours);
         classObj.mask.set(maskWeek(classObj, classObj.mask.get()));
@@ -86,6 +86,7 @@ function filterClasses(courseIDs, subjects, classes) {
                         countOnes(classObj.mask.get()[4])
                       ];
         classObj.ones.set(arrOnes);
+		*/console.log(classObj.ones.get());
         return classObj
       };
     });
