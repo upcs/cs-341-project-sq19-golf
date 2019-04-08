@@ -5,6 +5,8 @@ const BodyParser = require('body-parser')
 const Sql = require('./sql');
 const ScheduleGen = require('./schedule_generator');
 
+const Courses = require('./courses'); // LOCAL WORK
+
 const app = Express();
 
 updateDB();
@@ -15,6 +17,7 @@ app.use(BodyParser.json());
 //Client Side Post
 app.post('/api/scheduleRequest', (req, res) => {
   getViableSchedulesAsync(req.body, viableSchedules => {
+    //console.log(viableSchedules);
     res.json(viableSchedules);
   });
 });
@@ -47,7 +50,7 @@ app.all("*", function (req, res, next) {
 });
 
 app.listen(process.env.PORT || 8080, () => console.log(`Listening on port ${process.env.PORT || 8080}!`));
-
+updateDB();
 //TODO: Update from desiredClasses to courseID/subject
 async function updateDB() {
   //Update course data
@@ -69,6 +72,5 @@ async function getViableSchedulesAsync(desiredClasses, callback) {
 
   //Generate viable schedules
   let viableSchedules = await ScheduleGen.generateSchedules(courseIDs, subjects, courses);
-
   if (callback) callback(viableSchedules);
 }
