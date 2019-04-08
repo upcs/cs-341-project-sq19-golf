@@ -46,9 +46,18 @@ a {
 .navEl {
   background: none !important;
   padding: 0px 8px;
+  font-size: 16px;
 }
 
+.popup-content {
+  background-color: #DDDEDE !important;
+  padding: 12px 24px !important;
+}
 
+.header {
+  font-weight: bold;
+  font-size: 22px;
+}
 
 /*navbar*/
 
@@ -138,8 +147,7 @@ a {
   background-color: #DDDEDE;
   margin-bottom: 12px;
   padding: 8px;
-  border-radius: 5px;
-  font:16px "Helvetica", sans-serif;
+  font: 17px "Helvetica", sans-serif;
   font-weight: bold;
 }
 
