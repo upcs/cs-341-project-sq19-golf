@@ -122,7 +122,7 @@ export class ClassDisplay extends Component {
 			<button onMouseEnter={this.handleMouseIn.bind(this)} onMouseOut={this.handleMouseOut.bind(this)} className="classLabel">
 				{classData.subject}{classData.number}{classData.section}<br/>
 				{classData.days} {classData.start} - {classData.end}<br/>
-				{classData.location}
+				{classData.loc}
 			</button>
 			<div className="timeLabel" style={tooltipStyle}>
 				{classData.title}<br/>
