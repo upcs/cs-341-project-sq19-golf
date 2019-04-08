@@ -6,7 +6,6 @@ module.exports = {
     try {
       let possibleClasses = filterClasses(courseIDs, subjects, classes);
 	  for (var i = 0; i < possibleClasses.length; i++){
-		  console.log(possibleClasses[i]);
 		let mask = "0".repeat(168);
     	let freeHours = [mask, mask, mask, mask, mask];
         //classObj.mask.set(freeHours);
@@ -27,14 +26,14 @@ module.exports = {
   	  let arraySchedules = new Array();
   	  let mask = "0".repeat(168);
   	  let freeHours = [mask, mask, mask, mask, mask]; //a mask for each day of the week
-	console.log("Test1");
+	
   	  for (var i = 0; i < possibleSchedules.length; i++){
   		let sch = new Schedule(possibleSchedules[i], freeHours);
-		console.log(sch)
-  		if (sch.viable==true){arraySchedules.push(sch);}
+		
+  		if (sch.viable==true){arraySchedules.push(sch.courses);}
   	  }
   	 //return filteredSchedules;
-	 console.log("TEST2");
+	 
   	 return possibleSchedules;
     }
     catch (error) {
@@ -159,7 +158,7 @@ class Schedule {
   		this.totalOnes[3] += courses[i].ones[3];
   		this.totalOnes[4] += courses[i].ones[4];
   	}
-
+	this.viable = false;
 	this.viable = checkMask(arrayMasks, this.totalOnes);
 
   }
@@ -254,9 +253,11 @@ function checkMask(arrayMasks, totalOnes){
          dayMask[4].push(arrayMasks[i][4]);
     }
       for(var j = 0; j < 5; j++){
+			console.log("**** dayMask" + j + "\n" + dayMask[j]);
 				//accumulator and current are binary strings
 			var orMask = dayMask[j].reduce(function(accumulator, current) { return (bigInt(accumulator, 2).or(bigInt(current, 2))).toString(2);}); //bitwise AND on all masks
-			if (totalOnes[j] != countOnes(orMask)){
+			console.log(totalOnes[j] + " : " + countOnes(orMask));
+			if (parseInt(totalOnes[j]) != parseInt(countOnes(orMask))){
 				return false; // if putting the schedules together yields less occupied hours than each course total hours -> some courses overlap
 			}
       }
