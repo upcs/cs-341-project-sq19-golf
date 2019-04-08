@@ -876,49 +876,48 @@ exports[`AvailabilityContainer Should render correctly with a menu 1`] = `
           <div
             class="rt-tr -odd"
             role="row"
-            style="background:white;color:black"
           >
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             >
               8:00
             </div>
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
           </div>
         </div>
@@ -929,49 +928,48 @@ exports[`AvailabilityContainer Should render correctly with a menu 1`] = `
           <div
             class="rt-tr -even"
             role="row"
-            style="background:white;color:black"
           >
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             >
               9:00
             </div>
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
           </div>
         </div>
@@ -982,49 +980,48 @@ exports[`AvailabilityContainer Should render correctly with a menu 1`] = `
           <div
             class="rt-tr -odd"
             role="row"
-            style="background:white;color:black"
           >
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             >
               10:00
             </div>
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
           </div>
         </div>
@@ -1035,49 +1032,48 @@ exports[`AvailabilityContainer Should render correctly with a menu 1`] = `
           <div
             class="rt-tr -even"
             role="row"
-            style="background:white;color:black"
           >
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             >
               11:00
             </div>
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
           </div>
         </div>
@@ -1088,49 +1084,48 @@ exports[`AvailabilityContainer Should render correctly with a menu 1`] = `
           <div
             class="rt-tr -odd"
             role="row"
-            style="background:white;color:black"
           >
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             >
               12:00
             </div>
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
           </div>
         </div>
@@ -1141,49 +1136,48 @@ exports[`AvailabilityContainer Should render correctly with a menu 1`] = `
           <div
             class="rt-tr -even"
             role="row"
-            style="background:white;color:black"
           >
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             >
               13:00
             </div>
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
           </div>
         </div>
@@ -1194,49 +1188,48 @@ exports[`AvailabilityContainer Should render correctly with a menu 1`] = `
           <div
             class="rt-tr -odd"
             role="row"
-            style="background:white;color:black"
           >
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             >
               14:00
             </div>
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
           </div>
         </div>
@@ -1247,49 +1240,48 @@ exports[`AvailabilityContainer Should render correctly with a menu 1`] = `
           <div
             class="rt-tr -even"
             role="row"
-            style="background:white;color:black"
           >
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             >
               15:00
             </div>
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
           </div>
         </div>
@@ -1300,49 +1292,48 @@ exports[`AvailabilityContainer Should render correctly with a menu 1`] = `
           <div
             class="rt-tr -odd"
             role="row"
-            style="background:white;color:black"
           >
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             >
               16:00
             </div>
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
           </div>
         </div>
@@ -1353,49 +1344,48 @@ exports[`AvailabilityContainer Should render correctly with a menu 1`] = `
           <div
             class="rt-tr -even"
             role="row"
-            style="background:white;color:black"
           >
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             >
               17:00
             </div>
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
           </div>
         </div>
@@ -1406,49 +1396,48 @@ exports[`AvailabilityContainer Should render correctly with a menu 1`] = `
           <div
             class="rt-tr -odd"
             role="row"
-            style="background:white;color:black"
           >
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             >
               18:00
             </div>
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
           </div>
         </div>
@@ -1459,49 +1448,48 @@ exports[`AvailabilityContainer Should render correctly with a menu 1`] = `
           <div
             class="rt-tr -even"
             role="row"
-            style="background:white;color:black"
           >
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             >
               19:00
             </div>
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
           </div>
         </div>
@@ -1512,49 +1500,48 @@ exports[`AvailabilityContainer Should render correctly with a menu 1`] = `
           <div
             class="rt-tr -odd"
             role="row"
-            style="background:white;color:black"
           >
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             >
               20:00
             </div>
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
           </div>
         </div>
@@ -1565,49 +1552,48 @@ exports[`AvailabilityContainer Should render correctly with a menu 1`] = `
           <div
             class="rt-tr -even"
             role="row"
-            style="background:white;color:black"
           >
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             >
               21:00
             </div>
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
           </div>
         </div>
@@ -1618,49 +1604,48 @@ exports[`AvailabilityContainer Should render correctly with a menu 1`] = `
           <div
             class="rt-tr -odd"
             role="row"
-            style="background:white;color:black"
           >
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             >
               22:00
             </div>
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
           </div>
         </div>
@@ -1706,27 +1691,6 @@ exports[`AvailabilityContainer Should render correctly with a menu 1`] = `
     <div
       class="menu"
     >
-      <span
-        id="credit"
-      >
-        <div
-          class="inputHeader"
-        >
-          Max Credit Amount
-        </div>
-        <input
-          data-populated="false"
-          placeholder="Enter Max Credit Value"
-          type="number"
-        />
-        <button
-          form="main"
-          id="creditButton"
-          type="creditSave"
-        >
-          Save
-        </button>
-      </span>
       <span
         id="blacklist"
       >
@@ -1889,49 +1853,48 @@ exports[`AvailabilityContainer Should render correctly without a menu 1`] = `
           <div
             class="rt-tr -odd"
             role="row"
-            style="background:white;color:black"
           >
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             >
               8:00
             </div>
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
           </div>
         </div>
@@ -1942,49 +1905,48 @@ exports[`AvailabilityContainer Should render correctly without a menu 1`] = `
           <div
             class="rt-tr -even"
             role="row"
-            style="background:white;color:black"
           >
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             >
               9:00
             </div>
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
           </div>
         </div>
@@ -1995,49 +1957,48 @@ exports[`AvailabilityContainer Should render correctly without a menu 1`] = `
           <div
             class="rt-tr -odd"
             role="row"
-            style="background:white;color:black"
           >
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             >
               10:00
             </div>
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
           </div>
         </div>
@@ -2048,49 +2009,48 @@ exports[`AvailabilityContainer Should render correctly without a menu 1`] = `
           <div
             class="rt-tr -even"
             role="row"
-            style="background:white;color:black"
           >
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             >
               11:00
             </div>
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
           </div>
         </div>
@@ -2101,49 +2061,48 @@ exports[`AvailabilityContainer Should render correctly without a menu 1`] = `
           <div
             class="rt-tr -odd"
             role="row"
-            style="background:white;color:black"
           >
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             >
               12:00
             </div>
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
           </div>
         </div>
@@ -2154,49 +2113,48 @@ exports[`AvailabilityContainer Should render correctly without a menu 1`] = `
           <div
             class="rt-tr -even"
             role="row"
-            style="background:white;color:black"
           >
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             >
               13:00
             </div>
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
           </div>
         </div>
@@ -2207,49 +2165,48 @@ exports[`AvailabilityContainer Should render correctly without a menu 1`] = `
           <div
             class="rt-tr -odd"
             role="row"
-            style="background:white;color:black"
           >
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             >
               14:00
             </div>
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
           </div>
         </div>
@@ -2260,49 +2217,48 @@ exports[`AvailabilityContainer Should render correctly without a menu 1`] = `
           <div
             class="rt-tr -even"
             role="row"
-            style="background:white;color:black"
           >
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             >
               15:00
             </div>
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
           </div>
         </div>
@@ -2313,49 +2269,48 @@ exports[`AvailabilityContainer Should render correctly without a menu 1`] = `
           <div
             class="rt-tr -odd"
             role="row"
-            style="background:white;color:black"
           >
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             >
               16:00
             </div>
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
           </div>
         </div>
@@ -2366,49 +2321,48 @@ exports[`AvailabilityContainer Should render correctly without a menu 1`] = `
           <div
             class="rt-tr -even"
             role="row"
-            style="background:white;color:black"
           >
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             >
               17:00
             </div>
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
           </div>
         </div>
@@ -2419,49 +2373,48 @@ exports[`AvailabilityContainer Should render correctly without a menu 1`] = `
           <div
             class="rt-tr -odd"
             role="row"
-            style="background:white;color:black"
           >
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             >
               18:00
             </div>
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
           </div>
         </div>
@@ -2472,49 +2425,48 @@ exports[`AvailabilityContainer Should render correctly without a menu 1`] = `
           <div
             class="rt-tr -even"
             role="row"
-            style="background:white;color:black"
           >
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             >
               19:00
             </div>
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
           </div>
         </div>
@@ -2525,49 +2477,48 @@ exports[`AvailabilityContainer Should render correctly without a menu 1`] = `
           <div
             class="rt-tr -odd"
             role="row"
-            style="background:white;color:black"
           >
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             >
               20:00
             </div>
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
           </div>
         </div>
@@ -2578,49 +2529,48 @@ exports[`AvailabilityContainer Should render correctly without a menu 1`] = `
           <div
             class="rt-tr -even"
             role="row"
-            style="background:white;color:black"
           >
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             >
               21:00
             </div>
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
           </div>
         </div>
@@ -2631,49 +2581,48 @@ exports[`AvailabilityContainer Should render correctly without a menu 1`] = `
           <div
             class="rt-tr -odd"
             role="row"
-            style="background:white;color:black"
           >
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             >
               22:00
             </div>
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
             <div
               class="rt-td"
               role="gridcell"
-              style="flex:100 0 auto;width:100px"
+              style="background:white;color:black;flex:100 0 auto;width:100px"
             />
           </div>
         </div>
