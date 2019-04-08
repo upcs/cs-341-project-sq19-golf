@@ -205,7 +205,7 @@ a {
 }
 
 input, button  {
-  background-color: #aa8cc5 !important;
+  background-color: #aa8cc5;
   color: white;
   border-radius: 5px;
   text-decoration: none;
@@ -380,10 +380,13 @@ input[type=number] {
 .scheduleClass {
   display: flex;
   flex-direction: row;
+<<<<<<< Updated upstream
   margin-right: 48px;
 }
 
 .scheduleContainer {
+=======
+>>>>>>> Stashed changes
 }
 
 .daysLabel {

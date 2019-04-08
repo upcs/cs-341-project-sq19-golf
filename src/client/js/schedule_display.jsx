@@ -59,7 +59,7 @@ export class SchedulesContainer extends Component {
     			<input id="scheduleName" type="text" placeholder="Enter Schedule Name Here" onChange={this.handleScheduleName}/>
     		</div>
     		<div id="divToPrint" className="pdfdim">
-    			  <Schedules/>
+  			  <Schedules/>
     		</div>
         <div className="bottom">
           <button onClick={this.printDocument}>Save As PDF</button>
@@ -88,9 +88,15 @@ export class ScheduleDisplay extends Component {
 
     return (
       <span className="scheduleOption">
+<<<<<<< Updated upstream
     		<div className="scheduleContainer">
     			{classDisplayList}
     		</div>
+=======
+		    <div className="scheduleContainer">
+		      {classDisplayList}
+		    </div>
+>>>>>>> Stashed changes
       </span>
     )
   }
@@ -119,16 +125,28 @@ export class ClassDisplay extends Component {
 
     return (
 		  <div className="scheduleClass">
+<<<<<<< Updated upstream
   			<button onClick={this.handleMouseIn.bind(this)} onMouseOut={this.handleMouseOut.bind(this)} className="classLabel">
   				{classData.subject}{classData.number}{classData.section}<br/>
   				{classData.days} {classData.start} - {classData.end}<br/>
   				{classData.location}
   			</button>
+=======
+  			<div onClick={this.handleMouseIn.bind(this)} onMouseOut={this.handleMouseOut.bind(this)} className="classLabel">
+  				{classData.subject}{classData.number}{classData.section}<br/>
+  				{classData.days} {classData.start} - {classData.end}<br/>
+  				{classData.location}
+  			</div>
+>>>>>>> Stashed changes
   			<div className="timeLabel" style={tooltipStyle}>
   				{classData.title}<br/>
   				{classData.professor}<br/>
   				CRN: {classData.crn}<br/>
+<<<<<<< Updated upstream
   				{classData.credits}
+=======
+  				Credits: {classData.credits}
+>>>>>>> Stashed changes
   			</div>
 		  </div>
     );
