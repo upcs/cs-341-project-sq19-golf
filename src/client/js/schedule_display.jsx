@@ -126,9 +126,9 @@ export class ClassDisplay extends Component {
 			</button>
 			<div className="timeLabel" style={tooltipStyle}>
 				{classData.title}<br/>
-				Instructor: {classData.professor}<br/>
+				{classData.professor}<br/>
 				CRN: {classData.crn}<br/>
-				Credits: {classData.credits}		
+				{classData.credits}		
 			</div>
 		  </div>
     );
