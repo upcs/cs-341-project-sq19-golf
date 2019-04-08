@@ -34,7 +34,7 @@ module.exports = {
   	  }
   	 //return filteredSchedules;
 
-  	 return possibleSchedules;
+  	 return arraySchedules;
     }
     catch (error) {
 		console.log(error);

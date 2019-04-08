@@ -230,7 +230,10 @@ export class CourseInput extends Component {
 
   handleInput(value, context) {
     let input = this.state.input;
-    input[context] = value.toString();
+    if (context == 'subject') {
+      input[context] = value.toString().toUpperCase();
+    }
+    else input[context] = value.toString();
     this.setState({ input });
 
     //Send input back up to parent component
@@ -241,6 +244,7 @@ export class CourseInput extends Component {
     let input = this.state.input;
     let courses = this.props.courses;
 
+    console.log(input);
     console.log(courses);
 
     let numbers = (courses.subjectMap[input.subject]) ? courses.subjectMap[input.subject] : courses.subjectMap.all;
