@@ -12,7 +12,8 @@ export class AvailabilityContainer extends Component {
 		this.state = {
       showMenu: this.props.showMenu || false,
 			dropdownMenu: this.props.dropdownMenu || null,
-	  	selected: -1
+	  	selected: -1,
+			blacklistArray: [],
 		};
 
 	  this.showMenu = this.showMenu.bind(this);
@@ -36,6 +37,16 @@ export class AvailabilityContainer extends Component {
 
 		}
   }
+
+	addProf(profBL) {
+		//Note to self: offset by one, element #zero is empty
+		//and element #one is filled with first user input of blacklisted professor
+			var update = this.state.blacklistArray.slice();
+			update.push(profBL);
+			this.setState({blacklistArray: update})
+			//alert("Blacklist: " + this.state.blacklistArray.join(", "));
+	}
+
 
 	/*handleSubmit(event) {
 			event.preventDefault();
@@ -70,51 +81,47 @@ export class AvailabilityContainer extends Component {
 			let col = {
 				Header: accessor.charAt(0).toUpperCase() + accessor.slice(1),
 				accessor: accessor,
-				getProps: {(state, rowInfo) => ({
-					if (typeof rowInfo !== "undefined") {
-						return {
-								onClick: (e, handleOriginal) => {
-									this.setState({
-										selected: rowInfo.row.accessor = 1;
-									});
-									var timePref = [][];
-									function addPref (rowInfo, rowInfo.row.accessor) {
-										timePref[rowInfo.row.acessor].push(rowInfo);
-									}
-									if(handleOriginal) {
-										handleOriginal()
-									}
-								},
-								style: {
-									background: rowInfo.row.accessor === this.row.acessor? '#730ac9' : 'white',
-									color: rowInfo.row === this.row.accessor? 'white' : 'black'
-								},
-							}
-					}
-					else {
-						return {
-							onClick: (e, handleOriginal) => {
-								if (handleOriginal) {
-									handleOriginal()
-								}
-							},
-							style: {
-								background: 'white',
-								color: 'black'
-						},
-					}
-					})}
 			}
 
 			columns.push(col);
 		}
-
+//alert("Row index: " +rowInfo.index + ", column header:" + column.Header);
 		return (
 			<div id="main">
 				<SelectInput/>
 			 	<div id="tableCap"></div>
 			  <ReactTable
-
+				getTdProps={(state, rowInfo, column, instance) => {
+									if (typeof rowInfo !== "undefined") {
+										return {
+											onClick: (e, handleOriginal) => {
+												this.setState({
+												selected: column.Header
+												});
+												if (handleOriginal) {
+												handleOriginal()
+												}
+											},
+											style: {
+												background: column.Header === this.state.selected ? '#730ac9' : 'white',
+												color: column.Header  === this.state.selected ? 'white' : 'black'
+											},
+										}
+									}
+									else {
+										return {
+											onClick: (e, handleOriginal) => {
+												if (handleOriginal) {
+												handleOriginal()
+												}
+											},
+											style: {
+												background: 'white',
+												color: 'black'
+											},
+										}
+									}
+								}}
 				data={data}
 				resolveData={data => data.map(row => row)}
 				columns={columns}
@@ -143,14 +150,7 @@ export class AvailabilityContainer extends Component {
 								<span id="blacklist">
 									<div className="inputHeader">Professor Blacklist</div>
 									<input id="profBlacklist" type="text" placeholder="Enter Professor Name"/>
-									<button onClick={
-										//possible check to make sure that user has indeed provided valid input.
-											var profBL = document.getElementById("profBlacklist").value;
-											var blacklistArray = [];
-											function addProf (profBL) {
-												blacklistArray.push(profBL);
-												console.log("Blacklist: " + blacklistArray.join(", ") );
-											}} id="profButton" form="main" type="profSave">
+									<button onClick={() => this.addProf(document.getElementById("profBlacklist").value)} id="profButton" form="main" type="profSave">
 										Save
 									</button>
 								</span>
@@ -159,10 +159,10 @@ export class AvailabilityContainer extends Component {
 					}
 				</div>
 			</div>
+
 		);
   }
 }
-
 //Time Select Input
 export class SelectInput extends Component {
   render() {
