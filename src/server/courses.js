@@ -2,18 +2,18 @@ const Fs = require('fs');
 
 //Course Abstraction
 class Course {
-    constructor(sub, id, section, title, crn, start, end, days, professor, location, credits){
+    constructor(sub, id, section, title, crn, start, end, days, professor, loc, credits){
         this.subject = sub;
         this.number = id;
-		this.section = section;
+		    this.section = section;
         this.title = title;
-		this.crn = crn;
+		    this.crn = crn;
         this.start = start;
         this.end = end;
         this.days = days;
-		this.professor = professor;
-		this.location = location;
-		this.credits = credits;
+		    this.professor = professor;
+		    this.loc = loc;
+		    this.credits = credits;
     }
 }
 

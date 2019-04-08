@@ -17,16 +17,16 @@ const Db = new Sequelize('REGISTRATION', 'root', 'Gatolocoe#4209', {
 
 //Sequelize Table Reference
 const Classes = Db.define('course', {
-    subject: Sequelize.STRING,
-    number: Sequelize.STRING,
+  subject: Sequelize.STRING,
+  number: Sequelize.STRING,
 	section: Sequelize.STRING,
-    title: Sequelize.STRING,
+  title: Sequelize.STRING,
 	crn: Sequelize.STRING,
-    start: Sequelize.STRING,
-    end: Sequelize.STRING,
-    days: Sequelize.STRING,
+  start: Sequelize.STRING,
+  end: Sequelize.STRING,
+  days: Sequelize.STRING,
 	professor: Sequelize.STRING,
-	location: Sequelize.STRING,
+	loc: Sequelize.STRING,
 	credits: Sequelize.STRING
   }, {
     timestamps: false,
