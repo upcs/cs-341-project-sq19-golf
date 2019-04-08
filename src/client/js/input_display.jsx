@@ -24,24 +24,26 @@ export class TopNavigation extends Component {
     return (
       <section className="topNav">
         <div id="leftNav"><a>UP Scheduler</a></div>
-
         <div id='rightNav'>
           <Popup trigger={<button className="navEl"> Help </button>} modal closeOnDocumentClick>
-            <div className="header"><ul><font color="black"><h3><b>Help</b></h3><hr /></font></ul></div>
-            <span> <font color="black"><ul align="left">
-              <div><b>Availability Page</b></div>
-              <div>Enter the times when you are unavailable into the table</div>
-              <ul>• Teacher Blacklist: Prevent certain teachers from being included into your schedule</ul>
-              <br />
-              <div><b>Schedule Page</b></div>
-              <div>View, name, and save your generated schedule.</div>
-              </ul>
-              </font>
-            </span>
+            <div>
+              <div className="header">Help<hr/></div>
+              <span><ul align="left">
+                <b>Availability Page</b><br/>
+                Enter times you are unavailable, or professors you would like to avoid.
+                Schedules matching these fields will not be generated
+                <br/><br/>
+                <b>Schedule Page</b><br/>
+                View, name, and save your generated schedule
+                </ul>
+              </span>
+            </div>
           </Popup>
           <Popup trigger={<button className="navEl"> About </button>} modal closeOnDocumentClick>
-            <div className="header"><ul><font color="black"><h3><b>About</b></h3><hr /></font></ul></div>
-            <span> <ul><font color="black">UPSchedule is a convenient schedule planner created by students, for students.<br /></font></ul></span>
+            <div>
+              <div className="header">About<hr/></div>
+              <ul align="left">UPSchedule is a convenient schedule planner created by students, for students.</ul>
+            </div>
           </Popup>
         </div>
       </section>
@@ -71,12 +73,10 @@ export class InputContainer extends Component {
   }
 
   handleCourseInputChange(inputID, courseID, subject) {
-    if (subject != "" && courseID != "") {
-      let desiredCourses = this.state.desiredCourses;
-      desiredCourses[inputID] = {'subject': subject.toUpperCase(), 'courseID': courseID};
-      this.setState({ 'desiredCourses': desiredCourses });
-      this.modifyNecessaryInputs();
-    }
+    let desiredCourses = this.state.desiredCourses;
+    desiredCourses[inputID] = {'subject': subject.toUpperCase(), 'courseID': courseID};
+    this.setState({ 'desiredCourses': desiredCourses });
+    this.modifyNecessaryInputs();
   }
 
   //Determine whether inputs should be added or removed, onChange()
@@ -120,8 +120,7 @@ export class InputContainer extends Component {
   }
 
   async handleSubmit(event) {
-    let desiredCourses = this.state.desiredCourses.filter(() => true); //Remove undefined entries
-    console.log(desiredCourses);
+    let desiredCourses = this.state.desiredCourses.filter(course => course.subject && course.courseID); //Remove undefined entries
     await fetch('/api/scheduleRequest', {
       method: 'POST',
       body: JSON.stringify(desiredCourses),
@@ -242,6 +241,8 @@ export class CourseInput extends Component {
   render() {
     let input = this.state.input;
     let courses = this.props.courses;
+
+    console.log(courses);
 
     let numbers = (courses.subjectMap[input.subject]) ? courses.subjectMap[input.subject] : courses.subjectMap.all;
     let subjects = (courses.numberMap[input.number]) ? courses.numberMap[input.number] : courses.numberMap.all;
