@@ -4,14 +4,17 @@ exports[`ClassDisplay Allow for mouse hovering 1`] = `
 <div
   className="scheduleClass"
 >
-  <button
+  <div
     className="classLabel"
     onClick={[Function]}
+    onMouseOut={[Function]}
   >
+     
     <br />
      
      - 
-  </button>
+    <br />
+  </div>
   <div
     className="timeLabel"
     style={
@@ -21,7 +24,10 @@ exports[`ClassDisplay Allow for mouse hovering 1`] = `
     }
   >
     <br />
-    Instructor: 
+    <br />
+    CRN: 
+    <br />
+    Credits: 
   </div>
 </div>
 `;
@@ -30,16 +36,19 @@ exports[`ClassDisplay Should render correctly with a "populated" classData prope
 <div
   className="scheduleClass"
 >
-  <button
+  <div
     className="classLabel"
     onClick={[Function]}
+    onMouseOut={[Function]}
   >
+     
     <br />
      
     0
      - 
     1
-  </button>
+    <br />
+  </div>
   <div
     className="timeLabel"
     style={
@@ -50,7 +59,10 @@ exports[`ClassDisplay Should render correctly with a "populated" classData prope
   >
     class
     <br />
-    Instructor: 
+    <br />
+    CRN: 
+    <br />
+    Credits: 
   </div>
 </div>
 `;
@@ -59,14 +71,17 @@ exports[`ClassDisplay Should render correctly with a null classData property 1`]
 <div
   className="scheduleClass"
 >
-  <button
+  <div
     className="classLabel"
     onClick={[Function]}
+    onMouseOut={[Function]}
   >
+     
     <br />
      
      - 
-  </button>
+    <br />
+  </div>
   <div
     className="timeLabel"
     style={
@@ -76,7 +91,10 @@ exports[`ClassDisplay Should render correctly with a null classData property 1`]
     }
   >
     <br />
-    Instructor: 
+    <br />
+    CRN: 
+    <br />
+    Credits: 
   </div>
 </div>
 `;
@@ -85,14 +103,17 @@ exports[`ClassDisplay Should render correctly with no classData property 1`] = `
 <div
   className="scheduleClass"
 >
-  <button
+  <div
     className="classLabel"
     onClick={[Function]}
+    onMouseOut={[Function]}
   >
+     
     <br />
      
      - 
-  </button>
+    <br />
+  </div>
   <div
     className="timeLabel"
     style={
@@ -102,7 +123,10 @@ exports[`ClassDisplay Should render correctly with no classData property 1`] = `
     }
   >
     <br />
-    Instructor: 
+    <br />
+    CRN: 
+    <br />
+    Credits: 
   </div>
 </div>
 `;
@@ -111,27 +135,39 @@ exports[`ScheduleDisplay Should render correctly with a "populated" schedule pro
 <span
   className="scheduleOption"
 >
-  <ClassDisplay
-    classData={Array []}
-    key="class-0"
-  />
-  <ClassDisplay
-    classData={Array []}
-    key="class-1"
-  />
+  <div
+    className="scheduleContainer"
+  >
+    <ClassDisplay
+      classData={Array []}
+      key="class-0"
+    />
+    <ClassDisplay
+      classData={Array []}
+      key="class-1"
+    />
+  </div>
 </span>
 `;
 
 exports[`ScheduleDisplay Should render correctly with a null schedule property 1`] = `
 <span
   className="scheduleOption"
-/>
+>
+  <div
+    className="scheduleContainer"
+  />
+</span>
 `;
 
 exports[`ScheduleDisplay Should render correctly with no schedule property 1`] = `
 <span
   className="scheduleOption"
-/>
+>
+  <div
+    className="scheduleContainer"
+  />
+</span>
 `;
 
 exports[`SchedulesContainer Should not connect to schedule database properly 1`] = `
@@ -153,17 +189,12 @@ exports[`SchedulesContainer Should not connect to schedule database properly 1`]
     className="pdfdim"
     id="divToPrint"
   >
-    <div
-      className="horiz-container"
-    >
-      <Connect(schedulesList) />
-    </div>
+    <Connect(schedulesList) />
   </div>
   <div
     className="bottom"
   >
     <button
-      className="print"
       onClick={[Function]}
     >
       Save As PDF
@@ -197,17 +228,12 @@ exports[`SchedulesContainer Should render correctly with a "populated" schedules
     className="pdfdim"
     id="divToPrint"
   >
-    <div
-      className="horiz-container"
-    >
-      <Connect(schedulesList) />
-    </div>
+    <Connect(schedulesList) />
   </div>
   <div
     className="bottom"
   >
     <button
-      className="print"
       onClick={[Function]}
     >
       Save As PDF
@@ -241,17 +267,12 @@ exports[`SchedulesContainer Should render correctly with a null schedules proper
     className="pdfdim"
     id="divToPrint"
   >
-    <div
-      className="horiz-container"
-    >
-      <Connect(schedulesList) />
-    </div>
+    <Connect(schedulesList) />
   </div>
   <div
     className="bottom"
   >
     <button
-      className="print"
       onClick={[Function]}
     >
       Save As PDF
@@ -285,17 +306,12 @@ exports[`SchedulesContainer Should render correctly with no schedules property 1
     className="pdfdim"
     id="divToPrint"
   >
-    <div
-      className="horiz-container"
-    >
-      <Connect(schedulesList) />
-    </div>
+    <Connect(schedulesList) />
   </div>
   <div
     className="bottom"
   >
     <button
-      className="print"
       onClick={[Function]}
     >
       Save As PDF

@@ -6,7 +6,7 @@ exports[`CourseInput Should handle a TAB key press correctly 1`] = `
 >
   <InputPredict
     dictionary={null}
-    name="name"
+    name="subject"
     onKeyDown={[Function]}
     onKeyUp={[Function]}
     onValueChange={[Function]}
@@ -15,7 +15,7 @@ exports[`CourseInput Should handle a TAB key press correctly 1`] = `
   />
   <InputPredict
     dictionary={null}
-    name="name"
+    name="number"
     onKeyDown={[Function]}
     onKeyUp={[Function]}
     onValueChange={[Function]}
@@ -32,7 +32,7 @@ exports[`CourseInput Should handle an arbitrary key press correctly 1`] = `
 >
   <InputPredict
     dictionary={null}
-    name="name"
+    name="subject"
     onKeyDown={[Function]}
     onKeyUp={[Function]}
     onValueChange={[Function]}
@@ -41,7 +41,7 @@ exports[`CourseInput Should handle an arbitrary key press correctly 1`] = `
   />
   <InputPredict
     dictionary={null}
-    name="name"
+    name="number"
     onKeyDown={[Function]}
     onKeyUp={[Function]}
     onValueChange={[Function]}
@@ -58,7 +58,7 @@ exports[`CourseInput Should render correctly 1`] = `
 >
   <InputPredict
     dictionary={null}
-    name="name"
+    name="subject"
     onKeyDown={[Function]}
     onKeyUp={[Function]}
     onValueChange={[Function]}
@@ -67,7 +67,7 @@ exports[`CourseInput Should render correctly 1`] = `
   />
   <InputPredict
     dictionary={null}
-    name="name"
+    name="number"
     onKeyDown={[Function]}
     onKeyUp={[Function]}
     onValueChange={[Function]}
@@ -199,63 +199,127 @@ exports[`TopNavigation Should render correctly 1`] = `
 <section
   className="topNav"
 >
-  <a
+  <div
     id="leftNav"
   >
-    UP Scheduler
-  </a>
+    <a>
+      UP Scheduler
+    </a>
+  </div>
   <div
     id="rightNav"
   >
-    <div
-      className="dropdown"
+    <Popup
+      arrow={true}
+      arrowStyle={Object {}}
+      className=""
+      closeOnDocumentClick={true}
+      closeOnEscape={true}
+      contentStyle={Object {}}
+      defaultOpen={false}
+      disabled={false}
+      keepTooltipInside={false}
+      lockScroll={false}
+      modal={true}
+      mouseEnterDelay={100}
+      mouseLeaveDelay={100}
+      offsetX={0}
+      offsetY={0}
+      on={
+        Array [
+          "click",
+        ]
+      }
+      onClose={[Function]}
+      onOpen={[Function]}
+      open={false}
+      overlayStyle={Object {}}
+      position="bottom center"
+      repositionOnResize={true}
+      trigger={
+        <button
+          className="navEl"
+        >
+           Help 
+        </button>
+      }
     >
-      <div
-        className="dropmenu"
-      >
+      <div>
         <div
-          className="name"
+          className="header"
         >
-          <b>
-            Options
-          </b>
+          Help
+          <hr />
         </div>
-        <div
-          className="content"
-        >
-          <div
-            className="setting"
-            id="schedules"
+        <span>
+          <ul
+            align="left"
           >
-            Schedules
-          </div>
-          <div
-            className="setting"
-            id="help"
-          >
-            Help
-          </div>
-          <div
-            className="setting"
-            id="about"
-            onClick={[Function]}
-          >
-            About
-          </div>
-          <Link
-            replace={false}
-            to="/"
-          >
-            <div
-              className="setting"
-              id="quit"
-            >
-              Quit
-            </div>
-          </Link>
-        </div>
+            <b>
+              Availability Page
+            </b>
+            <br />
+            Enter times you are unavailable, or professors you would like to avoid. Schedules matching these fields will not be generated
+            <br />
+            <br />
+            <b>
+              Schedule Page
+            </b>
+            <br />
+            View, name, and save your generated schedule
+          </ul>
+        </span>
       </div>
-    </div>
+    </Popup>
+    <Popup
+      arrow={true}
+      arrowStyle={Object {}}
+      className=""
+      closeOnDocumentClick={true}
+      closeOnEscape={true}
+      contentStyle={Object {}}
+      defaultOpen={false}
+      disabled={false}
+      keepTooltipInside={false}
+      lockScroll={false}
+      modal={true}
+      mouseEnterDelay={100}
+      mouseLeaveDelay={100}
+      offsetX={0}
+      offsetY={0}
+      on={
+        Array [
+          "click",
+        ]
+      }
+      onClose={[Function]}
+      onOpen={[Function]}
+      open={false}
+      overlayStyle={Object {}}
+      position="bottom center"
+      repositionOnResize={true}
+      trigger={
+        <button
+          className="navEl"
+        >
+           About 
+        </button>
+      }
+    >
+      <div>
+        <div
+          className="header"
+        >
+          About
+          <hr />
+        </div>
+        <ul
+          align="left"
+        >
+          UPSchedule is a convenient schedule planner created by students, for students.
+        </ul>
+      </div>
+    </Popup>
   </div>
 </section>
 `;
