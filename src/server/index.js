@@ -1,5 +1,6 @@
 //Sprint 4: Performance testing
 var start = Date.now();
+const request = require('request');
 //
 
 const Express = require('express');
@@ -84,10 +85,11 @@ async function getViableSchedulesAsync(desiredClasses, callback) {
 }
 
 //Sprint 4: Performance testing
-const request = require('request');
+
+//Load the page
 request('http://www.google.com', function (error, response, body) {
   console.error('\nerror:', error); // Print the error if one occurred
   console.log('statusCode:', response && response.statusCode); // Print the response status code if a response was received
-  console.log("Google load time: " + (Date.now() - start) / 1000 + " seconds");
+  console.log("Google load time: " + (Date.now() - start) / 1000 + " seconds\n");
 });
 //

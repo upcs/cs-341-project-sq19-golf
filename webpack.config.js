@@ -51,5 +51,6 @@ module.exports = {
       }
     }),
     new webpack.optimize.AggressiveMergingPlugin(),
-  ]
+  ],
+  externals: ["fs", "tls", "net"],
 };

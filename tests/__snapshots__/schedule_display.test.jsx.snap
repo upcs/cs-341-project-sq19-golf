@@ -1,36 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ClassDisplay Allow for mouse hovering 1`] = `
-<div
-  className="scheduleClass"
->
-  <div
-    className="classLabel"
-    onClick={[Function]}
-  >
-     
-    <br />
-     
-     - 
-    <br />
-  </div>
-  <div
-    className="timeLabel"
-    style={
-      Object {
-        "display": "none",
-      }
-    }
-  >
-    <br />
-    <br />
-    CRN: 
-    <br />
-    Credits: 
-  </div>
-</div>
-`;
-
 exports[`ClassDisplay Should render correctly with a "populated" classData property 1`] = `
 <div
   className="scheduleClass"
