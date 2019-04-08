@@ -1,7 +1,7 @@
 const Fs = require('fs')
 //Course Abstraction
 class Course {
-  constructor(sub, number, section, title, crn, start, end, d, prof, loc, credits){
+  constructor(sub, number, section, title, crn, start, end, d, prof, location, credits){
     this.subject = sub;
     this.number = number;
     this.section = section;
@@ -11,7 +11,7 @@ class Course {
     this.end = ampm(end) + ":" + end.split(":")[1];
     this.days = d;
     this.professor = prof;
-    this.loc = loc;
+    this.location = location;
     this.credits = credits
 		//availability mask initialized to 0 => all available by default
 		this.mask = ["0".repeat(168), "0".repeat(168), "0".repeat(168), "0".repeat(168), "0".repeat(168)] ;

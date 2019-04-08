@@ -205,17 +205,10 @@ button {
   display: inline-block !important;
 }
 
-.input-predict-input {
-  position: relative;
-  background: transparent !important;
-  z-index: 2 !important;
-}
-
 .input-predict-suggestion {
   background: #aa8cc5 !important;
   left: 0;
-  color: lightgray !important;
-  z-index: 1 !important;
+  color: #d3d3d3 !important;
 }
 
 ::-webkit-input-placeholder { /* Chrome */
@@ -345,6 +338,11 @@ input[type=number] {
   display: flex;
   flex-direction: row;
   margin-right: 48px;
+  border: solid 1px black;
+}
+
+.scheduleContainer {
+	border: solid 1px black;
 }
 
 .daysLabel {
@@ -383,27 +381,6 @@ input[type=number] {
   &__no-hover {
     opacity: 1;
   }
-}
-
-
-
-.menu-item {
-  padding: 0 40px;
-  margin: 5px 10px;
-  user-select: none;
-  cursor: pointer;
-  border: none;
-}
-.menu-item-wrapper.active {
-  border: 1px blue solid;
-}
-.menu-item.active {
-  border: 1px green solid;
-}
-
-.scroll-menu-arrow {
-  padding: 20px;
-  cursor: pointer;
 }
 
  .inputHeader {

@@ -25,9 +25,9 @@ const Classes = Db.define('course', {
     start: Sequelize.STRING,
     end: Sequelize.STRING,
     days: Sequelize.STRING,
-    professor: Sequelize.STRING,
-	  loc: Sequelize.STRING,
-	  credits: Sequelize.STRING,
+	  professor: Sequelize.STRING,
+	  location: Sequelize.STRING,
+	  credits: Sequelize.STRING
   }, {
     timestamps: false,
     freezeTableName: true, //Allows the tableName to be defined strictly (not just the query + 's')
