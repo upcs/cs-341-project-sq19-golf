@@ -76,7 +76,7 @@ export class ScheduleDisplay extends Component {
     super(props);
     this.state = { schedule: props.schedule || [] };
   }
-  
+
   render() {
     let schedule = this.state.schedule;
 
@@ -88,9 +88,9 @@ export class ScheduleDisplay extends Component {
 
     return (
       <span className="scheduleOption">
-		<button className="scheduleContainer">
-			{classDisplayList}
-		</button>
+    		<div className="scheduleContainer">
+    			{classDisplayList}
+    		</div>
       </span>
     )
   }
@@ -119,17 +119,17 @@ export class ClassDisplay extends Component {
 
     return (
 		  <div className="scheduleClass">
-			<button onClick={this.handleMouseIn.bind(this)} onMouseOut={this.handleMouseOut.bind(this)} className="classLabel">
-				{classData.subject}{classData.number}{classData.section}<br/>
-				{classData.days} {classData.start} - {classData.end}<br/>
-				{classData.location}
-			</button>
-			<div className="timeLabel" style={tooltipStyle}>
-				{classData.title}<br/>
-				{classData.professor}<br/>
-				CRN: {classData.crn}<br/>
-				{classData.credits}		
-			</div>
+  			<button onClick={this.handleMouseIn.bind(this)} onMouseOut={this.handleMouseOut.bind(this)} className="classLabel">
+  				{classData.subject}{classData.number}{classData.section}<br/>
+  				{classData.days} {classData.start} - {classData.end}<br/>
+  				{classData.location}
+  			</button>
+  			<div className="timeLabel" style={tooltipStyle}>
+  				{classData.title}<br/>
+  				{classData.professor}<br/>
+  				CRN: {classData.crn}<br/>
+  				{classData.credits}
+  			</div>
 		  </div>
     );
   }
