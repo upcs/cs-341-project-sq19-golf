@@ -9,6 +9,8 @@ const Courses = require('./courses'); // LOCAL WORK
 
 const app = Express();
 
+updateDB();
+
 app.use(Express.static('dist'));
 app.use(BodyParser.json());
 
@@ -22,7 +24,22 @@ app.post('/api/scheduleRequest', (req, res) => {
 
 app.post('/api/allCoursesRequest', (req, res) => {
   getAllCoursesAsync(courses => {
-    res.json(courses);
+    let subjMap = { all: [] }, numMap = { all: [] };
+    courses.forEach(course => {
+      let courseSubj = course.subject, courseNum = course.number;
+
+      //Populate course subject map
+      if (subjMap[courseSubj]) subjMap[courseSubj].push(courseNum);
+      else subjMap[courseSubj] = [courseNum];
+      subjMap.all.push(courseNum);
+
+      //Populate course number map
+      if (numMap[courseNum]) numMap[courseNum].push(courseSubj);
+      else numMap[courseNum] = [courseSubj];
+      numMap.all.push(courseSubj);
+    });
+
+    res.json({ subjMap, numMap });
   });
 });
 
@@ -33,7 +50,7 @@ app.all("*", function (req, res, next) {
 });
 
 app.listen(process.env.PORT || 8080, () => console.log(`Listening on port ${process.env.PORT || 8080}!`));
-updateDB();
+
 //TODO: Update from desiredClasses to courseID/subject
 async function updateDB() {
   //Update course data

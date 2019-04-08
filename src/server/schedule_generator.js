@@ -15,12 +15,13 @@ module.exports = {
   	  let freeHours = [mask, mask, mask, mask, mask]; //a mask for each day of the week
 
   	  //CODE CRASHES IN COMMENTED AREA DOWN HERE: SCHEDULE EXPECTS A COURSE OBJECT, WITH ATTRIBUTE .ones
-  	  //for (var i = 0; i < possibleClasses.length; i++){
-  		 // console.log(possibleClasses[i].ones.get());
+  	  for (var i = 0; i < possibleClasses.length; i++){
+      
+  		 console.log("*****ONES :\n" + possibleClasses[i].ones.get());
   		//let sch = new Schedule(possibleSchedules[i], freeHours);
   		//console.log(sch.totalOnes);
   		   //if (sch.viable==true){arraySchedules.push(sch);}
-  	  //}
+  	  }
   	 // return filteredSchedules;
   	 return possibleSchedules;
     }

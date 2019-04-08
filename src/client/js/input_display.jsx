@@ -5,7 +5,8 @@ import FadeIn from 'react-fade-in';
 import fetch from 'node-fetch';
 import $ from 'jquery';
 import InputPredict from 'react-inline-predict';
-import {store, modifySchedules} from './redux';
+import {store, modifySchedules, modifyLastKey} from './redux';
+import Popup from 'reactjs-popup'
 import '../css/styles.css';
 
 //Menu bar
@@ -14,29 +15,35 @@ export class TopNavigation extends Component {
 		super(props);
 	};
 
-  aboutClick() {
-    alert('UPSchedule is a convenient schedule planner created by students, for students.');
+  backClick() {
+    window.history.back();
   }
+
 
   render() {
     return (
       <section className="topNav">
-        <a id="leftNav">UP Scheduler</a>
+        <div id="leftNav"><a>UP Scheduler</a></div>
+
         <div id='rightNav'>
-          <div className="dropdown">
-            <div className="dropmenu">
-              <div className="name"><b>Options</b></div>
-                <div className="content">
-                  <div className="setting" id="schedules">Schedules</div>
-                  <div className="setting" id="help">Help</div>
-                  <div className="setting" id="about" onClick={this.aboutClick}>About</div>
-                  <Link to="/">
-                    <div className="setting" id="quit">Quit</div>
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </div>
+          <Popup trigger={<button className="navEl"> Help </button>} modal closeOnDocumentClick>
+            <div className="header"><ul><font color="black"><h3><b>Help</b></h3><hr /></font></ul></div>
+            <span> <font color="black"><ul align="left">
+              <div><b>Availability Page</b></div>
+              <div>Enter the times when you are unavailable into the table</div>
+              <ul>• Teacher Blacklist: Prevent certain teachers from being included into your schedule</ul>
+              <br />
+              <div><b>Schedule Page</b></div>
+              <div>View, name, and save your generated schedule.</div>
+              </ul>
+              </font>
+            </span>
+          </Popup>
+          <Popup trigger={<button className="navEl"> About </button>} modal closeOnDocumentClick>
+            <div className="header"><ul><font color="black"><h3><b>About</b></h3><hr /></font></ul></div>
+            <span> <ul><font color="black">UPSchedule is a convenient schedule planner created by students, for students.<br /></font></ul></span>
+          </Popup>
+        </div>
       </section>
     );
   }
@@ -48,24 +55,28 @@ export class InputContainer extends Component {
     super(props);
     this.state = {
       totalInputs: 5,
-      allCoursesRaw: [],
-      allCoursesFiltered: [],
+      allCourses: {
+        subjectMap: {},
+        numberMap: {},
+      },
       desiredCourses: []
     }
 
     this.handleCourseInputChange = this.handleCourseInputChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.retrieveAllSchedules = this.retrieveAllSchedules.bind(this);
+    this.retrieveAllCourses = this.retrieveAllCourses.bind(this);
 
     //Retrieve course data for auto-complete purposes
-    this.retrieveAllSchedules();
+    this.retrieveAllCourses();
   }
 
   handleCourseInputChange(inputID, courseID, subject) {
-    let desiredCourses = this.state.desiredCourses;
-    desiredCourses[inputID] = {'subject': subject.toUpperCase(), 'courseID': courseID};
-    this.setState({ 'desiredCourses': desiredCourses });
-    this.modifyNecessaryInputs();
+    if (subject != "" && courseID != "") {
+      let desiredCourses = this.state.desiredCourses;
+      desiredCourses[inputID] = {'subject': subject.toUpperCase(), 'courseID': courseID};
+      this.setState({ 'desiredCourses': desiredCourses });
+      this.modifyNecessaryInputs();
+    }
   }
 
   //Determine whether inputs should be added or removed, onChange()
@@ -90,7 +101,7 @@ export class InputContainer extends Component {
     }
   }
 
-  async retrieveAllSchedules() {
+  async retrieveAllCourses() {
     await fetch('/api/allCoursesRequest', {
       method: 'POST',
       body: '',
@@ -100,20 +111,17 @@ export class InputContainer extends Component {
       }
     }).then(res => res.json()
     ).then(resJSON => {
-      //console.log(resJSON);
-      //Gather and filter data
-      let courses = resJSON.map(course => {
-        return { 'subject': course.subject, 'number': course.number }
-      });
-      this.setState({'allCoursesRaw': resJSON});
-      this.setState({'allCoursesFiltered': courses});
+      console.log(resJSON);
+
+      this.setState({'allCourses': {'subjectMap': resJSON.subjMap, 'numberMap': resJSON.numMap} });
     }).catch((error) => {
       //console.log(error);
     });
   }
 
   async handleSubmit(event) {
-    let desiredCourses = this.state.desiredCourses;
+    let desiredCourses = this.state.desiredCourses.filter(() => true); //Remove undefined entries
+    console.log(desiredCourses);
     await fetch('/api/scheduleRequest', {
       method: 'POST',
       body: JSON.stringify(desiredCourses),
@@ -132,10 +140,10 @@ export class InputContainer extends Component {
 }
 
   render() {
-    let courseList = [], references = {}, lastKey = {'key': null};
+    let courseList = [], references = {};
     for (let i = 0, idx = 0; i < this.state.totalInputs; i++, idx += 2) {
-      let course = <CourseInput key={"course-" + i} id={i} idx={idx} value={this.state["course-" + i]} lastKey={lastKey}
-                    courses={this.state.allCoursesFiltered} references={references} onChange={this.handleCourseInputChange}/>
+      let course = <CourseInput key={"course-" + i} id={i} idx={idx} value={this.state["course-" + i]}
+                    courses={this.state.allCourses} references={references} onChange={this.handleCourseInputChange}/>
       courseList.push(course);
     }
 
@@ -179,26 +187,30 @@ export class TermInput extends Component {
 export class CourseInput extends Component {
   constructor(props) {
     super(props);
-    this.handleChange = this.handleChange.bind(this);
-  }
+    this.state ={
+      input: {
+        subject: null,
+        number: null
+      }
+    }
 
-  handleChange(event) {
-    let parent = event.target.parentNode.parentNode;
-    let courseType = parent.firstChild.children[0].value;
-    let courseID = parent.lastChild.children[0].value;
-
-    this.props.onChange(this.props.id, courseID, courseType)
+    this.handleInput = this.handleInput.bind(this);
   }
 
   createRef(id) {
     if (this.props.references && !this.props.references.hasOwnProperty(id)) {
       return this.props.references[id] = React.createRef();
     }
+    else if (this.props.references) {
+      return this.props.references[id];
+    }
   }
 
   //Focuses next input box
-  _handleKeyPress(e, idx) {
-    if (this.props.lastKey.key === "Shift" && e.key === "Tab") {
+  _handleKeyDown(e, idx) {
+    let lastKey = store.getState().lastKey;
+
+    if (lastKey === "Shift" && e.key === "Tab") {
       let inputs = this.props.references;
       if (inputs.hasOwnProperty(idx - 1)) {
         ReactDOM.findDOMNode(inputs[idx - 1].current).children[0].focus();
@@ -211,30 +223,51 @@ export class CourseInput extends Component {
       }
     }
 
-    this.props.lastKey['key'] = e.key;
+    if (e.key === "Shift") store.dispatch(modifyLastKey(e.key));
+  }
+
+  _handleKeyUp(e) {
+    if (e.key === "Shift") store.dispatch(modifyLastKey(null));
+  }
+
+  handleInput(value, context) {
+    let input = this.state.input;
+    input[context] = value.toString();
+    this.setState({ input });
+
+    //Send input back up to parent component
+    this.props.onChange(this.props.id, input.number, input.subject)
   }
 
   render() {
-    let subjects = this.props.courses.map(course => course.subject);
-    let courses = this.props.courses.map(course => course.number);
+    let input = this.state.input;
+    let courses = this.props.courses;
+
+    let numbers = (courses.subjectMap[input.subject]) ? courses.subjectMap[input.subject] : courses.subjectMap.all;
+    let subjects = (courses.numberMap[input.number]) ? courses.numberMap[input.number] : courses.numberMap.all;
 
     return (
-      <div className="classSelect" onChange={this.handleChange}>
+      <div className="classSelect">
         <InputPredict
           type="text"
-          name="name"
-          placeholder="Course Type"
+          name="subject"
+          placeholder="Course Subject"
           dictionary={subjects}
           ref={this.createRef(this.props.idx)}
-          onKeyDown={(e) => this._handleKeyPress(e, this.props.idx)}
+          onKeyDown={(e) => this._handleKeyDown(e, this.props.idx)}
+          onValueChange={((value) => this.handleInput(value, 'subject'))}
+          onKeyUp={(e) => this._handleKeyUp(e)}
         />
         <InputPredict
-          type="number"
-          name="name"
+          type="text"
+          name="number"
+          pattern="[0-9]*"
           placeholder="Course Number"
-          dictionary={courses}
+          dictionary={numbers}
           ref={this.createRef(this.props.idx + 1)}
-          onKeyDown={(e) => this._handleKeyPress(e, this.props.idx + 1)}
+          onValueChange={((value) => this.handleInput(value, 'number'))}
+          onKeyDown={(e) => this._handleKeyDown(e, this.props.idx + 1)}
+          onKeyUp={(e) => this._handleKeyUp(e)}
         />
       </div>
     );

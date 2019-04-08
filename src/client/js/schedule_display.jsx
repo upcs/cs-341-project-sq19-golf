@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import jsPDF from 'jspdf';
-import html2canvas from 'html2canvas';
+import * as jsPDF from 'jspdf';
+import * as html2canvas from 'html2canvas';
 import Popup from 'reactjs-popup'
 import {Link} from 'react-router-dom';
 import {connect} from "react-redux";
@@ -40,9 +40,8 @@ export class SchedulesContainer extends Component {
     html2canvas(input)
       .then((canvas) => {
         const imgData = canvas.toDataURL('image/png');
-        const pdf = new jsPDF("1", "mm", "a4");
-        pdf.addImage(imgData, 'JPEG', 20, 20, 180, 150);
-        pdf.output('/schedules');
+        const pdf = new jsPDF('landscape');
+        pdf.addImage(imgData, 'JPEG', 0, 0, 180, 150);
         pdf.save(this.state.scheduleName + ".pdf");
       });
   }
@@ -60,12 +59,10 @@ export class SchedulesContainer extends Component {
     			<input id="scheduleName" type="text" placeholder="Enter Schedule Name Here" onChange={this.handleScheduleName}/>
     		</div>
     		<div id="divToPrint" className="pdfdim">
-    			<div className="horiz-container">
-    			  <Schedules/>
-    			</div>
+  			  <Schedules/>
     		</div>
         <div className="bottom">
-          <button className="print" onClick={this.printDocument}>Save As PDF</button>
+          <button onClick={this.printDocument}>Save As PDF</button>
           <button className="return" onClick={() => window.history.back()}>Return</button>
         </div>
       </section>
@@ -91,7 +88,9 @@ export class ScheduleDisplay extends Component {
 
     return (
       <span className="scheduleOption">
-        {classDisplayList}
+    		<div className="scheduleContainer">
+    			{classDisplayList}
+    		</div>
       </span>
     )
   }
@@ -120,14 +119,17 @@ export class ClassDisplay extends Component {
 
     return (
 		  <div className="scheduleClass">
-			<button onClick={this.handleMouseIn.bind(this)} className="classLabel">
-				{classData.subject}{classData.number}<br/>
-				{classData.days} {classData.start} - {classData.end}
-			</button>
-			<div className="timeLabel" style={tooltipStyle}>
-				{classData.title}<br/>
-				Instructor: {classData.professor}
-			</div>
+  			<div onClick={this.handleMouseIn.bind(this)} onMouseOut={this.handleMouseOut.bind(this)} className="classLabel">
+  				{classData.subject}{classData.number}{classData.section}<br/>
+  				{classData.days} {classData.start} - {classData.end}<br/>
+  				{classData.location}
+  			</div>
+  			<div className="timeLabel" style={tooltipStyle}>
+  				{classData.title}<br/>
+  				{classData.professor}<br/>
+  				CRN: {classData.crn}<br/>
+  				Credits: {classData.credits}
+  			</div>
 		  </div>
     );
   }
