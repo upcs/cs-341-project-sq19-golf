@@ -264,3 +264,4 @@ function checkMask(arrayMasks, totalOnes){
   return true;
 
 }
+

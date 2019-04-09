@@ -37,6 +37,7 @@ function ampm(time){
 	if (ap.localeCompare("pm") == 0 && hour != 12){
 		hour = (parseInt(hour) + 12).toString();
 	}
+	if(hour == 24){hour = 12;}
 	return hour;
 }
 
