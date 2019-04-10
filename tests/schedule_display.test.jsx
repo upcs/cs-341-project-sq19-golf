@@ -119,18 +119,6 @@ describe('ClassDisplay', () => {
     expect(classDisplay).toMatchSnapshot();
   });
 
-  test('Allow for mouse hovering', () => {
-	  const classDisplay = shallow(<ClassDisplay {...props}/>);
-	  expect(classDisplay).toMatchSnapshot();
-	  const props = { handleMouseIn: undefined, handleMouseOut: undefined };
-
-	  classDisplay.instance().handleMouseIn();
-	  expect(classDisplay.instance().props.handleMouseIn).toBe();
-
-	  classDisplay.instance().handleMouseOut();
-	  expect(classDisplay.instance().props.handleMouseOut).toBe();
-  });
-
   /* test('Should support onClick event on classes', () => {
       const clickCallback = Sinon.spy();
       const classDisplay = shallow(<ClassDisplay onClick={clickCallback}/>);

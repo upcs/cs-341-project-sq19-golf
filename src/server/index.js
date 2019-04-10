@@ -1,13 +1,21 @@
+//Sprint 4: Performance testing
+var start = Date.now();
+const request = require('request');
+//
+
 const Express = require('express');
+var cors = require('cors');
 const Os = require('os');
 const Path = require('path');
 const BodyParser = require('body-parser')
 const Sql = require('./sql');
 const ScheduleGen = require('./schedule_generator');
 
+const Courses = require('./courses'); // LOCAL WORK
+
 const app = Express();
 
-updateDB();
+//updateDB();
 
 app.use(Express.static('dist'));
 app.use(BodyParser.json());
@@ -15,6 +23,7 @@ app.use(BodyParser.json());
 //Client Side Post
 app.post('/api/scheduleRequest', (req, res) => {
   getViableSchedulesAsync(req.body, viableSchedules => {
+    //console.log(viableSchedules);
     res.json(viableSchedules);
   });
 });
@@ -26,13 +35,17 @@ app.post('/api/allCoursesRequest', (req, res) => {
       let courseSubj = course.subject, courseNum = course.number;
 
       //Populate course subject map
-      if (subjMap[courseSubj]) subjMap[courseSubj].push(courseNum);
-      else subjMap[courseSubj] = [courseNum];
+      if (subjMap[courseSubj] && !subjMap[courseSubj].includes(courseNum)) {
+        subjMap[courseSubj].push(courseNum);
+      }
+      else if (!subjMap[courseSubj]) subjMap[courseSubj] = [courseNum];
       subjMap.all.push(courseNum);
 
       //Populate course number map
-      if (numMap[courseNum]) numMap[courseNum].push(courseSubj);
-      else numMap[courseNum] = [courseSubj];
+      if (numMap[courseNum] && !numMap[courseNum].includes(courseSubj)) {
+        numMap[courseNum].push(courseSubj);
+      }
+      else if (!numMap[courseNum]) numMap[courseNum] = [courseSubj];
       numMap.all.push(courseSubj);
     });
 
@@ -69,6 +82,15 @@ async function getViableSchedulesAsync(desiredClasses, callback) {
 
   //Generate viable schedules
   let viableSchedules = await ScheduleGen.generateSchedules(courseIDs, subjects, courses);
-
   if (callback) callback(viableSchedules);
 }
+
+//Sprint 4: Performance testing
+
+//Load the page
+request('http://www.google.com', function (error, response, body) {
+  console.error('\nerror:', error); // Print the error if one occurred
+  console.log('statusCode:', response && response.statusCode); // Print the response status code if a response was received
+  console.log("Google load time: " + (Date.now() - start) / 1000 + " seconds\n");
+});
+//
