@@ -79,6 +79,14 @@ describe('ScheduleDisplay', () => {
     expect(scheduleDisplay).toMatchSnapshot();
   });
 
+  test('Should update schedule display', () => {
+    const scheduleDisplay = shallow(<ScheduleDisplay/>);
+    expect(scheduleDisplay).toMatchSnapshot();
+	
+	scheduleDisplay.instance().updateDisplay(0);
+	expect(scheduleDisplay.instance().state.updateDisplay).toBe();
+  });
+  
   test('Should render correctly with no schedule property', () => {
     const scheduleDisplay = shallow(<ScheduleDisplay/>);
     expect(scheduleDisplay).toMatchSnapshot();
@@ -119,15 +127,13 @@ describe('ClassDisplay', () => {
     expect(classDisplay).toMatchSnapshot();
   });
 
-  /* test('Should support onClick event on classes', () => {
-      const clickCallback = Sinon.spy();
-      const classDisplay = shallow(<ClassDisplay onClick={clickCallback}/>);
+  test('Should support onClick event on classes', () => {
+    const classDisplay = shallow(<ClassDisplay/>);
+	expect(classDisplay).toMatchSnapshot();
 
-      //Simulate an onClick event
-      classDisplay.find('.classLabel').simulate('click');
-
-      Sinon.assert.called(clickCallback);
-  }); */
+	classDisplay.instance().handleMouseClick();
+	expect(classDisplay.instance().state.handleMouseClick).toBe();
+  });
 
   test('Should handle mouseIn and mouseOut', () => {
 	  const classDisplay = shallow(<ClassDisplay/>);
