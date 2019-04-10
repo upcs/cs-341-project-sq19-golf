@@ -1,3 +1,6 @@
-test1,number1,title1,professor1,start1,end1,days1
-test2,number2,title2,professor2,start2,end2,days2
-test3,number3,title3,professor3,start3,end3,days3
+AS,001,A,Air Force ROTC Physical Training,41466,6:30 am,12:30 pm,M,John David Anthony  Gasa ,Chiles Center MEZ,1.000
+AS,002,A,Air Force ROTC Physical Training 2,41467,6:30 pm,7:30 pm,M,John David Anthony  Gasa ,Chiles Center MEZ,1.000
+AS,003,A,Air Force ROTC Physical Training 3,41468,8:10 am,8:15 am,T,John David Anthony  Gasa ,Chiles Center MEZ,1.000
+AS,001,A,Air Force ROTC Physical Training,41466,6:30 am,12:30 pm,W,John David Anthony  Gasa ,Chiles Center MEZ,1.000
+AS,002,A,Air Force ROTC Physical Training 2,41467,6:30 am,7:30 pm,R,John David Anthony  Gasa ,Chiles Center MEZ,1.000
+AS,003,A,Air Force ROTC Physical Training 3,41468,9:50 pm,9:55 pm,F,John David Anthony  Gasa ,Chiles Center MEZ,1.000
