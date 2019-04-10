@@ -8,6 +8,9 @@ describe('TopNavigation', () => {
     const topNav = shallow(<TopNavigation/>);
     expect(topNav).toMatchSnapshot();
 
+	topNav.instance().backClick();
+	expect(topNav.instance().state.backClick).toBe();
+	
     //topNav.instance().aboutClick('e');
 	  //expect(topNav.instance().state.aboutClick).toEqual('e');
   });
@@ -47,12 +50,20 @@ describe('CourseInput', () => {
     expect(courseInput).toMatchSnapshot();
   });
 
+  test('Should properly create references', () => {
+    const courseInput = shallow(<CourseInput courses={courses});
+    expect(courseInput).toMatchSnapshot();
+
+    courseInput.instance().createRef(0);
+    expect(courseInput.instance().props.createRef).toEqual(0); //TODO: Fix
+  });
+  
   test('Should handle a TAB key press correctly', () => {
     const courseInput = shallow(<CourseInput courses={courses} references={{}} lastKey={key}/>);
     expect(courseInput).toMatchSnapshot();
 
     courseInput.instance()._handleKeyUp({key: "Enter"}, 0);
-     //expect(courseInput.instance().props.lastKey['key']).toEqual("Enter"); //TODO: Fix
+    expect(courseInput.instance().props.lastKey['key']).toEqual("Enter"); //TODO: Fix
   });
 
   test('Should handle an arbitrary key press correctly', () => {
@@ -60,7 +71,15 @@ describe('CourseInput', () => {
     expect(courseInput).toMatchSnapshot();
 
     courseInput.instance()._handleKeyUp({key: "Enter"}, 0);
-     //expect(courseInput.instance().props.lastKey['key']).toEqual("Enter"); //TODO: Fix
+    expect(courseInput.instance().props.lastKey['key']).toEqual("Enter"); //TODO: Fix
+  });
+  
+  test('Should handle only Upper-case Inputs', () => {
+    const courseInput = shallow(<CourseInput courses={courses} references={{}} lastKey={key}/>);
+    expect(courseInput).toMatchSnapshot();
+
+    courseInput.instance().handleInput({key: "Enter"}, 0);
+    //expect(courseInput.instance().props.lastKey['key']).toEqual("Enter"); //TODO: Fix
   });
 
 });
