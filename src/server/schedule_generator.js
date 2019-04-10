@@ -33,7 +33,7 @@ module.exports = {
   		if (sch.viable==true){arraySchedules.push(sch.courses);}
   	  }
   	 //return filteredSchedules;
-
+		console.log(arraySchedules);
   	 return arraySchedules;
     }
     catch (error) {
