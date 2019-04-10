@@ -128,11 +128,12 @@ describe('ClassDisplay', () => {
   });
 
   test('Should support onClick event on classes', () => {
-    const classDisplay = shallow(<ClassDisplay/>);
+    const classDisplay = shallow(<ClassDisplay {...props}/>);
 	expect(classDisplay).toMatchSnapshot();
+	const props = { schedule: null };
 
 	classDisplay.instance().handleMouseClick();
-	expect(classDisplay.instance().state.handleMouseClick).toBe();
+	expect(classDisplay.instance().props.handleMouseClick).toBe();
   });
 
   test('Should handle mouseIn and mouseOut', () => {
