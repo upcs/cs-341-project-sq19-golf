@@ -38,13 +38,13 @@ describe('SchedulesContainer', () => {
 	  expect(schedulesContainer.instance().props.connectSchedules).toBe();
   });
 
-  /* test('Should not produce pdf of page properly', () => {
+  test('Should not produce pdf of page properly', () => {
 	  const schedulesContainer = shallow(<SchedulesContainer {...props}/>);
 	  expect(schedulesContainer).toMatchSnapshot();
 	  const props = { printDocument: null };
 
 	  schedulesContainer.instance().printDocument();
-	  expect(schedulesContainer.instance().props.printDocument).toEqual(null);
+	  expect(schedulesContainer.instance().props.printDocument).toBe();
   });
 
   test('Should title schedule name on pdf', () => {
@@ -55,7 +55,7 @@ describe('SchedulesContainer', () => {
 
 	   schedulesContainer.instance().handleScheduleName(event);
 	   expect(schedulesContainer.instance().props.handleScheduleName).toEqual(null);
-  }); */
+  });
 
   /* test('Should support onClick event on buttons', () => {
       const clickCallback = Sinon.spy();

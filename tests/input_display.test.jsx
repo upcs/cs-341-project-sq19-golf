@@ -51,7 +51,7 @@ describe('CourseInput', () => {
   });
 
   test('Should properly create references', () => {
-    const courseInput = shallow(<CourseInput courses={courses});
+    const courseInput = shallow(<CourseInput courses={courses}/>);
     expect(courseInput).toMatchSnapshot();
 
     courseInput.instance().createRef(0);
