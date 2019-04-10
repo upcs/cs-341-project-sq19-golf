@@ -244,9 +244,6 @@ export class CourseInput extends Component {
     let input = this.state.input;
     let courses = this.props.courses;
 
-    console.log(input);
-    console.log(courses);
-
     let numbers = (courses.subjectMap[input.subject]) ? courses.subjectMap[input.subject] : courses.subjectMap.all;
     let subjects = (courses.numberMap[input.number]) ? courses.numberMap[input.number] : courses.numberMap.all;
 

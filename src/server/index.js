@@ -1,4 +1,10 @@
+//Sprint 4: Performance testing
+var start = Date.now();
+const request = require('request');
+//
+
 const Express = require('express');
+var cors = require('cors');
 const Os = require('os');
 const Path = require('path');
 const BodyParser = require('body-parser')
@@ -9,7 +15,7 @@ const Courses = require('./courses'); // LOCAL WORK
 
 const app = Express();
 
-updateDB();
+//updateDB();
 
 app.use(Express.static('dist'));
 app.use(BodyParser.json());
@@ -78,3 +84,13 @@ async function getViableSchedulesAsync(desiredClasses, callback) {
   let viableSchedules = await ScheduleGen.generateSchedules(courseIDs, subjects, courses);
   if (callback) callback(viableSchedules);
 }
+
+//Sprint 4: Performance testing
+
+//Load the page
+request('http://www.google.com', function (error, response, body) {
+  console.error('\nerror:', error); // Print the error if one occurred
+  console.log('statusCode:', response && response.statusCode); // Print the response status code if a response was received
+  console.log("Google load time: " + (Date.now() - start) / 1000 + " seconds\n");
+});
+//

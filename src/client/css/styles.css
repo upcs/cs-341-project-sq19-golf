@@ -59,36 +59,7 @@ a {
   font-size: 22px;
 }
 
-/*navbar*/
 
-
-/*
-.menu {
-  text-align: center;
-  position: absolute;
-  min-width:80px;
-  display: flex;
-  flex-direction: column;
-  background: #232122;
-	color: #DDDEDE;
-  margin-bottom: 5px;
-  right:30px;
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
-  z-index:1;
-}
-
-.menu-item {
-  cursor: pointer;
-  position: relative;
-  min-height: 10px;
-  margin-top:7px;
-  right: 5px;
-}
-
-.menu-item:hover {
-  color: #ba9cd5;
-}*/
 
 /*Modal*/
 .modal {
@@ -127,6 +98,8 @@ a {
   background: #ffffff;
   border-radius: 18px;
 }
+
+
 
 /*Body Style*/
 .bottom, form {
@@ -307,6 +280,7 @@ input[type=number] {
   flex-direction: row;
 	margin-left: auto;
 	margin-right: auto;
+  overflow-x: auto;
 }
 
 .scheduleBox {
@@ -321,8 +295,9 @@ input[type=number] {
 }
 
 .scheduleClass {
-  min-width: '250px';
-  margin-right: 48px;
+  display: flex;
+  flex-direction: row;
+  margin: 12px 24px 4px;
 }
 
 .daysLabel {
@@ -331,12 +306,14 @@ input[type=number] {
 
 .timeLabel {
   float: right; /*sets all times of classes to right of page, align with classes*/
+  min-width: 250px;
   margin: 16px;
 }
 
 .classLabel {
   background-color: #aa8cc5;
   color: white;
+  min-width: 250px;
   border-radius: 5px;
   padding: 16px;
 }

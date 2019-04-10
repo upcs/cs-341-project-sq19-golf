@@ -41,7 +41,10 @@
     "babel-regenerator-runtime": "^6.5.0",
     "body-parser": "^1.18.3",
     "codecov": "^3.2.0",
+    "cors": "^2.8.5",
+    "dedupe-plugin": "^1.0.1",
     "express": "^4.16.3",
+    "fs": "0.0.1-security",
     "horizontal-scroll": "^1.1.0",
     "html2canvas": "^1.0.0-alpha.12",
     "iconv-lite": "^0.4.24",
@@ -54,6 +57,7 @@
     "jspdf": "^1.5.3",
     "mysql": "^2.16.0",
     "mysql2": "^1.6.5",
+    "net": "^1.0.2",
     "node-fetch": "^2.3.0",
     "react": "^16.8.3",
     "react-dom": "^16.5.2",
@@ -67,8 +71,11 @@
     "react-table": "^6.9.2",
     "reactjs-popup": "^1.3.2",
     "redux": "^4.0.1",
+    "request": "^2.88.0",
     "sequelize": "^4.42.0",
-    "tedious": "^5.0.3"
+    "tedious": "^5.0.3",
+    "tls": "0.0.1",
+    "uglify-js-plugin": "0.0.6"
   },
   "devDependencies": {
     "@babel/core": "^7.3.4",
@@ -109,7 +116,7 @@
     "sinon": "^7.3.0",
     "style-loader": "^0.23.1",
     "url-loader": "^1.0.1",
-    "webpack": "^4.5.0",
+    "webpack": "^4.29.6",
     "webpack-cli": "^3.0.8",
     "webpack-dev-server": "^3.1.3"
   }
