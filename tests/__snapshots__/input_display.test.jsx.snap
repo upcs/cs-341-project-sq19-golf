@@ -52,6 +52,32 @@ exports[`CourseInput Should handle an arbitrary key press correctly 1`] = `
 </div>
 `;
 
+exports[`CourseInput Should properly create references 1`] = `
+<div
+  className="classSelect"
+>
+  <InputPredict
+    dictionary={null}
+    name="subject"
+    onKeyDown={[Function]}
+    onKeyUp={[Function]}
+    onValueChange={[Function]}
+    placeholder="Course Subject"
+    type="text"
+  />
+  <InputPredict
+    dictionary={null}
+    name="number"
+    onKeyDown={[Function]}
+    onKeyUp={[Function]}
+    onValueChange={[Function]}
+    pattern="[0-9]*"
+    placeholder="Course Number"
+    type="text"
+  />
+</div>
+`;
+
 exports[`CourseInput Should render correctly 1`] = `
 <div
   className="classSelect"

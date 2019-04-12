@@ -139,6 +139,16 @@ exports[`ScheduleDisplay Should render correctly with no schedule property 1`] =
 </span>
 `;
 
+exports[`ScheduleDisplay Should update schedule display 1`] = `
+<span
+  className="scheduleOption"
+>
+  <div
+    className="scheduleContainer"
+  />
+</span>
+`;
+
 exports[`SchedulesContainer Should not connect to schedule database properly 1`] = `
 <section
   id="main"
