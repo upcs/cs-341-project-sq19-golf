@@ -120,10 +120,16 @@ export class InputContainer extends Component {
   }
 
   async handleSubmit(event) {
-    let desiredCourses = this.state.desiredCourses.filter(course => course.subject && course.courseID); //Remove undefined entries
-    console.log(desiredCourses);
+    let desiredCourses = this.state.desiredCourses.filter(course => {
+      let courses = this.state.allCourses;
+      let validSubj = courses.numberMap.all.includes(course.subject);
+      let validCourseID = courses.subjectMap[course.subject].includes(course.courseID.toString());
+
+      if (validSubj && validCourseID) return course;
+    }); //Remove undefined entries
+
     if (desiredCourses.length === 0) {
-      alert("Please enter a minimum of one valid course");
+      alert("Please enter at least one valid course");
       event.preventDefault();
     }
     else {
