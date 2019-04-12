@@ -74,6 +74,7 @@ export class InputContainer extends Component {
   handleCourseInputChange(inputID, courseID, subject) {
     let desiredCourses = this.state.desiredCourses;
     desiredCourses[inputID] = {'subject': subject.toUpperCase(), 'courseID': courseID};
+    console.log(desiredCourses);
     this.setState({ 'desiredCourses': desiredCourses });
     this.modifyNecessaryInputs();
   }
@@ -120,22 +121,29 @@ export class InputContainer extends Component {
 
   async handleSubmit(event) {
     let desiredCourses = this.state.desiredCourses.filter(course => course.subject && course.courseID); //Remove undefined entries
-    await fetch('/api/scheduleRequest', {
-      method: 'POST',
-      body: JSON.stringify(desiredCourses),
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
-      }
-    }).then(res => res.json()
-    ).then(resJSON => {
-      store.dispatch({ type: "CLEAR_SCHEDULES" }); //Hack to fix React's dumbass key-based rendering
-      console.log(resJSON);
-      store.dispatch(modifySchedules(resJSON));
-    }).catch((error) => {
-      //console.log(error);
-    });
-}
+    console.log(desiredCourses);
+    if (desiredCourses.length === 0) {
+      alert("Please enter a minimum of one valid course");
+      event.preventDefault();
+    }
+    else {
+      await fetch('/api/scheduleRequest', {
+        method: 'POST',
+        body: JSON.stringify(desiredCourses),
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        }
+      }).then(res => res.json()
+      ).then(resJSON => {
+        store.dispatch({ type: "CLEAR_SCHEDULES" }); //Hack to fix React's dumbass key-based rendering
+        console.log(resJSON);
+        store.dispatch(modifySchedules(resJSON));
+      }).catch((error) => {
+        //console.log(error);
+      });
+    }
+  }
 
   render() {
     let courseList = [], references = {};
@@ -228,7 +236,7 @@ export class CourseInput extends Component {
     if (e.key === "Shift") store.dispatch(modifyLastKey(null));
   }
 
-  handleInput(value, context) {
+  handleInput(value, match, context) {
     let input = this.state.input;
     if (context == 'subject') {
       input[context] = value.toString().toUpperCase();
@@ -256,7 +264,7 @@ export class CourseInput extends Component {
           dictionary={subjects}
           ref={this.createRef(this.props.idx)}
           onKeyDown={(e) => this._handleKeyDown(e, this.props.idx)}
-          onValueChange={((value) => this.handleInput(value, 'subject'))}
+          onValueChange={((value, match) => this.handleInput(value, match, 'subject'))}
           onKeyUp={(e) => this._handleKeyUp(e)}
         />
         <InputPredict
@@ -266,7 +274,7 @@ export class CourseInput extends Component {
           placeholder="Course Number"
           dictionary={numbers}
           ref={this.createRef(this.props.idx + 1)}
-          onValueChange={((value) => this.handleInput(value, 'number'))}
+          onValueChange={((value, match) => this.handleInput(value, match, 'number'))}
           onKeyDown={(e) => this._handleKeyDown(e, this.props.idx + 1)}
           onKeyUp={(e) => this._handleKeyUp(e)}
         />
