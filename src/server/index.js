@@ -33,14 +33,14 @@ app.post('/api/allCoursesRequest', (req, res) => {
         subjMap[courseSubj].push(courseNum);
       }
       else if (!subjMap[courseSubj]) subjMap[courseSubj] = [courseNum];
-      subjMap.all.push(courseNum);
+      if (!subjMap.all.includes(courseNum)) subjMap.all.push(courseNum); //Only add unique refs
 
       //Populate course number map
       if (numMap[courseNum] && !numMap[courseNum].includes(courseSubj)) {
         numMap[courseNum].push(courseSubj);
       }
       else if (!numMap[courseNum]) numMap[courseNum] = [courseSubj];
-      numMap.all.push(courseSubj);
+      if (!numMap.all.includes(courseSubj)) numMap.all.push(courseSubj); //Only add unique refs
     });
 
     res.json({ subjMap, numMap });
