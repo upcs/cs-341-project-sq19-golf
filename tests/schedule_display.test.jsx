@@ -82,11 +82,11 @@ describe('ScheduleDisplay', () => {
   test('Should update schedule display', () => {
     const scheduleDisplay = shallow(<ScheduleDisplay/>);
     expect(scheduleDisplay).toMatchSnapshot();
-	
+
 	scheduleDisplay.instance().updateDisplay(0);
 	expect(scheduleDisplay.instance().state.updateDisplay).toBe();
   });
-  
+
   test('Should render correctly with no schedule property', () => {
     const scheduleDisplay = shallow(<ScheduleDisplay/>);
     expect(scheduleDisplay).toMatchSnapshot();
@@ -139,8 +139,8 @@ describe('ClassDisplay', () => {
   test('Should handle mouseIn and mouseOut', () => {
 	  const classDisplay = shallow(<ClassDisplay/>);
 	  classDisplay.simulate("mouseIn");
-	  expect(classDisplay.state("hover")).toBe(false);
+	  expect(classDisplay.props.selected).toBe(undefined);
 	  classDisplay.simulate("mouseOut");
-	  expect(classDisplay.state("hover")).toBe(false);
+    expect(classDisplay.props.selected).toBe(undefined);
   });
 });
