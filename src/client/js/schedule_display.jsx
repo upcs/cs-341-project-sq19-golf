@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import * as jsPDF from 'jspdf';
+import $ from 'jquery';
+import { saveAs } from 'browser-filesaver';
 import * as html2canvas from 'html2canvas';
 import Popup from 'reactjs-popup'
 import {Link} from 'react-router-dom';
@@ -37,13 +38,14 @@ export class SchedulesContainer extends Component {
 
   printDocument() {
     const input = document.getElementById('divToPrint');
-    html2canvas(input)
-      .then((canvas) => {
-        const imgData = canvas.toDataURL('image/png');
-        const pdf = new jsPDF('landscape');
-        pdf.addImage(imgData, 'JPEG', 0, 0, 180, 150);
-        pdf.save(this.state.scheduleName + ".pdf");
+    if (input.childElementCount !== 0) {
+      html2canvas(input).then((canvas) => {
+        canvas.toBlob((blob) => {
+          saveAs(blob, this.state.scheduleName + ".png");
+        });
       });
+    }
+    else alert("Please generate a schedule first");
   }
 
   handleScheduleName(event) {
@@ -62,7 +64,7 @@ export class SchedulesContainer extends Component {
   			  <Schedules/>
     		</div>
         <div className="bottom">
-          <button onClick={this.printDocument}>Save As PDF</button>
+          <button onClick={this.printDocument}>Save As PNG</button>
           <button className="return" onClick={() => window.history.back()}>Return</button>
         </div>
       </section>
@@ -110,7 +112,8 @@ export class ClassDisplay extends Component {
   constructor(props) {
   	super(props);
   	this.state = { classData: props.classData || {},
-  		hover: false};
+  		hover: false
+    };
   }
 
   handleMouseClick() {

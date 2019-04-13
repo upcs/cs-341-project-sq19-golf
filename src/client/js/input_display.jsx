@@ -123,7 +123,7 @@ export class InputContainer extends Component {
     let desiredCourses = this.state.desiredCourses.filter(course => {
       let courses = this.state.allCourses;
       let validSubj = courses.numberMap.all.includes(course.subject);
-      let validCourseID = courses.subjectMap[course.subject].includes(course.courseID.toString());
+      let validCourseID = courses.subjectMap[course.subject] && courses.subjectMap[course.subject].includes(course.courseID.toString());
 
       if (validSubj && validCourseID) return course;
     }); //Remove undefined entries
@@ -189,7 +189,7 @@ export class TermInput extends Component {
   render() {
     return (
       <div id="greetingText">Select your courses for
-        <input id="termSelect" type="text" defaultValue="Fall 2019"/>
+        <input disabled id="termSelect" type="text" defaultValue="Fall 2019"/>
       </div>
     );
   }
@@ -265,6 +265,7 @@ export class CourseInput extends Component {
       <div className="classSelect">
         <InputPredict
           type="text"
+          autocomplete="off"
           name="subject"
           placeholder="Course Subject"
           dictionary={subjects}
@@ -275,6 +276,7 @@ export class CourseInput extends Component {
         />
         <InputPredict
           type="text"
+          autocomplete="off"
           name="number"
           pattern="[0-9]*"
           placeholder="Course Number"
