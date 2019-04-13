@@ -7,12 +7,11 @@ describe('TopNavigation', () => {
   test('Should render correctly', () => {
     const topNav = shallow(<TopNavigation/>);
     expect(topNav).toMatchSnapshot();
+  });
 
-	//topNav.instance().backClick();
-	//expect(topNav.instance().state.backClick).toEqual();
-	
-    //topNav.instance().aboutClick('e');
-	  //expect(topNav.instance().state.aboutClick).toEqual('e');
+  test('Should prevent the user from re-visiting the previous page if no history exists',  () => {
+    const topNav = shallow(<TopNavigation/>);
+    //expect(topNav.instance().backClick()).toBe(undefined);
   });
 });
 
@@ -57,7 +56,7 @@ describe('CourseInput', () => {
     courseInput.instance().createRef(0);
     expect(courseInput.instance().props.createRef).toEqual(undefined); //TODO: Fix
   });
-  
+
   test('Should handle a TAB key press correctly', () => {
     const courseInput = shallow(<CourseInput courses={courses} references={{}} lastKey={key}/>);
     expect(courseInput).toMatchSnapshot();
@@ -73,7 +72,7 @@ describe('CourseInput', () => {
     courseInput.instance()._handleKeyUp({key: "Enter"}, 0);
     expect(courseInput.instance().props.lastKey['key']).toEqual(null); //TODO: Fix
   });
-  
+
   /* test('Should handle only Upper-case Inputs', () => {
     const courseInput = shallow(<CourseInput courses={courses} references={{}} lastKey={key}/>);
     expect(courseInput).toMatchSnapshot();
