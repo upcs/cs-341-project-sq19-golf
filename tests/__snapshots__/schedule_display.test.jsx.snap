@@ -176,7 +176,7 @@ exports[`SchedulesContainer Should not connect to schedule database properly 1`]
     <button
       onClick={[Function]}
     >
-      Save As PDF
+      Save As PNG
     </button>
     <button
       className="return"
@@ -215,7 +215,7 @@ exports[`SchedulesContainer Should render correctly with a "populated" schedules
     <button
       onClick={[Function]}
     >
-      Save As PDF
+      Save As PNG
     </button>
     <button
       className="return"
@@ -254,7 +254,7 @@ exports[`SchedulesContainer Should render correctly with a null schedules proper
     <button
       onClick={[Function]}
     >
-      Save As PDF
+      Save As PNG
     </button>
     <button
       className="return"
@@ -293,7 +293,7 @@ exports[`SchedulesContainer Should render correctly with no schedules property 1
     <button
       onClick={[Function]}
     >
-      Save As PDF
+      Save As PNG
     </button>
     <button
       className="return"

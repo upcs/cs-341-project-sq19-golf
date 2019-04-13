@@ -9,19 +9,19 @@ import {connect} from "react-redux";
 import {store, modifySchedules} from './redux';
 import '../css/styles.css';
 
-//All possible schedules
+//Displays all user-generated, viable schedules
 export class SchedulesContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      scheduleName: 'schedules'
+      scheduleName: 'schedules' //Default schedule name value for png generation
     }
 
-    this.connectSchedules = this.connectSchedules.bind(this);
     this.printDocument = this.printDocument.bind(this);
     this.handleScheduleName = this.handleScheduleName.bind(this);
   }
 
+  //Redux-react store connection allowing for reactive state updates upon viableSchedules change
   connectSchedules() {
     const mapStateToProps = state => {
       return { viableSchedules: state.viableSchedules };
@@ -36,6 +36,7 @@ export class SchedulesContainer extends Component {
     return connect(mapStateToProps)(schedulesList);
   }
 
+  //Allows for the saving of the schedule display DOM section as a png
   printDocument() {
     const input = document.getElementById('divToPrint');
     if (input.childElementCount !== 0) {
@@ -48,6 +49,7 @@ export class SchedulesContainer extends Component {
     else alert("Please generate a schedule first");
   }
 
+  //Set png schedule name
   handleScheduleName(event) {
     this.setState({scheduleName: event.target.value});
   }
@@ -72,7 +74,7 @@ export class SchedulesContainer extends Component {
   }
 }
 
-//A single schedule
+//Represents a single viable schedule
 export class ScheduleDisplay extends Component {
   constructor(props) {
     super(props);
@@ -84,19 +86,20 @@ export class ScheduleDisplay extends Component {
     this.updateDisplay = this.updateDisplay.bind(this);
   }
 
+  //Handles display of schedule registration information onClick
   updateDisplay(truthVal) {
     this.setState({ selected: truthVal })
   }
 
   render() {
-    let schedule = this.state.schedule;
-
-    let classDisplayList = schedule.map((classData, i) => {
+    //Render all scheduled classes
+    let classDisplayList = this.state.schedule.map((classData, i) => {
       return (
         <ClassDisplay key={"class-" + i} classData={classData} updateDisplay={this.updateDisplay} selected={this.state.selected}/>
-      )
+      );
     });
 
+    //Attach and nest said classes within stylized schedule components
     return (
       <span className="scheduleOption">
     		<div className="scheduleContainer">
@@ -107,15 +110,15 @@ export class ScheduleDisplay extends Component {
   }
 };
 
-//A single course
+//Displays data for a single class
 export class ClassDisplay extends Component {
   constructor(props) {
   	super(props);
-  	this.state = { classData: props.classData || {},
-  		hover: false
-    };
+  	this.state = { classData: props.classData || {} };
   }
 
+  //TODO: Consider moving this up to the parent
+  //Handles stateful ferrying of data from child to parent, concerning schedule registration display
   handleMouseClick() {
     let selected = this.props.selected;
 	  this.props.updateDisplay(!selected);
