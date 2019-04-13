@@ -31,8 +31,7 @@
       "jest-canvas-mock"
     ],
     "moduleNameMapper": {
-      "\\.(css|less|sass|scss)$": "identity-obj-proxy",
-      "\\.(gif|ttf|eot|svg)$": "./tests/mocks/file.mock.js"
+      "\\.(css|less|sass|scss)$": "identity-obj-proxy"
     }
   },
   "dependencies": {

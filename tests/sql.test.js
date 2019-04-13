@@ -1,21 +1,25 @@
 import { sequelize, dataTypes, checkModelName, checkPropertyExists } from 'sequelize-test-helpers';
-import { Classes } from '../src/server/sql.js';
+import { Classes, updateAllCourseData, updateAllCourseDataAsync, getAllCourseData, getSelectedCourseData } from '../src/server/sql.js';
 
 describe('Classes model', () => {
-  test('Loading a class object', () => {
-    /*Classes.create({
-      subject: 'subject',
-      number: 'number',
-      title: 'title',
-      professor: 'professor',
-      start: 'start',
-      end: 'end',
-      days: 'days'
-    });*/
-  });
-
   test('Verify the model definition is correct', () => {
     const model = new Classes();
     expect(checkPropertyExists(model.course));
+  });
+
+  test('Should fail to update course data with fake file', () => {
+    expect(updateAllCourseData('fake_file.txt')).toBe(false)
+  });
+
+  test('Should fail to update course data asynchronously with fake file', () => {
+    expect(updateAllCourseDataAsync('fake_file.txt')).toBe(false)
+  });
+
+  test('Should fail to get all course data with null input', () => {
+    getAllCourseData(true);
+  });
+
+  test('Should fail to update course data asynchronously with fake file', () => {
+    getSelectedCourseData(null, null);
   });
 });
