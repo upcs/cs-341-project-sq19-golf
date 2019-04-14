@@ -55,7 +55,7 @@ describe('InputContainer', () => {
     expect(inputContainer.instance().props.handleSubmit).toBe();
 
     //Handle submission with invalid courses
-    inputContainer.instance().setState({ desiredCourses: [{ subject: null , courseID: null }]);
+    inputContainer.instance().setState({ desiredCourses: [{ subject: 'a', courseID: 'b' }]});
     inputContainer.instance().handleSubmit(event);
     expect(inputContainer.instance().props.handleSubmit).toBe();
   });

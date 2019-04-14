@@ -22,7 +22,7 @@ module.exports = {
       let possibleSchedules = Combinatorics.bigCombination(possibleClasses, subjects.length).toArray();
 
       possibleSchedules = isolateViableSchedules(courseIDs, subjects, possibleSchedules);
-  	  //filteredSchedules = filterSchedules(possibleSchedules);  => Using combinations it's unnecessary, I coded it for using permutations
+
   	  let arraySchedules = new Array();
   	  let mask = "0".repeat(168);
   	  let freeHours = [mask, mask, mask, mask, mask]; //a mask for each day of the week
@@ -41,25 +41,6 @@ module.exports = {
     }
   }
 }
-
-
-
- function filterSchedules(permutations){
-  var filtered = new Array();
-	for (var i = 0; i < permutations.length; i++){
-	  var obj = {};
-	  for (var j = 0; j < permutations[i].length; j++){
-
-		  obj[permutations[i][j].subject + permutations[i][j].number] = permutations[i][j];
-      //console.log(obj[permutations[i][j].subject + permutations[i][j].number])
-	  }
-	  var tmp  = obj;
-	  filtered.push(Object.values(obj));
-	}
-
-	return filtered;
-}
-
 
 //Preliminary removal step purposed to avoid heap overflows
 function filterClasses(courseIDs, subjects, classes) {
