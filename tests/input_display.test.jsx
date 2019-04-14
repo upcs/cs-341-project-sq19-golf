@@ -47,6 +47,17 @@ describe('InputContainer', () => {
     //Handle submission
     inputContainer.instance().handleSubmit(event);
     expect(inputContainer.instance().props.handleSubmit).toBe();
+
+    //Handle submission with no desired courses
+    window.alert = () => {};
+    inputContainer.instance().setState({ desiredCourses: [] })
+    inputContainer.instance().handleSubmit(event);
+    expect(inputContainer.instance().props.handleSubmit).toBe();
+
+    //Handle submission with invalid courses
+    inputContainer.instance().setState({ desiredCourses: [{ subject: null , courseID: null }]);
+    inputContainer.instance().handleSubmit(event);
+    expect(inputContainer.instance().props.handleSubmit).toBe();
   });
 });
 
@@ -87,14 +98,12 @@ describe('CourseInput', () => {
     expect(courseInput.instance().props.lastKey['key']).toEqual(null); //TODO: Fix
   });
 
-  /* test('Should handle only Upper-case Inputs', () => {
-    const courseInput = shallow(<CourseInput courses={courses} references={{}} lastKey={key}/>);
-    expect(courseInput).toMatchSnapshot();
+  test('Should write input to parent\'s state', () => {
+    const courseInput = shallow(<CourseInput courses={courses} onChange={() => {}}/>);
 
-    courseInput.instance().handleInput({key: "Enter"}, 0);
-    expect(courseInput.instance().props.lastKey['key']).toEqual(null); //TODO: Fix
-  }); */
-
+    courseInput.instance().handleInput('test', false, 'subject');
+    expect(courseInput.instance().state.input.subject).toEqual('TEST');
+  });
 });
 
 describe('TermInput', () => {
