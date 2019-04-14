@@ -44,18 +44,28 @@ describe('InputContainer', () => {
     inputContainer.instance().handleCourseInputChange(courseData.inputID, courseData.courseID, courseData.subject);
     expect(inputContainer.instance().state.desiredCourses).toEqual([{'courseID': 341, 'subject': 'CS'}]);
 
-    //Handle submission
-    inputContainer.instance().handleSubmit(event);
-    expect(inputContainer.instance().props.handleSubmit).toBe();
-
     //Handle submission with no desired courses
     window.alert = () => {};
     inputContainer.instance().setState({ desiredCourses: [] })
     inputContainer.instance().handleSubmit(event);
     expect(inputContainer.instance().props.handleSubmit).toBe();
+  });
 
-    //Handle submission with invalid courses
-    inputContainer.instance().setState({ desiredCourses: [{ subject: 'a', courseID: 'b' }]});
+  test('Should handle submit with valid courses', () => {
+    const inputContainer = shallow(<InputContainer/>);
+    const event = Object.assign(jest.fn(), { preventDefault: () => {}});
+
+    inputContainer.instance().setState({
+      allCourses: {
+        numberMap: { all: [ 'a' ] },
+        subjectMap: { a: [ '1' ] }
+      },
+      desiredCourses: [{
+        subject: 'a',
+        courseID: 1
+      }]
+    });
+
     inputContainer.instance().handleSubmit(event);
     expect(inputContainer.instance().props.handleSubmit).toBe();
   });
@@ -72,6 +82,14 @@ describe('CourseInput', () => {
 
   test('Should properly create references', () => {
     const courseInput = shallow(<CourseInput courses={courses}/>);
+
+    courseInput.instance().createRef(0);
+    expect(courseInput.instance().props.createRef).toEqual(undefined); //TODO: Fix
+  });
+
+  test('Should properly handle already existing references', () => {
+    let references = ['a'];
+    const courseInput = shallow(<CourseInput courses={courses} references={references}/>);
 
     courseInput.instance().createRef(0);
     expect(courseInput.instance().props.createRef).toEqual(undefined); //TODO: Fix
@@ -102,6 +120,9 @@ describe('CourseInput', () => {
     const courseInput = shallow(<CourseInput courses={courses} onChange={() => {}}/>);
 
     courseInput.instance().handleInput('test', false, 'subject');
+    expect(courseInput.instance().state.input.subject).toEqual('TEST');
+
+    courseInput.instance().handleInput('test', true, 'subject');
     expect(courseInput.instance().state.input.subject).toEqual('TEST');
   });
 });
