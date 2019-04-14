@@ -39,14 +39,14 @@ export class SchedulesContainer extends Component {
   //Allows for the saving of the schedule display DOM section as a png
   printDocument() {
     const input = document.getElementById('divToPrint');
-    if (input.childElementCount !== 0) {
+    if (input && input.childElementCount !== 0) {
       html2canvas(input).then((canvas) => {
         canvas.toBlob((blob) => {
           saveAs(blob, this.state.scheduleName + ".png");
         });
       });
     }
-    else alert("Please generate a schedule first");
+    else if (input) alert("Please generate a schedule first");
   }
 
   //Set png schedule name

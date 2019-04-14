@@ -57,7 +57,6 @@ export function modifyCourses(courses) {
 }
 
 export function modifyLastKey(lastKey) {
-  console.log(lastKey);
   return { type: actionTypes.MODIFY_LAST_KEY, lastKey: lastKey }
 }
 

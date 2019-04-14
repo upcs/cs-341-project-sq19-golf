@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallow, render, setState } from 'enzyme';
+import { shallow, render, setState, mount, find } from 'enzyme';
 import {store} from '../src/client/js/redux';
 import {TopNavigation, InputContainer, CourseInput, TermInput} from '../src/client/js/input_display.jsx';
 
@@ -12,7 +12,16 @@ describe('TopNavigation', () => {
   test('Should prevent the user from re-visiting the previous page if no history exists',  () => {
     const topNav = shallow(<TopNavigation/>);
     window.history = null;
+
     expect(topNav.instance().backClick()).toBe(undefined);
+  });
+
+  test('Should react with modal popups', () => {
+    const topNav = mount(<TopNavigation/>);
+
+    //Test modal clicks
+    topNav.find('#modal-1').simulate('click');
+    topNav.find('#modal-2').simulate('click');
   });
 });
 
@@ -52,7 +61,6 @@ describe('CourseInput', () => {
 
   test('Should properly create references', () => {
     const courseInput = shallow(<CourseInput courses={courses}/>);
-    expect(courseInput).toMatchSnapshot();
 
     courseInput.instance().createRef(0);
     expect(courseInput.instance().props.createRef).toEqual(undefined); //TODO: Fix
@@ -60,15 +68,20 @@ describe('CourseInput', () => {
 
   test('Should handle a TAB key press correctly', () => {
     const courseInput = shallow(<CourseInput courses={courses} references={{}} lastKey={key}/>);
-    expect(courseInput).toMatchSnapshot();
 
-    courseInput.instance()._handleKeyUp({key: "Enter"}, 0);
+    courseInput.instance()._handleKeyDown({key: "Tab"}, 0);
+    expect(courseInput.instance().props.lastKey['key']).toEqual(null); //TODO: Fix
+  });
+
+  test('Should handle a SHIFT key press correctly', () => {
+    const courseInput = shallow(<CourseInput courses={courses} references={{}} lastKey={key}/>);
+
+    courseInput.instance()._handleKeyDown({key: "Shift"}, 0);
     expect(courseInput.instance().props.lastKey['key']).toEqual(null); //TODO: Fix
   });
 
   test('Should handle an arbitrary key press correctly', () => {
     const courseInput = shallow(<CourseInput courses={courses} lastKey={key}/>);
-    expect(courseInput).toMatchSnapshot();
 
     courseInput.instance()._handleKeyUp({key: "Enter"}, 0);
     expect(courseInput.instance().props.lastKey['key']).toEqual(null); //TODO: Fix

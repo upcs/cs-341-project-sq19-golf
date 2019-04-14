@@ -25,7 +25,7 @@ export class TopNavigation extends Component {
       <section className="topNav">
         <div id="leftNav"><a>UP Scheduler</a></div>
         <div id='rightNav'>
-          <Popup trigger={<button className="navEl"> Help </button>} modal closeOnDocumentClick>
+          <Popup trigger={<button id="modal-1" className="navEl"> Help </button>} modal closeOnDocumentClick>
             <div>
               <div className="header">Help<hr/></div>
               <span><ul align="left">
@@ -39,7 +39,7 @@ export class TopNavigation extends Component {
               </span>
             </div>
           </Popup>
-          <Popup trigger={<button className="navEl"> About </button>} modal closeOnDocumentClick>
+          <Popup trigger={<button id="modal-2" className="navEl"> About </button>} modal closeOnDocumentClick>
             <div>
               <div className="header">About<hr/></div>
               <ul align="left">UPSchedule is a convenient schedule planner created by students, for students.</ul>
