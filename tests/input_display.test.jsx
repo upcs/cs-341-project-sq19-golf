@@ -11,7 +11,8 @@ describe('TopNavigation', () => {
 
   test('Should prevent the user from re-visiting the previous page if no history exists',  () => {
     const topNav = shallow(<TopNavigation/>);
-    //expect(topNav.instance().backClick()).toBe(undefined);
+    window.history = null;
+    expect(topNav.instance().backClick()).toBe(undefined);
   });
 });
 

@@ -7,6 +7,25 @@ describe('Classes model', () => {
     expect(checkPropertyExists(model.course));
   });
 
+  test('Verify the model is interactable', () => {
+    const model = new Classes();
+
+    let obj = {}
+    obj.getDataValue = obj.setDataValue = () => "[]";
+
+    Classes.attributes.mask.get = Classes.attributes.mask.get.bind(obj);
+    expect(Classes.attributes.mask.get()).toEqual([]);
+
+    Classes.attributes.mask.set = Classes.attributes.mask.set.bind(obj);
+    expect(Classes.attributes.mask.set()).toEqual("[]");
+
+    Classes.attributes.ones.get = Classes.attributes.ones.get.bind(obj);
+    expect(Classes.attributes.ones.get()).toEqual([]);
+
+    Classes.attributes.ones.set = Classes.attributes.ones.set.bind(obj);
+    expect(Classes.attributes.ones.set()).toEqual("[]");
+  });
+
   test('Should fail to update course data with fake file', () => {
     expect(updateAllCourseData('fake_file.txt')).toBe(false)
   });
