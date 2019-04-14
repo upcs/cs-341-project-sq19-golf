@@ -44,9 +44,8 @@ export class AvailabilityContainer extends Component {
 			var update = this.state.blacklistArray.slice();
 			update.push(profBL);
 			this.setState({blacklistArray: update})
-			//alert("Blacklist: " + this.state.blacklistArray.join(", "));
+			alert("Blacklist: " + this.state.blacklistArray.join(", "));
 	}
-
 
 	/*handleSubmit(event) {
 			event.preventDefault();
@@ -91,20 +90,25 @@ export class AvailabilityContainer extends Component {
 				<SelectInput/>
 			 	<div id="tableCap"></div>
 			  <ReactTable
-				getTdProps={(state, rowInfo, column, instance) => {
+				getTdProps={(state, rowInfo, columns, instance) => {
 									if (typeof rowInfo !== "undefined") {
 										return {
 											onClick: (e, handleOriginal) => {
 												this.setState({
-												selected: column.Header
+												selected: rowInfo.row.accessor
 												});
 												if (handleOriginal) {
 												handleOriginal()
 												}
 											},
+											//Possible roundabout styling is to set the row to the selected color,
+											//yet change the column.Header not selected to the standard.
+											//Use codeSandBox to answer this issue with single Cell selection.
+											//Then relay that to storing the selected cells Times of Days into an array
+											//Then store as Json object and send to server.
 											style: {
-												background: column.Header === this.state.selected ? '#730ac9' : 'white',
-												color: column.Header  === this.state.selected ? 'white' : 'black'
+												background: rowInfo.row.accessor === this.state.selected ? '#730ac9' : 'white',
+												color: rowInfo.row.accessor  === this.state.selected ? 'white' : 'black'
 											},
 										}
 									}
