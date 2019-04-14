@@ -58,30 +58,44 @@ module.exports = {
   Classes: Classes,
 
   updateAllCourseData: (filePath) => {
-    let courses = Courses.parseCourseData(filePath);
-    Classes.sync({force: true}).then(() => {
-      Classes.bulkCreate(courses);
-    });
+    try {
+      let courses = Courses.parseCourseData(filePath);
+      Classes.sync({force: true}).then(() => {
+        Classes.bulkCreate(courses);
+      });
+    }
+    catch (error) {
+      return false;
+    }
   },
 
-  updateAllCourseDataASync: (filePath, callback) => {
-    let courses = Courses.parseCourseData(filePath);
-    Classes.sync({force: true}).then(() => {
-      Classes.bulkCreate(courses).then(callback);
-    });
+  updateAllCourseDataAsync: (filePath, callback) => {
+    try {
+      let courses = Courses.parseCourseData(filePath);
+      Classes.sync({force: true}).then(() => {
+        Classes.bulkCreate(courses).then(callback);
+      });
+    }
+    catch (error) {
+      return false;
+    }
   },
 
-  getAllCourseData: () => {
-    return Classes.findAll({raw: true});
+  getAllCourseData: (mock) => {
+    let mockRef = mock || false;
+    if (!mockRef) return Classes.findAll({raw: true});
   },
 
   getSelectedCourseData: (courseIDs, subjects) => {
-    return selectedCourses = Classes.findAll({
-      where: {
-        number: courseIDs,
-        subject: subjects
-      },
-      raw: true
-    });
+    if (courseIDs != null && subjects != null) {
+      return Classes.findAll({
+        where: {
+          number: courseIDs,
+          subject: subjects
+        },
+        raw: true
+      });
+    }
+    else return [];
   }
 }

@@ -1,5 +1,6 @@
 import {createStore, combineReducers} from "redux";
 
+//Describes all possible actions
 export const actionTypes = {
   MODIFY_SCHEDULES: 'MODIFY_SCHEDULES',
   CLEAR_SCHEDULES: 'CLEAR_SCHEDULES',
@@ -7,13 +8,6 @@ export const actionTypes = {
   CLEAR_COURSE_CONTEXT: 'CLEAR_COURSE_CONTEXT',
   MODIFY_LAST_KEY: 'MODIFY_LAST_KEY'
 };
-
-//Intiailize state
-/*const scheduleState = {
-  desiredCourses: [],
-  blacklistedProfessors: [],
-  blacklistedTimes: [],
-}*/
 
 //Initialize reducers
 function scheduleReducer(viableSchedules = [], action) {
@@ -63,7 +57,6 @@ export function modifyCourses(courses) {
 }
 
 export function modifyLastKey(lastKey) {
-  console.log(lastKey);
   return { type: actionTypes.MODIFY_LAST_KEY, lastKey: lastKey }
 }
 
