@@ -31,9 +31,9 @@ function countOnes(mask){
 function ampm(time){
 	//Add 12 to hour if it's PM -> makes it easier to handle schedule binary array representation
 	var hour = time.split(":")[0];
-	var minute = time.split(":")[1];
-	var ap = minute.split(" ")[1];
-	minute = minute.split(" ")[0];
+	var minute = String(time.split(":")[1]);
+	var ap = String(minute.split(" ")[1]);
+	minute = String(minute.split(" ")[0]);
 	if (ap.localeCompare("pm") == 0 && hour != 12){
 		hour = (parseInt(hour) + 12).toString();
 	}
@@ -42,23 +42,23 @@ function ampm(time){
 }
 
 function maskWeek(course, freeHours){
-	if (course.days.includes("M")){
+	if (String(course.days).includes("M")){
 		freeHours[0] = maskDay(course, freeHours[0]);
 	}
 
-	if (course.days.includes("T")){
+	if (String(course.days).includes("T")){
 		freeHours[1] = maskDay(course, freeHours[1]);
 	}
 
-	if (course.days.includes("W")){
+	if (String(course.days).includes("W")){
 		freeHours[2] = maskDay(course, freeHours[2]);
 	}
 
-	if (course.days.includes("R")){
+	if (String(course.days).includes("R")){
 		freeHours[3] = maskDay(course, freeHours[3]);
 	}
 
-	if (course.days.includes("F")){
+	if (String(course.days).includes("F")){
 		freeHours[4] = maskDay(course, freeHours[4]);
 	}
 	return freeHours;
@@ -84,11 +84,11 @@ function maskDay(course, mask){
         else: i = ( 12 x hour(mod 8) ) + floor(minute/5)
 	*/
 
-	var startHour = parseInt(course.start.split(":")[0]);
+	var startHour = parseInt(String(course.start).split(":")[0]);
 
-	var startMinute = parseInt(course.start.split(":")[1].split(" ")[0]);
-	var endHour = parseInt(course.end.split(":")[0]);
-	var endMinute = parseInt(course.end.split(":")[1].split(" ")[0]);
+	var startMinute = parseInt(String(course.start).split(":")[1].split(" ")[0]);
+	var endHour = parseInt(String(course.end).split(":")[0]);
+	var endMinute = parseInt(String(course.end).split(":")[1].split(" ")[0]);
 
 	var leftIndex = 12 * (startHour % 8) + Math.floor(startMinute/5);
 	if (startHour > 15) {leftIndex += 12*8;}
@@ -97,12 +97,12 @@ function maskDay(course, mask){
 	if (endHour > 15) {rightIndex += 12*8;}
 
 	//console.log(course.number.toString() + " " +  leftIndex.toString() + " " + rightIndex.toString())
-	filledMask = fillMask(mask, leftIndex, rightIndex);
+	var filledMask = fillMask(mask, leftIndex, rightIndex);
 	return filledMask
 }
 
 function fillMask(mask, start, end){
-	aux = mask.split('');
+	var aux = String(mask).split('');
 	for (var i = start; i <= end; i++){
 		// <= end requires 5 minutes between classes
 		// < end allows overlap (end at 2:15, start next at 2:15)
@@ -125,7 +125,12 @@ module.exports = {
 
                 	   //AS,001,A,Air Force ROTC Physical Training,41466,6:30 am,7:30 am,M,John David Anthony  Gasa ,Chiles Center MEZ,1.000
                 	 	 //Course constructor(sub, id, name, prof, start, end, d)
-                     return new Course(...fields);
+					
+					return new Course(...fields);
+					/*return new Course(fields[0].toUpperCase().trim(), fields[1].trim(), fields[2].toUpperCase().trim(), fields[3].trim(), 
+					fields[4].trim(), fields[5].toLowerCase().trim(), fields[6].toLowerCase().trim(), fields[7].toUpperCase().trim(), 
+					fields[8].trim(), fields[9].trim(), fields[10].trim());*/
+
                 });
   }
 }
