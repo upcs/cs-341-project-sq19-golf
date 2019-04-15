@@ -1,62 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`CourseInput Should handle a TAB key press correctly 1`] = `
-<div
-  className="classSelect"
->
-  <InputPredict
-    dictionary={null}
-    name="subject"
-    onKeyDown={[Function]}
-    onKeyUp={[Function]}
-    onValueChange={[Function]}
-    placeholder="Course Subject"
-    type="text"
-  />
-  <InputPredict
-    dictionary={null}
-    name="number"
-    onKeyDown={[Function]}
-    onKeyUp={[Function]}
-    onValueChange={[Function]}
-    pattern="[0-9]*"
-    placeholder="Course Number"
-    type="text"
-  />
-</div>
-`;
-
-exports[`CourseInput Should handle an arbitrary key press correctly 1`] = `
-<div
-  className="classSelect"
->
-  <InputPredict
-    dictionary={null}
-    name="subject"
-    onKeyDown={[Function]}
-    onKeyUp={[Function]}
-    onValueChange={[Function]}
-    placeholder="Course Subject"
-    type="text"
-  />
-  <InputPredict
-    dictionary={null}
-    name="number"
-    onKeyDown={[Function]}
-    onKeyUp={[Function]}
-    onValueChange={[Function]}
-    pattern="[0-9]*"
-    placeholder="Course Number"
-    type="text"
-  />
-</div>
-`;
-
 exports[`CourseInput Should render correctly 1`] = `
 <div
   className="classSelect"
 >
   <InputPredict
+    autocomplete="off"
     dictionary={null}
     name="subject"
     onKeyDown={[Function]}
@@ -66,6 +15,7 @@ exports[`CourseInput Should render correctly 1`] = `
     type="text"
   />
   <InputPredict
+    autocomplete="off"
     dictionary={null}
     name="number"
     onKeyDown={[Function]}
@@ -189,6 +139,7 @@ exports[`TermInput Should render correctly 1`] = `
   Select your courses for
   <input
     defaultValue="Fall 2019"
+    disabled={true}
     id="termSelect"
     type="text"
   />
@@ -239,6 +190,7 @@ exports[`TopNavigation Should render correctly 1`] = `
       trigger={
         <button
           className="navEl"
+          id="modal-1"
         >
            Help 
         </button>
@@ -301,6 +253,7 @@ exports[`TopNavigation Should render correctly 1`] = `
       trigger={
         <button
           className="navEl"
+          id="modal-2"
         >
            About 
         </button>

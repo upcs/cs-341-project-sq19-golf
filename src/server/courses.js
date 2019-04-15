@@ -97,12 +97,14 @@ function maskDay(course, mask){
 	if (endHour > 15) {rightIndex += 12*8;}
 
 	//console.log(course.number.toString() + " " +  leftIndex.toString() + " " + rightIndex.toString())
-	var filledMask = fillMask(mask, leftIndex, rightIndex);
+
+	let filledMask = fillMask(mask, leftIndex, rightIndex);
 	return filledMask
 }
 
 function fillMask(mask, start, end){
-	var aux = String(mask).split('');
+
+	let aux = mask.split('');
 	for (var i = start; i <= end; i++){
 		// <= end requires 5 minutes between classes
 		// < end allows overlap (end at 2:15, start next at 2:15)

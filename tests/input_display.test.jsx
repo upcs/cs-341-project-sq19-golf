@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallow, render, setState } from 'enzyme';
+import { shallow, render, setState, mount, find } from 'enzyme';
 import {store} from '../src/client/js/redux';
 import {TopNavigation, InputContainer, CourseInput, TermInput} from '../src/client/js/input_display.jsx';
 
@@ -7,9 +7,21 @@ describe('TopNavigation', () => {
   test('Should render correctly', () => {
     const topNav = shallow(<TopNavigation/>);
     expect(topNav).toMatchSnapshot();
+  });
 
-    //topNav.instance().aboutClick('e');
-	  //expect(topNav.instance().state.aboutClick).toEqual('e');
+  test('Should prevent the user from re-visiting the previous page if no history exists',  () => {
+    const topNav = shallow(<TopNavigation/>);
+    window.history = null;
+
+    expect(topNav.instance().backClick()).toBe(undefined);
+  });
+
+  test('Should react with modal popups', () => {
+    const topNav = mount(<TopNavigation/>);
+
+    //Test modal clicks
+    topNav.find('#modal-1').simulate('click');
+    topNav.find('#modal-2').simulate('click');
   });
 });
 
@@ -32,7 +44,28 @@ describe('InputContainer', () => {
     inputContainer.instance().handleCourseInputChange(courseData.inputID, courseData.courseID, courseData.subject);
     expect(inputContainer.instance().state.desiredCourses).toEqual([{'courseID': 341, 'subject': 'CS'}]);
 
-    //Handle submission
+    //Handle submission with no desired courses
+    window.alert = () => {};
+    inputContainer.instance().setState({ desiredCourses: [] })
+    inputContainer.instance().handleSubmit(event);
+    expect(inputContainer.instance().props.handleSubmit).toBe();
+  });
+
+  test('Should handle submit with valid courses', () => {
+    const inputContainer = shallow(<InputContainer/>);
+    const event = Object.assign(jest.fn(), { preventDefault: () => {}});
+
+    inputContainer.instance().setState({
+      allCourses: {
+        numberMap: { all: [ 'a' ] },
+        subjectMap: { a: [ '1' ] }
+      },
+      desiredCourses: [{
+        subject: 'a',
+        courseID: 1
+      }]
+    });
+
     inputContainer.instance().handleSubmit(event);
     expect(inputContainer.instance().props.handleSubmit).toBe();
   });
@@ -47,22 +80,51 @@ describe('CourseInput', () => {
     expect(courseInput).toMatchSnapshot();
   });
 
+  test('Should properly create references', () => {
+    const courseInput = shallow(<CourseInput courses={courses}/>);
+
+    courseInput.instance().createRef(0);
+    expect(courseInput.instance().props.createRef).toEqual(undefined); //TODO: Fix
+  });
+
+  test('Should properly handle already existing references', () => {
+    let references = ['a'];
+    const courseInput = shallow(<CourseInput courses={courses} references={references}/>);
+
+    courseInput.instance().createRef(0);
+    expect(courseInput.instance().props.createRef).toEqual(undefined); //TODO: Fix
+  });
+
   test('Should handle a TAB key press correctly', () => {
     const courseInput = shallow(<CourseInput courses={courses} references={{}} lastKey={key}/>);
-    expect(courseInput).toMatchSnapshot();
 
-    courseInput.instance()._handleKeyUp({key: "Enter"}, 0);
-     //expect(courseInput.instance().props.lastKey['key']).toEqual("Enter"); //TODO: Fix
+    courseInput.instance()._handleKeyDown({key: "Tab"}, 0);
+    expect(courseInput.instance().props.lastKey['key']).toEqual(null); //TODO: Fix
+  });
+
+  test('Should handle a SHIFT key press correctly', () => {
+    const courseInput = shallow(<CourseInput courses={courses} references={{}} lastKey={key}/>);
+
+    courseInput.instance()._handleKeyDown({key: "Shift"}, 0);
+    expect(courseInput.instance().props.lastKey['key']).toEqual(null); //TODO: Fix
   });
 
   test('Should handle an arbitrary key press correctly', () => {
     const courseInput = shallow(<CourseInput courses={courses} lastKey={key}/>);
-    expect(courseInput).toMatchSnapshot();
 
     courseInput.instance()._handleKeyUp({key: "Enter"}, 0);
-     //expect(courseInput.instance().props.lastKey['key']).toEqual("Enter"); //TODO: Fix
+    expect(courseInput.instance().props.lastKey['key']).toEqual(null); //TODO: Fix
   });
 
+  test('Should write input to parent\'s state', () => {
+    const courseInput = shallow(<CourseInput courses={courses} onChange={() => {}}/>);
+
+    courseInput.instance().handleInput('test', false, 'subject');
+    expect(courseInput.instance().state.input.subject).toEqual('TEST');
+
+    courseInput.instance().handleInput('test', true, 'subject');
+    expect(courseInput.instance().state.input.subject).toEqual('TEST');
+  });
 });
 
 describe('TermInput', () => {

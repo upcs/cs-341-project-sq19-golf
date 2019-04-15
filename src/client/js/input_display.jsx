@@ -15,6 +15,7 @@ export class TopNavigation extends Component {
 		super(props);
 	};
 
+  //Moves the user back to the previous page
   backClick() {
     window.history.back();
   }
@@ -24,7 +25,7 @@ export class TopNavigation extends Component {
       <section className="topNav">
         <div id="leftNav"><a>UP Scheduler</a></div>
         <div id='rightNav'>
-          <Popup trigger={<button className="navEl"> Help </button>} modal closeOnDocumentClick>
+          <Popup trigger={<button id="modal-1" className="navEl"> Help </button>} modal closeOnDocumentClick>
             <div>
               <div className="header">Help<hr/></div>
               <span><ul align="left">
@@ -38,7 +39,7 @@ export class TopNavigation extends Component {
               </span>
             </div>
           </Popup>
-          <Popup trigger={<button className="navEl"> About </button>} modal closeOnDocumentClick>
+          <Popup trigger={<button id="modal-2" className="navEl"> About </button>} modal closeOnDocumentClick>
             <div>
               <div className="header">About<hr/></div>
               <ul align="left">UPSchedule is a convenient schedule planner created by students, for students.</ul>
@@ -55,12 +56,12 @@ export class InputContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      totalInputs: 5,
-      allCourses: {
+      totalInputs: 5, //Default number of inputs
+      allCourses: { //Describes courses corresponding to a given subject/courseID
         subjectMap: {},
         numberMap: {},
       },
-      desiredCourses: []
+      desiredCourses: [] //Records user requested courses
     }
 
     this.handleCourseInputChange = this.handleCourseInputChange.bind(this);
@@ -71,9 +72,11 @@ export class InputContainer extends Component {
     this.retrieveAllCourses();
   }
 
+  //Handles desiredCourses state update on input
   handleCourseInputChange(inputID, courseID, subject) {
     let desiredCourses = this.state.desiredCourses;
     desiredCourses[inputID] = {'subject': subject.toUpperCase(), 'courseID': courseID};
+
     this.setState({ 'desiredCourses': desiredCourses });
     this.modifyNecessaryInputs();
   }
@@ -100,6 +103,7 @@ export class InputContainer extends Component {
     }
   }
 
+  //Retrieves all courses on initial load, used for subjMap/numMap
   async retrieveAllCourses() {
     await fetch('/api/allCoursesRequest', {
       method: 'POST',
@@ -110,34 +114,54 @@ export class InputContainer extends Component {
       }
     }).then(res => res.json()
     ).then(resJSON => {
-      console.log(resJSON);
-
       this.setState({'allCourses': {'subjectMap': resJSON.subjMap, 'numberMap': resJSON.numMap} });
     }).catch((error) => {
-      //console.log(error);
+      //console.log(error); //Warnings are currently surpressed, as they can be excessive
     });
   }
 
+  //Handles request of user-generated viable schedules
   async handleSubmit(event) {
-    let desiredCourses = this.state.desiredCourses.filter(course => course.subject && course.courseID); //Remove undefined entries
-    await fetch('/api/scheduleRequest', {
-      method: 'POST',
-      body: JSON.stringify(desiredCourses),
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
-      }
-    }).then(res => res.json()
-    ).then(resJSON => {
-      store.dispatch({ type: "CLEAR_SCHEDULES" }); //Hack to fix React's dumbass key-based rendering
-      console.log(resJSON);
-      store.dispatch(modifySchedules(resJSON));
-    }).catch((error) => {
-      //console.log(error);
+    //Remove undefined entries
+    let invalidCourse = false;
+    let desiredCourses = this.state.desiredCourses.filter(course => {
+      let courses = this.state.allCourses;
+      let validSubj = courses.numberMap.all.includes(course.subject);
+      let validCourseID = courses.subjectMap[course.subject] && courses.subjectMap[course.subject].includes(course.courseID.toString());
+
+      if (validSubj && validCourseID) return course;
+      else invalidCourse = true; //Record invalid entries
     });
-}
+
+    //If no valid courses exist, inform the user
+    if (desiredCourses.length === 0 ) {
+      alert("Please enter at least one valid course");
+      event.preventDefault();
+    }
+    else {
+      //Notidy user of invalid course
+      if (invalidCourse) alert("Invalid courses(s) detected. Schedule generation will proceed without such inputs");
+
+      //Grab relevant data from the backend DB
+      await fetch('/api/scheduleRequest', {
+        method: 'POST',
+        body: JSON.stringify(desiredCourses),
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        }
+      }).then(res => res.json()
+      ).then(resJSON => {
+        store.dispatch({ type: "CLEAR_SCHEDULES" }); //Hack to fix React's key-based rendering
+        store.dispatch(modifySchedules(resJSON));
+      }).catch((error) => {
+        //console.log(error); //Warnings are currently surpressed, as they can be excessive
+      });
+    }
+  }
 
   render() {
+    //Render all necessary inputs
     let courseList = [], references = {};
     for (let i = 0, idx = 0; i < this.state.totalInputs; i++, idx += 2) {
       let course = <CourseInput key={"course-" + i} id={i} idx={idx} value={this.state["course-" + i]}
@@ -175,7 +199,7 @@ export class TermInput extends Component {
   render() {
     return (
       <div id="greetingText">Select your courses for
-        <input id="termSelect" type="text" defaultValue="Fall 2019"/>
+        <input disabled id="termSelect" type="text" defaultValue="Fall 2019"/>
       </div>
     );
   }
@@ -185,16 +209,18 @@ export class TermInput extends Component {
 export class CourseInput extends Component {
   constructor(props) {
     super(props);
-    this.state ={
-      input: {
+    this.state = {
+      input: { //Records current user input
         subject: null,
         number: null
-      }
+      },
+      color: '#d3d3d3' //Used to hack match suggestion to be "lazy"
     }
 
     this.handleInput = this.handleInput.bind(this);
   }
 
+  //Create a reference on rendering for future DOM-based modificaitons
   createRef(id) {
     if (this.props.references && !this.props.references.hasOwnProperty(id)) {
       return this.props.references[id] = React.createRef();
@@ -204,7 +230,7 @@ export class CourseInput extends Component {
     }
   }
 
-  //Focuses next input box
+  //Focuses the next input box (necessary as InputPredict breaks this feature)
   _handleKeyDown(e, idx) {
     let lastKey = store.getState().lastKey;
 
@@ -224,17 +250,21 @@ export class CourseInput extends Component {
     if (e.key === "Shift") store.dispatch(modifyLastKey(e.key));
   }
 
+  //A helper method for _handleKeyDown to allow for shift to be held
   _handleKeyUp(e) {
     if (e.key === "Shift") store.dispatch(modifyLastKey(null));
   }
 
-  handleInput(value, context) {
+  //Records user input and writes to parent's state
+  handleInput(value, match, context) {
     let input = this.state.input;
     if (context == 'subject') {
+      if (match) this.setState({ color: 'transparent' });
+
       input[context] = value.toString().toUpperCase();
     }
     else input[context] = value.toString();
-    this.setState({ input });
+    this.setState({ input: input });
 
     //Send input back up to parent component
     this.props.onChange(this.props.id, input.number, input.subject)
@@ -244,6 +274,7 @@ export class CourseInput extends Component {
     let input = this.state.input;
     let courses = this.props.courses;
 
+    //Treat all possible autocompletions
     let numbers = (courses.subjectMap[input.subject]) ? courses.subjectMap[input.subject] : courses.subjectMap.all;
     let subjects = (courses.numberMap[input.number]) ? courses.numberMap[input.number] : courses.numberMap.all;
 
@@ -251,22 +282,24 @@ export class CourseInput extends Component {
       <div className="classSelect">
         <InputPredict
           type="text"
+          autocomplete="off"
           name="subject"
           placeholder="Course Subject"
           dictionary={subjects}
           ref={this.createRef(this.props.idx)}
           onKeyDown={(e) => this._handleKeyDown(e, this.props.idx)}
-          onValueChange={((value) => this.handleInput(value, 'subject'))}
+          onValueChange={((value, match) => this.handleInput(value, match, 'subject'))}
           onKeyUp={(e) => this._handleKeyUp(e)}
         />
         <InputPredict
           type="text"
+          autocomplete="off"
           name="number"
           pattern="[0-9]*"
           placeholder="Course Number"
           dictionary={numbers}
           ref={this.createRef(this.props.idx + 1)}
-          onValueChange={((value) => this.handleInput(value, 'number'))}
+          onValueChange={((value, match) => this.handleInput(value, match, 'number'))}
           onKeyDown={(e) => this._handleKeyDown(e, this.props.idx + 1)}
           onKeyUp={(e) => this._handleKeyUp(e)}
         />

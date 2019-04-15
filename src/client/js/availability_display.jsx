@@ -12,7 +12,8 @@ export class AvailabilityContainer extends Component {
 		this.state = {
       showMenu: this.props.showMenu || false,
 			dropdownMenu: this.props.dropdownMenu || null,
-	  	selected: -1
+	  	selected: -1,
+			blacklistArray: [],
 		};
 
 	  this.showMenu = this.showMenu.bind(this);
@@ -36,6 +37,16 @@ export class AvailabilityContainer extends Component {
 
 		}
   }
+
+	addProf(profBL) {
+		//Note to self: offset by one, element #zero is empty
+		//and element #one is filled with first user input of blacklisted professor
+			var update = this.state.blacklistArray.slice();
+			update.push(profBL);
+			this.setState({blacklistArray: update})
+			//alert("Blacklist: " + this.state.blacklistArray.join(", "));
+	}
+
 
 	/*handleSubmit(event) {
 			event.preventDefault();
@@ -74,43 +85,43 @@ export class AvailabilityContainer extends Component {
 
 			columns.push(col);
 		}
-
+//alert("Row index: " +rowInfo.index + ", column header:" + column.Header);
 		return (
 			<div id="main">
 				<SelectInput/>
 			 	<div id="tableCap"></div>
 			  <ReactTable
-				getTrProps={(state, rowInfo, column, instance) => {
-					if (typeof rowInfo !== "undefined") {
-						return {
-							onClick: (e, handleOriginal) => {
-								this.setState({
-								selected: rowInfo.index
-								});
-								if (handleOriginal) {
-								handleOriginal()
-								}
-							},
-							style: {
-								background: rowInfo.index === this.state.selected ? '#00afec' : 'white',
-								color: rowInfo.index === this.state.selected ? 'white' : 'black'
-							},
-						}
-					}
-					else {
-						return {
-							onClick: (e, handleOriginal) => {
-								if (handleOriginal) {
-								handleOriginal()
-								}
-							},
-							style: {
-								background: 'white',
-								color: 'black'
-							},
-						}
-					}
-				}}
+				getTdProps={(state, rowInfo, column, instance) => {
+									if (typeof rowInfo !== "undefined") {
+										return {
+											onClick: (e, handleOriginal) => {
+												this.setState({
+												selected: column.Header
+												});
+												if (handleOriginal) {
+												handleOriginal()
+												}
+											},
+											style: {
+												background: column.Header === this.state.selected ? '#730ac9' : 'white',
+												color: column.Header  === this.state.selected ? 'white' : 'black'
+											},
+										}
+									}
+									else {
+										return {
+											onClick: (e, handleOriginal) => {
+												if (handleOriginal) {
+												handleOriginal()
+												}
+											},
+											style: {
+												background: 'white',
+												color: 'black'
+											},
+										}
+									}
+								}}
 				data={data}
 				resolveData={data => data.map(row => row)}
 				columns={columns}
@@ -133,21 +144,13 @@ export class AvailabilityContainer extends Component {
 					<button onClick={this.showMenu}>
 					  Additional Options
 					</button>
-
 					{
 					  this.state.showMenu ? (
 						  <div className="menu" ref={(element) => { this.state.dropdownMenu = element }}>
-								<span id="credit">
-									<div className="inputHeader">Max Credit Amount</div>
-									<input type="number" placeholder="Enter Max Credit Value" onChange={this.props.handleChange} data-populated="false"/>
-									<button id="creditButton" form="main" type="creditSave">
-										Save
-									</button>
-								</span>
 								<span id="blacklist">
 									<div className="inputHeader">Professor Blacklist</div>
 									<input id="profBlacklist" type="text" placeholder="Enter Professor Name"/>
-									<button id="profButton" form="main" type="profSave">
+									<button onClick={() => this.addProf(document.getElementById("profBlacklist").value)} id="profButton" form="main" type="profSave">
 										Save
 									</button>
 								</span>
@@ -156,15 +159,16 @@ export class AvailabilityContainer extends Component {
 					}
 				</div>
 			</div>
+
 		);
   }
 }
-
 //Time Select Input
 export class SelectInput extends Component {
   render() {
     return (
       <div id="greetingText">Select your unavailability over a typical school week.</div>
+
     );
   }
 };
