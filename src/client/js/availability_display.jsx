@@ -80,7 +80,23 @@ export class AvailabilityContainer extends Component {
 			let col = {
 				Header: accessor.charAt(0).toUpperCase() + accessor.slice(1),
 				accessor: accessor,
+				//Cell: v => console.log(v.value),
+				getProps: (state, rowInfo, column) => {
+						console.log(rowInfo);
+						console.log(column);
+
+						return {
+							onClick: (e, handleOriginal) => {
+								editCellStyle: {
+									background: '#730ac9'
+
+								}
+							},
+						}
+				}
+
 			}
+
 
 			columns.push(col);
 		}
@@ -90,42 +106,43 @@ export class AvailabilityContainer extends Component {
 				<SelectInput/>
 			 	<div id="tableCap"></div>
 			  <ReactTable
-				getTdProps={(state, rowInfo, columns, instance) => {
-									if (typeof rowInfo !== "undefined") {
-										return {
-											onClick: (e, handleOriginal) => {
-												this.setState({
-												selected: rowInfo.row.accessor
-												});
-												if (handleOriginal) {
-												handleOriginal()
-												}
-											},
-											//Possible roundabout styling is to set the row to the selected color,
-											//yet change the column.Header not selected to the standard.
-											//Use codeSandBox to answer this issue with single Cell selection.
-											//Then relay that to storing the selected cells Times of Days into an array
-											//Then store as Json object and send to server.
-											style: {
-												background: rowInfo.row.accessor === this.state.selected ? '#730ac9' : 'white',
-												color: rowInfo.row.accessor  === this.state.selected ? 'white' : 'black'
-											},
-										}
-									}
-									else {
-										return {
-											onClick: (e, handleOriginal) => {
-												if (handleOriginal) {
-												handleOriginal()
-												}
-											},
-											style: {
-												background: 'white',
-												color: 'black'
-											},
-										}
-									}
-								}}
+				// getTdProps={(state, rowInfo, columns, instance) => {
+				// 					//Additional
+				//
+				// 					//original
+				// 					if (typeof rowInfo !== "undefined") {
+				// 						return {
+				// 							onClick: (e, handleOriginal) => {
+				// 								this.setState({
+				//
+				// 								selected: rowInfo.index[columns.id] = 1
+				// 							});
+				// 							console.log(rowInfo);
+				// 							console.log(columns);
+				// 								if (handleOriginal) {
+				// 								handleOriginal()
+				// 								}
+				// 							},
+				// 							style: {
+				// 								background: 1 === this.state.selected ? '#730ac9' : 'white',
+				// 								color: 1  === this.state.selected ? 'white' : 'black'
+				// 							},
+				// 						}
+				// 					}
+				// 					else {
+				// 						return {
+				// 							onClick: (e, handleOriginal) => {
+				// 								if (handleOriginal) {
+				// 								handleOriginal()
+				// 								}
+				// 							},
+				// 							style: {
+				// 								background: 'white',
+				// 								color: 'black'
+				// 							},
+				// 						}
+				// 					}
+				// 				}}
 				data={data}
 				resolveData={data => data.map(row => row)}
 				columns={columns}
