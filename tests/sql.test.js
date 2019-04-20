@@ -33,6 +33,14 @@ describe('Classes model', () => {
   test('Should fail to update course data asynchronously with fake file', () => {
     expect(updateAllCourseDataAsync('fake_file.txt')).toBe(false)
   });
+  
+  test('Should be successful updating from file', () => {
+    expect(updateAllCourseData('./../web_scraper/course_dump.csv')).toBe(false)
+  });
+
+   test('Should be successful updating asyncrhonously from file', () => {
+    expect(updateAllCourseDataAsync('./../web_scraper/course_dump.csv')).toBe(false)
+  });
 
   test('Should fail to get course data with mocked input', () => {
     getAllCourseData(true);
@@ -40,5 +48,9 @@ describe('Classes model', () => {
 
   test('Should fail to get selected course data with null input', () => {
     getSelectedCourseData(null, null);
+  });
+  test('Should not return anything without connecting to the db', () => {
+	  console.log(getSelectedCourseData("001", "AS")[0]);
+    expect(getSelectedCourseData("001", "AS").title).toEqual(undefined);
   });
 });

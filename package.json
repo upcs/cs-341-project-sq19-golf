@@ -60,6 +60,7 @@
     "node-fetch": "^2.3.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
+    "react-dropdown": "^1.6.4",
     "react-fade-in": "^0.1.6",
     "react-inline-predict": "^2.0.1",
     "react-native": "^0.59.4",

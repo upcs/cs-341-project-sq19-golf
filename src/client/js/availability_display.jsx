@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom';
 import ReactTable from "react-table";
 import 'react-table/react-table.css'
 import '../css/styles.css';
-
+import Dropdown from 'react-dropdown';
 //Availability Table
 export class AvailabilityContainer extends Component {
 	constructor(props) {
@@ -81,20 +81,58 @@ export class AvailabilityContainer extends Component {
 			let col = {
 				Header: accessor.charAt(0).toUpperCase() + accessor.slice(1),
 				accessor: accessor,
-			}
-
+				Cell: () => {
+					<div
+					<Dropdown options={[8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21]}
+						onChange={this._onSelect}
+						value={8}
+						placeholder="Select hour" 
+					/>
+					<Dropdown options={[5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55]}
+						onChange={this._onSelect}
+						value={8}
+						placeholder="Select minute" 
+					/>
+					</div>
+				}
+				/* getProps: (state, rowInfo, column) => {
+                return {
+											onClick: (e, handleOriginal) => {
+												console.log(state);
+												console.log(column);
+												this.setState({
+												selected: true//column.Header
+												});
+												if (handleOriginal) {
+												handleOriginal()
+												}
+											},
+											style: {
+												background: column.Header === this.state.selected ? '#730ac9' : 'white',
+												color: column.Header  === this.state.selected ? 'white' : 'black'
+											}
+						};
+                }, */
+				
+            }
 			columns.push(col);
+ 
 		}
+
+			
+		
 //alert("Row index: " +rowInfo.index + ", column header:" + column.Header);
 		return (
 			<div id="main">
 				<SelectInput/>
 			 	<div id="tableCap"></div>
-			  <ReactTable
+ 			  <ReactTable
 				getTdProps={(state, rowInfo, column, instance) => {
 									if (typeof rowInfo !== "undefined") {
 										return {
 											onClick: (e, handleOriginal) => {
+												console.log(rowInfo);
+												console.log(column);
 												this.setState({
 												selected: column.Header
 												});
@@ -128,8 +166,9 @@ export class AvailabilityContainer extends Component {
 				showPagination={false}
 				minRows={0}
 				sortable={false}
-				resizable={false}
+				resizable={false} 
 			  />
+			  
 				<div className="bottom" id="option-container">
 					<Link to="/">
 						<button id="save" type="button">
