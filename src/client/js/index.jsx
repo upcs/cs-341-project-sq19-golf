@@ -8,6 +8,7 @@ import {TopNavigation, InputContainer} from './input_display';
 import {AvailabilityContainer} from './availability_display';
 import {SchedulesContainer} from './schedule_display';
 
+//Allows fade transitions
 const FadeInRoute = ({ component: Component, ...rest }) => (
   <Route {...rest} render={(props) => (
     <FadeIn>
@@ -16,6 +17,7 @@ const FadeInRoute = ({ component: Component, ...rest }) => (
   )}/>
 );
 
+//Allows navigation to other pages
 const PageContainer = (
   <div id="pageContainer">
     <TopNavigation/>
@@ -25,6 +27,7 @@ const PageContainer = (
   </div>
 );
 
+//Stores what is inputted into input page
 const InputPage = (
   <Provider store={store}>
     <HashRouter>
