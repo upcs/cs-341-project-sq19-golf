@@ -169,7 +169,7 @@ export class InputContainer extends Component {
       courseList.push(course);
     }
 
-    return (
+    return ('dummy','dummy',
       <div>
         <form id="main">
           <TermInput/>

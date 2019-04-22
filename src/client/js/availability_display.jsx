@@ -4,6 +4,9 @@ import ReactTable from "react-table";
 import 'react-table/react-table.css'
 import '../css/styles.css';
 import Dropdown from 'react-dropdown';
+import ReactDataGrid from 'react-data-grid';
+import {Course} from '../../server/courses';
+
 //Availability Table
 export class AvailabilityContainer extends Component {
 	constructor(props) {
@@ -14,6 +17,16 @@ export class AvailabilityContainer extends Component {
 			dropdownMenu: this.props.dropdownMenu || null,
 	  	selected: -1,
 			blacklistArray: [],
+		
+		//props for availability constraints
+		selectedDay: null,
+		selectedStartHour: null,
+		selectedStartMin: null,
+		selectedEndHour: null,
+		selectedEndMin: null,
+		constraints: [],
+		numConstraints: 0,
+		delConstraintID: null,
 		};
 
 	  this.showMenu = this.showMenu.bind(this);
@@ -37,6 +50,23 @@ export class AvailabilityContainer extends Component {
 
 		}
   }
+  
+  parseDay(day){
+	  switch (day){ //days
+			case "Monday":
+				return "M";
+			case "Tuesday":
+				return "T";
+			case "Wednesday":
+				return "W";
+			case "Thursday":
+				return "R";
+			case "Friday":
+				return "F";
+		}
+										
+	}
+  
 
 	addProf(profBL) {
 		//Note to self: offset by one, element #zero is empty
@@ -59,133 +89,174 @@ export class AvailabilityContainer extends Component {
   }*/
 
 	render() {
-		let data = [];
-		for(let time = 8; time <= 22; time++) {
-			let row = {
-				times: time + ":00",
-				monday: null,
-				tuesday: null,
-				wednesday: null,
-				thursday: null,
-				friday: null,
-				saturday: null,
-				sunday: null
-			}
-
-			data.push(row);
-		}
-
-		let columns = [], colAccessors = ['times', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'];
-		for (let i = 0; i < colAccessors.length; i++) {
-			let accessor = colAccessors[i];
-			let col = {
-				Header: accessor.charAt(0).toUpperCase() + accessor.slice(1),
-				accessor: accessor,
-				Cell: () => {
-					<div
-					<Dropdown options={[8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21]}
-						onChange={this._onSelect}
-						value={8}
-						placeholder="Select hour" 
-					/>
-					<Dropdown options={[5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55]}
-						onChange={this._onSelect}
-						value={8}
-						placeholder="Select minute" 
-					/>
-					</div>
-				}
-				/* getProps: (state, rowInfo, column) => {
-                return {
-											onClick: (e, handleOriginal) => {
-												console.log(state);
-												console.log(column);
-												this.setState({
-												selected: true//column.Header
-												});
-												if (handleOriginal) {
-												handleOriginal()
-												}
-											},
-											style: {
-												background: column.Header === this.state.selected ? '#730ac9' : 'white',
-												color: column.Header  === this.state.selected ? 'white' : 'black'
-											}
-						};
-                }, */
-				
-            }
-			columns.push(col);
- 
-		}
-
-			
 		
-//alert("Row index: " +rowInfo.index + ", column header:" + column.Header);
-		return (
-			<div id="main">
-				<SelectInput/>
-			 	<div id="tableCap"></div>
- 			  <ReactTable
-				getTdProps={(state, rowInfo, column, instance) => {
-									if (typeof rowInfo !== "undefined") {
-										return {
-											onClick: (e, handleOriginal) => {
-												console.log(rowInfo);
-												console.log(column);
-												this.setState({
-												selected: column.Header
-												});
-												if (handleOriginal) {
-												handleOriginal()
-												}
-											},
-											style: {
-												background: column.Header === this.state.selected ? '#730ac9' : 'white',
-												color: column.Header  === this.state.selected ? 'white' : 'black'
-											},
-										}
+
+	
+ 
+		
+
+	let optionsDays = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
+	let optionsHrs = [8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21];
+    let optionsMins = [0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55];
+	
+	let columns = [ {key: 'number', name:'ID'},
+					{key: 'Day', name:'Day'},
+					{key: 'StartHour', name:'Start Hour'},
+					{key: 'StartMin', name:'Start Minute'},
+					{key: 'EndHour', name:'End Hour'},
+					{key: 'EndMin', name:'End Minute'}];
+	
+	return (
+		<div>
+			<React.Fragment>
+				<td>
+					<Dropdown 
+						
+						options={optionsDays}
+						onChange={(e) => {
+							this._onSelect;
+							this.setState({selectedDay: (e.value)});
+							
+						}}
+						onClick={(e)=>{console.log(e);}}
+						//value={8}
+						placeholder='Select day' 
+					>
+					</Dropdown>
+				</td>
+				<td>
+					
+					<Dropdown 
+						
+						options={optionsHrs}
+						onChange={(e) => {
+							this._onSelect;
+							this.setState({selectedStartHour: (e.value)});
+							//this._onSelect;
+						}}
+						
+						placeholder='Select start hour' 
+					>
+					</Dropdown>
+				</td>
+				<td>
+					<Dropdown options={optionsMins}
+						
+						onChange={(e) => {
+							this._onSelect;
+							this.setState({selectedStartMin: (e.value)});
+							
+						}}
+						
+						placeholder='Select start minute'
+					>
+					</Dropdown>
+					
+				</td>
+				<td>
+					
+					<Dropdown 
+						
+						options={optionsHrs}
+						onChange={(e) => {
+							this._onSelect;
+							this.setState({selectedEndHour: (e.value)});
+							//this._onSelect;
+						}}
+						
+						placeholder='Select end hour' 
+					>
+					</Dropdown>
+				</td>
+				<td>
+					<Dropdown options={optionsMins}
+						
+						onChange={(e) => {
+							this._onSelect;
+							this.setState({selectedEndMin: (e.value)});
+							
+						}}
+						
+						placeholder='Select end minute'
+					>
+					</Dropdown>
+					
+				</td>
+				<td>
+					<button onClick={()=>{
+										this.state.constraints.push(
+											{	number: this.state.numConstraints, //keep count to be able to remove
+												Day: this.state.selectedDay,
+												StartHour: this.state.selectedStartHour,
+												StartMin: this.state.selectedStartMin,
+												EndHour: this.state.selectedEndHour,
+												EndMin: this.state.selectedEndMin
+											}
+										);
+										this.setState({numConstraints: this.state.numConstraints + 1});
+										console.log(this.state.constraints);
+										}	
+										
 									}
-									else {
-										return {
-											onClick: (e, handleOriginal) => {
-												if (handleOriginal) {
-												handleOriginal()
-												}
-											},
-											style: {
-												background: 'white',
-												color: 'black'
-											},
-										}
-									}
-								}}
-				data={data}
-				resolveData={data => data.map(row => row)}
-				columns={columns}
-				showPagination={false}
-				minRows={0}
-				sortable={false}
-				resizable={false} 
-			  />
-			  
-				<div className="bottom" id="option-container">
-					<Link to="/">
-						<button id="save" type="button">
-							Save
-						</button>
-					</Link>
-					<Link to="/availability" refresh="true">
-						<button type="reset">
-							Reset
-						</button>
-					</Link>
+					>Add</button>
+				</td>
+				
+			</React.Fragment>
+			<div>
+				<ReactDataGrid columns={columns} //columns defined before return statement: 
+								rowGetter={i => this.state.constraints[i]} //iterate through constraints elements
+								rowsCount = {this.state.constraints.length}
+				/>
+			</div>
+			<div>
+				<td>
+					<input type="number" value={this.state.delConstraintID} onChange={(e) => {
+						if (this.state.constraints.length > e.target.value && e.target.value >= 0){
+							this.setState({delConstraintID : e.target.value});
+						}
+					}}/>
+				</td>
+				<td>
+					<button onClick={()=>{
+						this.setState({
+							constraints: this.state.constraints.filter((x) => {
+											return this.state.delConstraintID != x.number;
+										})
+						});
+						this.setState({numConstraints: this.state.numConstraints - 1});
+					}}>Remove Constraint</button>
+				</td>
+			</div>
+			<div className="bottom" id="option-container">
+				<Link to="/">
+					<button id="save" type="button" onClick=
+						{()=>
+							{	//GENERATE DUMMY COURSES FORM CONSTRAINTS
+								//TODO: SEND ARRAY OF DUMMY COURSES TO SCHEDULING PAGE AND TREAT AS REGULAR COURSE
+									for(var i = 0; i < this.state.constraints.length; i++){
+									let course = new Course('DUMMY','DUMMY','DUMMY','DUMMY','DUMMY', //subject, number, section, title, crn
+									String(this.state.constraints[i].StartHour + ':' + this.state.constraints[i].StartMin + " am"), //start
+									String(this.state.constraints[i].EndHour + ':' + this.state.constraints[i].EndMin + " am"),  //end
+									this.parseDay(this.state.constraints[i].Day), 'DUMMY', 'DUMMY', 'DUMMY') //professor, location, credits
+									
+									console.log(course);
+								}
+							}
+						}
+					>Save
+					</button>
+				</Link>
+				<Link to="/availability" refresh="true">
+					<button type="reset">
+						Reset
+					</button>
+				</Link>
 					<button onClick={this.showMenu}>
-					  Additional Options
+						Additional Options
 					</button>
 					{
 					  this.state.showMenu ? (
-						  <div className="menu" ref={(element) => { this.state.dropdownMenu = element }}>
+							<div className="menu" ref={(element) => { this.state.dropdownMenu = element }}>
 								<span id="blacklist">
 									<div className="inputHeader">Professor Blacklist</div>
 									<input id="profBlacklist" type="text" placeholder="Enter Professor Name"/>
@@ -193,13 +264,14 @@ export class AvailabilityContainer extends Component {
 										Save
 									</button>
 								</span>
-					  	</div>
+							</div>
 						) : (null)
 					}
-				</div>
 			</div>
+		</div>
+			
 
-		);
+	);
   }
 }
 //Time Select Input

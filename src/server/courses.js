@@ -1,4 +1,4 @@
-const Fs = require('fs')
+//const Fs = require('fs')
 //Course Abstraction
 class Course {
   constructor(sub, number, section, title, crn, start, end, d, prof, location, credits){
@@ -114,6 +114,7 @@ function fillMask(mask, start, end){
 }
 
 module.exports = {
+	Course,
   parseCourseData: (filePath) => {
     //Extract file data
     let data = Fs.readFileSync(filePath, "utf-8");
