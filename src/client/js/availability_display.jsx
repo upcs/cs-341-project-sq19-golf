@@ -19,6 +19,7 @@ export class AvailabilityContainer extends Component {
 			dropdownMenu: this.props.dropdownMenu || null,
 	  	selected: -1,
 			blacklistArray: [],
+			blacklistInput: "",
 		
 		//props for availability constraints
 		selectedDay: null,
@@ -29,6 +30,9 @@ export class AvailabilityContainer extends Component {
 		constraints: [],
 		numConstraints: 0,
 		delConstraintID: null,
+		
+		//props for blacklist
+		
 		};
 
 	  this.showMenu = this.showMenu.bind(this);
@@ -70,14 +74,6 @@ export class AvailabilityContainer extends Component {
 	}
   
 
-	addProf(profBL) {
-		//Note to self: offset by one, element #zero is empty
-		//and element #one is filled with first user input of blacklisted professor
-			var update = this.state.blacklistArray.slice();
-			update.push(profBL);
-			this.setState({blacklistArray: update})
-			//alert("Blacklist: " + this.state.blacklistArray.join(", "));
-	}
 
 
 	/*handleSubmit(event) {
@@ -227,6 +223,7 @@ export class AvailabilityContainer extends Component {
 					}}>Remove Constraint</button>
 				</td>
 			</div>
+			
 			<div className="bottom" id="option-container">
 				<Link to="/">
 					<button id="save" type="button" onClick=
@@ -273,8 +270,11 @@ export class AvailabilityContainer extends Component {
 							<div className="menu" ref={(element) => { this.state.dropdownMenu = element }}>
 								<span id="blacklist">
 									<div className="inputHeader">Professor Blacklist</div>
-									<input id="profBlacklist" type="text" placeholder="Enter Professor Name"/>
-									<button onClick={() => this.addProf(document.getElementById("profBlacklist").value)} id="profButton" form="main" type="profSave">
+									<input id="profBlacklist" type="text" placeholder="Enter Professor Name" value={this.state.blacklistInput} 
+											onChange={(e) => {this.setState({blacklistInput: e.target.value});}
+													}
+									/>
+									<button onClick={() => this.state.blacklistArray.push(this.state.blacklistInput)} id="profButton" form="main" type="profSave">
 										Save
 									</button>
 								</span>
