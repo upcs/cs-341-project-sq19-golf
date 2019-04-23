@@ -29,6 +29,7 @@ describe('InputContainer', () => {
   test('Should render correctly', () => {
     const inputContainer = shallow(<InputContainer/>);
     expect(inputContainer).toMatchSnapshot();
+<<<<<<< HEAD
     const event = Object.assign(jest.fn(), { preventDefault: () => {}});
     let courseData = {'inputID': 0, 'courseID': 341, 'subject': 'CS'};
 
@@ -68,6 +69,13 @@ describe('InputContainer', () => {
 
     inputContainer.instance().handleSubmit(event);
     expect(inputContainer.instance().props.handleSubmit).toBe();
+=======
+  });
+
+  test('Handling course input change', () => {
+    const inputContainer = shallow(<InputContainer/>);
+    expect(inputContainer).toMatchSnapshot();
+>>>>>>> fd1078c7e06952df0855d36351553f112576b224
   });
 });
 
