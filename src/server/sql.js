@@ -1,5 +1,6 @@
 const Sequelize = require('sequelize');
 const Courses = require('./courses');
+const Fs = require('fs');
 
 //MySQL ORM Interface
 const Db = new Sequelize('REGISTRATION', 'root', 'Gatolocoe#4209', {
@@ -57,9 +58,26 @@ module.exports = {
   Db: Db,
   Classes: Classes,
 
+  parseCourseData: (filePath) => {
+    //Extract file data
+    let data = Fs.readFileSync(filePath, "utf-8");
+    var lines = data.split("\n");
+
+    //Parse file data
+    return lines.filter(line => line != '')
+                .map(line => {
+                     let fields = line.split(",");
+                     fields.forEach(el => el.trim())
+
+                     //AS,001,A,Air Force ROTC Physical Training,41466,6:30 am,7:30 am,M,John David Anthony  Gasa ,Chiles Center MEZ,1.000
+                     //Course constructor(sub, id, name, prof, start, end, d)
+                     return new Courses.Course(...fields);
+                });
+  },
+
   updateAllCourseData: (filePath) => {
     try {
-      let courses = Courses.parseCourseData(filePath);
+      let courses = module.exports.parseCourseData(filePath);
       Classes.sync({force: true}).then(() => {
         Classes.bulkCreate(courses);
       });
@@ -71,7 +89,7 @@ module.exports = {
 
   updateAllCourseDataAsync: (filePath, callback) => {
     try {
-      let courses = Courses.parseCourseData(filePath);
+      let courses = module.exports.parseCourseData(filePath);
       Classes.sync({force: true}).then(() => {
         Classes.bulkCreate(courses).then(callback);
       });

@@ -4,6 +4,8 @@ import { shallow, render } from 'enzyme';
 
 import {AvailabilityContainer, SelectInput} from '../src/client/js/availability_display.jsx';
 
+console.warn = jest.fn();
+
 describe('AvailabilityContainer', () => {
   test('Should render correctly with a menu', () => {
     const availabilityContainer = render(<HashRouter><AvailabilityContainer showMenu={true}/></HashRouter>);
@@ -34,6 +36,22 @@ describe('AvailabilityContainer', () => {
 
     //The component should have reverted to its original state
     expect(availabilityContainer).toMatchSnapshot();
+  });
+
+  test('Should all for days to be parsed', () => {
+    const availabilityContainer = shallow(<AvailabilityContainer/>);
+    let parseDay = availabilityContainer.instance().parseDay;
+
+    expect(parseDay("Monday")).toBe("M");
+    expect(parseDay("Tuesday")).toBe("T");
+    expect(parseDay("Wednesday")).toBe("W");
+    expect(parseDay("Thursday")).toBe("R");
+    expect(parseDay("Friday")).toBe("F");
+  });
+
+  test('Should handle changes', () => {
+    const availabilityContainer = shallow(<AvailabilityContainer/>);
+    expect(availabilityContainer.instance().handleChange({ value: 'a' })).toBe(undefined);
   });
 });
 

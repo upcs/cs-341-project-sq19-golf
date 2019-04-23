@@ -1,4 +1,3 @@
-const Fs = require('fs')
 //Course Abstraction
 class Course {
   constructor(sub, number, section, title, crn, start, end, d, prof, location, credits){
@@ -112,20 +111,5 @@ function fillMask(mask, start, end){
 }
 
 module.exports = {
-  parseCourseData: (filePath) => {
-    //Extract file data
-    let data = Fs.readFileSync(filePath, "utf-8");
-    var lines = data.split("\n");
-
-    //Parse file data
-    return lines.filter(line => line != '')
-                .map(line => {
-                     let fields = line.split(",");
-                     fields.forEach(el => el.trim())
-
-                	   //AS,001,A,Air Force ROTC Physical Training,41466,6:30 am,7:30 am,M,John David Anthony  Gasa ,Chiles Center MEZ,1.000
-                	 	 //Course constructor(sub, id, name, prof, start, end, d)
-                     return new Course(...fields);
-                });
-  }
+  Course
 }

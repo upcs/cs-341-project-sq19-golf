@@ -2,7 +2,7 @@ import React from 'react';
 import Path  from 'path';
 import { shallow } from 'enzyme';
 
-import Courses from '../src/server/courses.js';
+import {parseCourseData} from '../src/server/sql.js';
 const Fs = require('fs');
 
 describe('Courses', () => {
@@ -13,7 +13,7 @@ describe('Courses', () => {
         test3,number3,title3,professor3,start3,end3,days3*/
 
   let dataPath = Path.join('tests', 'courses_test.csv');
-  var testCourses = Courses.parseCourseData(dataPath);
+  var testCourses = parseCourseData(dataPath);
 
   //The parsing script calls toUpper() on the title and day fields
   expect(testCourses[0].subject).toBe("AS");
