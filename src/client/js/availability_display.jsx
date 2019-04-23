@@ -7,6 +7,8 @@ import Dropdown from 'react-dropdown';
 import ReactDataGrid from 'react-data-grid';
 import {Course} from '../../server/courses';
 
+var bigInt = require("big-integer");
+
 //Availability Table
 export class AvailabilityContainer extends Component {
 	constructor(props) {
@@ -118,8 +120,6 @@ export class AvailabilityContainer extends Component {
 							this.setState({selectedDay: (e.value)});
 							
 						}}
-						onClick={(e)=>{console.log(e);}}
-						//value={8}
 						placeholder='Select day' 
 					>
 					</Dropdown>
@@ -194,7 +194,7 @@ export class AvailabilityContainer extends Component {
 											}
 										);
 										this.setState({numConstraints: this.state.numConstraints + 1});
-										console.log(this.state.constraints);
+										//console.log(this.state.constraints);
 										}	
 										
 									}
@@ -233,14 +233,28 @@ export class AvailabilityContainer extends Component {
 						{()=>
 							{	//GENERATE DUMMY COURSES FORM CONSTRAINTS
 								//TODO: SEND ARRAY OF DUMMY COURSES TO SCHEDULING PAGE AND TREAT AS REGULAR COURSE
+									let initialMask = "0" * 168;
+									let constraintsMask = [[],[],[],[],[]]; //weekMask
 									for(var i = 0; i < this.state.constraints.length; i++){
-									let course = new Course('DUMMY','DUMMY','DUMMY','DUMMY','DUMMY', //subject, number, section, title, crn
-									String(this.state.constraints[i].StartHour + ':' + this.state.constraints[i].StartMin + " am"), //start
-									String(this.state.constraints[i].EndHour + ':' + this.state.constraints[i].EndMin + " am"),  //end
-									this.parseDay(this.state.constraints[i].Day), 'DUMMY', 'DUMMY', 'DUMMY') //professor, location, credits
-									
-									console.log(course);
+										let course = new Course('DUMMY','DUMMY','DUMMY','DUMMY','DUMMY', //subject, number, section, title, crn
+										String(this.state.constraints[i].StartHour + ':' + this.state.constraints[i].StartMin + " am"), //start
+										String(this.state.constraints[i].EndHour + ':' + this.state.constraints[i].EndMin + " am"),  //end
+										this.parseDay(this.state.constraints[i].Day), 'DUMMY', 'DUMMY', 'DUMMY') //professor, location, credits
+										constraintsMask[0].push(course.mask[0]);
+										constraintsMask[1].push(course.mask[1]);
+										constraintsMask[2].push(course.mask[2]);
+										constraintsMask[3].push(course.mask[3]);
+										constraintsMask[4].push(course.mask[4]);
+										//console.log(course.mask);
 								}
+								var orMask = new Array(5);
+								for(var j = 0; j < 5; j++){
+									//accumulator and current are binary strings
+									orMask[j] = (constraintsMask[j].reduce(function(accumulator, current) { return (bigInt(accumulator, 2).or(bigInt(current, 2))).toString(2);})); //bitwise OR on all masks
+									//now orMask contains the mask that represents all diferent constraints
+									
+								}
+								console.log(orMask);
 							}
 						}
 					>Save
