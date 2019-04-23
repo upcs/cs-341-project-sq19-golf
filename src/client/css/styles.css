@@ -1,9 +1,8 @@
 /* Author: Michael Quach and Julian Donovan */
-
 body {
-    margin: 2vh;
-    background-color: #cfbede;
-    font-size: 18px;
+  margin: 2vh;
+  background-color: #cfbede;
+  font-size: 18px;
 }
 
 /*index css*/
@@ -17,30 +16,32 @@ body {
 
 /*Header Style*/
 .topNav {
-    height: 26px;
-    padding: 11px;
-    font: 18px "Lucida Grande", Helvetica, Arial, sans-serif; /*sets font of header to Arial, sized 35*/
-    background-color: #232122;
-    border-radius: 5px;
+  height: 26px;
+  padding: 11px;
+  font: 18px "Lucida Grande", Helvetica, Arial, sans-serif;
+  /*sets font of header to Arial, sized 35*/
+  background-color: #232122;
+  border-radius: 5px;
 }
 
 a {
-    color: #DDDEDE; /*sets font color in header to white*/
-    text-decoration: none;
+  color: #DDDEDE;
+  /*sets font color in header to white*/
+  text-decoration: none;
 }
 
 #leftNav {
-    float: left;
-    font-weight: bold;
-    font-size: 22px;
-    margin-left: 12px;
+  float: left;
+  font-weight: bold;
+  font-size: 22px;
+  margin-left: 12px;
 }
 
 #rightNav {
-    float: right;
-    display:inline-block;
-    margin: 0.6px;
-    text-decoration: none;
+  float: right;
+  display: inline-block;
+  margin: 0.6px;
+  text-decoration: none;
 }
 
 .navEl {
@@ -59,14 +60,12 @@ a {
   font-size: 22px;
 }
 
-
-
 /*Modal*/
 .modal {
   font-size: 12px;
 }
 
-.modal > .header {
+.modal>.header {
   width: 100%;
   border-bottom: 1px solid gray;
   font-size: 18px;
@@ -74,19 +73,19 @@ a {
   padding: 5px;
 }
 
-.modal > .content {
+.modal>.content {
   width: 100%;
   padding: 10px 5px;
   border-radius: 5px;
 }
 
-.modal > .actions {
+.modal>.actions {
   width: 100%;
   padding: 10px 5px;
   margin: auto;
 }
 
-.modal > .close {
+.modal>.close {
   cursor: pointer;
   position: absolute;
   display: block;
@@ -98,8 +97,6 @@ a {
   background: #ffffff;
   border-radius: 18px;
 }
-
-
 
 /*Body Style*/
 .bottom, form {
@@ -124,7 +121,7 @@ a {
   font-weight: bold;
 }
 
-input, button  {
+input, button {
   background-color: #aa8cc5;
   color: white;
   border-radius: 5px;
@@ -138,8 +135,7 @@ button {
   background-color: #885ead !important;
 }
 
-
-#classGroup{
+#classGroup {
   padding: 5px;
   margin: 10px;
   border: none
@@ -170,17 +166,24 @@ button {
   z-index: 1 !important;
 }
 
-::-webkit-input-placeholder { /* Chrome */
+::-webkit-input-placeholder {
+  /* Chrome */
   color: white;
 }
-:-ms-input-placeholder { /* IE 10+ */
+
+:-ms-input-placeholder {
+  /* IE 10+ */
   color: white;
 }
-::-moz-placeholder { /* Firefox 19+ */
+
+::-moz-placeholder {
+  /* Firefox 19+ */
   color: white;
   opacity: 1;
 }
-:-moz-placeholder { /* Firefox 4 - 18 */
+
+:-moz-placeholder {
+  /* Firefox 4 - 18 */
   color: white;
   opacity: 1;
 }
@@ -188,39 +191,39 @@ button {
 /*Table Style*/
 .rt-table {
   background-color: #885ead;
-  border:#885ead;
+  border: #885ead;
 }
 
 .rt-thead -header {
   background-color: #885ead;
-  border:#885ead;
+  border: #885ead;
 }
 
 .rt-tr {
   background-color: #885ead;
-  border:#885ead;
+  border: #885ead;
 }
 
 .rt-th {
   background-color: #aa8cc5;
-  border:#885ead;
+  border: #885ead;
   font: 18px "Lucida Grande", Helvetica, Arial, sans-serif;
   color: black;
 }
 
 .rt-tbody {
   background-color: #885ead;
-  border:#885ead;
+  border: #885ead;
 }
 
 .rt-tr-group: {
   background-color: #DDDEDE;
-  border:#885ead;
+  border: #885ead;
 }
 
 .rt-td {
   background-color: #DDDEDE;
-  border:#885ead;
+  border: #885ead;
   font: 18px "Helvetica", sans-serif;
   color: black;
   text-align: center;
@@ -238,12 +241,12 @@ button {
   height: auto;
   margin-left: 1px;
   margin-right: 1px;
-  font:16px "Helvetica", sans-serif;
+  font: 16px "Helvetica", sans-serif;
 }
 
 .optable {
   text-align: center;
-  font:15px "Helvetica", sans-serif;
+  font: 15px "Helvetica", sans-serif;
   background-color: #DDDEDE;
   border-color: #885ead;
   border-radius: 5px;
@@ -254,40 +257,42 @@ button {
 
 /*Schedule Style */
 .horiz-container {
-    display: flex;
-    flex-direction: row;
-    margin-top: 8px;
-    margin-bottom: 8px;
-    overflow-x: auto;
-    border-color: #885ead;
-    border-radius: 5px;
-    font:16px "Helvetica", sans-serif;
+  display: flex;
+  flex-direction: row;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  overflow-x: auto;
+  border-color: #885ead;
+  border-radius: 5px;
+  font: 16px "Helvetica", sans-serif;
 }
 
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0; /* Removes hidden margins */
+  -webkit-appearance: none;
+  margin: 0;
+  /* Removes hidden margins */
 }
 
 input[type=number] {
-    -moz-appearance:textfield; /* Firefox */
-    width: auto;
+  -moz-appearance: textfield;
+  /* Firefox */
+  width: auto;
 }
 
 .pdfdim {
   display: flex;
   flex-direction: row;
-	margin-left: auto;
-	margin-right: auto;
+  margin-left: auto;
+  margin-right: auto;
   overflow-x: auto;
 }
 
 .scheduleBox {
   background-color: #DDDEDE;
-  font:15px "Helvetica", sans-serif;
+  font: 15px "Helvetica", sans-serif;
   border-radius: 5px;
-  padding:8px;
+  padding: 8px;
 }
 
 .save-return {
@@ -301,11 +306,13 @@ input[type=number] {
 }
 
 .daysLabel {
-  float: right; /*sets all days of classes to right of page, align with classes*/
+  float: right;
+  /*sets all days of classes to right of page, align with classes*/
 }
 
 .timeLabel {
-  float: right; /*sets all times of classes to right of page, align with classes*/
+  float: right;
+  /*sets all times of classes to right of page, align with classes*/
   min-width: 250px;
   margin: 16px;
 }
@@ -340,10 +347,10 @@ input[type=number] {
   }
 }
 
- .inputHeader {
-   font-weight: bold;
-   padding-top: 12px;
- }
+.inputHeader {
+  font-weight: bold;
+  padding-top: 12px;
+}
 
 .textContainer {
   background-color: #DDDEDE;
@@ -357,7 +364,7 @@ input[type=number] {
   border: 1px solid #aa8cc5;
   border-radius: 5px;
   padding: 8px;
-  font:12px "Helvetica", sans-serif;
+  font: 12px "Helvetica", sans-serif;
 }
 
 #tableTitle {
@@ -365,15 +372,15 @@ input[type=number] {
 }
 
 .helpSet {
-  color:black;
-  background-color:#DDDEDE;
+  color: black;
+  background-color: #DDDEDE;
   border: 1px solid #aa8cc5;
   border-radius: 5px;
   padding: 8px;
-  font:15px "Helvetica", sans-serif;
+  font: 15px "Helvetica", sans-serif;
 }
 
 .helpContent {
-  font:12px "Helvetica", sans-serif;
+  font: 12px "Helvetica", sans-serif;
   color: black;
 }
