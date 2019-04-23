@@ -1,4 +1,4 @@
-//const Fs = require('fs')
+const Fs = require('fs')
 //Course Abstraction
 class Course {
   constructor(sub, number, section, title, crn, start, end, d, prof, location, credits){
@@ -128,10 +128,10 @@ module.exports = {
 
                 	   //AS,001,A,Air Force ROTC Physical Training,41466,6:30 am,7:30 am,M,John David Anthony  Gasa ,Chiles Center MEZ,1.000
                 	 	 //Course constructor(sub, id, name, prof, start, end, d)
-					
+
 					return new Course(...fields);
-					/*return new Course(fields[0].toUpperCase().trim(), fields[1].trim(), fields[2].toUpperCase().trim(), fields[3].trim(), 
-					fields[4].trim(), fields[5].toLowerCase().trim(), fields[6].toLowerCase().trim(), fields[7].toUpperCase().trim(), 
+					/*return new Course(fields[0].toUpperCase().trim(), fields[1].trim(), fields[2].toUpperCase().trim(), fields[3].trim(),
+					fields[4].trim(), fields[5].toLowerCase().trim(), fields[6].toLowerCase().trim(), fields[7].toUpperCase().trim(),
 					fields[8].trim(), fields[9].trim(), fields[10].trim());*/
 
                 });

@@ -1,340 +1,199 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`AvailabilityContainer Should allow for the menu to be closed and opened 1`] = `
-<div
-  id="main"
->
-  <SelectInput />
-  <div
-    id="tableCap"
-  />
-  <ReactTable
-    AggregatedComponent={[Function]}
-    ExpanderComponent={[Function]}
-    FilterComponent={[Function]}
-    LoadingComponent={[Function]}
-    NoDataComponent={[Function]}
-    PadRowComponent={[Function]}
-    PaginationComponent={[Function]}
-    PivotValueComponent={[Function]}
-    ResizerComponent={[Function]}
-    TableComponent={[Function]}
-    TbodyComponent={[Function]}
-    TdComponent={[Function]}
-    TfootComponent={[Function]}
-    ThComponent={[Function]}
-    TheadComponent={[Function]}
-    TrComponent={[Function]}
-    TrGroupComponent={[Function]}
-    aggregatedKey="_aggregated"
-    className=""
-    collapseOnDataChange={true}
-    collapseOnPageChange={true}
-    collapseOnSortingChange={true}
-    column={
-      Object {
-        "Aggregated": undefined,
-        "Cell": undefined,
-        "Expander": undefined,
-        "Filter": undefined,
-        "Footer": undefined,
-        "Header": undefined,
-        "Pivot": undefined,
-        "PivotValue": undefined,
-        "Placeholder": undefined,
-        "aggregate": undefined,
-        "className": "",
-        "filterAll": false,
-        "filterMethod": undefined,
-        "filterable": undefined,
-        "footerClassName": "",
-        "footerStyle": Object {},
-        "getFooterProps": [Function],
-        "getHeaderProps": [Function],
-        "getProps": [Function],
-        "headerClassName": "",
-        "headerStyle": Object {},
-        "minResizeWidth": 11,
-        "minWidth": 100,
-        "resizable": undefined,
-        "show": true,
-        "sortMethod": undefined,
-        "sortable": undefined,
-        "style": Object {},
+<div>
+  <td>
+    <Dropdown
+      baseClassName="Dropdown"
+      onChange={[Function]}
+      onClick={[Function]}
+      options={
+        Array [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+        ]
       }
-    }
-    columns={
-      Array [
-        Object {
-          "Header": "Times",
-          "accessor": "times",
-        },
-        Object {
-          "Header": "Monday",
-          "accessor": "monday",
-        },
-        Object {
-          "Header": "Tuesday",
-          "accessor": "tuesday",
-        },
-        Object {
-          "Header": "Wednesday",
-          "accessor": "wednesday",
-        },
-        Object {
-          "Header": "Thursday",
-          "accessor": "thursday",
-        },
-        Object {
-          "Header": "Friday",
-          "accessor": "friday",
-        },
-        Object {
-          "Header": "Saturday",
-          "accessor": "saturday",
-        },
-        Object {
-          "Header": "Sunday",
-          "accessor": "sunday",
-        },
-      ]
-    }
-    data={
-      Array [
-        Object {
-          "friday": null,
-          "monday": null,
-          "saturday": null,
-          "sunday": null,
-          "thursday": null,
-          "times": "8:00",
-          "tuesday": null,
-          "wednesday": null,
-        },
-        Object {
-          "friday": null,
-          "monday": null,
-          "saturday": null,
-          "sunday": null,
-          "thursday": null,
-          "times": "9:00",
-          "tuesday": null,
-          "wednesday": null,
-        },
-        Object {
-          "friday": null,
-          "monday": null,
-          "saturday": null,
-          "sunday": null,
-          "thursday": null,
-          "times": "10:00",
-          "tuesday": null,
-          "wednesday": null,
-        },
-        Object {
-          "friday": null,
-          "monday": null,
-          "saturday": null,
-          "sunday": null,
-          "thursday": null,
-          "times": "11:00",
-          "tuesday": null,
-          "wednesday": null,
-        },
-        Object {
-          "friday": null,
-          "monday": null,
-          "saturday": null,
-          "sunday": null,
-          "thursday": null,
-          "times": "12:00",
-          "tuesday": null,
-          "wednesday": null,
-        },
-        Object {
-          "friday": null,
-          "monday": null,
-          "saturday": null,
-          "sunday": null,
-          "thursday": null,
-          "times": "13:00",
-          "tuesday": null,
-          "wednesday": null,
-        },
-        Object {
-          "friday": null,
-          "monday": null,
-          "saturday": null,
-          "sunday": null,
-          "thursday": null,
-          "times": "14:00",
-          "tuesday": null,
-          "wednesday": null,
-        },
-        Object {
-          "friday": null,
-          "monday": null,
-          "saturday": null,
-          "sunday": null,
-          "thursday": null,
-          "times": "15:00",
-          "tuesday": null,
-          "wednesday": null,
-        },
-        Object {
-          "friday": null,
-          "monday": null,
-          "saturday": null,
-          "sunday": null,
-          "thursday": null,
-          "times": "16:00",
-          "tuesday": null,
-          "wednesday": null,
-        },
-        Object {
-          "friday": null,
-          "monday": null,
-          "saturday": null,
-          "sunday": null,
-          "thursday": null,
-          "times": "17:00",
-          "tuesday": null,
-          "wednesday": null,
-        },
-        Object {
-          "friday": null,
-          "monday": null,
-          "saturday": null,
-          "sunday": null,
-          "thursday": null,
-          "times": "18:00",
-          "tuesday": null,
-          "wednesday": null,
-        },
-        Object {
-          "friday": null,
-          "monday": null,
-          "saturday": null,
-          "sunday": null,
-          "thursday": null,
-          "times": "19:00",
-          "tuesday": null,
-          "wednesday": null,
-        },
-        Object {
-          "friday": null,
-          "monday": null,
-          "saturday": null,
-          "sunday": null,
-          "thursday": null,
-          "times": "20:00",
-          "tuesday": null,
-          "wednesday": null,
-        },
-        Object {
-          "friday": null,
-          "monday": null,
-          "saturday": null,
-          "sunday": null,
-          "thursday": null,
-          "times": "21:00",
-          "tuesday": null,
-          "wednesday": null,
-        },
-        Object {
-          "friday": null,
-          "monday": null,
-          "saturday": null,
-          "sunday": null,
-          "thursday": null,
-          "times": "22:00",
-          "tuesday": null,
-          "wednesday": null,
-        },
-      ]
-    }
-    defaultExpanded={Object {}}
-    defaultFilterMethod={[Function]}
-    defaultFiltered={Array []}
-    defaultPage={0}
-    defaultPageSize={20}
-    defaultResized={Array []}
-    defaultSortDesc={false}
-    defaultSortMethod={[Function]}
-    defaultSorted={Array []}
-    expanderDefaults={
-      Object {
-        "filterable": false,
-        "resizable": false,
-        "sortable": false,
-        "width": 35,
+      placeholder="Select day"
+    />
+  </td>
+  <td>
+    <Dropdown
+      baseClassName="Dropdown"
+      onChange={[Function]}
+      options={
+        Array [
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+        ]
       }
-    }
-    filterable={false}
-    freezeWhenExpanded={false}
-    getLoadingProps={[Function]}
-    getNoDataProps={[Function]}
-    getPaginationProps={[Function]}
-    getProps={[Function]}
-    getResizerProps={[Function]}
-    getTableProps={[Function]}
-    getTbodyProps={[Function]}
-    getTdProps={[Function]}
-    getTfootProps={[Function]}
-    getTfootTdProps={[Function]}
-    getTfootTrProps={[Function]}
-    getTheadFilterProps={[Function]}
-    getTheadFilterThProps={[Function]}
-    getTheadFilterTrProps={[Function]}
-    getTheadGroupProps={[Function]}
-    getTheadGroupThProps={[Function]}
-    getTheadGroupTrProps={[Function]}
-    getTheadProps={[Function]}
-    getTheadThProps={[Function]}
-    getTheadTrProps={[Function]}
-    getTrGroupProps={[Function]}
-    getTrProps={[Function]}
-    groupedByPivotKey="_groupedByPivot"
-    indexKey="_index"
-    loading={false}
-    loadingText="Loading..."
-    minRows={0}
-    multiSort={true}
-    nestingLevelKey="_nestingLevel"
-    nextText="Next"
-    noDataText="No rows found"
-    ofText="of"
-    onFetchData={[Function]}
-    originalKey="_original"
-    pageJumpText="jump to page"
-    pageSizeOptions={
-      Array [
-        5,
-        10,
-        20,
-        25,
-        50,
-        100,
-      ]
-    }
-    pageText="Page"
-    pivotDefaults={Object {}}
-    pivotIDKey="_pivotID"
-    pivotValKey="_pivotVal"
-    previousText="Previous"
-    resizable={false}
-    resolveData={[Function]}
-    rowsSelectorText="rows per page"
-    rowsText="rows"
-    showPageJump={true}
-    showPageSizeOptions={true}
-    showPagination={false}
-    showPaginationBottom={true}
-    showPaginationTop={false}
-    sortable={false}
-    style={Object {}}
-    subRowsKey="_subRows"
-  />
+      placeholder="Select start hour"
+    />
+  </td>
+  <td>
+    <Dropdown
+      baseClassName="Dropdown"
+      onChange={[Function]}
+      options={
+        Array [
+          0,
+          5,
+          10,
+          15,
+          20,
+          25,
+          30,
+          35,
+          40,
+          45,
+          50,
+          55,
+        ]
+      }
+      placeholder="Select start minute"
+    />
+  </td>
+  <td>
+    <Dropdown
+      baseClassName="Dropdown"
+      onChange={[Function]}
+      options={
+        Array [
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+        ]
+      }
+      placeholder="Select end hour"
+    />
+  </td>
+  <td>
+    <Dropdown
+      baseClassName="Dropdown"
+      onChange={[Function]}
+      options={
+        Array [
+          0,
+          5,
+          10,
+          15,
+          20,
+          25,
+          30,
+          35,
+          40,
+          45,
+          50,
+          55,
+        ]
+      }
+      placeholder="Select end minute"
+    />
+  </td>
+  <td>
+    <button
+      onClick={[Function]}
+    >
+      Add
+    </button>
+  </td>
+  <div>
+    <ReactDataGrid
+      cellNavigationMode="none"
+      columnEquality={[Function]}
+      columns={
+        Array [
+          Object {
+            "key": "number",
+            "name": "ID",
+          },
+          Object {
+            "key": "Day",
+            "name": "Day",
+          },
+          Object {
+            "key": "StartHour",
+            "name": "Start Hour",
+          },
+          Object {
+            "key": "StartMin",
+            "name": "Start Minute",
+          },
+          Object {
+            "key": "EndHour",
+            "name": "End Hour",
+          },
+          Object {
+            "key": "EndMin",
+            "name": "End Minute",
+          },
+        ]
+      }
+      editorPortalTarget={<body />}
+      enableCellAutoFocus={true}
+      enableCellSelect={false}
+      enableRowSelect={false}
+      headerFiltersHeight={45}
+      minColumnWidth={80}
+      minHeight={350}
+      onBeforeEdit={[Function]}
+      overScan={
+        Object {
+          "colsEnd": 2,
+          "colsStart": 2,
+          "rowsEnd": 2,
+          "rowsStart": 2,
+        }
+      }
+      rowGetter={[Function]}
+      rowHeight={35}
+      rowKey="id"
+      rowScrollTimeout={0}
+      rowsCount={0}
+      scrollToRowIndex={0}
+    />
+  </div>
+  <div>
+    <td>
+      <input
+        onChange={[Function]}
+        type="number"
+        value={null}
+      />
+    </td>
+    <td>
+      <button
+        onClick={[Function]}
+      >
+        Remove Constraint
+      </button>
+    </td>
+  </div>
   <div
     className="bottom"
     id="option-container"
@@ -345,6 +204,7 @@ exports[`AvailabilityContainer Should allow for the menu to be closed and opened
     >
       <button
         id="save"
+        onClick={[Function]}
         type="button"
       >
         Save
@@ -371,340 +231,199 @@ exports[`AvailabilityContainer Should allow for the menu to be closed and opened
 `;
 
 exports[`AvailabilityContainer Should allow for the menu to be closed and opened 2`] = `
-<div
-  id="main"
->
-  <SelectInput />
-  <div
-    id="tableCap"
-  />
-  <ReactTable
-    AggregatedComponent={[Function]}
-    ExpanderComponent={[Function]}
-    FilterComponent={[Function]}
-    LoadingComponent={[Function]}
-    NoDataComponent={[Function]}
-    PadRowComponent={[Function]}
-    PaginationComponent={[Function]}
-    PivotValueComponent={[Function]}
-    ResizerComponent={[Function]}
-    TableComponent={[Function]}
-    TbodyComponent={[Function]}
-    TdComponent={[Function]}
-    TfootComponent={[Function]}
-    ThComponent={[Function]}
-    TheadComponent={[Function]}
-    TrComponent={[Function]}
-    TrGroupComponent={[Function]}
-    aggregatedKey="_aggregated"
-    className=""
-    collapseOnDataChange={true}
-    collapseOnPageChange={true}
-    collapseOnSortingChange={true}
-    column={
-      Object {
-        "Aggregated": undefined,
-        "Cell": undefined,
-        "Expander": undefined,
-        "Filter": undefined,
-        "Footer": undefined,
-        "Header": undefined,
-        "Pivot": undefined,
-        "PivotValue": undefined,
-        "Placeholder": undefined,
-        "aggregate": undefined,
-        "className": "",
-        "filterAll": false,
-        "filterMethod": undefined,
-        "filterable": undefined,
-        "footerClassName": "",
-        "footerStyle": Object {},
-        "getFooterProps": [Function],
-        "getHeaderProps": [Function],
-        "getProps": [Function],
-        "headerClassName": "",
-        "headerStyle": Object {},
-        "minResizeWidth": 11,
-        "minWidth": 100,
-        "resizable": undefined,
-        "show": true,
-        "sortMethod": undefined,
-        "sortable": undefined,
-        "style": Object {},
+<div>
+  <td>
+    <Dropdown
+      baseClassName="Dropdown"
+      onChange={[Function]}
+      onClick={[Function]}
+      options={
+        Array [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+        ]
       }
-    }
-    columns={
-      Array [
-        Object {
-          "Header": "Times",
-          "accessor": "times",
-        },
-        Object {
-          "Header": "Monday",
-          "accessor": "monday",
-        },
-        Object {
-          "Header": "Tuesday",
-          "accessor": "tuesday",
-        },
-        Object {
-          "Header": "Wednesday",
-          "accessor": "wednesday",
-        },
-        Object {
-          "Header": "Thursday",
-          "accessor": "thursday",
-        },
-        Object {
-          "Header": "Friday",
-          "accessor": "friday",
-        },
-        Object {
-          "Header": "Saturday",
-          "accessor": "saturday",
-        },
-        Object {
-          "Header": "Sunday",
-          "accessor": "sunday",
-        },
-      ]
-    }
-    data={
-      Array [
-        Object {
-          "friday": null,
-          "monday": null,
-          "saturday": null,
-          "sunday": null,
-          "thursday": null,
-          "times": "8:00",
-          "tuesday": null,
-          "wednesday": null,
-        },
-        Object {
-          "friday": null,
-          "monday": null,
-          "saturday": null,
-          "sunday": null,
-          "thursday": null,
-          "times": "9:00",
-          "tuesday": null,
-          "wednesday": null,
-        },
-        Object {
-          "friday": null,
-          "monday": null,
-          "saturday": null,
-          "sunday": null,
-          "thursday": null,
-          "times": "10:00",
-          "tuesday": null,
-          "wednesday": null,
-        },
-        Object {
-          "friday": null,
-          "monday": null,
-          "saturday": null,
-          "sunday": null,
-          "thursday": null,
-          "times": "11:00",
-          "tuesday": null,
-          "wednesday": null,
-        },
-        Object {
-          "friday": null,
-          "monday": null,
-          "saturday": null,
-          "sunday": null,
-          "thursday": null,
-          "times": "12:00",
-          "tuesday": null,
-          "wednesday": null,
-        },
-        Object {
-          "friday": null,
-          "monday": null,
-          "saturday": null,
-          "sunday": null,
-          "thursday": null,
-          "times": "13:00",
-          "tuesday": null,
-          "wednesday": null,
-        },
-        Object {
-          "friday": null,
-          "monday": null,
-          "saturday": null,
-          "sunday": null,
-          "thursday": null,
-          "times": "14:00",
-          "tuesday": null,
-          "wednesday": null,
-        },
-        Object {
-          "friday": null,
-          "monday": null,
-          "saturday": null,
-          "sunday": null,
-          "thursday": null,
-          "times": "15:00",
-          "tuesday": null,
-          "wednesday": null,
-        },
-        Object {
-          "friday": null,
-          "monday": null,
-          "saturday": null,
-          "sunday": null,
-          "thursday": null,
-          "times": "16:00",
-          "tuesday": null,
-          "wednesday": null,
-        },
-        Object {
-          "friday": null,
-          "monday": null,
-          "saturday": null,
-          "sunday": null,
-          "thursday": null,
-          "times": "17:00",
-          "tuesday": null,
-          "wednesday": null,
-        },
-        Object {
-          "friday": null,
-          "monday": null,
-          "saturday": null,
-          "sunday": null,
-          "thursday": null,
-          "times": "18:00",
-          "tuesday": null,
-          "wednesday": null,
-        },
-        Object {
-          "friday": null,
-          "monday": null,
-          "saturday": null,
-          "sunday": null,
-          "thursday": null,
-          "times": "19:00",
-          "tuesday": null,
-          "wednesday": null,
-        },
-        Object {
-          "friday": null,
-          "monday": null,
-          "saturday": null,
-          "sunday": null,
-          "thursday": null,
-          "times": "20:00",
-          "tuesday": null,
-          "wednesday": null,
-        },
-        Object {
-          "friday": null,
-          "monday": null,
-          "saturday": null,
-          "sunday": null,
-          "thursday": null,
-          "times": "21:00",
-          "tuesday": null,
-          "wednesday": null,
-        },
-        Object {
-          "friday": null,
-          "monday": null,
-          "saturday": null,
-          "sunday": null,
-          "thursday": null,
-          "times": "22:00",
-          "tuesday": null,
-          "wednesday": null,
-        },
-      ]
-    }
-    defaultExpanded={Object {}}
-    defaultFilterMethod={[Function]}
-    defaultFiltered={Array []}
-    defaultPage={0}
-    defaultPageSize={20}
-    defaultResized={Array []}
-    defaultSortDesc={false}
-    defaultSortMethod={[Function]}
-    defaultSorted={Array []}
-    expanderDefaults={
-      Object {
-        "filterable": false,
-        "resizable": false,
-        "sortable": false,
-        "width": 35,
+      placeholder="Select day"
+    />
+  </td>
+  <td>
+    <Dropdown
+      baseClassName="Dropdown"
+      onChange={[Function]}
+      options={
+        Array [
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+        ]
       }
-    }
-    filterable={false}
-    freezeWhenExpanded={false}
-    getLoadingProps={[Function]}
-    getNoDataProps={[Function]}
-    getPaginationProps={[Function]}
-    getProps={[Function]}
-    getResizerProps={[Function]}
-    getTableProps={[Function]}
-    getTbodyProps={[Function]}
-    getTdProps={[Function]}
-    getTfootProps={[Function]}
-    getTfootTdProps={[Function]}
-    getTfootTrProps={[Function]}
-    getTheadFilterProps={[Function]}
-    getTheadFilterThProps={[Function]}
-    getTheadFilterTrProps={[Function]}
-    getTheadGroupProps={[Function]}
-    getTheadGroupThProps={[Function]}
-    getTheadGroupTrProps={[Function]}
-    getTheadProps={[Function]}
-    getTheadThProps={[Function]}
-    getTheadTrProps={[Function]}
-    getTrGroupProps={[Function]}
-    getTrProps={[Function]}
-    groupedByPivotKey="_groupedByPivot"
-    indexKey="_index"
-    loading={false}
-    loadingText="Loading..."
-    minRows={0}
-    multiSort={true}
-    nestingLevelKey="_nestingLevel"
-    nextText="Next"
-    noDataText="No rows found"
-    ofText="of"
-    onFetchData={[Function]}
-    originalKey="_original"
-    pageJumpText="jump to page"
-    pageSizeOptions={
-      Array [
-        5,
-        10,
-        20,
-        25,
-        50,
-        100,
-      ]
-    }
-    pageText="Page"
-    pivotDefaults={Object {}}
-    pivotIDKey="_pivotID"
-    pivotValKey="_pivotVal"
-    previousText="Previous"
-    resizable={false}
-    resolveData={[Function]}
-    rowsSelectorText="rows per page"
-    rowsText="rows"
-    showPageJump={true}
-    showPageSizeOptions={true}
-    showPagination={false}
-    showPaginationBottom={true}
-    showPaginationTop={false}
-    sortable={false}
-    style={Object {}}
-    subRowsKey="_subRows"
-  />
+      placeholder="Select start hour"
+    />
+  </td>
+  <td>
+    <Dropdown
+      baseClassName="Dropdown"
+      onChange={[Function]}
+      options={
+        Array [
+          0,
+          5,
+          10,
+          15,
+          20,
+          25,
+          30,
+          35,
+          40,
+          45,
+          50,
+          55,
+        ]
+      }
+      placeholder="Select start minute"
+    />
+  </td>
+  <td>
+    <Dropdown
+      baseClassName="Dropdown"
+      onChange={[Function]}
+      options={
+        Array [
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+        ]
+      }
+      placeholder="Select end hour"
+    />
+  </td>
+  <td>
+    <Dropdown
+      baseClassName="Dropdown"
+      onChange={[Function]}
+      options={
+        Array [
+          0,
+          5,
+          10,
+          15,
+          20,
+          25,
+          30,
+          35,
+          40,
+          45,
+          50,
+          55,
+        ]
+      }
+      placeholder="Select end minute"
+    />
+  </td>
+  <td>
+    <button
+      onClick={[Function]}
+    >
+      Add
+    </button>
+  </td>
+  <div>
+    <ReactDataGrid
+      cellNavigationMode="none"
+      columnEquality={[Function]}
+      columns={
+        Array [
+          Object {
+            "key": "number",
+            "name": "ID",
+          },
+          Object {
+            "key": "Day",
+            "name": "Day",
+          },
+          Object {
+            "key": "StartHour",
+            "name": "Start Hour",
+          },
+          Object {
+            "key": "StartMin",
+            "name": "Start Minute",
+          },
+          Object {
+            "key": "EndHour",
+            "name": "End Hour",
+          },
+          Object {
+            "key": "EndMin",
+            "name": "End Minute",
+          },
+        ]
+      }
+      editorPortalTarget={<body />}
+      enableCellAutoFocus={true}
+      enableCellSelect={false}
+      enableRowSelect={false}
+      headerFiltersHeight={45}
+      minColumnWidth={80}
+      minHeight={350}
+      onBeforeEdit={[Function]}
+      overScan={
+        Object {
+          "colsEnd": 2,
+          "colsStart": 2,
+          "rowsEnd": 2,
+          "rowsStart": 2,
+        }
+      }
+      rowGetter={[Function]}
+      rowHeight={35}
+      rowKey="id"
+      rowScrollTimeout={0}
+      rowsCount={0}
+      scrollToRowIndex={0}
+    />
+  </div>
+  <div>
+    <td>
+      <input
+        onChange={[Function]}
+        type="number"
+        value={null}
+      />
+    </td>
+    <td>
+      <button
+        onClick={[Function]}
+      >
+        Remove Constraint
+      </button>
+    </td>
+  </div>
   <div
     className="bottom"
     id="option-container"
@@ -715,6 +434,7 @@ exports[`AvailabilityContainer Should allow for the menu to be closed and opened
     >
       <button
         id="save"
+        onClick={[Function]}
         type="button"
       >
         Save
@@ -741,925 +461,231 @@ exports[`AvailabilityContainer Should allow for the menu to be closed and opened
 `;
 
 exports[`AvailabilityContainer Should render correctly with a menu 1`] = `
-<div
-  id="main"
->
+<div>
   <div
-    id="greetingText"
+    class="Dropdown-root"
   >
-    Select your unavailability over a typical school week.
+    <div
+      aria-haspopup="listbox"
+      class="Dropdown-control"
+    >
+      <div
+        class="Dropdown-placeholder"
+      >
+        Select day
+      </div>
+      <div
+        class="Dropdown-arrow-wrapper"
+      >
+        <span
+          class="Dropdown-arrow"
+        />
+      </div>
+    </div>
   </div>
   <div
-    id="tableCap"
-  />
-  <div
-    class="ReactTable"
+    class="Dropdown-root"
   >
     <div
-      class="rt-table"
-      role="grid"
+      aria-haspopup="listbox"
+      class="Dropdown-control"
     >
       <div
-        class="rt-thead -header"
-        style="min-width:800px"
+        class="Dropdown-placeholder"
       >
-        <div
-          class="rt-tr"
-          role="row"
-        >
-          <div
-            class="rt-th"
-            role="columnheader"
-            style="flex:100 0 auto;width:100px"
-            tabindex="-1"
-          >
-            <div
-              class=""
-            >
-              Times
-            </div>
-          </div>
-          <div
-            class="rt-th"
-            role="columnheader"
-            style="flex:100 0 auto;width:100px"
-            tabindex="-1"
-          >
-            <div
-              class=""
-            >
-              Monday
-            </div>
-          </div>
-          <div
-            class="rt-th"
-            role="columnheader"
-            style="flex:100 0 auto;width:100px"
-            tabindex="-1"
-          >
-            <div
-              class=""
-            >
-              Tuesday
-            </div>
-          </div>
-          <div
-            class="rt-th"
-            role="columnheader"
-            style="flex:100 0 auto;width:100px"
-            tabindex="-1"
-          >
-            <div
-              class=""
-            >
-              Wednesday
-            </div>
-          </div>
-          <div
-            class="rt-th"
-            role="columnheader"
-            style="flex:100 0 auto;width:100px"
-            tabindex="-1"
-          >
-            <div
-              class=""
-            >
-              Thursday
-            </div>
-          </div>
-          <div
-            class="rt-th"
-            role="columnheader"
-            style="flex:100 0 auto;width:100px"
-            tabindex="-1"
-          >
-            <div
-              class=""
-            >
-              Friday
-            </div>
-          </div>
-          <div
-            class="rt-th"
-            role="columnheader"
-            style="flex:100 0 auto;width:100px"
-            tabindex="-1"
-          >
-            <div
-              class=""
-            >
-              Saturday
-            </div>
-          </div>
-          <div
-            class="rt-th"
-            role="columnheader"
-            style="flex:100 0 auto;width:100px"
-            tabindex="-1"
-          >
-            <div
-              class=""
-            >
-              Sunday
-            </div>
-          </div>
-        </div>
+        Select start hour
       </div>
       <div
-        class="rt-tbody"
-        style="min-width:800px"
+        class="Dropdown-arrow-wrapper"
       >
-        <div
-          class="rt-tr-group"
-          role="rowgroup"
-        >
-          <div
-            class="rt-tr -odd"
-            role="row"
-          >
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            >
-              8:00
-            </div>
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-          </div>
-        </div>
-        <div
-          class="rt-tr-group"
-          role="rowgroup"
-        >
-          <div
-            class="rt-tr -even"
-            role="row"
-          >
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            >
-              9:00
-            </div>
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-          </div>
-        </div>
-        <div
-          class="rt-tr-group"
-          role="rowgroup"
-        >
-          <div
-            class="rt-tr -odd"
-            role="row"
-          >
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            >
-              10:00
-            </div>
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-          </div>
-        </div>
-        <div
-          class="rt-tr-group"
-          role="rowgroup"
-        >
-          <div
-            class="rt-tr -even"
-            role="row"
-          >
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            >
-              11:00
-            </div>
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-          </div>
-        </div>
-        <div
-          class="rt-tr-group"
-          role="rowgroup"
-        >
-          <div
-            class="rt-tr -odd"
-            role="row"
-          >
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            >
-              12:00
-            </div>
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-          </div>
-        </div>
-        <div
-          class="rt-tr-group"
-          role="rowgroup"
-        >
-          <div
-            class="rt-tr -even"
-            role="row"
-          >
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            >
-              13:00
-            </div>
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-          </div>
-        </div>
-        <div
-          class="rt-tr-group"
-          role="rowgroup"
-        >
-          <div
-            class="rt-tr -odd"
-            role="row"
-          >
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            >
-              14:00
-            </div>
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-          </div>
-        </div>
-        <div
-          class="rt-tr-group"
-          role="rowgroup"
-        >
-          <div
-            class="rt-tr -even"
-            role="row"
-          >
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            >
-              15:00
-            </div>
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-          </div>
-        </div>
-        <div
-          class="rt-tr-group"
-          role="rowgroup"
-        >
-          <div
-            class="rt-tr -odd"
-            role="row"
-          >
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            >
-              16:00
-            </div>
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-          </div>
-        </div>
-        <div
-          class="rt-tr-group"
-          role="rowgroup"
-        >
-          <div
-            class="rt-tr -even"
-            role="row"
-          >
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            >
-              17:00
-            </div>
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-          </div>
-        </div>
-        <div
-          class="rt-tr-group"
-          role="rowgroup"
-        >
-          <div
-            class="rt-tr -odd"
-            role="row"
-          >
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            >
-              18:00
-            </div>
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-          </div>
-        </div>
-        <div
-          class="rt-tr-group"
-          role="rowgroup"
-        >
-          <div
-            class="rt-tr -even"
-            role="row"
-          >
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            >
-              19:00
-            </div>
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-          </div>
-        </div>
-        <div
-          class="rt-tr-group"
-          role="rowgroup"
-        >
-          <div
-            class="rt-tr -odd"
-            role="row"
-          >
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            >
-              20:00
-            </div>
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-          </div>
-        </div>
-        <div
-          class="rt-tr-group"
-          role="rowgroup"
-        >
-          <div
-            class="rt-tr -even"
-            role="row"
-          >
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            >
-              21:00
-            </div>
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-          </div>
-        </div>
-        <div
-          class="rt-tr-group"
-          role="rowgroup"
-        >
-          <div
-            class="rt-tr -odd"
-            role="row"
-          >
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            >
-              22:00
-            </div>
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-          </div>
-        </div>
+        <span
+          class="Dropdown-arrow"
+        />
       </div>
     </div>
+  </div>
+  <div
+    class="Dropdown-root"
+  >
     <div
-      class="-loading"
+      aria-haspopup="listbox"
+      class="Dropdown-control"
     >
       <div
-        class="-loading-inner"
+        class="Dropdown-placeholder"
       >
-        Loading...
+        Select start minute
+      </div>
+      <div
+        class="Dropdown-arrow-wrapper"
+      >
+        <span
+          class="Dropdown-arrow"
+        />
       </div>
     </div>
+  </div>
+  <div
+    class="Dropdown-root"
+  >
+    <div
+      aria-haspopup="listbox"
+      class="Dropdown-control"
+    >
+      <div
+        class="Dropdown-placeholder"
+      >
+        Select end hour
+      </div>
+      <div
+        class="Dropdown-arrow-wrapper"
+      >
+        <span
+          class="Dropdown-arrow"
+        />
+      </div>
+    </div>
+  </div>
+  <div
+    class="Dropdown-root"
+  >
+    <div
+      aria-haspopup="listbox"
+      class="Dropdown-control"
+    >
+      <div
+        class="Dropdown-placeholder"
+      >
+        Select end minute
+      </div>
+      <div
+        class="Dropdown-arrow-wrapper"
+      >
+        <span
+          class="Dropdown-arrow"
+        />
+      </div>
+    </div>
+  </div>
+  <button>
+    Add
+  </button>
+  <div>
+    <div
+      class="react-grid-Container"
+      style="width:100%"
+    >
+      <div
+        class="react-grid-Main"
+      >
+        <div
+          class="react-grid-Grid"
+          style="overflow:hidden;outline:0;position:relative;min-height:350px"
+        >
+          <div
+            class="react-grid-Header"
+            height="35"
+            style="position:relative;height:35px"
+          >
+            <div
+              class="react-grid-HeaderRow"
+              height="35"
+              style="position:absolute;top:0;left:0;width:100%;overflow-x:hidden;min-height:auto"
+              width="0"
+            >
+              <div
+                style="width:100%;height:35px;white-space:nowrap;overflow-x:hidden;overflow-y:hidden"
+              >
+                <div
+                  class="react-grid-HeaderCell"
+                  style="width:80px;left:0;display:inline-block;position:absolute;height:35px;margin:0;text-overflow:ellipsis;white-space:nowrap"
+                >
+                  <div
+                    class="widget-HeaderCell__value"
+                  >
+                    ID
+                  </div>
+                </div>
+                <div
+                  class="react-grid-HeaderCell"
+                  style="width:80px;left:80px;display:inline-block;position:absolute;height:35px;margin:0;text-overflow:ellipsis;white-space:nowrap"
+                >
+                  <div
+                    class="widget-HeaderCell__value"
+                  >
+                    Day
+                  </div>
+                </div>
+                <div
+                  class="react-grid-HeaderCell"
+                  style="width:80px;left:160px;display:inline-block;position:absolute;height:35px;margin:0;text-overflow:ellipsis;white-space:nowrap"
+                >
+                  <div
+                    class="widget-HeaderCell__value"
+                  >
+                    Start Hour
+                  </div>
+                </div>
+                <div
+                  class="react-grid-HeaderCell"
+                  style="width:80px;left:240px;display:inline-block;position:absolute;height:35px;margin:0;text-overflow:ellipsis;white-space:nowrap"
+                >
+                  <div
+                    class="widget-HeaderCell__value"
+                  >
+                    Start Minute
+                  </div>
+                </div>
+                <div
+                  class="react-grid-HeaderCell"
+                  style="width:80px;left:320px;display:inline-block;position:absolute;height:35px;margin:0;text-overflow:ellipsis;white-space:nowrap"
+                >
+                  <div
+                    class="widget-HeaderCell__value"
+                  >
+                    End Hour
+                  </div>
+                </div>
+                <div
+                  class="react-grid-HeaderCell"
+                  style="width:80px;left:400px;display:inline-block;position:absolute;height:35px;margin:0;text-overflow:ellipsis;white-space:nowrap"
+                >
+                  <div
+                    class="widget-HeaderCell__value"
+                  >
+                    End Minute
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div
+              class="react-grid-Viewport"
+              style="padding:0;bottom:0;left:0;right:0;overflow:hidden;position:absolute;top:35px"
+            >
+              <div
+                class="react-grid-Canvas"
+                style="position:absolute;top:0;left:0;overflow-x:auto;overflow-y:scroll;width:100%;height:315px"
+              >
+                <div />
+                <div
+                  style="width:480px"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <input
+      type="number"
+    />
+    <button>
+      Remove Constraint
+    </button>
   </div>
   <div
     class="bottom"
@@ -1718,925 +744,231 @@ exports[`AvailabilityContainer Should render correctly with a menu 1`] = `
 `;
 
 exports[`AvailabilityContainer Should render correctly without a menu 1`] = `
-<div
-  id="main"
->
+<div>
   <div
-    id="greetingText"
+    class="Dropdown-root"
   >
-    Select your unavailability over a typical school week.
+    <div
+      aria-haspopup="listbox"
+      class="Dropdown-control"
+    >
+      <div
+        class="Dropdown-placeholder"
+      >
+        Select day
+      </div>
+      <div
+        class="Dropdown-arrow-wrapper"
+      >
+        <span
+          class="Dropdown-arrow"
+        />
+      </div>
+    </div>
   </div>
   <div
-    id="tableCap"
-  />
-  <div
-    class="ReactTable"
+    class="Dropdown-root"
   >
     <div
-      class="rt-table"
-      role="grid"
+      aria-haspopup="listbox"
+      class="Dropdown-control"
     >
       <div
-        class="rt-thead -header"
-        style="min-width:800px"
+        class="Dropdown-placeholder"
       >
-        <div
-          class="rt-tr"
-          role="row"
-        >
-          <div
-            class="rt-th"
-            role="columnheader"
-            style="flex:100 0 auto;width:100px"
-            tabindex="-1"
-          >
-            <div
-              class=""
-            >
-              Times
-            </div>
-          </div>
-          <div
-            class="rt-th"
-            role="columnheader"
-            style="flex:100 0 auto;width:100px"
-            tabindex="-1"
-          >
-            <div
-              class=""
-            >
-              Monday
-            </div>
-          </div>
-          <div
-            class="rt-th"
-            role="columnheader"
-            style="flex:100 0 auto;width:100px"
-            tabindex="-1"
-          >
-            <div
-              class=""
-            >
-              Tuesday
-            </div>
-          </div>
-          <div
-            class="rt-th"
-            role="columnheader"
-            style="flex:100 0 auto;width:100px"
-            tabindex="-1"
-          >
-            <div
-              class=""
-            >
-              Wednesday
-            </div>
-          </div>
-          <div
-            class="rt-th"
-            role="columnheader"
-            style="flex:100 0 auto;width:100px"
-            tabindex="-1"
-          >
-            <div
-              class=""
-            >
-              Thursday
-            </div>
-          </div>
-          <div
-            class="rt-th"
-            role="columnheader"
-            style="flex:100 0 auto;width:100px"
-            tabindex="-1"
-          >
-            <div
-              class=""
-            >
-              Friday
-            </div>
-          </div>
-          <div
-            class="rt-th"
-            role="columnheader"
-            style="flex:100 0 auto;width:100px"
-            tabindex="-1"
-          >
-            <div
-              class=""
-            >
-              Saturday
-            </div>
-          </div>
-          <div
-            class="rt-th"
-            role="columnheader"
-            style="flex:100 0 auto;width:100px"
-            tabindex="-1"
-          >
-            <div
-              class=""
-            >
-              Sunday
-            </div>
-          </div>
-        </div>
+        Select start hour
       </div>
       <div
-        class="rt-tbody"
-        style="min-width:800px"
+        class="Dropdown-arrow-wrapper"
       >
-        <div
-          class="rt-tr-group"
-          role="rowgroup"
-        >
-          <div
-            class="rt-tr -odd"
-            role="row"
-          >
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            >
-              8:00
-            </div>
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-          </div>
-        </div>
-        <div
-          class="rt-tr-group"
-          role="rowgroup"
-        >
-          <div
-            class="rt-tr -even"
-            role="row"
-          >
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            >
-              9:00
-            </div>
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-          </div>
-        </div>
-        <div
-          class="rt-tr-group"
-          role="rowgroup"
-        >
-          <div
-            class="rt-tr -odd"
-            role="row"
-          >
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            >
-              10:00
-            </div>
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-          </div>
-        </div>
-        <div
-          class="rt-tr-group"
-          role="rowgroup"
-        >
-          <div
-            class="rt-tr -even"
-            role="row"
-          >
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            >
-              11:00
-            </div>
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-          </div>
-        </div>
-        <div
-          class="rt-tr-group"
-          role="rowgroup"
-        >
-          <div
-            class="rt-tr -odd"
-            role="row"
-          >
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            >
-              12:00
-            </div>
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-          </div>
-        </div>
-        <div
-          class="rt-tr-group"
-          role="rowgroup"
-        >
-          <div
-            class="rt-tr -even"
-            role="row"
-          >
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            >
-              13:00
-            </div>
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-          </div>
-        </div>
-        <div
-          class="rt-tr-group"
-          role="rowgroup"
-        >
-          <div
-            class="rt-tr -odd"
-            role="row"
-          >
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            >
-              14:00
-            </div>
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-          </div>
-        </div>
-        <div
-          class="rt-tr-group"
-          role="rowgroup"
-        >
-          <div
-            class="rt-tr -even"
-            role="row"
-          >
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            >
-              15:00
-            </div>
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-          </div>
-        </div>
-        <div
-          class="rt-tr-group"
-          role="rowgroup"
-        >
-          <div
-            class="rt-tr -odd"
-            role="row"
-          >
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            >
-              16:00
-            </div>
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-          </div>
-        </div>
-        <div
-          class="rt-tr-group"
-          role="rowgroup"
-        >
-          <div
-            class="rt-tr -even"
-            role="row"
-          >
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            >
-              17:00
-            </div>
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-          </div>
-        </div>
-        <div
-          class="rt-tr-group"
-          role="rowgroup"
-        >
-          <div
-            class="rt-tr -odd"
-            role="row"
-          >
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            >
-              18:00
-            </div>
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-          </div>
-        </div>
-        <div
-          class="rt-tr-group"
-          role="rowgroup"
-        >
-          <div
-            class="rt-tr -even"
-            role="row"
-          >
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            >
-              19:00
-            </div>
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-          </div>
-        </div>
-        <div
-          class="rt-tr-group"
-          role="rowgroup"
-        >
-          <div
-            class="rt-tr -odd"
-            role="row"
-          >
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            >
-              20:00
-            </div>
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-          </div>
-        </div>
-        <div
-          class="rt-tr-group"
-          role="rowgroup"
-        >
-          <div
-            class="rt-tr -even"
-            role="row"
-          >
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            >
-              21:00
-            </div>
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-          </div>
-        </div>
-        <div
-          class="rt-tr-group"
-          role="rowgroup"
-        >
-          <div
-            class="rt-tr -odd"
-            role="row"
-          >
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            >
-              22:00
-            </div>
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-            <div
-              class="rt-td"
-              role="gridcell"
-              style="background:white;color:black;flex:100 0 auto;width:100px"
-            />
-          </div>
-        </div>
+        <span
+          class="Dropdown-arrow"
+        />
       </div>
     </div>
+  </div>
+  <div
+    class="Dropdown-root"
+  >
     <div
-      class="-loading"
+      aria-haspopup="listbox"
+      class="Dropdown-control"
     >
       <div
-        class="-loading-inner"
+        class="Dropdown-placeholder"
       >
-        Loading...
+        Select start minute
+      </div>
+      <div
+        class="Dropdown-arrow-wrapper"
+      >
+        <span
+          class="Dropdown-arrow"
+        />
       </div>
     </div>
+  </div>
+  <div
+    class="Dropdown-root"
+  >
+    <div
+      aria-haspopup="listbox"
+      class="Dropdown-control"
+    >
+      <div
+        class="Dropdown-placeholder"
+      >
+        Select end hour
+      </div>
+      <div
+        class="Dropdown-arrow-wrapper"
+      >
+        <span
+          class="Dropdown-arrow"
+        />
+      </div>
+    </div>
+  </div>
+  <div
+    class="Dropdown-root"
+  >
+    <div
+      aria-haspopup="listbox"
+      class="Dropdown-control"
+    >
+      <div
+        class="Dropdown-placeholder"
+      >
+        Select end minute
+      </div>
+      <div
+        class="Dropdown-arrow-wrapper"
+      >
+        <span
+          class="Dropdown-arrow"
+        />
+      </div>
+    </div>
+  </div>
+  <button>
+    Add
+  </button>
+  <div>
+    <div
+      class="react-grid-Container"
+      style="width:100%"
+    >
+      <div
+        class="react-grid-Main"
+      >
+        <div
+          class="react-grid-Grid"
+          style="overflow:hidden;outline:0;position:relative;min-height:350px"
+        >
+          <div
+            class="react-grid-Header"
+            height="35"
+            style="position:relative;height:35px"
+          >
+            <div
+              class="react-grid-HeaderRow"
+              height="35"
+              style="position:absolute;top:0;left:0;width:100%;overflow-x:hidden;min-height:auto"
+              width="0"
+            >
+              <div
+                style="width:100%;height:35px;white-space:nowrap;overflow-x:hidden;overflow-y:hidden"
+              >
+                <div
+                  class="react-grid-HeaderCell"
+                  style="width:80px;left:0;display:inline-block;position:absolute;height:35px;margin:0;text-overflow:ellipsis;white-space:nowrap"
+                >
+                  <div
+                    class="widget-HeaderCell__value"
+                  >
+                    ID
+                  </div>
+                </div>
+                <div
+                  class="react-grid-HeaderCell"
+                  style="width:80px;left:80px;display:inline-block;position:absolute;height:35px;margin:0;text-overflow:ellipsis;white-space:nowrap"
+                >
+                  <div
+                    class="widget-HeaderCell__value"
+                  >
+                    Day
+                  </div>
+                </div>
+                <div
+                  class="react-grid-HeaderCell"
+                  style="width:80px;left:160px;display:inline-block;position:absolute;height:35px;margin:0;text-overflow:ellipsis;white-space:nowrap"
+                >
+                  <div
+                    class="widget-HeaderCell__value"
+                  >
+                    Start Hour
+                  </div>
+                </div>
+                <div
+                  class="react-grid-HeaderCell"
+                  style="width:80px;left:240px;display:inline-block;position:absolute;height:35px;margin:0;text-overflow:ellipsis;white-space:nowrap"
+                >
+                  <div
+                    class="widget-HeaderCell__value"
+                  >
+                    Start Minute
+                  </div>
+                </div>
+                <div
+                  class="react-grid-HeaderCell"
+                  style="width:80px;left:320px;display:inline-block;position:absolute;height:35px;margin:0;text-overflow:ellipsis;white-space:nowrap"
+                >
+                  <div
+                    class="widget-HeaderCell__value"
+                  >
+                    End Hour
+                  </div>
+                </div>
+                <div
+                  class="react-grid-HeaderCell"
+                  style="width:80px;left:400px;display:inline-block;position:absolute;height:35px;margin:0;text-overflow:ellipsis;white-space:nowrap"
+                >
+                  <div
+                    class="widget-HeaderCell__value"
+                  >
+                    End Minute
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div
+              class="react-grid-Viewport"
+              style="padding:0;bottom:0;left:0;right:0;overflow:hidden;position:absolute;top:35px"
+            >
+              <div
+                class="react-grid-Canvas"
+                style="position:absolute;top:0;left:0;overflow-x:auto;overflow-y:scroll;width:100%;height:315px"
+              >
+                <div />
+                <div
+                  style="width:480px"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <input
+      type="number"
+    />
+    <button>
+      Remove Constraint
+    </button>
   </div>
   <div
     class="bottom"

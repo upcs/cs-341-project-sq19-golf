@@ -5,7 +5,29 @@ import 'react-table/react-table.css'
 import '../css/styles.css';
 import Dropdown from 'react-dropdown';
 import ReactDataGrid from 'react-data-grid';
-import {Course} from '../../server/courses';
+
+class Course {
+  constructor(sub, number, section, title, crn, start, end, d, prof, location, credits){
+    this.subject = sub;
+    this.number = number;
+    this.section = section;
+    this.title = title;
+    this.crn = crn;
+    this.start = ampm(start) + ":" + start.split(":")[1];
+    this.end = ampm(end) + ":" + end.split(":")[1];
+    this.days = d;
+    this.professor = prof;
+    this.location = location;
+    this.credits = credits
+		//availability mask initialized to 0 => all available by default
+		this.mask = ["0".repeat(168), "0".repeat(168), "0".repeat(168), "0".repeat(168), "0".repeat(168)] ;
+		//each course's mask reflects the time gaps that the course takes
+		this.mask = maskWeek(this, this.mask);
+		//count the total number of 1s in the mask at object instantiation time : compute only once and avoid doing it later to compare viability of a full schedule
+		this.ones = [countOnes(this.mask[0]), countOnes(this.mask[1]), countOnes(this.mask[2]), countOnes(this.mask[3]), countOnes(this.mask[4])];
+		//console.log(this.ones);
+	}
+}
 
 //Availability Table
 export class AvailabilityContainer extends Component {
@@ -17,16 +39,16 @@ export class AvailabilityContainer extends Component {
 			dropdownMenu: this.props.dropdownMenu || null,
 	  	selected: -1,
 			blacklistArray: [],
-		
-		//props for availability constraints
-		selectedDay: null,
-		selectedStartHour: null,
-		selectedStartMin: null,
-		selectedEndHour: null,
-		selectedEndMin: null,
-		constraints: [],
-		numConstraints: 0,
-		delConstraintID: null,
+
+			//props for availability constraints
+			selectedDay: null,
+			selectedStartHour: null,
+			selectedStartMin: null,
+			selectedEndHour: null,
+			selectedEndMin: null,
+			constraints: [],
+			numConstraints: 0,
+			delConstraintID: null,
 		};
 
 	  this.showMenu = this.showMenu.bind(this);
@@ -50,7 +72,7 @@ export class AvailabilityContainer extends Component {
 
 		}
   }
-  
+
   parseDay(day){
 	  switch (day){ //days
 			case "Monday":
@@ -64,9 +86,9 @@ export class AvailabilityContainer extends Component {
 			case "Friday":
 				return "F";
 		}
-										
+
 	}
-  
+
 
 	addProf(profBL) {
 		//Note to self: offset by one, element #zero is empty
@@ -74,6 +96,7 @@ export class AvailabilityContainer extends Component {
 			var update = this.state.blacklistArray.slice();
 			update.push(profBL);
 			this.setState({blacklistArray: update})
+			console.log(this.state.blacklistArray);
 			//alert("Blacklist: " + this.state.blacklistArray.join(", "));
 	}
 
@@ -89,98 +112,98 @@ export class AvailabilityContainer extends Component {
   }*/
 
 	render() {
-		
 
-	
- 
-		
+
+
+
+
 
 	let optionsDays = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
 	let optionsHrs = [8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21];
     let optionsMins = [0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55];
-	
+
 	let columns = [ {key: 'number', name:'ID'},
 					{key: 'Day', name:'Day'},
 					{key: 'StartHour', name:'Start Hour'},
 					{key: 'StartMin', name:'Start Minute'},
 					{key: 'EndHour', name:'End Hour'},
 					{key: 'EndMin', name:'End Minute'}];
-	
+
 	return (
 		<div>
 			<React.Fragment>
 				<td>
-					<Dropdown 
-						
+					<Dropdown
+
 						options={optionsDays}
 						onChange={(e) => {
 							this._onSelect;
 							this.setState({selectedDay: (e.value)});
-							
+
 						}}
 						onClick={(e)=>{console.log(e);}}
 						//value={8}
-						placeholder='Select day' 
+						placeholder='Select day'
 					>
 					</Dropdown>
 				</td>
 				<td>
-					
-					<Dropdown 
-						
+
+					<Dropdown
+
 						options={optionsHrs}
 						onChange={(e) => {
 							this._onSelect;
 							this.setState({selectedStartHour: (e.value)});
 							//this._onSelect;
 						}}
-						
-						placeholder='Select start hour' 
+
+						placeholder='Select start hour'
 					>
 					</Dropdown>
 				</td>
 				<td>
 					<Dropdown options={optionsMins}
-						
+
 						onChange={(e) => {
 							this._onSelect;
 							this.setState({selectedStartMin: (e.value)});
-							
+
 						}}
-						
+
 						placeholder='Select start minute'
 					>
 					</Dropdown>
-					
+
 				</td>
 				<td>
-					
-					<Dropdown 
-						
+
+					<Dropdown
+
 						options={optionsHrs}
 						onChange={(e) => {
 							this._onSelect;
 							this.setState({selectedEndHour: (e.value)});
 							//this._onSelect;
 						}}
-						
-						placeholder='Select end hour' 
+
+						placeholder='Select end hour'
 					>
 					</Dropdown>
 				</td>
 				<td>
 					<Dropdown options={optionsMins}
-						
+
 						onChange={(e) => {
 							this._onSelect;
 							this.setState({selectedEndMin: (e.value)});
-							
+
 						}}
-						
+
 						placeholder='Select end minute'
 					>
 					</Dropdown>
-					
+
 				</td>
 				<td>
 					<button onClick={()=>{
@@ -195,15 +218,15 @@ export class AvailabilityContainer extends Component {
 										);
 										this.setState({numConstraints: this.state.numConstraints + 1});
 										console.log(this.state.constraints);
-										}	
-										
+										}
+
 									}
 					>Add</button>
 				</td>
-				
+
 			</React.Fragment>
 			<div>
-				<ReactDataGrid columns={columns} //columns defined before return statement: 
+				<ReactDataGrid columns={columns} //columns defined before return statement:
 								rowGetter={i => this.state.constraints[i]} //iterate through constraints elements
 								rowsCount = {this.state.constraints.length}
 				/>
@@ -224,7 +247,7 @@ export class AvailabilityContainer extends Component {
 										})
 						});
 						this.setState({numConstraints: this.state.numConstraints - 1});
-					}}>Remove Constraint</button>
+					}}> Remove Constraint</button>
 				</td>
 			</div>
 			<div className="bottom" id="option-container">
@@ -233,12 +256,12 @@ export class AvailabilityContainer extends Component {
 						{()=>
 							{	//GENERATE DUMMY COURSES FORM CONSTRAINTS
 								//TODO: SEND ARRAY OF DUMMY COURSES TO SCHEDULING PAGE AND TREAT AS REGULAR COURSE
-									for(var i = 0; i < this.state.constraints.length; i++){
+								for(var i = 0; i < this.state.constraints.length; i++){
 									let course = new Course('DUMMY','DUMMY','DUMMY','DUMMY','DUMMY', //subject, number, section, title, crn
 									String(this.state.constraints[i].StartHour + ':' + this.state.constraints[i].StartMin + " am"), //start
 									String(this.state.constraints[i].EndHour + ':' + this.state.constraints[i].EndMin + " am"),  //end
 									this.parseDay(this.state.constraints[i].Day), 'DUMMY', 'DUMMY', 'DUMMY') //professor, location, credits
-									
+
 									console.log(course);
 								}
 							}
@@ -269,7 +292,7 @@ export class AvailabilityContainer extends Component {
 					}
 			</div>
 		</div>
-			
+
 
 	);
   }

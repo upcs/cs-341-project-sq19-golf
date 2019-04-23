@@ -115,6 +115,7 @@ export class InputContainer extends Component {
     }).then(res => res.json()
     ).then(resJSON => {
       this.setState({'allCourses': {'subjectMap': resJSON.subjMap, 'numberMap': resJSON.numMap} });
+      console.log(resJSON);
     }).catch((error) => {
       //console.log(error); //Warnings are currently surpressed, as they can be excessive
     });
