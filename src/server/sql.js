@@ -1,5 +1,6 @@
 const Sequelize = require('sequelize');
 const Courses = require('./courses');
+const Fs = require('fs')
 
 //MySQL ORM Interface
 const Db = new Sequelize('REGISTRATION', 'root', 'Gatolocoe#4209', {
@@ -53,13 +54,34 @@ const Classes = Db.define('course', {
     tableName: 'courses'
 });
 
+function parseCourseData(filePath) {
+  //Extract file data
+  let data = Fs.readFileSync(filePath, "utf-8");
+  var lines = data.split("\n");
+
+  //Parse file data
+  return lines.filter(line => line != '')
+              .map(line => {
+                   let fields = line.split(",");
+                   fields.forEach(el => el.trim())
+
+                   //AS,001,A,Air Force ROTC Physical Training,41466,6:30 am,7:30 am,M,John David Anthony  Gasa ,Chiles Center MEZ,1.000
+                   //Course constructor(sub, id, name, prof, start, end, d)
+
+        return new Courses.Course(...fields);
+        /*return new Course(fields[0].toUpperCase().trim(), fields[1].trim(), fields[2].toUpperCase().trim(), fields[3].trim(),
+        fields[4].trim(), fields[5].toLowerCase().trim(), fields[6].toLowerCase().trim(), fields[7].toUpperCase().trim(),
+        fields[8].trim(), fields[9].trim(), fields[10].trim());*/
+  });
+}
+
 module.exports = {
   Db: Db,
   Classes: Classes,
 
   updateAllCourseData: (filePath) => {
     try {
-      let courses = Courses.parseCourseData(filePath);
+      let courses = parseCourseData(filePath);
       Classes.sync({force: true}).then(() => {
         Classes.bulkCreate(courses);
       });
@@ -71,7 +93,7 @@ module.exports = {
 
   updateAllCourseDataAsync: (filePath, callback) => {
     try {
-      let courses = Courses.parseCourseData(filePath);
+      let courses = parseCourseData(filePath);
       Classes.sync({force: true}).then(() => {
         Classes.bulkCreate(courses).then(callback);
       });

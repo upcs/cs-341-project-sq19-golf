@@ -143,10 +143,21 @@ export class InputContainer extends Component {
       //Notidy user of invalid course
       if (invalidCourse) alert("Invalid courses(s) detected. Schedule generation will proceed without such inputs");
 
+      //Get schedule constraints
+      let constraints = store.getState().constraints;
+
+      //Bundle constraints and desired courses
+      let data = {
+        desiredCourses,
+        constraints
+      };
+
+      console.log(data);
+
       //Grab relevant data from the backend DB
       await fetch('/api/scheduleRequest', {
         method: 'POST',
-        body: JSON.stringify(desiredCourses),
+        body: JSON.stringify(data),
         headers: {
           'Accept': 'application/json',
           'Content-Type': 'application/json'

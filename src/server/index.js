@@ -68,8 +68,12 @@ async function getAllCoursesAsync(callback) {
   callback(courses);
 }
 
-async function getViableSchedulesAsync(desiredClasses, callback) {
+async function getViableSchedulesAsync(data, callback) {
+  //NICO: data should have a property called constraints with everything you need
+  console.log(data.constraints);
+
   //Get selected course data
+  let desiredClasses = data.desiredCourses;
   let subjects = desiredClasses.map(x => x.subject);
   let courseIDs = desiredClasses.map(x => x.courseID);
   let courses = await Sql.getSelectedCourseData(courseIDs, subjects);

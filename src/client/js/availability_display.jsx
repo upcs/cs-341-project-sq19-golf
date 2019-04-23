@@ -5,29 +5,8 @@ import 'react-table/react-table.css'
 import '../css/styles.css';
 import Dropdown from 'react-dropdown';
 import ReactDataGrid from 'react-data-grid';
-
-class Course {
-  constructor(sub, number, section, title, crn, start, end, d, prof, location, credits){
-    this.subject = sub;
-    this.number = number;
-    this.section = section;
-    this.title = title;
-    this.crn = crn;
-    this.start = ampm(start) + ":" + start.split(":")[1];
-    this.end = ampm(end) + ":" + end.split(":")[1];
-    this.days = d;
-    this.professor = prof;
-    this.location = location;
-    this.credits = credits
-		//availability mask initialized to 0 => all available by default
-		this.mask = ["0".repeat(168), "0".repeat(168), "0".repeat(168), "0".repeat(168), "0".repeat(168)] ;
-		//each course's mask reflects the time gaps that the course takes
-		this.mask = maskWeek(this, this.mask);
-		//count the total number of 1s in the mask at object instantiation time : compute only once and avoid doing it later to compare viability of a full schedule
-		this.ones = [countOnes(this.mask[0]), countOnes(this.mask[1]), countOnes(this.mask[2]), countOnes(this.mask[3]), countOnes(this.mask[4])];
-		//console.log(this.ones);
-	}
-}
+import {store, modifyConstraints} from './redux';
+import {Course}  from '../../server/courses';
 
 var bigInt = require("big-integer");
 
@@ -277,7 +256,8 @@ export class AvailabilityContainer extends Component {
 									//now orMask contains the mask that represents all diferent constraints
 
 								}
-								console.log(orMask);
+
+								store.dispatch(modifyConstraints(orMask));
 							}
 						}
 					>Save
