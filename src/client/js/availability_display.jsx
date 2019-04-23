@@ -17,7 +17,7 @@ export class AvailabilityContainer extends Component {
 			dropdownMenu: this.props.dropdownMenu || null,
 	  	selected: -1,
 			blacklistArray: [],
-		
+
 		//props for availability constraints
 		selectedDay: null,
 		selectedStartHour: null,
@@ -50,7 +50,7 @@ export class AvailabilityContainer extends Component {
 
 		}
   }
-  
+
   parseDay(day){
 	  switch (day){ //days
 			case "Monday":
@@ -64,9 +64,9 @@ export class AvailabilityContainer extends Component {
 			case "Friday":
 				return "F";
 		}
-										
+
 	}
-  
+
 
 	addProf(profBL) {
 		//Note to self: offset by one, element #zero is empty
@@ -89,98 +89,98 @@ export class AvailabilityContainer extends Component {
   }*/
 
 	render() {
-		
 
-	
- 
-		
+
+
+
+
 
 	let optionsDays = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
 	let optionsHrs = [8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21];
     let optionsMins = [0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55];
-	
+
 	let columns = [ {key: 'number', name:'ID'},
 					{key: 'Day', name:'Day'},
 					{key: 'StartHour', name:'Start Hour'},
 					{key: 'StartMin', name:'Start Minute'},
 					{key: 'EndHour', name:'End Hour'},
 					{key: 'EndMin', name:'End Minute'}];
-	
+
 	return (
 		<div>
 			<React.Fragment>
 				<td>
-					<Dropdown 
-						
+					<Dropdown
+
 						options={optionsDays}
 						onChange={(e) => {
 							this._onSelect;
 							this.setState({selectedDay: (e.value)});
-							
+
 						}}
 						onClick={(e)=>{console.log(e);}}
 						//value={8}
-						placeholder='Select day' 
+						placeholder='Select day'
 					>
 					</Dropdown>
 				</td>
 				<td>
-					
-					<Dropdown 
-						
+
+					<Dropdown
+
 						options={optionsHrs}
 						onChange={(e) => {
 							this._onSelect;
 							this.setState({selectedStartHour: (e.value)});
 							//this._onSelect;
 						}}
-						
+
 						placeholder='Select start hour' 
 					>
 					</Dropdown>
 				</td>
 				<td>
 					<Dropdown options={optionsMins}
-						
+
 						onChange={(e) => {
 							this._onSelect;
 							this.setState({selectedStartMin: (e.value)});
-							
+
 						}}
-						
+
 						placeholder='Select start minute'
 					>
 					</Dropdown>
-					
+
 				</td>
 				<td>
-					
-					<Dropdown 
-						
+
+					<Dropdown
+
 						options={optionsHrs}
 						onChange={(e) => {
 							this._onSelect;
 							this.setState({selectedEndHour: (e.value)});
 							//this._onSelect;
 						}}
-						
-						placeholder='Select end hour' 
+
+						placeholder='Select end hour'
 					>
 					</Dropdown>
 				</td>
 				<td>
 					<Dropdown options={optionsMins}
-						
+
 						onChange={(e) => {
 							this._onSelect;
 							this.setState({selectedEndMin: (e.value)});
-							
+
 						}}
-						
+
 						placeholder='Select end minute'
 					>
 					</Dropdown>
-					
+
 				</td>
 				<td>
 					<button onClick={()=>{
@@ -195,15 +195,15 @@ export class AvailabilityContainer extends Component {
 										);
 										this.setState({numConstraints: this.state.numConstraints + 1});
 										console.log(this.state.constraints);
-										}	
-										
+										}
+
 									}
 					>Add</button>
 				</td>
-				
+
 			</React.Fragment>
 			<div>
-				<ReactDataGrid columns={columns} //columns defined before return statement: 
+				<ReactDataGrid columns={columns} //columns defined before return statement:
 								rowGetter={i => this.state.constraints[i]} //iterate through constraints elements
 								rowsCount = {this.state.constraints.length}
 				/>
@@ -238,7 +238,7 @@ export class AvailabilityContainer extends Component {
 									String(this.state.constraints[i].StartHour + ':' + this.state.constraints[i].StartMin + " am"), //start
 									String(this.state.constraints[i].EndHour + ':' + this.state.constraints[i].EndMin + " am"),  //end
 									this.parseDay(this.state.constraints[i].Day), 'DUMMY', 'DUMMY', 'DUMMY') //professor, location, credits
-									
+
 									console.log(course);
 								}
 							}
@@ -269,7 +269,7 @@ export class AvailabilityContainer extends Component {
 					}
 			</div>
 		</div>
-			
+
 
 	);
   }
