@@ -79,6 +79,6 @@ async function getViableSchedulesAsync(data, callback) {
   let courses = await Sql.getSelectedCourseData(courseIDs, subjects);
 
   //Generate viable schedules
-  let viableSchedules = await ScheduleGen.generateSchedules(courseIDs, subjects, courses);
+  let viableSchedules = await ScheduleGen.generateSchedules(courseIDs, subjects, courses, data.constraints);
   if (callback) callback(viableSchedules);
 }

@@ -33,7 +33,7 @@ export class AvailabilityContainer extends Component {
 			delConstraintID: null,
 
 			//props for blacklist
-
+	
 		};
 
 	  this.showMenu = this.showMenu.bind(this);
@@ -252,7 +252,7 @@ export class AvailabilityContainer extends Component {
 									//now orMask contains the mask that represents all diferent constraints
 
 								}
-
+								if(orMask == null) {orMask = [initialMask, initialMask, initialMask, initialMask, initialMask];}
 								let constraints = { timeMask: orMask, profBlacklist: this.state.blacklistArray };
 								store.dispatch(modifyConstraints(constraints));
 							}
