@@ -2,9 +2,9 @@ const Combinatorics = require('js-combinatorics');
 var bigInt = require("big-integer");
 const Courses = require('./courses');
 module.exports = {
-  generateSchedules: (courseIDs, subjects, classes) => {
+  generateSchedules: (courseIDs, subjects, classes, constraints) => {
     try {
-      let possibleClasses = filterClasses(courseIDs, subjects, classes);
+      let possibleClasses = filterClasses(courseIDs, subjects, classes, constraints);
       for (var i = 0; i < possibleClasses.length; i++) { //TODO: Follow up with Nico about this
         let mask = "0".repeat(168);
 	      let freeHours = [mask, mask, mask, mask, mask];
@@ -43,13 +43,29 @@ module.exports = {
 }
 
 //Preliminary removal step purposed to avoid heap overflows
-function filterClasses(courseIDs, subjects, classes) {
+function filterClasses(courseIDs, subjects, classes, constraints) {
   try {
   	let possibleClasses = classes.filter(classObj => {
       let subject = classObj.subject;
       let courseID = classObj.number;
-
-      if (subjects.includes(subject) && courseIDs.includes(courseID)) return classObj;
+	  let courseProf = classObj.professor;
+	  
+	  if(constraints != null){
+		  if (constraints.profBlacklist != null) {
+			  if (!(checkBlacklist(constraints.profBlacklist, courseProf))){ //perform the blacklist check in every course, not in every schedule -> save time
+				  
+				  return;
+			  }
+		  }
+		  if (constraints.timeMask != null){
+			  
+			  if (!(viableCourse(classObj, constraints))) { //perform constraints check in every course, not in every schedule -> save time
+				  return;
+			  }
+		  }
+		  
+	  }
+      if (subjects.includes(subject) && courseIDs.includes(courseID) ) return classObj;
     });
 
     return possibleClasses;
@@ -57,6 +73,30 @@ function filterClasses(courseIDs, subjects, classes) {
   catch (error) {
     return [];
   }
+}
+
+function checkBlacklist(blacklist, professor){
+	for(var i=0; i < blacklist.length; i++){
+ 		if (professor.indexOf(blacklist[i]) != -1){  //check that no element in the blacklist is a substring of the professor
+			return false;
+		} 
+	}
+	return true;
+}
+
+function viableCourse(course, constraints){	//check course is not conflicting with time schedule
+	
+	for(var i=0; i < 5; i++){
+		let totalOnes = countOnes(bigInt(JSON.parse(course.mask)[i], 2).or(bigInt(constraints.timeMask[i], 2)).toString(2));
+		let courseOnes = (JSON.parse(course.ones)[i]);
+		let constraintOnes = countOnes(constraints.timeMask[i]);
+		
+		if ( totalOnes != courseOnes + constraintOnes) { //IF the separate sum of 1's is different than the sum of 1's in the bitwise OR : constraint overlaps with course
+			return false;
+		}
+	}
+	return true
+	
 }
 
 function isolateViableSchedules(courseIDs, subjects, possibleSchedules) {
@@ -230,7 +270,7 @@ function checkMask(arrayMasks, totalOnes){
       for(var j = 0; j < 5; j++){
 			//console.log("**** dayMask" + j + "\n" + dayMask[j]);
 				//accumulator and current are binary strings
-			var orMask = dayMask[j].reduce(function(accumulator, current) { return (bigInt(accumulator, 2).or(bigInt(current, 2))).toString(2);}); //bitwise AND on all masks
+			var orMask = dayMask[j].reduce(function(accumulator, current) { return (bigInt(accumulator, 2).or(bigInt(current, 2))).toString(2);}); //bitwise OR on all masks
 			//console.log(totalOnes[j] + " : " + countOnes(orMask));
 			if (parseInt(totalOnes[j]) != parseInt(countOnes(orMask))){
 				return false; // if putting the schedules together yields less occupied hours than each course total hours -> some courses overlap

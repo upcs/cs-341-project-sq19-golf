@@ -5,7 +5,10 @@ import 'react-table/react-table.css'
 import '../css/styles.css';
 import Dropdown from 'react-dropdown';
 import ReactDataGrid from 'react-data-grid';
-import {Course} from '../../server/courses';
+import {store, modifyConstraints} from './redux';
+import {Course}  from '../../server/courses';
+
+var bigInt = require("big-integer");
 
 //Availability Table
 export class AvailabilityContainer extends Component {
@@ -17,16 +20,20 @@ export class AvailabilityContainer extends Component {
 			dropdownMenu: this.props.dropdownMenu || null,
 	  	selected: -1,
 			blacklistArray: [],
+			blacklistInput: "",
 
-		//props for availability constraints
-		selectedDay: null,
-		selectedStartHour: null,
-		selectedStartMin: null,
-		selectedEndHour: null,
-		selectedEndMin: null,
-		constraints: [],
-		numConstraints: 0,
-		delConstraintID: null,
+			//props for availability constraints
+			selectedDay: null,
+			selectedStartHour: null,
+			selectedStartMin: null,
+			selectedEndHour: null,
+			selectedEndMin: null,
+			constraints: [],
+			numConstraints: 0,
+			delConstraintID: null,
+
+			//props for blacklist
+
 		};
 
 	  this.showMenu = this.showMenu.bind(this);
@@ -68,14 +75,6 @@ export class AvailabilityContainer extends Component {
 	}
 
 
-	addProf(profBL) {
-		//Note to self: offset by one, element #zero is empty
-		//and element #one is filled with first user input of blacklisted professor
-			var update = this.state.blacklistArray.slice();
-			update.push(profBL);
-			this.setState({blacklistArray: update})
-			//alert("Blacklist: " + this.state.blacklistArray.join(", "));
-	}
 
 
 	/*handleSubmit(event) {
@@ -118,8 +117,6 @@ export class AvailabilityContainer extends Component {
 							this.setState({selectedDay: (e.value)});
 
 						}}
-						onClick={(e)=>{console.log(e);}}
-						//value={8}
 						placeholder='Select day'
 					>
 					</Dropdown>
@@ -135,7 +132,7 @@ export class AvailabilityContainer extends Component {
 							//this._onSelect;
 						}}
 
-						placeholder='Select start hour' 
+						placeholder='Select start hour'
 					>
 					</Dropdown>
 				</td>
@@ -194,7 +191,7 @@ export class AvailabilityContainer extends Component {
 											}
 										);
 										this.setState({numConstraints: this.state.numConstraints + 1});
-										console.log(this.state.constraints);
+										//console.log(this.state.constraints);
 										}
 
 									}
@@ -224,23 +221,40 @@ export class AvailabilityContainer extends Component {
 										})
 						});
 						this.setState({numConstraints: this.state.numConstraints - 1});
-					}}>Remove Constraint</button>
+					}}> Remove Constraint</button>
 				</td>
 			</div>
+
 			<div className="bottom" id="option-container">
 				<Link to="/">
 					<button id="save" type="button" onClick=
 						{()=>
 							{	//GENERATE DUMMY COURSES FORM CONSTRAINTS
 								//TODO: SEND ARRAY OF DUMMY COURSES TO SCHEDULING PAGE AND TREAT AS REGULAR COURSE
+									let initialMask = "0" * 168;
+									let constraintsMask = [[],[],[],[],[]]; //weekMask
 									for(var i = 0; i < this.state.constraints.length; i++){
-									let course = new Course('DUMMY','DUMMY','DUMMY','DUMMY','DUMMY', //subject, number, section, title, crn
-									String(this.state.constraints[i].StartHour + ':' + this.state.constraints[i].StartMin + " am"), //start
-									String(this.state.constraints[i].EndHour + ':' + this.state.constraints[i].EndMin + " am"),  //end
-									this.parseDay(this.state.constraints[i].Day), 'DUMMY', 'DUMMY', 'DUMMY') //professor, location, credits
-
-									console.log(course);
+										let course = new Course('DUMMY','DUMMY','DUMMY','DUMMY','DUMMY', //subject, number, section, title, crn
+										String(this.state.constraints[i].StartHour + ':' + this.state.constraints[i].StartMin + " am"), //start
+										String(this.state.constraints[i].EndHour + ':' + this.state.constraints[i].EndMin + " am"),  //end
+										this.parseDay(this.state.constraints[i].Day), 'DUMMY', 'DUMMY', 'DUMMY') //professor, location, credits
+										constraintsMask[0].push(course.mask[0]);
+										constraintsMask[1].push(course.mask[1]);
+										constraintsMask[2].push(course.mask[2]);
+										constraintsMask[3].push(course.mask[3]);
+										constraintsMask[4].push(course.mask[4]);
+										//console.log(course.mask);
 								}
+								var orMask = new Array(5);
+								for(var j = 0; j < 5; j++){
+									//accumulator and current are binary strings
+									orMask[j] = (constraintsMask[j].reduce(function(accumulator, current) { return (bigInt(accumulator, 2).or(bigInt(current, 2))).toString(2);})); //bitwise OR on all masks
+									//now orMask contains the mask that represents all diferent constraints
+
+								}
+								if(orMask == null) {orMask = [initialMask, initialMask, initialMask, initialMask, initialMask];}
+								let constraints = { timeMask: orMask, profBlacklist: this.state.blacklistArray };
+								store.dispatch(modifyConstraints(constraints));
 							}
 						}
 					>Save
@@ -259,8 +273,11 @@ export class AvailabilityContainer extends Component {
 							<div className="menu" ref={(element) => { this.state.dropdownMenu = element }}>
 								<span id="blacklist">
 									<div className="inputHeader">Professor Blacklist</div>
-									<input id="profBlacklist" type="text" placeholder="Enter Professor Name"/>
-									<button onClick={() => this.addProf(document.getElementById("profBlacklist").value)} id="profButton" form="main" type="profSave">
+									<input id="profBlacklist" type="text" placeholder="Enter Professor Name" value={this.state.blacklistInput}
+											onChange={(e) => {this.setState({blacklistInput: e.target.value});}
+													}
+									/>
+									<button onClick={() => this.state.blacklistArray.push(this.state.blacklistInput)} id="profButton" form="main" type="profSave">
 										Save
 									</button>
 								</span>

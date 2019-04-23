@@ -6,7 +6,8 @@ export const actionTypes = {
   CLEAR_SCHEDULES: 'CLEAR_SCHEDULES',
   MODIFY_COURSE_CONTEXT: 'MODIFY_COURSE_CONTEXT',
   CLEAR_COURSE_CONTEXT: 'CLEAR_COURSE_CONTEXT',
-  MODIFY_LAST_KEY: 'MODIFY_LAST_KEY'
+  MODIFY_LAST_KEY: 'MODIFY_LAST_KEY',
+  MODIFY_CONSTRAINTS: 'MODIFY_CONSTRAINTS'
 };
 
 //Initialize reducers
@@ -41,10 +42,20 @@ function lastKeyReducer(lastKey = null, action) {
   }
 }
 
+function scheduleConstraintReducer(constraints = null, action) {
+  switch (action.type) {
+    case actionTypes.MODIFY_CONSTRAINTS:
+      return action.constraints;
+    default:
+      return constraints;
+  }
+}
+
 export const rootReducer = combineReducers({
   viableSchedules: scheduleReducer,
   courseContext: courseReducer,
-  lastKey: lastKeyReducer
+  lastKey: lastKeyReducer,
+  constraints: scheduleConstraintReducer
 });
 
 //Initialize actions
@@ -58,6 +69,11 @@ export function modifyCourses(courses) {
 
 export function modifyLastKey(lastKey) {
   return { type: actionTypes.MODIFY_LAST_KEY, lastKey: lastKey }
+}
+
+//TODO: Add professor blacklist
+export function modifyConstraints(constraints) {
+  return { type: actionTypes.MODIFY_CONSTRAINTS, constraints: constraints }
 }
 
 //Initialize store
