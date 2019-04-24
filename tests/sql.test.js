@@ -1,20 +1,9 @@
-<<<<<<< HEAD
 import { sequelize, dataTypes, checkModelName, checkPropertyExists } from 'sequelize-test-helpers';
 import { Classes, updateAllCourseData, updateAllCourseDataAsync, getAllCourseData, getSelectedCourseData } from '../src/server/sql.js';
 
 const Fs = require('fs');
-=======
-import Sequelize from 'sequelize';
-import { Classes } from '../src/server/sql.js';
-import { shallow } from 'enzyme';
-import Path  from 'path';
-//TODO: Fix this mockup
->>>>>>> fd1078c7e06952df0855d36351553f112576b224
 
-
-/*
 describe('Classes model', () => {
-<<<<<<< HEAD
   test('Verify the model definition is correct', () => {
     const model = new Classes();
     expect(checkPropertyExists(model.course));
@@ -53,32 +42,5 @@ describe('Classes model', () => {
 
   test('Should fail to get selected course data with null input', () => {
     getSelectedCourseData(null, null);
-=======
-  test('Loading a class object', () => {
-    var x = Classes.create({
-      subject: 'subject',
-      number: 'number',
-      title: 'title',
-      professor: 'professor',
-      start: 'start',
-      end: 'end',
-      days: 'days'
-    });
-  });
-});
-
-describe('Course data functions', () => {
-  test('Updating all course data', () => {
-
-  });
-  test('Updating all course data (ASync)', () => {
-
-  });
-  test('Getting all course data', () => {
-
-  });
-  test('Getting specific course data', () => {
-
->>>>>>> fd1078c7e06952df0855d36351553f112576b224
   });
 });

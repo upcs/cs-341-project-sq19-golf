@@ -53,6 +53,27 @@ describe('AvailabilityContainer', () => {
     const availabilityContainer = shallow(<AvailabilityContainer/>);
     expect(availabilityContainer.instance().handleChange({ value: 'a' })).toBe(undefined);
   });
+
+  test('Should handle constraints', () => {
+    const availabilityContainer = shallow(<AvailabilityContainer/>);
+    expect(availabilityContainer.instance().handleConstraints()).toBe(undefined);
+  });
+
+  test('Should handle save events', () => {
+    let constraints = [{ StartHour: 0, StartMin: 0, EndHour: 0, EndMin: 0, Day: "Monday" }];
+    const availabilityContainer = shallow(<AvailabilityContainer constraints={constraints}/>);
+
+    expect(availabilityContainer.instance().handleSave()).toBe(undefined);
+  });
+
+  test('Should handle constraint deletion', () => {
+    let constraints = [{ StartHour: 0, StartMin: 0, EndHour: 0, EndMin: 0, Day: "Monday" },
+                       { StartHour: 0, StartMin: 0, EndHour: 0, EndMin: 0, Day: "Monday" }];
+    const availabilityContainer = shallow(<AvailabilityContainer constraints={constraints}/>);
+    expect(availabilityContainer.instance().targetDeleteConstraint({ target: { value: 1 } })).toBe(undefined);
+    expect(availabilityContainer.instance().deleteConstraint()).toBe(undefined);
+
+  });
 });
 
 describe('SelectInput', () => {

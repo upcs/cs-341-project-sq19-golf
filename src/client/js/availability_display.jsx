@@ -28,7 +28,7 @@ export class AvailabilityContainer extends Component {
 			selectedStartMin: null,
 			selectedEndHour: null,
 			selectedEndMin: null,
-			constraints: [],
+			constraints: this.props.constraints || [],
 			numConstraints: 0,
 			delConstraintID: null,
 		};
@@ -36,6 +36,10 @@ export class AvailabilityContainer extends Component {
 	  this.showMenu = this.showMenu.bind(this);
 		this.closeMenu = this.closeMenu.bind(this);
 		this.handleChange = this.handleChange.bind(this);
+		this.handleConstraints = this.handleConstraints.bind(this);
+		this.deleteConstraint = this.deleteConstraint.bind(this);
+		this.targetDeleteConstraint = this.targetDeleteConstraint.bind(this);
+		this.handleSave = this.handleSave.bind(this);
 	}
 
 	showMenu(event) {
@@ -74,6 +78,60 @@ export class AvailabilityContainer extends Component {
 		this.setState({selectedDay: (e.value)});
 	}
 
+	handleConstraints() {
+		this.state.constraints.push({
+			number: this.state.numConstraints, //keep count to be able to remove
+			Day: this.state.selectedDay,
+			StartHour: this.state.selectedStartHour,
+			StartMin: this.state.selectedStartMin,
+			EndHour: this.state.selectedEndHour,
+			EndMin: this.state.selectedEndMin
+		});
+		this.setState({numConstraints: this.state.numConstraints + 1});
+	}
+
+	deleteConstraint() {
+		this.setState({
+			constraints: this.state.constraints.filter((x) => {
+				return this.state.delConstraintID != x.number;
+			})
+		});
+		this.setState({numConstraints: this.state.numConstraints - 1});
+	}
+
+	targetDeleteConstraint(e) {
+		if (this.state.constraints.length > e.target.value && e.target.value >= 0){
+			this.setState({delConstraintID : e.target.value});
+		}
+	}
+
+	handleSave() {
+		let initialMask = "0" * 168;
+		let constraintsMask = [[],[],[],[],[]]; //weekMask
+		for (var i = 0; i < this.state.constraints.length; i++){
+			let course = new Course('DUMMY','DUMMY','DUMMY','DUMMY','DUMMY', //subject, number, section, title, crn
+				String(this.state.constraints[i].StartHour + ':' + this.state.constraints[i].StartMin + " am"), //start
+				String(this.state.constraints[i].EndHour + ':' + this.state.constraints[i].EndMin + " am"),  //end
+				this.parseDay(this.state.constraints[i].Day), 'DUMMY', 'DUMMY', 'DUMMY') //professor, location, credits
+			constraintsMask[0].push(course.mask[0]);
+			constraintsMask[1].push(course.mask[1]);
+			constraintsMask[2].push(course.mask[2]);
+			constraintsMask[3].push(course.mask[3]);
+			constraintsMask[4].push(course.mask[4]);
+		}
+
+		var orMask = new Array(5);
+		for (var j = 0; j < 5; j++){
+			//accumulator and current are binary strings
+			orMask[j] = (constraintsMask[j].reduce(function(accumulator, current) { return (bigInt(accumulator, 2).or(bigInt(current, 2))).toString(2);})); //bitwise OR on all masks
+			//now orMask contains the mask that represents all diferent constraints
+
+		}
+		//if (orMask == null) orMask = [initialMask, initialMask, initialMask, initialMask, initialMask]; //TODO: Remove?
+		let constraints = { timeMask: orMask, profBlacklist: this.state.blacklistArray };
+		store.dispatch(modifyConstraints(constraints));
+	}
+
 	render() {
 		let optionsDays = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
 		let optionsHrs = [8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21];
@@ -105,85 +163,28 @@ export class AvailabilityContainer extends Component {
 					<Dropdown options={optionsMins} onChange={this.handleChange} placeholder='Select end minute'></Dropdown>
 				</td>
 				<td>
-					<button onClick={()=>{
-										this.state.constraints.push(
-											{	number: this.state.numConstraints, //keep count to be able to remove
-												Day: this.state.selectedDay,
-												StartHour: this.state.selectedStartHour,
-												StartMin: this.state.selectedStartMin,
-												EndHour: this.state.selectedEndHour,
-												EndMin: this.state.selectedEndMin
-											}
-										);
-										this.setState({numConstraints: this.state.numConstraints + 1});
-										//console.log(this.state.constraints);
-										}
-
-									}
-					>Add</button>
+					<button onClick={this.handleConstraints}>Add</button>
 				</td>
 
 			</React.Fragment>
 			<div>
 				<ReactDataGrid columns={columns} //columns defined before return statement:
-								rowGetter={i => this.state.constraints[i]} //iterate through constraints elements
-								rowsCount = {this.state.constraints.length}
+					rowGetter={i => this.state.constraints[i]} //iterate through constraints elements
+					rowsCount = {this.state.constraints.length}
 				/>
 			</div>
 			<div>
 				<td>
-					<input type="number" value={this.state.delConstraintID} onChange={(e) => {
-						if (this.state.constraints.length > e.target.value && e.target.value >= 0){
-							this.setState({delConstraintID : e.target.value});
-						}
-					}}/>
+					<input type="number" value={this.state.delConstraintID} onChange={this.deleteConstraint}/>
 				</td>
 				<td>
-					<button onClick={()=>{
-						this.setState({
-							constraints: this.state.constraints.filter((x) => {
-											return this.state.delConstraintID != x.number;
-										})
-						});
-						this.setState({numConstraints: this.state.numConstraints - 1});
-					}}> Remove Constraint</button>
+					<button onClick={this.deleteConstraint}> Remove Constraint</button>
 				</td>
 			</div>
 
 			<div className="bottom" id="option-container">
 				<Link to="/">
-					<button id="save" type="button" onClick=
-						{()=>
-							{	//GENERATE DUMMY COURSES FORM CONSTRAINTS
-								//TODO: SEND ARRAY OF DUMMY COURSES TO SCHEDULING PAGE AND TREAT AS REGULAR COURSE
-									let initialMask = "0" * 168;
-									let constraintsMask = [[],[],[],[],[]]; //weekMask
-									for(var i = 0; i < this.state.constraints.length; i++){
-										let course = new Course('DUMMY','DUMMY','DUMMY','DUMMY','DUMMY', //subject, number, section, title, crn
-										String(this.state.constraints[i].StartHour + ':' + this.state.constraints[i].StartMin + " am"), //start
-										String(this.state.constraints[i].EndHour + ':' + this.state.constraints[i].EndMin + " am"),  //end
-										this.parseDay(this.state.constraints[i].Day), 'DUMMY', 'DUMMY', 'DUMMY') //professor, location, credits
-										constraintsMask[0].push(course.mask[0]);
-										constraintsMask[1].push(course.mask[1]);
-										constraintsMask[2].push(course.mask[2]);
-										constraintsMask[3].push(course.mask[3]);
-										constraintsMask[4].push(course.mask[4]);
-										//console.log(course.mask);
-								}
-								var orMask = new Array(5);
-								for(var j = 0; j < 5; j++){
-									//accumulator and current are binary strings
-									orMask[j] = (constraintsMask[j].reduce(function(accumulator, current) { return (bigInt(accumulator, 2).or(bigInt(current, 2))).toString(2);})); //bitwise OR on all masks
-									//now orMask contains the mask that represents all diferent constraints
-
-								}
-								if(orMask == null) {orMask = [initialMask, initialMask, initialMask, initialMask, initialMask];}
-								let constraints = { timeMask: orMask, profBlacklist: this.state.blacklistArray };
-								store.dispatch(modifyConstraints(constraints));
-							}
-						}
-					>Save
-					</button>
+					<button id="save" type="button" onClick={this.handleSave}>Save</button>
 				</Link>
 				<Link to="/availability" refresh="true">
 					<button type="reset">
@@ -199,8 +200,7 @@ export class AvailabilityContainer extends Component {
 								<span id="blacklist">
 									<div className="inputHeader">Professor Blacklist</div>
 									<input id="profBlacklist" type="text" placeholder="Enter Professor Name" value={this.state.blacklistInput}
-											onChange={(e) => {this.setState({blacklistInput: e.target.value});}
-													}
+											onChange={(e) => {this.setState({blacklistInput: e.target.value})}}
 									/>
 									<button onClick={() => this.state.blacklistArray.push(this.state.blacklistInput)} id="profButton" form="main" type="profSave">
 										Save
@@ -221,7 +221,6 @@ export class SelectInput extends Component {
   render() {
     return (
       <div id="greetingText">Select your unavailability over a typical school week.</div>
-
     );
   }
 };

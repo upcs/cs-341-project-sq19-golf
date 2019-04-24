@@ -1,12 +1,8 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import {Link} from 'react-router-dom';
-<<<<<<< HEAD
 import FadeIn from 'react-fade-in';
 import fetch from 'node-fetch';
-=======
-import '../css/styles.css';
->>>>>>> fd1078c7e06952df0855d36351553f112576b224
 import $ from 'jquery';
 import InputPredict from 'react-inline-predict';
 import {store, modifySchedules, modifyLastKey} from './redux';
@@ -27,7 +23,6 @@ export class TopNavigation extends Component {
   render() {
     return (
       <section className="topNav">
-<<<<<<< HEAD
         <div id="leftNav"><a>UP Scheduler</a></div>
         <div id='rightNav'>
           <Popup trigger={<button id="modal-1" className="navEl"> Help </button>} modal closeOnDocumentClick>
@@ -51,12 +46,6 @@ export class TopNavigation extends Component {
             </div>
           </Popup>
         </div>
-=======
-        <a id="leftNav">UP Scheduler</a>
-        <Link id='rightNav' to='/settings'>
-          Sett  ings
-        </Link>
->>>>>>> fd1078c7e06952df0855d36351553f112576b224
       </section>
     );
   }
@@ -124,7 +113,6 @@ export class InputContainer extends Component {
         'Content-Type': 'application/json'
       }
     }).then(res => res.json()
-<<<<<<< HEAD
     ).then(resJSON => {
       this.setState({'allCourses': {'subjectMap': resJSON.subjMap, 'numberMap': resJSON.numMap} });
       console.log(resJSON);
@@ -180,11 +168,6 @@ export class InputContainer extends Component {
         //console.log(error); //Warnings are currently surpressed, as they can be excessive
       });
     }
-=======
-  ).then(resJSON => {
-    Schedules.viableSchedules = resJSON;
-  });
->>>>>>> fd1078c7e06952df0855d36351553f112576b224
   }
 
   render() {
