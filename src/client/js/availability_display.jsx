@@ -93,13 +93,14 @@ export class AvailabilityContainer extends Component {
 				<td>
 					<Dropdown
 
+						placeholder='Select day'
+
 						options={optionsDays}
 						onChange={(e) => {
 							this._onSelect;
 							this.setState({selectedDay: (e.value)});
-
 						}}
-						placeholder='Select day'
+
 					>
 					</Dropdown>
 				</td>
@@ -160,12 +161,13 @@ export class AvailabilityContainer extends Component {
 				</td>
 				<td>
 					<button onClick={()=>{
+								//check that all fields are filled out for each constraint. If not: give error msg.
 								if((this.state.selectedDay == null) || (this.state.selectedStartHour == null) ||
 										(this.state.selectedStartMin == null) || (this.state.selectedEndHour == null) ||
 										(this.state.selectedEndMin == null)) {
 										alert("Please fill all constraints");
 									}
-									else {
+									else { //If so, store constraints
 										this.state.constraints.push(
 											{	number: this.state.numConstraints, //keep count to be able to remove
 												Day: this.state.selectedDay,
