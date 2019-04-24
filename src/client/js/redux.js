@@ -6,10 +6,11 @@ export const actionTypes = {
   CLEAR_SCHEDULES: 'CLEAR_SCHEDULES',
   MODIFY_COURSE_CONTEXT: 'MODIFY_COURSE_CONTEXT',
   CLEAR_COURSE_CONTEXT: 'CLEAR_COURSE_CONTEXT',
-  MODIFY_LAST_KEY: 'MODIFY_LAST_KEY'
+  MODIFY_LAST_KEY: 'MODIFY_LAST_KEY',
+  MODIFY_CONSTRAINTS: 'MODIFY_CONSTRAINTS'
 };
 
-//Initialize reducers
+//Initialize schedule reducer
 function scheduleReducer(viableSchedules = [], action) {
   switch (action.type) {
     case actionTypes.MODIFY_SCHEDULES:
@@ -21,6 +22,7 @@ function scheduleReducer(viableSchedules = [], action) {
   }
 }
 
+//Initialize course reducer
 function courseReducer(courses = {}, action) {
   switch (action.type) {
     case actionTypes.MODIFY_COURSE_CONTEXT:
@@ -32,6 +34,7 @@ function courseReducer(courses = {}, action) {
   }
 }
 
+//Initialize Last Key Reducer
 function lastKeyReducer(lastKey = null, action) {
   switch (action.type) {
     case actionTypes.MODIFY_LAST_KEY:
@@ -41,24 +44,43 @@ function lastKeyReducer(lastKey = null, action) {
   }
 }
 
+//Initialize Schedule Constraint Reducer
+function scheduleConstraintReducer(constraints = null, action) {
+  switch (action.type) {
+    case actionTypes.MODIFY_CONSTRAINTS:
+      return action.constraints;
+    default:
+      return constraints;
+  }
+}
+
+//Initialize Root Reducer
 export const rootReducer = combineReducers({
   viableSchedules: scheduleReducer,
   courseContext: courseReducer,
-  lastKey: lastKeyReducer
+  lastKey: lastKeyReducer,
+  constraints: scheduleConstraintReducer
 });
 
-//Initialize actions
+//Initialize Modify Schedules
 export function modifySchedules(schedules) {
   return { type: actionTypes.MODIFY_SCHEDULES, viableSchedules: schedules };
 }
 
+//Initialize Modify Courses
 export function modifyCourses(courses) {
   return { type: actionTypes.MODIFY_COURSE_CONTEXT, courses: courses };
 }
 
+//Initialize Modify Last Key
 export function modifyLastKey(lastKey) {
   return { type: actionTypes.MODIFY_LAST_KEY, lastKey: lastKey }
 }
 
-//Initialize store
+//Initialize Modify Constraints
+export function modifyConstraints(constraints) {
+  return { type: actionTypes.MODIFY_CONSTRAINTS, constraints: constraints }
+}
+
+//Initialize Store
 export const store = createStore(rootReducer);
