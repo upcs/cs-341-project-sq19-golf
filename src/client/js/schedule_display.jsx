@@ -117,7 +117,6 @@ export class ClassDisplay extends Component {
   	this.state = { classData: props.classData || {} };
   }
 
-  //TODO: Consider moving this up to the parent
   //Handles stateful ferrying of data from child to parent, concerning schedule registration display
   handleMouseClick() {
     let selected = this.props.selected;

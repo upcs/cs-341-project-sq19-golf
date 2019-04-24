@@ -260,8 +260,7 @@ export class CourseInput extends Component {
     let input = this.state.input;
     if (context == 'subject') {
       if (match) this.setState({ color: 'transparent' });
-
-      input[context] = value.toString().toUpperCase();
+        input[context] = value.toString().toUpperCase();
     }
     else input[context] = value.toString();
     this.setState({ input: input });
