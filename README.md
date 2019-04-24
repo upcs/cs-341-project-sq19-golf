@@ -15,7 +15,7 @@
   - Using HTML
   - Using CSS (Extra attention was paid here as it will be re-used in our shift towards angular.js)
 - A Webscraper capable of gathering all scheduling data
-- Integration of Jest, CodeCov and Travis CI
+- Integration of Jest, CodeCov and Travis CI 
 
 ## **Tasks Completed for Sprint 2:**
 
