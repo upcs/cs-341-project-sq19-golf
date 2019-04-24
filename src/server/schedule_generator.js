@@ -2,9 +2,9 @@ const Combinatorics = require('js-combinatorics');
 var bigInt = require("big-integer");
 const Courses = require('./courses');
 module.exports = {
-  generateSchedules: (courseIDs, subjects, classes) => {
+  generateSchedules: (courseIDs, subjects, classes, constraints) => {
     try {
-      let possibleClasses = filterClasses(courseIDs, subjects, classes);
+      let possibleClasses = filterClasses(courseIDs, subjects, classes, constraints);
       for (var i = 0; i < possibleClasses.length; i++) { //TODO: Follow up with Nico about this
         let mask = "0".repeat(168);
 	      let freeHours = [mask, mask, mask, mask, mask];
@@ -39,17 +39,56 @@ module.exports = {
 		  //console.log(error);
       return [];
     }
+  },
+
+  checkBlacklist: (blacklist, professor) => {
+  	for(var i=0; i < blacklist.length; i++){
+   		if (professor.indexOf(blacklist[i]) != -1){  //check that no element in the blacklist is a substring of the professor
+  			return false;
+  		}
+  	}
+  	return true;
+  },
+
+  viableCourse: (course, constraints) => {	//check course is not conflicting with time schedule
+  	for (var i=0; i < 5; i++){
+  		let totalOnes = countOnes(bigInt(JSON.parse(course.mask)[i], 2).or(bigInt(constraints.timeMask[i], 2)).toString(2));
+  		let courseOnes = (JSON.parse(course.ones)[i]);
+  		let constraintOnes = countOnes(constraints.timeMask[i]);
+
+  		if ( totalOnes != courseOnes + constraintOnes) { //IF the separate sum of 1's is different than the sum of 1's in the bitwise OR : constraint overlaps with course
+  			return false;
+  		}
+  	}
+  	return true
+
   }
 }
 
 //Preliminary removal step purposed to avoid heap overflows
-function filterClasses(courseIDs, subjects, classes) {
+function filterClasses(courseIDs, subjects, classes, constraints) {
   try {
   	let possibleClasses = classes.filter(classObj => {
       let subject = classObj.subject;
       let courseID = classObj.number;
+	  let courseProf = classObj.professor;
 
-      if (subjects.includes(subject) && courseIDs.includes(courseID)) return classObj;
+	  if(constraints != null){
+		  if (constraints.profBlacklist != null) {
+			  if (!(module.exports.checkBlacklist(constraints.profBlacklist, courseProf))){ //perform the blacklist check in every course, not in every schedule -> save time
+
+				  return;
+			  }
+		  }
+		  if (constraints.timeMask != null){
+
+			  if (!(module.exports.viableCourse(classObj, constraints))) { //perform constraints check in every course, not in every schedule -> save time
+				  return;
+			  }
+		  }
+
+	  }
+      if (subjects.includes(subject) && courseIDs.includes(courseID) ) return classObj;
     });
 
     return possibleClasses;
@@ -94,29 +133,6 @@ function findMatchingIdx(arr1, arr2, query1, query2) {
 	Efficient permutation from  Solution 61: https://stackoverflow.com/questions/9960908/permutations-in-javascript
 	based on: http://homepage.math.uiowa.edu/~goodman/22m150.dir/2007/Permutation%20Generation%20Methods.pdf
 	*/
-
-/*function permute(permutation) {
-  var length = permutation.length,
-      result = [permutation.slice()],
-      c = new Array(length).fill(0),
-      i = 1, k, p;
-
-  while (i < length) {
-    if (c[i] < i) {
-      k = i % 2 && c[i];
-      p = permutation[i];
-      permutation[i] = permutation[k];
-      permutation[k] = p;
-      ++c[i];
-      i = 1;
-      result.push(permutation.slice());
-    } else {
-      c[i] = 0;
-      ++i;
-    }
-  }
-  return result;
-}*/
 
 class Schedule {
   constructor(courses, week){
@@ -213,9 +229,6 @@ function maskDay(course, mask){
 		return aux.join('');
 	}
 
-
-
-
 function checkMask(arrayMasks, totalOnes){
   var dayMask = [[],[],[],[],[]];
     for(var i = 0; i < arrayMasks.length; i++){
@@ -230,7 +243,7 @@ function checkMask(arrayMasks, totalOnes){
       for(var j = 0; j < 5; j++){
 			//console.log("**** dayMask" + j + "\n" + dayMask[j]);
 				//accumulator and current are binary strings
-			var orMask = dayMask[j].reduce(function(accumulator, current) { return (bigInt(accumulator, 2).or(bigInt(current, 2))).toString(2);}); //bitwise AND on all masks
+			var orMask = dayMask[j].reduce(function(accumulator, current) { return (bigInt(accumulator, 2).or(bigInt(current, 2))).toString(2);}); //bitwise OR on all masks
 			//console.log(totalOnes[j] + " : " + countOnes(orMask));
 			if (parseInt(totalOnes[j]) != parseInt(countOnes(orMask))){
 				return false; // if putting the schedules together yields less occupied hours than each course total hours -> some courses overlap

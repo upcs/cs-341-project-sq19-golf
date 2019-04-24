@@ -51,7 +51,7 @@ export class AvailabilityContainer extends Component {
   }
 
   closeMenu(event) {
-		if (!this.state.dropdownMenu.contains(event.target)) {
+		if (this.state.dropdownMenu && !this.state.dropdownMenu.contains(event.target)) {
 		  this.setState({ showMenu: false }, () => {
 				document.removeEventListener('click', this.closeMenu);
 		  });
@@ -73,9 +73,9 @@ export class AvailabilityContainer extends Component {
 		}
 	}
 
-	handleChange(e) {
+	handleChange(e, target) {
 		this._onSelect;
-		this.setState({selectedDay: (e.value)});
+		this.setState({[target]: (e.value)});
 	}
 
 	handleConstraints() {
@@ -106,13 +106,13 @@ export class AvailabilityContainer extends Component {
 	}
 
 	handleSave() {
-		let initialMask = "0" * 168;
+		let initialMask = "0".repeat(168);
 		let constraintsMask = [[],[],[],[],[]]; //weekMask
 		for (var i = 0; i < this.state.constraints.length; i++){
-			let course = new Course('DUMMY','DUMMY','DUMMY','DUMMY','DUMMY', //subject, number, section, title, crn
-				String(this.state.constraints[i].StartHour + ':' + this.state.constraints[i].StartMin + " am"), //start
-				String(this.state.constraints[i].EndHour + ':' + this.state.constraints[i].EndMin + " am"),  //end
-				this.parseDay(this.state.constraints[i].Day), 'DUMMY', 'DUMMY', 'DUMMY') //professor, location, credits
+			let course = new Course('DUMMY','DUMMY','DUMMY','DUMMY','DUMMY', String(this.state.constraints[i].StartHour + ':' + this.state.constraints[i].StartMin + " am"),
+				String(this.state.constraints[i].EndHour + ':' + this.state.constraints[i].EndMin + " am"),
+				this.parseDay(this.state.constraints[i].Day), 'DUMMY', 'DUMMY', 'DUMMY');
+
 			constraintsMask[0].push(course.mask[0]);
 			constraintsMask[1].push(course.mask[1]);
 			constraintsMask[2].push(course.mask[2]);
@@ -120,14 +120,17 @@ export class AvailabilityContainer extends Component {
 			constraintsMask[4].push(course.mask[4]);
 		}
 
-		var orMask = new Array(5);
-		for (var j = 0; j < 5; j++){
-			//accumulator and current are binary strings
-			orMask[j] = (constraintsMask[j].reduce(function(accumulator, current) { return (bigInt(accumulator, 2).or(bigInt(current, 2))).toString(2);})); //bitwise OR on all masks
-			//now orMask contains the mask that represents all diferent constraints
+		if (constraintsMask[0].length !== 0) {
+			var orMask = new Array(5);
+			for (var j = 0; j < 5; j++){
+				//accumulator and current are binary strings
+				orMask[j] = (constraintsMask[j].reduce(function(accumulator, current) { return (bigInt(accumulator, 2).or(bigInt(current, 2))).toString(2);})); //bitwise OR on all masks
+				//now orMask contains the mask that represents all diferent constraints
 
+			}
 		}
-		//if (orMask == null) orMask = [initialMask, initialMask, initialMask, initialMask, initialMask]; //TODO: Remove?
+		else orMask = [initialMask, initialMask, initialMask, initialMask, initialMask];
+
 		let constraints = { timeMask: orMask, profBlacklist: this.state.blacklistArray };
 		store.dispatch(modifyConstraints(constraints));
 	}
@@ -148,19 +151,19 @@ export class AvailabilityContainer extends Component {
 		<div>
 			<React.Fragment>
 				<td>
-					<Dropdown options={optionsDays} onChange={this.handleChange} placeholder='Select day'></Dropdown>
+					<Dropdown options={optionsDays} onChange={(e) => this.handleChange(e, 'selectedDay')} placeholder='Select day'></Dropdown>
 				</td>
 				<td>
-					<Dropdown options={optionsHrs} onChange={this.handleChange} placeholder='Select start hour'></Dropdown>
+					<Dropdown options={optionsHrs} onChange={(e) => this.handleChange(e, 'selectedStartHour')} placeholder='Select start hour'></Dropdown>
 				</td>
 				<td>
-					<Dropdown options={optionsMins} onChange={this.handleChange} placeholder='Select start minute'></Dropdown>
+					<Dropdown options={optionsMins} onChange={(e) => this.handleChange(e, 'selectedStartMin')} placeholder='Select start minute'></Dropdown>
 				</td>
 				<td>
-					<Dropdown options={optionsHrs} onChange={this.handleChange} placeholder='Select end hour'></Dropdown>
+					<Dropdown options={optionsHrs} onChange={(e) => this.handleChange(e, 'selectedEndHour')} placeholder='Select end hour'></Dropdown>
 				</td>
 				<td>
-					<Dropdown options={optionsMins} onChange={this.handleChange} placeholder='Select end minute'></Dropdown>
+					<Dropdown options={optionsMins} onChange={(e) => this.handleChange(e, 'selectedEndMin')} placeholder='Select end minute'></Dropdown>
 				</td>
 				<td>
 					<button onClick={this.handleConstraints}>Add</button>
