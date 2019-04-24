@@ -1,5 +1,16 @@
-import { sequelize, dataTypes, checkModelName, checkPropertyExists } from 'sequelize-test-helpers';
-import { Classes, updateAllCourseData, updateAllCourseDataAsync, getAllCourseData, getSelectedCourseData } from '../src/server/sql.js';
+import {
+  sequelize,
+  dataTypes,
+  checkModelName,
+  checkPropertyExists
+} from 'sequelize-test-helpers';
+import {
+  Classes,
+  updateAllCourseData,
+  updateAllCourseDataAsync,
+  getAllCourseData,
+  getSelectedCourseData
+} from '../src/server/sql.js';
 
 const Fs = require('fs');
 

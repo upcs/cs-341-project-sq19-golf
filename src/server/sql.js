@@ -18,40 +18,40 @@ const Db = new Sequelize('REGISTRATION', 'root', 'Gatolocoe#4209', {
 //Sequelize Table Reference
 
 const Classes = Db.define('course', {
-    subject: Sequelize.STRING,
-    number: Sequelize.STRING,
-	  section: Sequelize.STRING,
-    title: Sequelize.STRING,
-	  crn: Sequelize.STRING,
-    start: Sequelize.STRING,
-    end: Sequelize.STRING,
-    days: Sequelize.STRING,
-	  professor: Sequelize.STRING,
-	  location: Sequelize.STRING,
-	  credits: Sequelize.STRING,
-    mask: {
-      type: Sequelize.STRING(1000),
-      get: function() {
-        return JSON.parse(this.getDataValue('mask'));
-      },
-      set: function(val) {
-        return this.setDataValue('mask', JSON.stringify(val));
-      }
+  subject: Sequelize.STRING,
+  number: Sequelize.STRING,
+  section: Sequelize.STRING,
+  title: Sequelize.STRING,
+  crn: Sequelize.STRING,
+  start: Sequelize.STRING,
+  end: Sequelize.STRING,
+  days: Sequelize.STRING,
+  professor: Sequelize.STRING,
+  location: Sequelize.STRING,
+  credits: Sequelize.STRING,
+  mask: {
+    type: Sequelize.STRING(1000),
+    get: function() {
+      return JSON.parse(this.getDataValue('mask'));
     },
-    ones: {
-      type: Sequelize.STRING(176),
-      get: function() {
-        let onesStr = JSON.parse(this.getDataValue('ones'));
-        return onesStr.map(el => parseInt(el));
-      },
-      set: function(val) {
-        return this.setDataValue('ones', JSON.stringify(val));
-      }
+    set: function(val) {
+      return this.setDataValue('mask', JSON.stringify(val));
     }
-  }, {
-    timestamps: false,
-    freezeTableName: true, //Allows the tableName to be defined strictly (not just the query + 's')
-    tableName: 'courses'
+  },
+  ones: {
+    type: Sequelize.STRING(176),
+    get: function() {
+      let onesStr = JSON.parse(this.getDataValue('ones'));
+      return onesStr.map(el => parseInt(el));
+    },
+    set: function(val) {
+      return this.setDataValue('ones', JSON.stringify(val));
+    }
+  }
+}, {
+  timestamps: false,
+  freezeTableName: true, //Allows the tableName to be defined strictly (not just the query + 's')
+  tableName: 'courses'
 });
 
 module.exports = {
@@ -77,31 +77,35 @@ module.exports = {
 
   updateAllCourseData: (filePath) => {
     try {
-      let courses = module.exports.parseCourseData(filePath);
-      Classes.sync({force: true}).then(() => {
+      let courses = Courses.parseCourseData(filePath);
+      Classes.sync({
+        force: true
+      }).then(() => {
         Classes.bulkCreate(courses);
       });
-    }
-    catch (error) {
+    } catch (error) {
       return false;
     }
   },
 
   updateAllCourseDataAsync: (filePath, callback) => {
     try {
-      let courses = module.exports.parseCourseData(filePath);
-      Classes.sync({force: true}).then(() => {
+      let courses = Courses.parseCourseData(filePath);
+      Classes.sync({
+        force: true
+      }).then(() => {
         Classes.bulkCreate(courses).then(callback);
       });
-    }
-    catch (error) {
+    } catch (error) {
       return false;
     }
   },
 
   getAllCourseData: (mock) => {
     let mockRef = mock || false;
-    if (!mockRef) return Classes.findAll({raw: true});
+    if (!mockRef) return Classes.findAll({
+      raw: true
+    });
   },
 
   getSelectedCourseData: (courseIDs, subjects) => {
@@ -113,7 +117,6 @@ module.exports = {
         },
         raw: true
       });
-    }
-    else return [];
+    } else return [];
   }
 }
